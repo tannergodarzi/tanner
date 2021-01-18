@@ -1,0 +1,26 @@
+.title, .copy {
+  font-family: "Founders Grotesk";
+  font-smooth: always;
+  font-weight: lighter;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+  
+.title {
+  font-weight: lighter;
+}
+  
+.title--1 {
+  font-size: 32px;
+  line-height: 38px;
+}
+  
+.copy {
+  > p {
+    margin-bottom: 1em;
+  }
+}
+
+.copy--regular {
+  font-size: 34px;
+  line-height: 44px;
+}

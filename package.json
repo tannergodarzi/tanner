@@ -4,7 +4,8 @@
   "description": "Tanner",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"test\""
+    "test": "echo \"test\"",
+    "sass": "node-sass -w src/styles -o public/css"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,6 @@
   },
   "homepage": "https://github.com/tannergodarzi/tanner#readme",
   "dependencies": {
-    "webpack": "^5.11.1"
+    "node-sass": "^5.0.0"
   }
 }
