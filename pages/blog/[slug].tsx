@@ -3,6 +3,7 @@ import { Client } from "@notionhq/client";
 import { Block } from "../../components/block";
 
 import styles from "./slug.module.css";
+import { PostData } from "../../helpers/notionTypes";
 
 // Notion client
 const notion = new Client({
@@ -18,14 +19,14 @@ export async function getServerSideProps(context) {
 	// TODO: Handle query not returning anything
 	const id = queryResponse[0].id;
 
-	const pageResponse = await notion.pages.retrieve({ page_id: id }).then((response) => response);
+	const pageResponse = await notion.pages.retrieve({ page_id: id }).then((response) => response as PostData);
 	const blocksResponse = await notion.blocks.children
 		.list({
 			block_id: id,
 		})
 		.then((response) => response.results);
 
-	const { created_time, last_edited_time, properties, cover, icon, archived } = pageResponse;
+	const { created_time, last_edited_time, properties, cover, icon } = pageResponse;
 	// TODO: Handle archived state as 404 or permanently deleted
 
 	const pageTitle = properties.title.title[0].plain_text;
