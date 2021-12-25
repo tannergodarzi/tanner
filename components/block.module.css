@@ -41,7 +41,7 @@
 }
 .divider {
     margin: 2rem 0;
-    height: 1px;
-    border: none;
-    background-color: rgba(0,0,0,0.1);
+    border-width: 1px;
+    border-color: rgba(0,0,0,0.2);
+    -webkit-filter: invert(90%);
 }
