@@ -1,0 +1,47 @@
+.heading_1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.8rem 0;
+}
+.heading_2 {
+    font-size: 1.8rem;
+    margin: 0 0 1.8rem 0;
+}
+.heading_3 {
+    font-size: 1.6rem;
+    margin: 0 0 1.8rem 0;
+}
+.paragraph {
+    font-size: 1rem;
+    margin: 1em 0;
+}
+.list_item {
+    font-size: 1rem;
+}
+.quote {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    quotes: "“" "”";
+}
+.quote::before {
+    content: open-quote;
+}
+.quote::after {
+    content: close-quote;
+}
+.code {
+    font-family: monospace;
+    font-size: 0.8rem;
+    padding: 0.8rem;
+    display: block;
+    box-sizing: border-box;
+    background-color: rgba(200,200,200,0.1);
+}
+.divider {
+    margin: 2rem 0;
+    height: 1px;
+    border: none;
+    background-color: rgba(0,0,0,0.1);
+}

@@ -34,23 +34,49 @@ body {
 ol, ul {
 	list-style: none;
 }
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+a {
+	color: inherit;
+}
 
 /* Overrides */
+
+:root {
+	--color-dark: rgb(16,16,16);
+	--color-medium: rgb(128,128, 128);
+	--color-light: rgb(196,196, 196);
+	--color-lightest: rgb(255,255,255);
+}
+
+:root {
+	--text-color: var(--color-dark);
+	--page-background: var(--color-lightest);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text-color: var(--color-light);
+		--page-background: var(--color-dark);
+	}
+}
+
 html,
 body {
-    background: rgb(16,16,16);
-    height: 100vh;
-    width: 100vw;
+	font-family: "adonis-web", serif;
+	font-weight: 400;
+	font-style: normal;
+    color: var(--text-color);
+	background: var(--page-background);
+	font-size: clamp(1rem, 0.7996rem + 0.8909vw, 2rem);
+	line-height: 1.25em;
+}
+
+h1 {
+	line-height: 1.4em;
+	font-size: 2rem;
+	font-weight: 700;
+    margin: 0 0 1.8rem 0;
 }

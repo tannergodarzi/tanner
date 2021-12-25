@@ -1,0 +1,18 @@
+
+.article {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 900px);
+    box-sizing: border-box;
+    padding: 0 max(1rem, 2rem);
+    margin: 2rem auto;
+    justify-self: center;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    margin-bottom: 0.2rem;
+}
