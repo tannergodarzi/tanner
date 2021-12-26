@@ -1,17 +1,17 @@
 .heading_1 {
     font-weight: 700;
-    margin: 0.8rem 0;
+    margin: 0.4rem 0;
 }
 .heading_2 {
-    margin: 0.8rem 0;
+    margin: 0.4rem 0;
 }
 .heading_3 {
-    margin: 0.8rem 0;
+    margin: 0.4rem 0;
 }
 .paragraph {
     font-size: 1.2rem;
     line-height: 1.4em;
-    margin: 0.8rem 0;
+    margin: 0.2rem 0 0.6rem;
 }
 .paragraph + :not(.paragraph) {
     margin-top: 2.2rem;
@@ -19,19 +19,7 @@
 .list_item {
     font-size: 1rem;
 }
-.quote {
-    font-size: 1.2rem;
-    font-weight: 700;
-    font-style: italic;
-    text-align: center;
-    quotes: "“" "”";
-}
-.quote::before {
-    content: open-quote;
-}
-.quote::after {
-    content: close-quote;
-}
+
 .code {
     font-family: monospace;
     font-size: 0.8rem;
