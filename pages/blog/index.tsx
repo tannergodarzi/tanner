@@ -45,6 +45,12 @@ export default function Index(props) {
 			</Head>
 
 			<main>
+				<section className="mast">
+					<nav>
+						<a href="./">{"Tanner"}</a>
+						<a href="./blog">{"Writings"}</a>
+					</nav>
+				</section>
 				<section className="container">
 					{posts.map((post) => {
 						if (!post.child_page || post.archived === true) {
@@ -94,6 +100,30 @@ export default function Index(props) {
 				.entry-title a:hover,
 				.entry-title a:focus {
 					text-decoration: underline;
+				}
+				.mast {
+					height: auto;
+					padding: 1.5rem;
+					box-sizing: border-box;
+					position: sticky;
+					top: 0;
+					width: 100%;
+					background: var(--page-background);
+					z-index: 9999;
+				}
+				.mast nav {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-evenly;
+					box-sizing: border-box;
+					width: 100%;
+					height: 100%;
+					gap: 1rem;
+				}
+				.mast nav a {
+					text-decoration: none;
+					font-size: 2rem;
 				}
 			`}</style>
 		</>

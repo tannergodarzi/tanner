@@ -61,6 +61,12 @@ export default function Slug(props) {
 			</Head>
 
 			<main>
+				<section className="mast">
+					<nav>
+						<a href="./">{"Tanner"}</a>
+						<a href="./blog">{"Writings"}</a>
+					</nav>
+				</section>
 				<article className={"article"}>
 					<header className={"header"}>
 						<h1>{pageTitle}</h1>
@@ -90,13 +96,37 @@ export default function Slug(props) {
 					position: relative;
 					padding-bottom: min(calc(0.25 * 940px + 4rem), calc(0.25 * 100vw + 4rem));
 				}
+				.mast {
+					height: auto;
+					padding: 1.5rem;
+					box-sizing: border-box;
+					position: sticky;
+					top: 0;
+					width: 100%;
+					background: var(--page-background);
+					z-index: 9999;
+				}
+				.mast nav {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-evenly;
+					box-sizing: border-box;
+					width: 100%;
+					height: 100%;
+					gap: 1rem;
+				}
+				.mast nav a {
+					text-decoration: none;
+					font-size: 2rem;
+				}
 				.article,
 				.footer {
 					flex-direction: column;
 					width: min(100%, 1040px);
 					box-sizing: border-box;
-					padding: 0 max(1rem, 2rem);
-					margin: 2rem auto;
+					padding: 0 1.5rem;
+					margin: 3rem auto;
 				}
 				.article {
 					background: var(--page-background);
