@@ -105,7 +105,7 @@ export default function Slug(props) {
 					text-align: center;
 				}
 				.footer h2 {
-					font-size: calc(8rem + (9 - 8) * ((100vw - 300px) / (1040 - 300)));
+					font-size: calc(7rem + (9 - 7) * ((100vw - 300px) / (1040 - 300)));
 					font-style: italic;
 				}
 			`}</style>
