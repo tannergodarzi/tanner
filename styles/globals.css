@@ -123,8 +123,8 @@ a {
 /* Overrides */
 
 :root {
-	--color-dark: rgb(40, 40, 40);
-	--color-medium: rgb(128, 128, 128);
+	--color-dark: rgb(16, 16, 16);
+	--color-medium: rgb(40, 40, 40);
 	--color-light: rgb(200, 200, 200);
 	--color-lightest: rgb(255, 255, 255);
 	--color-blue: #97dbda;
