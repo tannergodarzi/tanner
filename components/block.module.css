@@ -1,18 +1,16 @@
 .heading_1 {
-	font-size: 3rem;
     font-weight: 700;
     margin: 0.8rem 0;
 }
 .heading_2 {
-    font-size: 1.8rem;
     margin: 0.8rem 0;
 }
 .heading_3 {
-    font-size: 1.6rem;
     margin: 0.8rem 0;
 }
 .paragraph {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.4em;
     margin: 0.8rem 0;
 }
 .paragraph + :not(.paragraph) {

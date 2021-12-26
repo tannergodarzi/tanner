@@ -71,20 +71,22 @@ body {
     color: var(--text-color);
 	background: var(--page-background);
 	font-size: clamp(1rem, 0.7996rem + 0.8909vw, 2rem);
-	line-height: 1.15em;
+    line-height: 1.4em;
 }
 
 h1 {
-	line-height: 1em;
-	font-size: 3rem;
+	font-size: 2.75rem;
 	font-weight: 700;
     margin: 0 0 1.8rem 0;
+	line-height: 1.2em;
 }
 h2 {
     font-size: 1.8rem;
     margin: 0.8rem 0;
+	line-height: 1.4em;
 }
 h3 {
     font-size: 1.6rem;
     margin: 0.8rem 0;
+	line-height: 1.4em;
 }
