@@ -1,15 +1,15 @@
 .heading_1 {
-	font-size: 2.4rem;
+	font-size: 3rem;
     font-weight: 700;
- margin: 0.8rem 0;
+    margin: 0.8rem 0;
 }
 .heading_2 {
     font-size: 1.8rem;
- margin: 0.8rem 0;
+    margin: 0.8rem 0;
 }
 .heading_3 {
     font-size: 1.6rem;
- margin: 0.8rem 0;
+    margin: 0.8rem 0;
 }
 .paragraph {
     font-size: 1rem;
@@ -46,11 +46,20 @@
     margin: 2rem 0;
     border-width: 1px;
     border-color: rgba(0,0,0,0.2);
-    -webkit-filter: invert(90%);
+    filter: invert(90%);
 }
 .bookmark {
     font-size: 1rem;
-    margin: 0.75rem 0;
+    margin: 0.25rem 0;
     display: flex;
     gap: 0.25rem;
+}
+.embed {
+    display: block;
+}
+
+.embed iframe {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
 }

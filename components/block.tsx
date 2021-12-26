@@ -10,6 +10,7 @@ interface BlockProps {
 export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 	const { type, id } = block;
 	const value = block[type];
+	console.log(type);
 	switch (type) {
 		case "heading_1":
 			return (
@@ -75,9 +76,22 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 			return (
 				<figure>
 					<Image src={block.image.file.url} width={1200} height={1200} alt={block.image.caption || ""} />
-					<figcaption>
-						<Text value={block.image.caption} />
-					</figcaption>
+					{block.image.caption.length > 0 && (
+						<figcaption>
+							<Text value={block.image.caption} />
+						</figcaption>
+					)}
+				</figure>
+			);
+		case "embed":
+			return (
+				<figure className={styles.embed}>
+					<iframe src={block.embed.url} width="1600px" height="900px" />
+					{block.embed.caption.length > 0 && (
+						<figcaption>
+							<Text value={block.embed.caption} />
+						</figcaption>
+					)}
 				</figure>
 			);
 		default:
