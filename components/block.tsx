@@ -62,20 +62,17 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 		case "divider":
 			return <hr key={id} className={styles.divider} />;
 		case "bookmark":
+			const innerText = value.caption.length > 0 ? <Text value={value.caption} /> : value.url
 			return (
-				<figure className={styles.bookmark}>
-					{value.caption.length > 0 && (
-						<figcaption>
-							<Text value={value.caption} />
-						</figcaption>
-					)}
-					<a href={value.url}>{value.url}</a>
-				</figure>
+				<a href={value.url} className={styles.bookmark}>
+					{innerText}
+				</a>
 			);
 		case "image":
 			const { image } = block;
 			return (
 				<figure className={styles.image}>
+					{/* eslint-disable-next-line @next/next/no-img-element */}
 					<img src={image.file.url} alt={image.caption} />
 					{image.caption.length > 0 && (
 						<figcaption>

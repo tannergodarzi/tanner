@@ -3,19 +3,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,14 +92,24 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
 body {
 	line-height: 1;
 }
-ol, ul {
+ol,
+ul {
 	list-style: none;
 }
 table {
@@ -45,11 +123,11 @@ a {
 /* Overrides */
 
 :root {
-	--color-dark: rgb(16,16,16);
-	--color-medium: rgb(128,128, 128);
-	--color-light: rgb(196,196, 196);
-	--color-lightest: rgb(255,255,255);
-	--color-blue: #97DBDA;
+	--color-dark: rgb(16, 16, 16);
+	--color-medium: rgb(128, 128, 128);
+	--color-light: rgb(196, 196, 196);
+	--color-lightest: rgb(255, 255, 255);
+	--color-blue: #97dbda;
 }
 
 :root {
@@ -66,29 +144,35 @@ a {
 
 html,
 body {
+	color: var(--text-color);
+	background: var(--page-background);
+}
+html,
+body {
 	font-family: "adonis-web", serif;
 	font-weight: 400;
 	font-style: normal;
-    color: var(--text-color);
-	background: var(--page-background);
 	font-size: clamp(1rem, 0.7996rem + 0.8909vw, 2rem);
-    line-height: 1.4em;
+	line-height: 1.4em;
 }
 
 h1 {
 	font-size: 2.75rem;
 	font-weight: 700;
-    margin: 0 0 1.8rem 0;
+	margin: 0 0 1.8rem 0;
 	line-height: 1.2em;
+	letter-spacing: -0.01em;
 }
 h2 {
-    font-size: 1.8rem;
+	font-size: 1.8rem;
 	font-weight: 700;
-    margin: 0.8rem 0 0.2em;
+	margin: 0.8rem 0 0.2em;
 	line-height: 1.2em;
+	letter-spacing: -0.01em;
 }
 h3 {
-    font-size: 1.6rem;
-    margin: 0.8rem 0;
+	font-size: 1.6rem;
+	margin: 0.8rem 0;
 	line-height: 1.4em;
+	letter-spacing: -0.01em;
 }

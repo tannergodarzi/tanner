@@ -1,8 +1,6 @@
 import Head from "next/head";
 import { Client } from "@notionhq/client";
 import { Block } from "../../components/block";
-
-import styles from "./slug.module.css";
 import { PostData } from "../../helpers/notionTypes";
 
 // Notion client
@@ -63,8 +61,8 @@ export default function Slug(props) {
 			</Head>
 
 			<main>
-				<article className={styles.article}>
-					<header className={styles.header}>
+				<article className={"article"}>
+					<header className={"header"}>
 						<h1>{pageTitle}</h1>
 						<time dateTime={meta.created_time}>
 							{`Published ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
@@ -78,7 +76,39 @@ export default function Slug(props) {
 						})}
 					</section>
 				</article>
+				<footer className="footer">
+					<h2>{"The End"}</h2>
+				</footer>
 			</main>
+			<style jsx>{`
+				.article {
+					display: flex;
+					flex-direction: column;
+					width: min(100%, 1040px);
+					box-sizing: border-box;
+					padding: 0 max(1rem, 2rem);
+					margin: 2rem auto;
+				}
+				.header {
+					margin-bottom: 1rem;
+					font-size: 0.75rem;
+					text-align: center;
+				}
+				.header time {
+					line-height: 1em;
+					font-family: monospace;
+				}
+				.header h1 {
+					margin-bottom: 0.25rem;
+				}
+				.footer {
+					text-align: center;
+				}
+				.footer h2 {
+					font-size: calc(8rem + (9 - 8) * ((100vw - 300px) / (1040 - 300)));
+					font-style: italic;
+				}
+			`}</style>
 		</>
 	);
 }
