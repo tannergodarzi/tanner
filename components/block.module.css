@@ -14,6 +14,9 @@
 	line-height: 1.4em;
 	margin: 0.2rem 0 0.6rem;
 }
+.paragraph a {
+    font-weight: 700;
+}
 .paragraph + :not(.paragraph) {
 	margin-top: 2.2rem;
 }
