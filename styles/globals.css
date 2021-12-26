@@ -123,9 +123,9 @@ a {
 /* Overrides */
 
 :root {
-	--color-dark: rgb(16, 16, 16);
+	--color-dark: rgb(40, 40, 40);
 	--color-medium: rgb(128, 128, 128);
-	--color-light: rgb(196, 196, 196);
+	--color-light: rgb(200, 200, 200);
 	--color-lightest: rgb(255, 255, 255);
 	--color-blue: #97dbda;
 }
@@ -168,11 +168,11 @@ h2 {
 	font-weight: 700;
 	margin: 0.8rem 0 0.2em;
 	line-height: 1em;
-	letter-spacing: -0.01em;
+	letter-spacing: -0.02em;
 }
 h3 {
 	font-size: 1.6rem;
 	margin: 0.8rem 0;
 	line-height: 1.1em;
-	letter-spacing: -0.01em;
+	letter-spacing: -0.02em;
 }
