@@ -78,7 +78,7 @@ export default function Index(props) {
 					width: min(100%, 1680px);
 					box-sizing: border-box;
 					padding: 0 max(1rem, 2rem);
-					margin: 5rem auto;
+					margin: 4rem auto;
 				}
 				.entry {
 					display: flex;
