@@ -1,19 +1,22 @@
 .heading_1 {
-    font-size: 2rem;
+	font-size: 2.4rem;
     font-weight: 700;
-    margin: 0 0 1.8rem 0;
+ margin: 0.8rem 0;
 }
 .heading_2 {
     font-size: 1.8rem;
-    margin: 0 0 1.8rem 0;
+ margin: 0.8rem 0;
 }
 .heading_3 {
     font-size: 1.6rem;
-    margin: 0 0 1.8rem 0;
+ margin: 0.8rem 0;
 }
 .paragraph {
     font-size: 1rem;
-    margin: 1em 0;
+    margin: 0.8rem 0;
+}
+.paragraph + :not(.paragraph) {
+    margin-top: 2.2rem;
 }
 .list_item {
     font-size: 1rem;
@@ -44,4 +47,10 @@
     border-width: 1px;
     border-color: rgba(0,0,0,0.2);
     -webkit-filter: invert(90%);
+}
+.bookmark {
+    font-size: 1rem;
+    margin: 0.75rem 0;
+    display: flex;
+    gap: 0.25rem;
 }

@@ -7,7 +7,7 @@ interface TextProps {
 }
 
 export const Text = ({ value }: PropsWithChildren<TextProps>) => {
-	return value.text.map((block) => {
+	return value.map((block) => {
 		const { annotations, plain_text, text } = block;
 
 		return (
@@ -22,7 +22,8 @@ export const Text = ({ value }: PropsWithChildren<TextProps>) => {
 					[styles.text_underline]: annotations.underline,
 				})}
 			>
-				{text.content}
+				{!text.link && text.content}
+				{text.link && <a href={text.link.url}>{text.content}</a>}
 			</span>
 		);
 	});

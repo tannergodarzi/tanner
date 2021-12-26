@@ -42,6 +42,7 @@ export default function Index(props) {
 				<meta name="author" content="Tanner Godarzi" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<link rel="icon" href="/favicon.ico" />
+				<link rel="stylesheet" href="https://use.typekit.net/wir7xtg.css" />
 			</Head>
 
 			<main>
@@ -54,9 +55,9 @@ export default function Index(props) {
 						return (
 							<article key={id}>
 								<header>
-									<h2>
+									<h1>
 										<a href={`blog/${sluggify(child_page.title)}`}>{child_page.title}</a>
-									</h2>
+									</h1>
 								</header>
 							</article>
 						);

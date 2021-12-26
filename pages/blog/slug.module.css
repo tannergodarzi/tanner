@@ -10,9 +10,11 @@
 }
 
 .header {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    text-align: center;
 }
 
 .header h1 {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
 }

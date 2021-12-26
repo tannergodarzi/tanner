@@ -43,7 +43,6 @@ export async function getServerSideProps(context) {
 
 export default function Slug(props) {
 	const { blocks, meta, pageTitle } = props;
-	console.log(new Intl.DateTimeFormat("en-US").format(new Date(meta.created_time)));
 	return (
 		<>
 			<Head>
