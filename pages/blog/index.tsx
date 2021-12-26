@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "../styles/pages/index.module.css";
 import { Client } from "@notionhq/client";
 import { sluggify } from "../../helpers/urlHelpers";
 
@@ -29,9 +28,9 @@ export default function Index(props) {
 	return (
 		<>
 			<Head>
-				<title>Hello, I&rsquo;m Tanner</title>
+				<title>Blog of Tanner Godarzi</title>
 				<meta charSet="UTF-8" />
-				<meta name="title" content="Hello, I'm Tanner" />
+				<meta name="title" content="Blog of Tanner Godarzi" />
 				<meta
 					name="description"
 					content="a Front End Engineer living in San Francisco. I&rsquo;m
@@ -46,24 +45,54 @@ export default function Index(props) {
 			</Head>
 
 			<main>
-				<section>
+				<section className="container">
 					{posts.map((post) => {
-						if (!post.child_page) {
+						if (!post.child_page || post.archived === true) {
 							return null;
 						}
-						const { id, child_page } = post;
+						const { id, child_page, created_time } = post;
 						return (
-							<article key={id}>
-								<header>
-									<h1>
-										<a href={`blog/${sluggify(child_page.title)}`}>{child_page.title}</a>
-									</h1>
-								</header>
-							</article>
+							<section key={id} className="entry">
+								<h2 className="entry-title">
+									<a href={`blog/${sluggify(child_page.title)}`}>{child_page.title}</a>
+								</h2>
+								<time dateTime={created_time}>
+									{`Published ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
+										new Date(created_time)
+									)}`}
+								</time>
+							</section>
 						);
 					})}
 				</section>
 			</main>
+			<style jsx>{`
+				.container {
+					display: flex;
+					flex-direction: column;
+					width: min(100%, 1040px);
+					box-sizing: border-box;
+					padding: 0 max(1rem, 2rem);
+					margin: 2rem auto;
+				}
+				.entry {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					margin-bottom: 1rem;
+					font-size: 0.75rem;
+				}
+				.entry-title {
+					margin-bottom: 0.25rem;
+				}
+				.entry-title a {
+					text-decoration: none;
+				}
+				.entry-title a:hover,
+				.entry-title a:focus {
+					text-decoration: underline;
+				}
+			`}</style>
 		</>
 	);
 }
