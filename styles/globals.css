@@ -71,7 +71,7 @@ body {
     color: var(--text-color);
 	background: var(--page-background);
 	font-size: clamp(1rem, 0.7996rem + 0.8909vw, 2rem);
-	line-height: 1.05em;
+	line-height: 1.15em;
 }
 
 h1 {
