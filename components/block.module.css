@@ -1,51 +1,80 @@
 .heading_1 {
-    font-weight: 700;
-    margin: 0.4rem 0;
+	font-weight: 700;
+	margin: 0.4rem 0;
 }
 .heading_2 {
-    margin: 0.4rem 0;
+	margin: 0.4rem 0;
 }
 .heading_3 {
-    margin: 0.4rem 0;
+	margin: 0.4rem 0;
 }
-.paragraph {
-    font-size: 1.2rem;
-    line-height: 1.4em;
-    margin: 0.2rem 0 0.6rem;
+.paragraph,
+.text {
+	font-size: 1.2rem;
+	line-height: 1.4em;
+	margin: 0.2rem 0 0.6rem;
 }
 .paragraph + :not(.paragraph) {
-    margin-top: 2.2rem;
+	margin-top: 2.2rem;
 }
 .list_item {
-    font-size: 1rem;
+	font-size: 1rem;
 }
-
 .code {
-    font-family: monospace;
-    font-size: 0.8rem;
-    padding: 0.8rem;
-    display: block;
-    box-sizing: border-box;
-    background-color: rgba(200,200,200,0.1);
+	font-family: monospace;
+	font-size: 0.8rem;
+	padding: 0.8rem;
+	display: block;
+	box-sizing: border-box;
+	background-color: rgba(200, 200, 200, 0.1);
 }
 .divider {
-    margin: 2rem 0;
-    border-width: 1px;
-    border-color: rgba(0,0,0,0.2);
-    filter: invert(90%);
+	margin: 2rem 0;
+    border: none;
+	border-top: 1px solid rgba(0, 0, 0, 1);
+    height: 0;
+	filter: invert(50%);
+}
+.quote {
+	font-size: 1.2rem;
+	font-weight: 700;
+	font-style: italic;
+	text-align: center;
+	quotes: "“" "”";
+}
+.quote::before {
+	content: open-quote;
+}
+.quote::after {
+	content: close-quote;
 }
 .bookmark {
-    font-size: 1rem;
-    margin: 0.25rem 0;
-    display: flex;
-    gap: 0.25rem;
+	font-size: 1rem;
+	margin: 0.25rem 0;
+	display: flex;
+	gap: 0.25rem;
 }
 .embed {
-    display: block;
+	display: block;
 }
 
 .embed iframe {
-    width: 100%;
-    display: block;
-    aspect-ratio: 16 / 9;
+	width: 100%;
+	display: block;
+	aspect-ratio: 16 / 9;
+}
+.image {
+	width: max(256px, 80%);
+	margin: auto;
+	display: block;
+}
+.image img {
+	display: block;
+	height: auto;
+	width: 100%;
+}
+.image figcaption {
+	margin-top: 0.25rem;
+	font-size: 0.8rem;
+	opacity: 0.8;
 }

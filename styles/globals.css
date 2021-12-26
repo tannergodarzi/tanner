@@ -49,11 +49,12 @@ a {
 	--color-medium: rgb(128,128, 128);
 	--color-light: rgb(196,196, 196);
 	--color-lightest: rgb(255,255,255);
+	--color-blue: #97DBDA;
 }
 
 :root {
 	--text-color: var(--color-dark);
-	--page-background: var(--color-lightest);
+	--page-background: var(--color-blue);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -83,8 +84,8 @@ h1 {
 h2 {
     font-size: 1.8rem;
 	font-weight: 700;
-    margin: 0.8rem 0;
-	line-height: 1.4em;
+    margin: 0.8rem 0 0.2em;
+	line-height: 1.2em;
 }
 h3 {
     font-size: 1.6rem;

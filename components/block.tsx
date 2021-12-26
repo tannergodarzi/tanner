@@ -40,7 +40,7 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 		case "numbered_list_item":
 			return (
 				<ul className={styles.list_item}>
-					<li>
+					<li className={styles.text}>
 						<Text value={value.text} />
 					</li>
 				</ul>
@@ -55,26 +55,9 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 			);
 		case "quote":
 			return (
-				<>
-					<blockquote className={"quote"}>
-						<Text value={value.text} />
-					</blockquote>
-					<style jsx>{`
-						.quote {
-							font-size: 1.2rem;
-							font-weight: 700;
-							font-style: italic;
-							text-align: center;
-							quotes: "“" "”";
-						}
-						.quote::before {
-							content: open-quote;
-						}
-						.quote::after {
-							content: close-quote;
-						}
-					`}</style>
-				</>
+				<blockquote className={styles.quote}>
+					<Text value={value.text} />
+				</blockquote>
 			);
 		case "divider":
 			return <hr key={id} className={styles.divider} />;
@@ -92,33 +75,14 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 		case "image":
 			const { image } = block;
 			return (
-				<>
-					<figure className="block-image">
-						<img src={image.file.url} alt={image.caption} />
-						{image.caption.length > 0 && (
-							<figcaption>
-								<Text value={image.caption} />
-							</figcaption>
-						)}
-					</figure>
-					<style jsx>{`
-						.block-image {
-							width: max(256px, 80%);
-							margin: auto;
-							display: block;
-						}
-						.block-image img {
-							display: block;
-							height: auto;
-							width: 100%;
-						}
-						.block-image figcaption {
-							margin-top: 0.25rem;
-							font-size: 0.8rem;
-							opacity: 0.8;
-						}
-					`}</style>
-				</>
+				<figure className={styles.image}>
+					<img src={image.file.url} alt={image.caption} />
+					{image.caption.length > 0 && (
+						<figcaption>
+							<Text value={image.caption} />
+						</figcaption>
+					)}
+				</figure>
 			);
 		case "embed":
 			return (

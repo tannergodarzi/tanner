@@ -51,16 +51,15 @@ export default function Index(props) {
 							return null;
 						}
 						const { id, child_page, created_time } = post;
+						const publishedDate = new Intl.DateTimeFormat("en-US", { dateStyle: "long" }).format(
+							new Date(created_time)
+						);
 						return (
 							<section key={id} className="entry">
 								<h2 className="entry-title">
 									<a href={`blog/${sluggify(child_page.title)}`}>{child_page.title}</a>
 								</h2>
-								<time dateTime={created_time}>
-									{`Published ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
-										new Date(created_time)
-									)}`}
-								</time>
+								<time dateTime={created_time}>{publishedDate}</time>
 							</section>
 						);
 					})}
@@ -83,10 +82,14 @@ export default function Index(props) {
 					font-size: 0.75rem;
 				}
 				.entry-title {
-					margin-bottom: 0.25rem;
+					margin-bottom: 0.2em;
 				}
 				.entry-title a {
 					text-decoration: none;
+				}
+				.entry time {
+					line-height: 1em;
+					font-family: monospace;
 				}
 				.entry-title a:hover,
 				.entry-title a:focus {
