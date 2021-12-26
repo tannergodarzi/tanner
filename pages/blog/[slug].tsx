@@ -64,7 +64,7 @@ export default function Slug(props) {
 				<section className="mast">
 					<nav>
 						<a href="./">{"Tanner"}</a>
-						<a href="./blog">{"Writings"}</a>
+						<a href="./">{"☰"}</a>
 					</nav>
 				</section>
 				<article className={"article"}>
@@ -98,7 +98,7 @@ export default function Slug(props) {
 				}
 				.mast {
 					height: auto;
-					padding: 1.5rem;
+					padding: 0;
 					box-sizing: border-box;
 					position: sticky;
 					top: 0;
@@ -110,11 +110,13 @@ export default function Slug(props) {
 					display: flex;
 					flex-direction: row;
 					align-items: center;
-					justify-content: space-evenly;
+					justify-content: space-between;
 					box-sizing: border-box;
 					width: 100%;
 					height: 100%;
 					gap: 1rem;
+					padding: 1.5rem;
+					border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 				}
 				.mast nav a {
 					text-decoration: none;
