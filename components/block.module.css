@@ -54,6 +54,9 @@
 	display: flex;
 	gap: 0.25rem;
 }
+.bookmark figcaption {
+    font-family: monospace;
+}
 .embed {
 	display: block;
 }
@@ -76,5 +79,5 @@
 .image figcaption {
 	margin-top: 0.25rem;
 	font-size: 0.8rem;
-	opacity: 0.8;
+    font-family: monospace;
 }
