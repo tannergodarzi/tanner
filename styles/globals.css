@@ -160,19 +160,19 @@ h1 {
 	font-size: 2.75rem;
 	font-weight: 700;
 	margin: 0 0 1.8rem 0;
-	line-height: 1.2em;
+	line-height: 1em;
 	letter-spacing: -0.01em;
 }
 h2 {
 	font-size: 1.8rem;
 	font-weight: 700;
 	margin: 0.8rem 0 0.2em;
-	line-height: 1.2em;
+	line-height: 1em;
 	letter-spacing: -0.01em;
 }
 h3 {
 	font-size: 1.6rem;
 	margin: 0.8rem 0;
-	line-height: 1.4em;
+	line-height: 1.1em;
 	letter-spacing: -0.01em;
 }

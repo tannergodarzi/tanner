@@ -62,9 +62,9 @@ export default function Index(props) {
 						);
 						return (
 							<section key={id} className="entry">
-								<h2 className="entry-title">
+								<h1 className="entry-title">
 									<a href={`blog/${sluggify(child_page.title)}`}>{child_page.title}</a>
-								</h2>
+								</h1>
 								<time dateTime={created_time}>{publishedDate}</time>
 							</section>
 						);
@@ -75,16 +75,16 @@ export default function Index(props) {
 				.container {
 					display: flex;
 					flex-direction: column;
-					width: min(100%, 1040px);
+					width: min(100%, 1680px);
 					box-sizing: border-box;
 					padding: 0 max(1rem, 2rem);
-					margin: 2rem auto;
+					margin: 5rem auto;
 				}
 				.entry {
 					display: flex;
 					flex-direction: column;
 					width: 100%;
-					margin-bottom: 1rem;
+					margin-bottom: 4em;
 					font-size: 0.75rem;
 				}
 				.entry-title {
