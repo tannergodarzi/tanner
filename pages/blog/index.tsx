@@ -8,7 +8,7 @@ const notion = new Client({
 	auth: process.env.NOTION_TOKEN,
 });
 
-export async function getServerSideProps(context) {
+export async function getStaticProps() {
 	const pageContent = await notion.blocks.children.list({
 		block_id: process.env.NOTION_BLOG_PAGE,
 	});

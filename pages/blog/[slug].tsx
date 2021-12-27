@@ -3,19 +3,24 @@ import { Client } from "@notionhq/client";
 import { Block } from "../../components/block";
 import { PostData } from "../../helpers/notionTypes";
 import { Navigation } from "../../components/navigation";
+import { sluggify } from "../../helpers/urlHelpers";
 
 // Notion client
 const notion = new Client({
 	auth: process.env.NOTION_TOKEN,
 });
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 	const queryResponse = await notion
 		.search({
 			query: context.params.slug,
 		})
 		.then((response) => response.results);
-	// TODO: Handle query not returning anything
+	if (queryResponse.length === 0) {
+		return {
+			notFound: true,
+		};
+	}
 	const id = queryResponse[0].id;
 
 	const pageResponse = await notion.pages.retrieve({ page_id: id }).then((response) => response as PostData);
@@ -38,6 +43,25 @@ export async function getServerSideProps(context) {
 			blocks,
 		},
 	};
+}
+
+export async function getStaticPaths() {
+	const pageContent = await notion.blocks.children.list({
+		block_id: process.env.NOTION_BLOG_PAGE,
+	});
+
+	const paths = pageContent.results
+		.map((block: any) => {
+			if (block.child_page?.title && block.archived !== true) {
+				return { params: { slug: sluggify(block.child_page.title) } };
+			}
+		})
+		.filter((a) => a !== undefined);
+
+	// We'll pre-render only these paths at build time.
+	// { fallback: blocking } will server-render pages
+	// on-demand if the path doesn't exist.
+	return { paths, fallback: "blocking" };
 }
 
 export default function Slug(props) {
