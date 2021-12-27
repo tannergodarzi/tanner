@@ -76,6 +76,7 @@ export default function Index(props) {
 					padding: 0 1.5rem;
 					margin: 4rem auto;
 				}
+
 				.entry {
 					display: flex;
 					flex-direction: column;
