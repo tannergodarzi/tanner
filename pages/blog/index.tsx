@@ -73,7 +73,7 @@ export default function Index(props) {
 					flex-direction: column;
 					width: min(100%, 1440px);
 					box-sizing: border-box;
-					padding: 1.5rem;
+					padding: 0 1.5rem;
 					margin: 4rem auto;
 				}
 				.entry {
