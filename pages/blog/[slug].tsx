@@ -125,7 +125,7 @@ export default function Slug(props) {
 					margin: 0 auto 1rem;
 					font-size: 0.75rem;
 					text-align: center;
-					width: max(75%, 420px);
+					width: max(75%, 320px);
 				}
 				.header time {
 					line-height: 1em;
