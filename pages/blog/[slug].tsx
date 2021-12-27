@@ -113,13 +113,7 @@ export default function Slug(props) {
 					width: min(100%, 1440px);
 					box-sizing: border-box;
 					padding: 0 1.5rem;
-					margin: 3rem auto;
-				}
-				.article {
-					background: var(--page-background);
-					z-index: 1;
-					position: relative;
-					padding-bottom: 2rem;
+					margin: 4rem auto;
 				}
 				.header {
 					margin: 0 auto 1rem;
