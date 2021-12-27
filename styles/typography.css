@@ -23,14 +23,14 @@ h1 {
 	font-weight: 700;
 }
 h2 {
-		font: var(--font-display);
+	font: var(--font-display);
 	font-size: 1.8rem;
 	margin: 0.8rem 0 0.2em;
 	line-height: 1em;
 	letter-spacing: -0.02em;
 }
 h3 {
-		font: var(--font-display);
+	font: var(--font-display);
 	font-size: 1.6rem;
 	margin: 0.8rem 0;
 	line-height: 1.1em;
