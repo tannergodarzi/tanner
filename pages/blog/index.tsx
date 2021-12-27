@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Client } from "@notionhq/client";
 import { sluggify } from "../../helpers/urlHelpers";
 import { Navigation } from "../../components/navigation";
+import { Text } from "../../components/text";
 
 // Notion client
 const notion = new Client({
@@ -9,24 +10,32 @@ const notion = new Client({
 });
 
 export async function getStaticProps() {
-	const pageContent = await notion.blocks.children.list({
-		block_id: process.env.NOTION_BLOG_PAGE,
-	});
+	const posts = await notion.blocks.children
+		.list({
+			block_id: process.env.NOTION_BLOG_PAGE,
+		})
+		.then((a) => a.results)
+		.then((b) =>
+			b.map((block) => {
+				return block;
+			})
+		);
 
-	const posts = pageContent.results.map((block) => {
-		return block;
+	const page = await notion.pages.retrieve({
+		page_id: process.env.NOTION_BLOG_PAGE,
 	});
 
 	return {
 		props: {
-			posts: posts,
+			posts,
+			page,
 		},
 		revalidate: 60,
 	};
 }
 
-export default function Index(props) {
-	const { posts } = props;
+export default function Index({ posts, page }) {
+	console.log(page);
 	return (
 		<>
 			<Head>
@@ -49,6 +58,11 @@ export default function Index(props) {
 			<main>
 				<Navigation />
 				<section className="container">
+					<header>
+						<h1>
+							<Text value={page.properties.title.title} />
+						</h1>
+					</header>
 					{posts.map((post) => {
 						if (!post.child_page || post.archived === true) {
 							return null;
@@ -59,10 +73,10 @@ export default function Index(props) {
 						);
 						return (
 							<section key={id} className="entry">
-								<h1 className="entry-title">
+								<h2 className="entry-title">
 									<a href={`blog/${sluggify(child_page.title)}`}>{child_page.title}</a>
-								</h1>
-								<time dateTime={created_time}>{publishedDate}</time>
+								</h2>
+								<time dateTime={created_time}>{`Published ${publishedDate}`}</time>
 							</section>
 						);
 					})}
@@ -77,7 +91,10 @@ export default function Index(props) {
 					padding: 0 1.5rem;
 					margin: 4rem auto;
 				}
-
+				.container header {
+					text-align: center;
+					text-transform: uppercase;
+				}
 				.entry {
 					display: flex;
 					flex-direction: column;
@@ -97,8 +114,7 @@ export default function Index(props) {
 				}
 				.entry time {
 					line-height: 1em;
-					font-family: oswald, sans-serif;
-					font-weight: 300;
+					font-family: monospace;
 					text-transform: uppercase;
 					opacity: 0.75;
 				}
