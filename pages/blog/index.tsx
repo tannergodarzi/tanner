@@ -101,7 +101,7 @@ export default function Index({ posts, page }) {
 					text-align: center;
 					width: 100%;
 					margin-bottom: 4em;
-					font-size: 0.75rem;
+					font-size: 0.85rem;
 				}
 				.entry-title {
 					margin-bottom: 0.35em;
@@ -115,7 +115,6 @@ export default function Index({ posts, page }) {
 				.entry time {
 					line-height: 1em;
 					font-family: monospace;
-					text-transform: uppercase;
 					opacity: 0.75;
 				}
 				.entry-title a:hover,
