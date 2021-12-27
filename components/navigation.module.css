@@ -24,8 +24,11 @@
 .mast nav a {
 	text-decoration: none;
 	font-size: 1.2rem;
+	font-family: oswald, sans-serif;
+	font-weight: 900;
+	text-transform: uppercase;
 }
 
 .mast nav a:hover {
-	filter: invert(90%);
+	opacity: 0.75;
 }

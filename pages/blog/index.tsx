@@ -97,7 +97,9 @@ export default function Index(props) {
 				}
 				.entry time {
 					line-height: 1em;
-					font-family: monospace;
+					font-family: oswald, sans-serif;
+					font-weight: 300;
+					text-transform: uppercase;
 					opacity: 0.75;
 				}
 				.entry-title a:hover,

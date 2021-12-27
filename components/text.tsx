@@ -55,6 +55,11 @@ export const Text = ({ value }: PropsWithChildren<TextProps>) => {
 			wrappedElement.push(`</u>`);
 		}
 
+		if (annotations.code) {
+			wrappedElement = prepend(`<code>`, wrappedElement);
+			wrappedElement.push(`</code>`);
+		}
+
 		return (
 			<span
 				key={plain_text}
