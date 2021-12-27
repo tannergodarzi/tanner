@@ -44,11 +44,11 @@ export const Hero = () => {
 				<p className="omega">
 					{`Howdy, I’m Tanner — a cowboy on the internet `}
 					<Poster>
-						<Image src={"/cowboy.jpg"} alt={""} layout="fill" />
+						<Image src={"/the-good-the-bad-the-ugly.gif"} alt={""} layout="fill" objectFit="cover" />
 					</Poster>
 					{` — living in San Francisco `}
 					<Poster>
-						<Image src={"/san-francisco.jpg"} alt={""} layout="fill" />
+						<Image src={"/san-francisco.gif"} alt={""} layout="fill" objectFit="cover" />
 					</Poster>
 					{" I’m A Front End Engineer telling the story of the future of work at Notion. "}
 					<Poster>
@@ -56,7 +56,7 @@ export const Hero = () => {
 					</Poster>
 					{" I love meeting new people over coffee. "}
 					<Poster>
-						<Image src={"/cowboy.jpg"} alt={""} layout="fill" />
+						<Image src={"/clint-eastwood.gif"} alt={""} layout="fill" objectFit="cover" />
 					</Poster>
 				</p>
 			</article>
