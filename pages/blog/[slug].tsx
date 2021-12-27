@@ -117,15 +117,13 @@ export default function Slug(props) {
 				}
 				.header {
 					margin: 0 auto 1rem;
-					font-size: 0.75rem;
+					font-size: 0.85rem;
 					text-align: center;
 					width: max(75%, 320px);
 				}
 				.header time {
 					line-height: 1em;
-					font-family: oswald, sans-serif;
-					font-weight: 300;
-					text-transform: uppercase;
+					font-family: monospace;
 				}
 				.header h1 {
 					margin-bottom: 0.25rem;
