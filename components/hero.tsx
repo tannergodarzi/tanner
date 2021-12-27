@@ -6,12 +6,13 @@ import classNames from "classnames";
 interface PosterProps {}
 const Poster = ({ children }: PropsWithChildren<PosterProps>) => {
 	const [isExpanded, setIsExpanded] = useState(false);
-	const [coords, setCoordinates] = useState({});
+	const [coords, setCoordinates] = useState({ xPos: 0, yPos: 0 });
 	return (
 		<span
 			className={styles.poster}
 			onMouseEnter={(event) => {
 				setIsExpanded((a) => !a);
+				setCoordinates({ xPos: event.clientX, yPos: event.clientY });
 			}}
 			onMouseLeave={(event) => {
 				setIsExpanded(false);
