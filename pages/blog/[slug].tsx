@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Client } from "@notionhq/client";
 import { Block } from "../../components/block";
 import { PostData } from "../../helpers/notionTypes";
+import { Navigation } from "../../components/navigation";
 
 // Notion client
 const notion = new Client({
@@ -61,12 +62,7 @@ export default function Slug(props) {
 			</Head>
 
 			<main>
-				<section className="mast">
-					<nav>
-						<a href="./">{"Tanner"}</a>
-						<a href="./">{"☰"}</a>
-					</nav>
-				</section>
+				<Navigation />
 				<article className={"article"}>
 					<header className={"header"}>
 						<h1>{pageTitle}</h1>
@@ -87,36 +83,10 @@ export default function Slug(props) {
 				main {
 					position: relative;
 				}
-				.mast {
-					height: auto;
-					padding: 0;
-					box-sizing: border-box;
-					position: sticky;
-					top: 0;
-					width: 100%;
-					background: var(--page-background);
-					z-index: 9999;
-				}
-				.mast nav {
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-					justify-content: space-between;
-					box-sizing: border-box;
-					width: 100%;
-					height: 100%;
-					gap: 1rem;
-					padding: 1.5rem;
-					border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-				}
-				.mast nav a {
-					text-decoration: none;
-					font-size: 2rem;
-				}
 				.article,
 				.footer {
 					flex-direction: column;
-					width: min(100%, 1040px);
+					width: min(100%, 1440px);
 					box-sizing: border-box;
 					padding: 0 1.5rem;
 					margin: 3rem auto;

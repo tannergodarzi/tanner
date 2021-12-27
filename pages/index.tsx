@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Navigation } from "../components/navigation";
 import styles from "../styles/pages/index.module.css";
 
 export default function Index() {
@@ -21,6 +22,7 @@ export default function Index() {
 			</Head>
 
 			<main>
+				<Navigation />
 				<article className={styles.bio}>
 					<p>
 						Hello, I&rsquo;m Tanner &mdash; a Front End Engineer &mdash; living in San Francisco. I&rsquo;m

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Client } from "@notionhq/client";
 import { sluggify } from "../../helpers/urlHelpers";
+import { Navigation } from "../../components/navigation";
 
 // Notion client
 const notion = new Client({
@@ -45,12 +46,7 @@ export default function Index(props) {
 			</Head>
 
 			<main>
-				<section className="mast">
-					<nav>
-						<a href="./">{"Tanner"}</a>
-						<a href="./">{"☰"}</a>
-					</nav>
-				</section>
+				<Navigation />
 				<section className="container">
 					{posts.map((post) => {
 						if (!post.child_page || post.archived === true) {
@@ -88,44 +84,21 @@ export default function Index(props) {
 					font-size: 0.75rem;
 				}
 				.entry-title {
-					margin-bottom: 0.2em;
+					margin-bottom: 0.35em;
 				}
 				.entry-title a {
 					text-decoration: none;
+					display: block;
+					width: 100%;
 				}
 				.entry time {
 					line-height: 1em;
 					font-family: monospace;
+					opacity: 0.75;
 				}
 				.entry-title a:hover,
 				.entry-title a:focus {
 					text-decoration: underline;
-				}
-				.mast {
-					height: auto;
-					padding: 0;
-					box-sizing: border-box;
-					position: sticky;
-					top: 0;
-					width: 100%;
-					background: var(--page-background);
-					z-index: 9999;
-				}
-				.mast nav {
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-					justify-content: space-between;
-					box-sizing: border-box;
-					width: 100%;
-					height: 100%;
-					gap: 1rem;
-					padding: 1.5rem;
-					border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-				}
-				.mast nav a {
-					text-decoration: none;
-					font-size: 2rem;
 				}
 			`}</style>
 		</>
