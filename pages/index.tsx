@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { Navigation } from "../components/navigation";
-import styles from "../styles/pages/index.module.css";
 
 export default function Index() {
 	return (
@@ -23,14 +22,8 @@ export default function Index() {
 
 			<main>
 				<Navigation />
-				<article className={styles.bio}>
-					<p>
-						Hello, I&rsquo;m Tanner &mdash; a Front End Engineer &mdash; living in San Francisco. I&rsquo;m
-						currently at <a href="https://www.notion.so/">Notion</a> telling the story of toolmaking for the
-						future.
-					</p>
-				</article>
 			</main>
+			<style jsx>{``}</style>
 		</>
 	);
 }

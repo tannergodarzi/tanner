@@ -1,10 +1,11 @@
 .mast {
 	height: auto;
-	padding: 0;
-	box-sizing: border-box;
 	position: sticky;
 	top: 0;
-	width: 100%;
+	width: min(100%, 1440px);
+	box-sizing: border-box;
+	padding: 0 1.5rem;
+	margin: 0 auto;
 	background: var(--page-background);
 	z-index: 9999;
 }
@@ -17,7 +18,7 @@
 	width: 100%;
 	height: 100%;
 	gap: 1rem;
-	padding: 1rem 1.5rem;
+	padding: 1rem 0;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 .mast nav a {

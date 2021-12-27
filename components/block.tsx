@@ -37,9 +37,6 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 			);
 		case "bulleted_list_item":
 		case "numbered_list_item":
-			if (block.has_children) {
-				console.log(block);
-			}
 			return (
 				<ul className={styles.list_item}>
 					<li className={styles.text}>

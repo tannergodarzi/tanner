@@ -16,6 +16,23 @@ export const Text = ({ value }: PropsWithChildren<TextProps>) => {
 	return value.map((block) => {
 		const { annotations, plain_text, text } = block;
 
+		if (text.link) {
+			return (
+				<a
+					href={text.link.url}
+					className={classNames(styles.text, {
+						[styles.text_bold]: annotations.bold,
+						[styles[`text_color_${annotations.color}`]]: annotations.color,
+						[styles.text_italic]: annotations.italic,
+						[styles.text_strikethrough]: annotations.strikethrough,
+						[styles.text_underline]: annotations.underline,
+					})}
+				>
+					{text.content}
+				</a>
+			);
+		}
+
 		let wrappedElement = [text.content];
 
 		if (annotations.bold) {
@@ -48,10 +65,8 @@ export const Text = ({ value }: PropsWithChildren<TextProps>) => {
 					[styles.text_strikethrough]: annotations.strikethrough,
 					[styles.text_underline]: annotations.underline,
 				})}
-				dangerouslySetInnerHTML={!text.link && { __html: wrappedElement.join("") }}
-			>
-				{text.link && <a href={text.link.url}>{text.content}</a>}
-			</span>
+				dangerouslySetInnerHTML={{ __html: wrappedElement.join("") }}
+			/>
 		);
 	});
 };

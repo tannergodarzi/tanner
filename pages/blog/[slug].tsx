@@ -83,8 +83,7 @@ export default function Slug(props) {
 				main {
 					position: relative;
 				}
-				.article,
-				.footer {
+				.article {
 					flex-direction: column;
 					width: min(100%, 1440px);
 					box-sizing: border-box;
