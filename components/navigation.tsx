@@ -13,7 +13,7 @@ export const Navigation = ({}: PropsWithChildren<NavigationProps>) => {
 					<a>{"Home"}</a>
 				</Link>
 				<Link href={"/blog"}>
-					<a>{"Blog"}</a>
+					<a>{"Writings"}</a>
 				</Link>
 				<Link href={"/about"}>
 					<a>{"About"}</a>
