@@ -30,9 +30,9 @@ export default function Index(props) {
 	return (
 		<>
 			<Head>
-				<title>Blog of Tanner Godarzi</title>
+				<title>Tanner Godarzi&rsquo;s Blog</title>
 				<meta charSet="UTF-8" />
-				<meta name="title" content="Blog of Tanner Godarzi" />
+				<meta name="title" content="Tanner Godarzi&rsquo;s Blog" />
 				<meta
 					name="description"
 					content="a Front End Engineer living in San Francisco. I&rsquo;m
