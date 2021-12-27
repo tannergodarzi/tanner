@@ -91,6 +91,7 @@ export default function Index(props) {
 					text-decoration: none;
 					display: block;
 					width: 100%;
+					transition: opacity 100ms ease;
 				}
 				.entry time {
 					line-height: 1em;
@@ -99,7 +100,7 @@ export default function Index(props) {
 				}
 				.entry-title a:hover,
 				.entry-title a:focus {
-					text-decoration: underline;
+					opacity: 0.7;
 				}
 			`}</style>
 		</>

@@ -97,9 +97,10 @@ export default function Slug(props) {
 					padding-bottom: 2rem;
 				}
 				.header {
-					margin-bottom: 1rem;
+					margin: 0 auto 1rem;
 					font-size: 0.75rem;
 					text-align: center;
+					width: max(75%, 420px);
 				}
 				.header time {
 					line-height: 1em;
