@@ -1,10 +1,6 @@
 html,
 body {
-	font-family: "adonis-web", serif;
-	font-weight: 400;
-	font-style: normal;
 	font-size: clamp(1rem, 0.7996rem + 0.8909vw, 2rem);
-	line-height: 1.4em;
 	font-feature-settings: "liga" 0;
 	font-kerning: normal;
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -12,8 +8,7 @@ body {
 }
 
 h1 {
-	font-size: 2.85rem;
-	font-weight: 700;
+	font: var(--font-display);
 	margin: 0 0 1.8rem 0;
 	line-height: 1em;
 	letter-spacing: -0.01em;
@@ -25,14 +20,17 @@ h1 {
 	line-height: 1em;
 	display: inline-block;
 	letter-spacing: -0.02em;
+	font-weight: 700;
 }
 h2 {
+		font: var(--font-display);
 	font-size: 1.8rem;
 	margin: 0.8rem 0 0.2em;
 	line-height: 1em;
 	letter-spacing: -0.02em;
 }
 h3 {
+		font: var(--font-display);
 	font-size: 1.6rem;
 	margin: 0.8rem 0;
 	line-height: 1.1em;

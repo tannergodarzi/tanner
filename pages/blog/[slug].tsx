@@ -119,8 +119,7 @@ export default function Slug(props) {
 					width: max(75%, 20rem);
 				}
 				.header time {
-					line-height: 1em;
-					font-family: monospace;
+					font: var(--font-annotation);
 				}
 				.header h1 {
 					margin-bottom: 0.25rem;

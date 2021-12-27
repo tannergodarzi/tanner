@@ -12,9 +12,6 @@ export const Navigation = () => {
 				<Link href={"/blog"}>
 					<a>{"Writings"}</a>
 				</Link>
-				<Link href={"/about"}>
-					<a>{"About"}</a>
-				</Link>
 			</nav>
 		</section>
 	);

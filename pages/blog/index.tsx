@@ -90,8 +90,7 @@ export default function Index({ posts, page }) {
 					margin-bottom: 1em;
 				}
 				.container h1 {
-					font-family: oswald;
-					font-weight: 900;
+					font: var(--font-presentation);
 					text-transform: uppercase;
 				}
 				.entry {
@@ -112,8 +111,7 @@ export default function Index({ posts, page }) {
 					transition: opacity 100ms ease;
 				}
 				.entry time {
-					line-height: 1em;
-					font-family: monospace;
+					font: var(--font-annotation);
 					opacity: 0.75;
 				}
 				.entry-title a:hover,
