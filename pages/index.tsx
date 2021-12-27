@@ -16,7 +16,7 @@ export default function Index() {
 				/>
 				<meta name="keywords" content="Tanner Godarzi, Tanner, Notion, Dropbox, black ops" />
 				<meta name="author" content="Tanner Godarzi" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=true" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<link rel="icon" href="/favicon.ico" />
 				<link rel="stylesheet" href="https://use.typekit.net/wir7xtg.css" />
 			</Head>
