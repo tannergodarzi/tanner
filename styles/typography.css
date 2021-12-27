@@ -1,0 +1,50 @@
+html,
+body {
+	font-family: "adonis-web", serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: clamp(1rem, 0.7996rem + 0.8909vw, 2rem);
+	line-height: 1.4em;
+}
+
+h1 {
+	font-size: 2.85rem;
+	font-weight: 700;
+	margin: 0 0 1.8rem 0;
+	line-height: 1em;
+	letter-spacing: -0.01em;
+}
+.omega {
+	font-size: 4rem;
+	text-transform: uppercase;
+	margin: 0;
+	line-height: 1em;
+	display: inline-block;
+	font-weight: 700;
+	font-family: oswald;
+}
+.omega > * {
+	display: inline;
+	font-size: 4rem;
+	text-transform: uppercase;
+	margin: 0;
+	line-height: 1em;
+}
+h2 {
+	font-size: 1.8rem;
+	margin: 0.8rem 0 0.2em;
+	line-height: 1em;
+	letter-spacing: -0.02em;
+}
+h3 {
+	font-size: 1.6rem;
+	margin: 0.8rem 0;
+	line-height: 1.1em;
+	letter-spacing: -0.02em;
+}
+h6 {
+	font-size: 0.6rem;
+}
+em {
+	font-style: italic;
+}

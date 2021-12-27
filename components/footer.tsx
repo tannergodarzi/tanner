@@ -5,7 +5,7 @@ import Link from "next/link";
 export const Footer = () => {
 	return (
 		<footer className={styles.footer}>
-			<h6>{"Made with love in San Francisco"}</h6>
+			<h6>{"©2021 All rights reserved"}</h6>
 		</footer>
 	);
 };
