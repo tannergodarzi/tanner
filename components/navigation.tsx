@@ -1,11 +1,8 @@
-import React, { PropsWithChildren } from "react";
-import classNames from "classnames";
+import React from "react";
 import styles from "./navigation.module.css";
 import Link from "next/link";
 
-interface NavigationProps {}
-
-export const Navigation = ({}: PropsWithChildren<NavigationProps>) => {
+export const Navigation = () => {
 	return (
 		<section className={styles.mast}>
 			<nav>

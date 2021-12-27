@@ -157,7 +157,7 @@ body {
 }
 
 h1 {
-	font-size: 2.75rem;
+	font-size: 2.85rem;
 	font-weight: 700;
 	margin: 0 0 1.8rem 0;
 	line-height: 1em;
@@ -165,7 +165,6 @@ h1 {
 }
 h2 {
 	font-size: 1.8rem;
-	font-weight: 700;
 	margin: 0.8rem 0 0.2em;
 	line-height: 1em;
 	letter-spacing: -0.02em;

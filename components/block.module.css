@@ -70,7 +70,7 @@
 	aspect-ratio: 16 / 9;
 }
 .image {
-	width: max(256px, 80%);
+	width: max(16rem, 80%);
 	margin: auto;
 	display: block;
 }

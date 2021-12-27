@@ -86,14 +86,14 @@ export default function Index({ posts, page }) {
 				.container {
 					display: flex;
 					flex-direction: column;
-					width: min(100%, 1440px);
+					width: min(100%, 90rem);
 					box-sizing: border-box;
 					padding: 0 1.5rem;
 					margin: 4rem auto;
 				}
 				.container header {
 					text-align: center;
-					text-transform: uppercase;
+					margin-bottom: 1em;
 				}
 				.entry {
 					display: flex;

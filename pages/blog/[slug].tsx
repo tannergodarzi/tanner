@@ -4,6 +4,7 @@ import { Block } from "../../components/block";
 import { PostData } from "../../helpers/notionTypes";
 import { Navigation } from "../../components/navigation";
 import { sluggify } from "../../helpers/urlHelpers";
+import { Footer } from "../../components/footer";
 
 // Notion client
 const notion = new Client({
@@ -102,6 +103,7 @@ export default function Slug(props) {
 							return <Block block={block} key={block.id} />;
 						})}
 					</section>
+					<Footer />
 				</article>
 			</main>
 			<style jsx>{`
@@ -110,7 +112,7 @@ export default function Slug(props) {
 				}
 				.article {
 					flex-direction: column;
-					width: min(100%, 1440px);
+					width: min(100%, 90rem);
 					box-sizing: border-box;
 					padding: 0 1.5rem;
 					margin: 4rem auto;
@@ -119,7 +121,7 @@ export default function Slug(props) {
 					margin: 0 auto 1rem;
 					font-size: 0.85rem;
 					text-align: center;
-					width: max(75%, 320px);
+					width: max(75%, 20rem);
 				}
 				.header time {
 					line-height: 1em;
