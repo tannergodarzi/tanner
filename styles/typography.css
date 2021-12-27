@@ -5,6 +5,10 @@ body {
 	font-style: normal;
 	font-size: clamp(1rem, 0.7996rem + 0.8909vw, 2rem);
 	line-height: 1.4em;
+	font-feature-settings: "liga" 0;
+	font-kerning: normal;
+	-webkit-font-smoothing: subpixel-antialiased;
+	font-display: block;
 }
 
 h1 {
@@ -20,8 +24,7 @@ h1 {
 	margin: 0;
 	line-height: 1em;
 	display: inline-block;
-	font-weight: 900;
-	font-family: oswald;
+	letter-spacing: -0.02em;
 }
 h2 {
 	font-size: 1.8rem;

@@ -16,7 +16,7 @@ export const Hero = () => {
 					<span className={styles.poster}>
 						<Image src={"/cowboy.jpg"} alt={""} height={1117} width={1117} layout="fill" />
 					</span>
-					{"I’m A Front End Engineer telling the story of the future of work at Notion. "}
+					{" I’m A Front End Engineer telling the story of the future of work at Notion. "}
 					<span className={styles.poster}>
 						<Image src={"/cowboy.jpg"} alt={""} height={1117} width={1117} layout="fill" />
 					</span>

@@ -7,8 +7,8 @@
 .poster {
 	display: inline-block;
 	aspect-ratio: 1 / 1;
-	height: 0.8em;
-	margin: 0.2em 0 0 0;
+	height: 0.7em;
+	align-self: baseline;
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
