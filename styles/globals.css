@@ -176,3 +176,6 @@ h3 {
 	line-height: 1.1em;
 	letter-spacing: -0.02em;
 }
+em {
+	font-style: italic;
+}

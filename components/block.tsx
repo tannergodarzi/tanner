@@ -10,7 +10,6 @@ interface BlockProps {
 export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 	const { type, id } = block;
 	const value = block[type];
-	console.log(type);
 	switch (type) {
 		case "heading_1":
 			return (
@@ -38,6 +37,9 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 			);
 		case "bulleted_list_item":
 		case "numbered_list_item":
+			if (block.has_children) {
+				console.log(block);
+			}
 			return (
 				<ul className={styles.list_item}>
 					<li className={styles.text}>
@@ -62,7 +64,7 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 		case "divider":
 			return <hr key={id} className={styles.divider} />;
 		case "bookmark":
-			const innerText = value.caption.length > 0 ? <Text value={value.caption} /> : value.url
+			const innerText = value.caption.length > 0 ? <Text value={value.caption} /> : value.url;
 			return (
 				<a href={value.url} className={styles.bookmark}>
 					{innerText}
