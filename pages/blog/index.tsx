@@ -89,6 +89,11 @@ export default function Index({ posts, page }) {
 					text-align: center;
 					margin-bottom: 1em;
 				}
+				.container h1 {
+					font-family: oswald;
+					font-weight: 900;
+					text-transform: uppercase;
+				}
 				.entry {
 					display: flex;
 					flex-direction: column;
