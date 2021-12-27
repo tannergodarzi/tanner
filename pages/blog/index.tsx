@@ -79,6 +79,7 @@ export default function Index(props) {
 				.entry {
 					display: flex;
 					flex-direction: column;
+					text-align: center;
 					width: 100%;
 					margin-bottom: 4em;
 					font-size: 0.75rem;
