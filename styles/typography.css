@@ -37,11 +37,11 @@ h5 {
 h6 {
 	font-size: 0.6rem;
 }
-p {
+* {
 	font: var(--font-body);
 	margin: 0.2rem 0 0.6rem;
 }
-p a {
+a {
 	font-weight: 700;
 }
 em {

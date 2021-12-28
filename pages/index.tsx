@@ -1,11 +1,25 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { Footer } from "../components/footer";
 import { GridElement } from "../components/gridElement";
 import { Hero } from "../components/hero";
 import { Navigation } from "../components/navigation";
+import { getNotionBlocks } from "../helpers/notionHelpers";
+import { sluggify } from "../helpers/urlHelpers";
 
-export default function Index() {
+export async function getStaticProps() {
+	const posts = await getNotionBlocks();
+	console.log(posts);
+	return {
+		props: {
+			posts,
+		},
+		revalidate: 60,
+	};
+}
+
+export default function Index({ posts }) {
 	return (
 		<>
 			<Head>
@@ -41,6 +55,9 @@ export default function Index() {
 									"Integer consectetur blandit feugiat. Suspendisse in sem viverra, tempus enim vel, rhoncus mauris."
 								}
 							</p>
+							<Link href={"/about"}>
+								<a>{"Read more"}</a>
+							</Link>
 						</article>
 					</GridElement>
 					<GridElement column={11} columnSpan={4} row={6} rowSpan={4}>
@@ -60,16 +77,35 @@ export default function Index() {
 							objectFit="contain"
 						/>
 					</GridElement>
-					<GridElement column={8} columnSpan={8} row={11} rowSpan={6}>
-						<picture className="frame">
-							<Image
-								src={"/photos/photo-01.jpg"}
-								alt="A photo of the San Jacinto mountain range during sunrise"
-								width={1200}
-								height={794}
-								objectFit="cover"
-							/>
-						</picture>
+					<GridElement column={2} columnSpan={14} row={16} rowSpan={1}>
+						<header>
+							<h2>{"Selected Writings"}</h2>
+						</header>
+					</GridElement>
+					{posts.map((post, index: number) => {
+						if (!post.child_page || post.archived === true) {
+							return null;
+						}
+						const { id, child_page, created_time } = post;
+						const publishedDate = new Intl.DateTimeFormat("en-US", { dateStyle: "long" }).format(
+							new Date(created_time)
+						);
+						if (index > 2) {
+							return null;
+						}
+						return (
+							<GridElement column={2 + 4 * index} columnSpan={4} row={17 + 0} rowSpan={3} key={id}>
+								<section className="entry">
+									<h3 className="entry-title">{child_page.title}</h3>
+
+									<time dateTime={created_time}>{`Published ${publishedDate}`}</time>
+									<a href={`blog/${sluggify(child_page.title)}`}>{"Read more"}</a>
+								</section>
+							</GridElement>
+						);
+					})}
+					<GridElement column={8} columnSpan={7} row={21} rowSpan={4}>
+						<Image src={"/card.jpg"} layout="fill" alt="" objectFit="contain" />
 					</GridElement>
 				</section>
 				<Footer />
@@ -91,6 +127,28 @@ export default function Index() {
 					position: relative;
 					display: flex;
 					box-shadow: 2px 2px 15px -1px rgba(0, 0, 0, 0.25);
+				}
+				.entry {
+					border: 2px solid var(--color-medium);
+					display: flex;
+					flex-direction: column;
+					height: 100%;
+					box-sizing: border-box;
+					padding: 1em;
+				}
+				.entry-title {
+					margin-bottom: 0.2em;
+				}
+				.entry a {
+					margin-top: auto;
+					text-decoration: none;
+				}
+				.entry a:after {
+					content: " ⭢";
+					display: inline-block;
+				}
+				.entry time {
+					font-size: 0.6rem;
 				}
 			`}</style>
 		</>

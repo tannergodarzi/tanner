@@ -1,30 +1,13 @@
 import Head from "next/head";
-import { Client } from "@notionhq/client";
 import { sluggify } from "../../helpers/urlHelpers";
 import { Navigation } from "../../components/navigation";
 import { Text } from "../../components/text";
 import { Footer } from "../../components/footer";
-
-// Notion client
-const notion = new Client({
-	auth: process.env.NOTION_TOKEN,
-});
+import { getNotionBlocks, getNotionPage } from "../../helpers/notionHelpers";
 
 export async function getStaticProps() {
-	const posts = await notion.blocks.children
-		.list({
-			block_id: process.env.NOTION_BLOG_PAGE,
-		})
-		.then((a) => a.results)
-		.then((b) =>
-			b.map((block) => {
-				return block;
-			})
-		);
-
-	const page = await notion.pages.retrieve({
-		page_id: process.env.NOTION_BLOG_PAGE,
-	});
+	const posts = await getNotionBlocks();
+	const page = await getNotionPage();
 
 	return {
 		props: {
