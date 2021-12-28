@@ -42,7 +42,7 @@ export default function Index() {
 					</aside>
 					<section className="music">
 						<iframe
-							src="https://open.spotify.com/embed/playlist/4JkjPloFbFB6UBSQgc3Nnt"
+							src="https://open.spotify.com/embed/playlist/4FuWTIt1AQQJcEeOKqEukk"
 							width="300"
 							height="380"
 							frameBorder="0"
