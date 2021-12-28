@@ -32,6 +32,8 @@
 	content: "/";
 	margin-left: 0.5em;
 	text-decoration: none;
+	pointer-events: none;
+	cursor: default;
 }
 
 .footerNav a:last-of-type:after {
