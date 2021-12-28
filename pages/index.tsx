@@ -40,7 +40,6 @@ export default function Index() {
 							width="300"
 							height="380"
 							frameBorder="0"
-							allowTransparency="true"
 							allow="encrypted-media"
 						></iframe>
 					</section>
@@ -61,8 +60,13 @@ export default function Index() {
 					grid-row: 2 / span 2;
 				}
 				.music {
-					grid-column: 11 / span 3;
-					grid-row: 10 / span 2;
+					grid-column: 11 / span 5;
+					grid-row: 10 / span 6;
+				}
+				.music iframe {
+					display: block;
+					width: 100%;
+					height: 100%;
 				}
 				.grid {
 					display: grid;
