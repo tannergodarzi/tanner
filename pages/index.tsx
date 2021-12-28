@@ -62,16 +62,14 @@ export default function Index() {
 				}
 				aside {
 					grid-column: 9 / span 6;
-					grid-row: 2 / span 2;
+					grid-row: 2 / span 4;
+					overflow: hidden;
 				}
 				.music {
-					grid-column: 11 / span 5;
-					grid-row: 10 / span 6;
+					grid-column: 12 / span 4;
+					grid-row: 10 / span 5;
 				}
 				.music iframe {
-					display: block;
-					width: 100%;
-					height: 100%;
 				}
 				.grid {
 					display: grid;
