@@ -110,16 +110,13 @@ export default function Slug(props) {
 					width: min(100%, 45rem);
 					box-sizing: border-box;
 					padding: 0 1.5rem;
-					margin: 4rem auto;
+					margin: 4rem auto 0;
 				}
 				.header {
 					margin: 0 auto 1rem;
 					font-size: 0.85rem;
 					text-align: center;
 					width: max(75%, 20rem);
-				}
-				.header time {
-					font: var(--font-annotation);
 				}
 				.header h1 {
 					margin-bottom: 0.25rem;

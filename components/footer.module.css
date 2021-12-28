@@ -1,6 +1,39 @@
 .footer {
 	box-sizing: border-box;
-	padding: 1.5rem;
+	padding: 2.5rem;
 	width: 100%;
 	text-align: center;
+		font: var(--font-annotation);
+		text-transform: uppercase;
+}
+
+.footerHeader {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	font: var(--font-annotation);
+	font-weight: 900;
+	margin-bottom: 0.75em;
+}
+
+.footerNav {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5em;
+	justify-content: center;
+}
+
+.footerNav a {
+	font-size: 0.6rem;
+	text-decoration: none;
+}
+
+.footerNav a:after {
+	content: "/";
+	margin-left: 0.5em;
+	text-decoration: none;
+}
+
+.footerNav a:last-of-type:after {
+	display: none;
 }

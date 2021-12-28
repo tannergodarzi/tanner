@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Footer } from "../components/footer";
+import { GridElement } from "../components/gridElement";
 import { Hero } from "../components/hero";
 import { Navigation } from "../components/navigation";
 
@@ -23,7 +24,7 @@ export default function Index() {
 				<Navigation />
 				<Hero />
 				<section className="grid">
-					<picture>
+					<GridElement column={4} columnSpan={4} row={2} rowSpan={6}>
 						<Image
 							src={"https://via.placeholder.com/400x600"}
 							layout="fill"
@@ -31,50 +32,47 @@ export default function Index() {
 							height={600}
 							alt=""
 						/>
-					</picture>
-					<aside>
-						<h2>{"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}</h2>
-						<p>
-							{
-								"Integer consectetur blandit feugiat. Suspendisse in sem viverra, tempus enim vel, rhoncus mauris. Morbi eu finibus nunc, at malesuada odio. Aenean lorem lectus, venenatis eu tellus sit amet, rutrum pretium velit. Morbi finibus convallis interdum."
-							}
-						</p>
-					</aside>
-					<section className="music">
+					</GridElement>
+					<GridElement column={9} columnSpan={6} row={2} rowSpan={4}>
+						<article>
+							<h2>{"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}</h2>
+							<p>
+								{
+									"Integer consectetur blandit feugiat. Suspendisse in sem viverra, tempus enim vel, rhoncus mauris."
+								}
+							</p>
+						</article>
+					</GridElement>
+					<GridElement column={12} columnSpan={4} row={8} rowSpan={4}>
 						<iframe
 							src="https://open.spotify.com/embed/playlist/4FuWTIt1AQQJcEeOKqEukk"
-							width="300"
-							height="380"
+							width="100%"
+							height="100%"
 							frameBorder="0"
 							allow="encrypted-media"
 						></iframe>
-					</section>
+					</GridElement>
+					<GridElement column={3} columnSpan={6} row={9} rowSpan={7}>
+						<Image
+							src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
+							layout="fill"
+							width={1000}
+							height={1290}
+							alt=""
+							objectFit="contain"
+						/>
+					</GridElement>
 				</section>
 				<Footer />
 			</main>
 			<style jsx>{`
-				picture {
-					grid-column: 4 / span 4;
-					grid-row: 2 / span 6;
-					background: rgba(0, 0, 0, 0.1);
-					position: relative;
-					object-fit: cover;
-				}
-				aside {
-					grid-column: 9 / span 6;
-					grid-row: 2 / span 4;
-					overflow: hidden;
-				}
-				.music {
-					grid-column: 12 / span 4;
-					grid-row: 10 / span 5;
-				}
-				.music iframe {
-				}
 				.grid {
 					display: grid;
 					grid-template-columns: repeat(16, calc(100vw / 16));
 					grid-template-rows: repeat(32, calc(100vw / 16));
+					gap: 0.5rem;
+					grid-template-columns: repeat(16, minmax(calc(100vw / 16 - 0.5rem), calc(100vw / 16)));
+					grid-template-rows: repeat(32, minmax(calc(100vw / 16 - 0.5rem), calc(100vw / 16)));
 					width: 100vw;
 				}
 			`}</style>

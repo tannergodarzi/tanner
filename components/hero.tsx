@@ -51,7 +51,7 @@ export const Hero = () => {
 
 					<span>{` Praesent faucibus nisi libero. `}</span>
 					<Poster>
-						<Image src={"/san-francisco.gif"} alt={""} layout="fill" objectFit="cover" />
+						<Image src={"/san-francisco.jpg"} alt={""} layout="fill" objectFit="cover" />
 					</Poster>
 					<span>{" Cras auctor accumsan erat, id ornare quam rutrum nec. "}</span>
 					<Poster>

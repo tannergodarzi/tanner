@@ -1,0 +1,5 @@
+.gridElement {
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+}

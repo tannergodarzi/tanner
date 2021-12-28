@@ -1,12 +1,15 @@
 html,
 body {
+	font: var(--font-body);
 	font-size: clamp(1rem, 0.7996rem + 0.8909vw, 2rem);
 	font-feature-settings: "liga" 0;
 	font-kerning: normal;
 	-webkit-font-smoothing: subpixel-antialiased;
 	font-display: block;
 }
-
+time {
+	font: var(--font-annotation);
+}
 h1 {
 	font: var(--font-display);
 	font-size: 2.75rem;
@@ -28,16 +31,18 @@ h3 {
 	line-height: 1.1em;
 	letter-spacing: -0.02em;
 }
+h5 {
+	font-size: 0.8rem;
+}
 h6 {
 	font-size: 0.6rem;
 }
-p{
-	font-size: 1.2rem;
-	line-height: 1.4em;
+p {
+	font: var(--font-body);
 	margin: 0.2rem 0 0.6rem;
 }
 p a {
-    font-weight: 700;
+	font-weight: 700;
 }
 em {
 	font-style: italic;
