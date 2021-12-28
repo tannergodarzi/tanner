@@ -1,5 +1,9 @@
 .gridElement {
 	box-sizing: border-box;
 	position: relative;
-	display: block;
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
+	justify-content: flex-start;
+	  align-items: flex-start;
 }

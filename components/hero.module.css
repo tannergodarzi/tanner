@@ -2,6 +2,8 @@
 	box-sizing: border-box;
 	width: 100%;
 	padding: 1.5rem;
+	z-index: 1000;
+	position: relative;
 }
 
 .hero_text  {

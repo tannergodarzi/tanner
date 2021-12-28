@@ -3,6 +3,7 @@ import { Client } from "@notionhq/client";
 import { sluggify } from "../../helpers/urlHelpers";
 import { Navigation } from "../../components/navigation";
 import { Text } from "../../components/text";
+import { Footer } from "../../components/footer";
 
 // Notion client
 const notion = new Client({
@@ -75,6 +76,7 @@ export default function Index({ posts, page }) {
 						);
 					})}
 				</section>
+				<Footer />
 			</main>
 			<style jsx>{`
 				.container {

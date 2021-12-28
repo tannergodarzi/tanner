@@ -44,16 +44,18 @@ export const Hero = () => {
 		<section className={styles.hero}>
 			<article>
 				<p className={styles.hero_text}>
-					<span>{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. `}</span>
+					<span>{`Howdy, I’m Tanner — a real person on the internet — `}</span>
 					<Poster>
 						<Image src={"/the-good-the-bad-the-ugly.gif"} alt={""} layout="fill" objectFit="cover" />
 					</Poster>
 
-					<span>{` Praesent faucibus nisi libero. `}</span>
+					<span>{` living in San Francisco. `}</span>
 					<Poster>
 						<Image src={"/san-francisco.jpg"} alt={""} layout="fill" objectFit="cover" />
 					</Poster>
-					<span>{" Cras auctor accumsan erat, id ornare quam rutrum nec. "}</span>
+					<span>
+						{" I’m a Front End Engineer at Notion telling the story of tools and the future of work. "}
+					</span>
 					<Poster>
 						<Image src={"/notion-office.jpg"} alt={""} layout="fill" />
 					</Poster>

@@ -26,6 +26,9 @@ export const Footer = () => {
 				<Link href={"https://glass.photo/tannergodarzi"}>
 					<a>{"Glass"}</a>
 				</Link>
+				<Link href={"https://github.com/tannergodarzi"}>
+					<a>{"GitHub"}</a>
+				</Link>
 				<Link href={"https://tannergodarzi.eth.xyz"}>
 					<a>{"ETH"}</a>
 				</Link>

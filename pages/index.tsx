@@ -24,13 +24,13 @@ export default function Index() {
 				<Navigation />
 				<Hero />
 				<section className="grid">
-					<GridElement column={4} columnSpan={4} row={2} rowSpan={6}>
+					<GridElement column={3} columnSpan={5} row={2} rowSpan={6}>
 						<Image
-							src={"https://via.placeholder.com/400x600"}
+							src={"/tanner-foto.jpeg"}
 							layout="fill"
-							width={400}
-							height={600}
-							alt=""
+							alt="A photo of Tanner Godarzi"
+							objectFit="contain"
+							objectPosition={"top center"}
 						/>
 					</GridElement>
 					<GridElement column={9} columnSpan={6} row={2} rowSpan={4}>
@@ -43,7 +43,7 @@ export default function Index() {
 							</p>
 						</article>
 					</GridElement>
-					<GridElement column={12} columnSpan={4} row={8} rowSpan={4}>
+					<GridElement column={11} columnSpan={4} row={6} rowSpan={4}>
 						<iframe
 							src="https://open.spotify.com/embed/playlist/4FuWTIt1AQQJcEeOKqEukk"
 							width="100%"
@@ -52,15 +52,24 @@ export default function Index() {
 							allow="encrypted-media"
 						></iframe>
 					</GridElement>
-					<GridElement column={3} columnSpan={6} row={9} rowSpan={7}>
+					<GridElement column={2} columnSpan={5} row={9} rowSpan={7}>
 						<Image
 							src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
 							layout="fill"
-							width={1000}
-							height={1290}
 							alt=""
 							objectFit="contain"
 						/>
+					</GridElement>
+					<GridElement column={8} columnSpan={8} row={11} rowSpan={6}>
+						<picture className="frame">
+							<Image
+								src={"/photos/photo-01.jpg"}
+								alt="A photo of the San Jacinto mountain range during sunrise"
+								width={1200}
+								height={794}
+								objectFit="cover"
+							/>
+						</picture>
 					</GridElement>
 				</section>
 				<Footer />
@@ -74,6 +83,14 @@ export default function Index() {
 					grid-template-columns: repeat(16, minmax(calc(100vw / 16 - 0.5rem), calc(100vw / 16)));
 					grid-template-rows: repeat(32, minmax(calc(100vw / 16 - 0.5rem), calc(100vw / 16)));
 					width: 100vw;
+				}
+				.frame {
+					border: 1px solid rgba(0, 0, 0, 0.1);
+					padding: 0.75rem;
+					background: var(--color-neutral);
+					position: relative;
+					display: flex;
+					box-shadow: 2px 2px 15px -1px rgba(0, 0, 0, 0.25);
 				}
 			`}</style>
 		</>
