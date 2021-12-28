@@ -24,7 +24,13 @@ export default function Index() {
 				<Hero />
 				<section className="grid">
 					<picture>
-						<Image src={"https://via.placeholder.com/400x600"} layout="fill" width={400} height={600} />
+						<Image
+							src={"https://via.placeholder.com/400x600"}
+							layout="fill"
+							width={400}
+							height={600}
+							alt=""
+						/>
 					</picture>
 					<aside>
 						<h2>{"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}</h2>
