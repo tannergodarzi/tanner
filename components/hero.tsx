@@ -9,7 +9,9 @@ const Poster = ({ children }: PropsWithChildren<PosterProps>) => {
 	const [coords, setCoordinates] = useState({ xPos: 0, yPos: 0 });
 	return (
 		<span
-			className={styles.poster}
+			className={classNames(styles.poster, {
+				[styles.poster_expanded]: isExpanded,
+			})}
 			onMouseEnter={(event) => {
 				setIsExpanded((a) => !a);
 				setCoordinates({ xPos: event.clientX, yPos: event.clientY });
@@ -41,20 +43,25 @@ export const Hero = () => {
 	return (
 		<section className={styles.hero}>
 			<article>
-				<p className="omega">
-					{`Howdy, I’m Tanner — a cowboy on the internet `}
+				<p className={styles.hero_text}>
+					<span>{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. `}</span>
 					<Poster>
 						<Image src={"/the-good-the-bad-the-ugly.gif"} alt={""} layout="fill" objectFit="cover" />
 					</Poster>
-					{` — living in San Francisco `}
+
+					<span>{` Praesent faucibus nisi libero. `}</span>
 					<Poster>
 						<Image src={"/san-francisco.gif"} alt={""} layout="fill" objectFit="cover" />
 					</Poster>
-					{" I’m A Front End Engineer telling the story of the future of work at Notion. "}
+					<span>{" Cras auctor accumsan erat, id ornare quam rutrum nec. "}</span>
 					<Poster>
 						<Image src={"/notion-office.jpg"} alt={""} layout="fill" />
 					</Poster>
-					{" I love meeting new people over coffee. "}
+					<span>
+						{
+							" Suspendisse sollicitudin, tellus vitae convallis rutrum, dolor metus imperdiet quam, sit amet varius nibh ipsum at sapien. "
+						}
+					</span>
 					<Poster>
 						<Image src={"/clint-eastwood.gif"} alt={""} layout="fill" objectFit="cover" />
 					</Poster>

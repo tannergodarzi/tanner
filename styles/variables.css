@@ -4,11 +4,12 @@
 	--color-light: rgb(200, 200, 200);
 	--color-lightest: rgb(255, 255, 255);
 	--color-blue: #97dbda;
+	--color-gray: rgb(177,177,176);
 
 	--font-annotation: normal normal 400 0.8rem/1.2em monospace;
 	--font-body: normal normal 400 1rem/1.4em "adonis-web", sans-serif;
-	--font-display: normal normal 700 2.75rem/1.1em "adonis-web", sans-serif;
-	--font-presentation: normal normal 900 2.75rem/1.1em "oswald", sans-serif;
+	--font-display: normal normal 400 2.75rem/1.1em "adonis-web", sans-serif;
+	--font-presentation: normal normal 700 2.75rem/1.1em "oswald", sans-serif;
 }
 
 :root {
