@@ -24,10 +24,7 @@ export default function Index() {
 				<Hero />
 				<section className="grid">
 					<picture>
-						<Image
-							src={"/The-Good-the-Bad-and-the-Ugly-clint-eastwood-41428448-744-999.jpg"}
-							layout="fill"
-						/>
+						<Image src={"https://via.placeholder.com/400x600"} layout="fill" width={400} height={600} />
 					</picture>
 					<aside>
 						<h2>{"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}</h2>
@@ -37,7 +34,18 @@ export default function Index() {
 							}
 						</p>
 					</aside>
+					<section className="music">
+						<iframe
+							src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG"
+							width="300"
+							height="380"
+							frameBorder="0"
+							allowTransparency="true"
+							allow="encrypted-media"
+						></iframe>
+					</section>
 				</section>
+
 				<Footer />
 			</main>
 			<style jsx>{`
@@ -52,16 +60,15 @@ export default function Index() {
 					grid-column: 9 / span 6;
 					grid-row: 2 / span 2;
 				}
+				.music {
+					grid-column: 11 / span 3;
+					grid-row: 10 / span 2;
+				}
 				.grid {
 					display: grid;
 					grid-template-columns: repeat(16, calc(100vw / 16));
 					grid-template-rows: repeat(32, calc(100vw / 16));
 					width: 100vw;
-				}
-				.hero {
-					grid-column: 1 / span all;
-					grid-row: 1 / span 4;
-					background: rgba(255, 0, 0, 0.4);
 				}
 			`}</style>
 		</>

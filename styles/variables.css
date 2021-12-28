@@ -4,17 +4,19 @@
 	--color-light: rgb(200, 200, 200);
 	--color-lightest: rgb(255, 255, 255);
 	--color-blue: #97dbda;
-	--color-gray: rgb(177,177,176);
+	--color-gray: rgb(249,247,242);
+	--color-brown: #61381c;
+	--color-gold: #e6b870;
 
-	--font-annotation: normal normal 400 0.8rem/1.2em monospace;
-	--font-body: normal normal 400 1rem/1.4em "adonis-web", sans-serif;
-	--font-display: normal normal 400 2.75rem/1.1em "adonis-web", sans-serif;
+	--font-annotation: normal normal 400 0.8rem/1.2em ibm-plex-mono, sans-serif;
+	--font-body: normal normal 400 1rem/1.4em "meno-text", sans-serif;
+	--font-display: normal normal 700 2.75rem/1.1em "adonis-web", sans-serif;
 	--font-presentation: normal normal 700 2.75rem/1.1em "oswald", sans-serif;
 }
 
 :root {
 	--text-color: var(--color-dark);
-	--page-background: var(--color-blue);
+	--page-background: var(--color-gray);
 }
 
 @media (prefers-color-scheme: dark) {
