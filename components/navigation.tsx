@@ -12,12 +12,6 @@ export const Navigation = () => {
 				<Link href={"/blog"}>
 					<a>{"Writings"}</a>
 				</Link>
-				<Link href={"mailto:tanner.godarzi@gmail.com"}>
-					<a>{"Fan Mail"}</a>
-				</Link>
-				<Link href={"https://twitter.com/tannergodarzi"}>
-					<a>{"Twitter"}</a>
-				</Link>
 			</nav>
 		</section>
 	);
