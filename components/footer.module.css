@@ -29,6 +29,10 @@
 	text-decoration: none;
 }
 
+.footerNav a:hover {
+	text-decoration: underline;
+}
+
 .footerNav a:after {
 	content: "/";
 	margin-left: 0.5em;
