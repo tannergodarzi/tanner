@@ -18,18 +18,6 @@ export const Navigation = () => {
 				<Link href={"https://twitter.com/tannergodarzi"}>
 					<a>{"Twitter"}</a>
 				</Link>
-				<Link href={"https://glass.photo/tannergodarzi"}>
-					<a>{"Glass"}</a>
-				</Link>
-				<Link href={"https://github.com/tannergodarzi"}>
-					<a>{"GitHub"}</a>
-				</Link>
-				<Link href={"https://tannergodarzi.eth.xyz"}>
-					<a>{"ETH"}</a>
-				</Link>
-				<Link href={"https://www.linkedin.com/in/tannergodarzi/"}>
-					<a>{"LinkedIn"}</a>
-				</Link>
 			</nav>
 		</section>
 	);
