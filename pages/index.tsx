@@ -112,6 +112,7 @@ export default function Index({ posts }) {
 			<style jsx>{`
 				.grid {
 					display: grid;
+					display: none;
 					grid-template-columns: repeat(16, calc(100vw / 16));
 					grid-template-rows: repeat(32, calc(100vw / 16));
 					gap: 0.5rem;

@@ -23,6 +23,7 @@
 }
 .mast nav a {
 	text-decoration: none;
+	font-weight: 400;
 	font-size: 1rem;
 	font-family: "ibm-plex-mono";
 }
