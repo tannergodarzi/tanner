@@ -58,7 +58,7 @@ export const Hero = () => {
 					<span>{`I’m also Front End Engineer motivated by design thinking and story telling.`}</span>
 					<Poster>
 						<Image
-							src={"https://media.giphy.com/media/sk6yL9EGVeAcE/giphy.gif"}
+							src={"https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif"}
 							alt={""}
 							layout="fill"
 							objectFit="cover"
@@ -73,16 +73,18 @@ export const Hero = () => {
 					</span>
 					<Poster>
 						<Image
-							src={"https://media.giphy.com/media/9ViAEnNgtuDUnVcfgi/giphy.gif"}
+							src={"https://media.giphy.com/media/4GmVM1KT157CfsP5AY/giphy-downsized-large.gif"}
 							alt={""}
 							layout="fill"
 							objectFit="cover"
 						/>
 					</Poster>
-					<span>{"My favorite dish? Thanks for asking. I can’t deny the beauty of a Cacio e Pepe"}</span>
+					<span>
+						{"My favorite dish? Thanks for asking. I can’t deny the beauty of a Prosciutto di Parma Pie"}
+					</span>
 					<Poster>
 						<Image
-							src={"https://media.giphy.com/media/3o7bugOn9JDdvolbxu/giphy.gif"}
+							src={"https://media.giphy.com/media/4ayiIWaq2VULC/giphy.gif"}
 							alt={""}
 							layout="fill"
 							objectFit="cover"
