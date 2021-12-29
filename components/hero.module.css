@@ -15,6 +15,9 @@
 	display: inline-block;
 	letter-spacing: -0.02em;
 	font-weight: 400;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
 
 }
 
