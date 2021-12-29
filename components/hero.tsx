@@ -55,7 +55,7 @@ export const Hero = () => {
 						/>
 					</Poster>
 
-					<span>{`I’m also Front End Engineer motivated by design thinking and story telling.`}</span>
+					<span>{`I’m also a Front End Engineer motivated by design thinking and story telling.`}</span>
 					<Poster>
 						<Image
 							src={"https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif"}

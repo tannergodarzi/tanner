@@ -46,7 +46,7 @@ export default function Index({ posts }) {
 							objectPosition={"top center"}
 						/>
 					</GridElement>
-					<GridElement column={9} columnSpan={6} row={2} rowSpan={4}>
+					<GridElement column={9} columnSpan={6} row={2} rowSpan={8}>
 						<article>
 							<h2>{"Lorem ipsum dolor sit amet, consectetur adipiscing elit"}</h2>
 							<p>
@@ -59,7 +59,7 @@ export default function Index({ posts }) {
 							</Link>
 						</article>
 					</GridElement>
-					<GridElement column={11} columnSpan={4} row={6} rowSpan={4}>
+					<GridElement column={11} columnSpan={4} row={11} rowSpan={5}>
 						<iframe
 							src="https://open.spotify.com/embed/playlist/4FuWTIt1AQQJcEeOKqEukk"
 							width="100%"
@@ -68,12 +68,13 @@ export default function Index({ posts }) {
 							allow="encrypted-media"
 						></iframe>
 					</GridElement>
-					<GridElement column={2} columnSpan={5} row={9} rowSpan={7}>
+					<GridElement column={2} columnSpan={5} row={9} rowSpan={6}>
 						<Image
 							src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
 							layout="fill"
 							alt=""
 							objectFit="contain"
+							objectPosition={"top center"}
 						/>
 					</GridElement>
 					<GridElement column={2} columnSpan={14} row={16} rowSpan={1}>
@@ -112,7 +113,6 @@ export default function Index({ posts }) {
 			<style jsx>{`
 				.grid {
 					display: grid;
-					display: none;
 					grid-template-columns: repeat(16, calc(100vw / 16));
 					grid-template-rows: repeat(32, calc(100vw / 16));
 					gap: 0.5rem;
