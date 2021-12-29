@@ -39,7 +39,9 @@ h6 {
 }
 * {
 	font: var(--font-body);
-	margin: 0.2rem 0 0.6rem;
+}
+p {
+		margin: 0.2rem 0 0.6rem;
 }
 a {
 	font-weight: 700;

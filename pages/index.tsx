@@ -10,7 +10,6 @@ import { sluggify } from "../helpers/urlHelpers";
 
 export async function getStaticProps() {
 	const posts = await getNotionBlocks();
-	console.log(posts);
 	return {
 		props: {
 			posts,
@@ -142,10 +141,14 @@ export default function Index({ posts }) {
 				.entry a {
 					margin-top: auto;
 					text-decoration: none;
+					display: flex;
+					align-items: center;
 				}
 				.entry a:after {
 					content: " ⭢";
 					display: inline-block;
+					margin-left: 0.2em;
+					height: 1em;
 				}
 				.entry time {
 					font-size: 0.6rem;
