@@ -96,7 +96,6 @@ export default function Index({ posts, page }) {
 					transition: opacity 100ms ease;
 				}
 				.entry time {
-					font: var(--font-annotation);
 					opacity: 0.75;
 				}
 				.entry-title a:hover,

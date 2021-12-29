@@ -9,6 +9,7 @@ body {
 }
 time {
 	font: var(--font-annotation);
+	font-family: "adonis-web";
 }
 h1 {
 	font: var(--font-display);
