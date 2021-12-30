@@ -7,8 +7,7 @@ export const Footer = () => {
 	return (
 		<footer className={styles.footer}>
 			<header className={styles.footerHeader}>
-				<h5>{"Tanner Godarzi"}</h5>
-				<h6>{`©${currentYear} All rights reserved`}</h6>
+				<h6>{`Written, designed, and built by Tanner Godarzi. © ${currentYear}`}</h6>
 			</header>
 			<nav className={styles.footerNav}>
 				<Link href={"/"}>
