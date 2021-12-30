@@ -112,10 +112,6 @@ export const Hero = () => {
 					word-break: break-word;
 					overflow-wrap: break-word;
 					hyphens: auto;
-					font-style: italic;
-				}
-				.hero-text *:not(h1) {
-					font-style: normal;
 				}
 				@media (max-width: 768px) {
 					.hero-text h1 {
