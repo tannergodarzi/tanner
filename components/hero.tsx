@@ -42,10 +42,10 @@ const Poster = ({ children }: PropsWithChildren<PosterProps>) => {
 
 export const Hero = () => {
 	return (
-		<section className={styles.hero}>
-			<article>
-				<p className={styles.hero_text}>
-					<span>{`Howdy, I’m Tanner — a real person on the internet.`}</span>
+		<>
+			<section className="hero">
+				<article className="hero-text">
+					<h1>{`Howdy, I’m Tanner`}</h1> <span>{`— a real person on the internet.`}</span>
 					<Poster>
 						<Image
 							src={"https://media.giphy.com/media/xs7bOB7WyxnnQ9d0CS/giphy.gif"}
@@ -54,7 +54,6 @@ export const Hero = () => {
 							objectFit="cover"
 						/>
 					</Poster>
-
 					<span>{`I’m also a Front End Engineer motivated by design thinking and story telling.`}</span>
 					<Poster>
 						<Image
@@ -90,8 +89,42 @@ export const Hero = () => {
 							objectFit="cover"
 						/>
 					</Poster>
-				</p>
-			</article>
-		</section>
+				</article>
+			</section>
+			<style jsx>{`
+				.hero {
+					box-sizing: border-box;
+					width: 100%;
+					padding: 1.5rem;
+					z-index: 1000;
+					position: relative;
+				}
+				.hero-text,
+				.hero-text * {
+					z-index: 0;
+					position: relative;
+					pointer-events: none;
+					font: var(--font-display);
+					font-size: clamp(2.25rem, 1.7996rem + 1.8909vw, 3.75rem);
+					display: inline;
+					letter-spacing: -0.02em;
+					font-weight: 400;
+					word-break: break-word;
+					overflow-wrap: break-word;
+					hyphens: auto;
+					font-style: italic;
+				}
+				.hero-text *:not(h1) {
+					font-style: normal;
+				}
+				@media (max-width: 768px) {
+					.hero-text h1 {
+						display: inline-block;
+						font-size: 4.2rem;
+						margin-bottom: 0;
+					}
+				}
+			`}</style>
+		</>
 	);
 };

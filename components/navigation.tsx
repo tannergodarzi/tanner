@@ -10,7 +10,7 @@ export const Navigation = () => {
 					<a>{"Home"}</a>
 				</Link>
 				<Link href={"/blog"}>
-					<a>{"Writings"}</a>
+					<a>{"Blog"}</a>
 				</Link>
 			</nav>
 		</section>
