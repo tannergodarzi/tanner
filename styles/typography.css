@@ -21,7 +21,7 @@ h1 {
 h2 {
 	font: var(--font-display);
 	font-size: 1.8rem;
-	margin: 0 0 0.4em;
+	margin: 0 0 0.1em;
 	line-height: 1em;
 	letter-spacing: -0.02em;
 }

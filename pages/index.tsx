@@ -85,13 +85,14 @@ Seaworthy (New Orleans), King's Highway
 							</p>
 						</section>
 					</GridElement>
-					<GridElement column={11} columnSpan={4} row={16} rowSpan={4}>
+					<GridElement column={11} columnSpan={4} row={14} rowSpan={1}>
 						<iframe
-							src="https://open.spotify.com/embed/playlist/4FuWTIt1AQQJcEeOKqEukk"
+							src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?utm_source=generator&theme=0"
 							width="100%"
-							height="100%"
+							height="80"
 							frameBorder="0"
-							allow="encrypted-media"
+							allowFullScreen={false}
+							allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
 						></iframe>
 					</GridElement>
 					<GridElement column={11} columnSpan={5} row={6} rowSpan={6}>
