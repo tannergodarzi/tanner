@@ -85,16 +85,7 @@ Seaworthy (New Orleans), King's Highway
 							</p>
 						</section>
 					</GridElement>
-					<GridElement column={11} columnSpan={4} row={14} rowSpan={1}>
-						<iframe
-							src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?utm_source=generator&theme=0"
-							width="100%"
-							height="80"
-							frameBorder="0"
-							allowFullScreen={false}
-							allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-						></iframe>
-					</GridElement>
+
 					<GridElement column={11} columnSpan={5} row={6} rowSpan={6}>
 						<Image
 							src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
@@ -105,9 +96,17 @@ Seaworthy (New Orleans), King's Highway
 						/>
 					</GridElement>
 
-					<GridElement column={2} columnSpan={5} row={9} rowSpan={10}>
+					<GridElement column={2} columnSpan={5} row={9} rowSpan={6}>
 						<section className="entry frame">
-							<span></span>
+							<span>
+								<Image
+									src={"/newspaper.jpeg"}
+									layout="fill"
+									alt=""
+									objectFit="cover"
+									objectPosition={"top center"}
+								/>
+							</span>
 							<header>
 								<h3>{"Broadway from a Hotel Window"}</h3>
 							</header>
@@ -121,9 +120,9 @@ Seaworthy (New Orleans), King's Highway
 							</Link>
 						</section>
 					</GridElement>
-					<GridElement column={8} columnSpan={2} row={12} rowSpan={2}>
+					<GridElement column={8} columnSpan={2} row={13} rowSpan={2}>
 						<Link href={"/blog"}>
-							<a className="circle">{"Blog"}</a>
+							<a className="circle special">{"Blog"}</a>
 						</Link>
 					</GridElement>
 
@@ -146,6 +145,20 @@ Seaworthy (New Orleans), King's Highway
 					grid-template-rows: repeat(48, calc(100vw / 16 - 0.5rem));
 					gap: 0.5rem;
 					width: 100vw;
+					--minFontSize: 12px;
+					--maxFontSize: 32px;
+					--scaler: 1vw;
+				}
+				.grid p,
+				.grid a:not(.special) {
+					line-height: 1.3em;
+					font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+				}
+				.grid h3 {
+					font-size: calc(1.8 * clamp(var(--minFontSize), var(--scaler), var(--maxFontSize)));
+				}
+				.grid h3 {
+					font-size: calc(1.6 * clamp(var(--minFontSize), var(--scaler), var(--maxFontSize)));
 				}
 				.circle {
 					color: var(--text-color);
@@ -203,27 +216,23 @@ Seaworthy (New Orleans), King's Highway
 					width: 100%;
 					display: block;
 					aspect-ratio: 4 / 2;
+					position: relative;
+					font-size: 0;
 				}
 				.entry {
 					display: flex;
 					flex: 0 0 auto;
-					gap: 0.5em;
+					gap: 1em;
 					width: 100%;
 					padding-bottom: 2rem;
-					font-size: 1rem;
 					flex-direction: column;
 					align-content: center;
 					text-align: center;
 				}
 
 				.entry * {
+					margin-top: 0;
 					margin-bottom: 0;
-				}
-				.entry p {
-					font: var(--font-annotation);
-				}
-				.entry a {
-					font-size: 1em;
 				}
 			`}</style>
 		</>

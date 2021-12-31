@@ -113,13 +113,6 @@ export const Hero = () => {
 					overflow-wrap: break-word;
 					hyphens: auto;
 				}
-				@media (max-width: 768px) {
-					.hero-text h1 {
-						display: inline-block;
-						font-size: 4.2rem;
-						margin-bottom: 0;
-					}
-				}
 			`}</style>
 		</>
 	);
