@@ -1,6 +1,7 @@
 .poster {
 	display: inline-block;
 	aspect-ratio: 2 / 1;
+	border-radius: 0.05em;
 	height: 0.8em;
 	top: 0.1em;
 	margin: 0 0.25em;
@@ -10,7 +11,7 @@
 	position: relative;
 	pointer-events: all;
 	box-sizing: border-box;
-	overflow: visible;
+	overflow: hidden;
 }
 .poster_expanded {
 	z-index: 100;

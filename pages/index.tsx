@@ -36,23 +36,56 @@ export default function Index({ posts }) {
 			<main>
 				<Navigation />
 				<Hero />
-				<section className="grid">
-					<GridElement column={2} columnSpan={4} row={2} rowSpan={6}></GridElement>
-					<GridElement column={6} columnSpan={6} row={2} rowSpan={4}>
-						<article>
-							<h2></h2>
-							<p>
-								{
-									"Integer consectetur blandit feugiat. Suspendisse in sem viverra, tempus enim vel, rhoncus mauris."
-								}
-							</p>
-							<Link href={"/about"}>
-								<a>{"Read more"}</a>
-							</Link>
-						</article>
+				<article className="grid">
+					<GridElement column={4} columnSpan={4} row={2} rowSpan={6}>
+						<Image
+							src={"/tanner-foto.jpeg"}
+							layout="fill"
+							objectFit="cover"
+							objectPosition="center"
+							alt=""
+						/>
 					</GridElement>
-					<GridElement column={12} columnSpan={4} row={3} rowSpan={3}></GridElement>
-					<GridElement column={11} columnSpan={5} row={8} rowSpan={6}>
+					<GridElement column={9} columnSpan={5} row={2} rowSpan={4}>
+						<h2>{"Not actually a cowboy"}</h2>
+						<p>
+							{`Ace Activity Book
+ Connect the dots, color inside (or outside) the lines, draw
+your essence. Fun pages from our pals the Haas Brothers,
+Nathaniel Russell, Andy Plants and yours truly, Ace Hotel.
+Recipes
+Favorites, classics and signature dishes from our culinary
+partners
+at Bar Marilou
+(New Orleans), Best Girl (Los Angeles),
+The Breslin (New York City), City Mouse (Chicago), Josephine
+Estelle (New Orleans),
+Seaworthy (New Orleans), King's Highway
+(Palm Springs), Hoi Polloi (Iondon), and Whitfield (Pittsburgh)`}
+						</p>
+						<Link href={"/about"}>
+							<a>{"Read more"}</a>
+						</Link>
+					</GridElement>
+					<GridElement column={13} columnSpan={3} row={28} rowSpan={4}>
+						<section className="frame">
+							<h3>{"Things I like"}</h3>
+							<p>
+								{"Every Ace Hotel"}
+								<br />
+								{"Deserts of the American Southwest"}
+								<br />
+
+								<Link href="https://twitter.com/ninlive/status/1183382334868983814">
+									<a>{"This video of Trent Reznor starting a Nine Inch Nails set"}</a>
+								</Link>
+								<br />
+								{"Land-use conspiracy theories and urban planning"}
+								<br />
+							</p>
+						</section>
+					</GridElement>
+					<GridElement column={11} columnSpan={4} row={16} rowSpan={4}>
 						<iframe
 							src="https://open.spotify.com/embed/playlist/4FuWTIt1AQQJcEeOKqEukk"
 							width="100%"
@@ -61,7 +94,7 @@ export default function Index({ posts }) {
 							allow="encrypted-media"
 						></iframe>
 					</GridElement>
-					<GridElement column={2} columnSpan={5} row={9} rowSpan={6}>
+					<GridElement column={11} columnSpan={5} row={6} rowSpan={6}>
 						<Image
 							src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
 							layout="fill"
@@ -71,8 +104,8 @@ export default function Index({ posts }) {
 						/>
 					</GridElement>
 
-					<GridElement column={3} columnSpan={5} row={16} rowSpan={10}>
-						<section className="entry">
+					<GridElement column={2} columnSpan={5} row={9} rowSpan={10}>
+						<section className="entry frame">
 							<span></span>
 							<header>
 								<h3>{"Broadway from a Hotel Window"}</h3>
@@ -87,9 +120,9 @@ export default function Index({ posts }) {
 							</Link>
 						</section>
 					</GridElement>
-					<GridElement column={10} columnSpan={3} row={19} rowSpan={3}>
+					<GridElement column={8} columnSpan={2} row={12} rowSpan={2}>
 						<Link href={"/blog"}>
-							<a className="circle">{"Read more"}</a>
+							<a className="circle">{"Blog"}</a>
 						</Link>
 					</GridElement>
 
@@ -102,7 +135,7 @@ export default function Index({ posts }) {
 							objectPosition={"center top"}
 						/>
 					</GridElement>
-				</section>
+				</article>
 				<Footer />
 			</main>
 			<style jsx>{`
@@ -124,10 +157,10 @@ export default function Index({ posts }) {
 					align-items: center;
 					text-align: center;
 					font-size: 3vw;
-					font-family: cooper-black-std;
+
 					padding: 0.5em;
 					line-height: 1em;
-					font-weight: 900;
+					font-weight: 700;
 					text-transform: uppercase;
 					text-decoration: none;
 					border-radius: 50%;
@@ -140,11 +173,29 @@ export default function Index({ posts }) {
 					content: " ";
 					position: absolute;
 					z-index: 0;
+					pointer-events: none;
 					top: 4px;
 					left: 4px;
 					right: 4px;
 					bottom: 4px;
 					border-radius: 50%;
+					border: 2px solid var(--text-color);
+				}
+				.frame {
+					box-sizing: border-box;
+					padding: 1em;
+					border: 4px solid var(--text-color);
+					position: relative;
+				}
+				.frame:before {
+					content: " ";
+					position: absolute;
+					z-index: 0;
+					pointer-events: none;
+					top: 4px;
+					left: 4px;
+					right: 4px;
+					bottom: 4px;
 					border: 2px solid var(--text-color);
 				}
 				.entry span {
@@ -153,29 +204,17 @@ export default function Index({ posts }) {
 					aspect-ratio: 4 / 2;
 				}
 				.entry {
-					position: relative;
 					display: flex;
 					flex: 0 0 auto;
 					gap: 0.5em;
 					width: 100%;
+					padding-bottom: 2rem;
 					font-size: 1rem;
 					flex-direction: column;
 					align-content: center;
 					text-align: center;
-					box-sizing: border-box;
-					padding: calc(20px + 1em);
-					border: 4px solid var(--text-color);
 				}
-				.entry:before {
-					content: " ";
-					position: absolute;
-					z-index: 0;
-					top: 4px;
-					left: 4px;
-					right: 4px;
-					bottom: 4px;
-					border: 2px solid var(--text-color);
-				}
+
 				.entry * {
 					margin-bottom: 0;
 				}

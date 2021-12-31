@@ -14,7 +14,7 @@ export const Footer = () => {
 					<a>{"Home"}</a>
 				</Link>
 				<Link href={"/blog"}>
-					<a>{"Writings"}</a>
+					<a>{"Blog"}</a>
 				</Link>
 				<Link href={"mailto:tanner.godarzi@gmail.com"}>
 					<a>{"Fan Mail"}</a>

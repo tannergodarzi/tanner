@@ -10,8 +10,8 @@
 	--color-tan: rgba(249,225,180, 1);
 	--color-neutral: var(--color-tan);
 
-	--font-annotation: normal normal 400 0.8rem/1.2em ibm-plex-mono, sans-serif;
-	--font-body: normal normal 400 1.2rem/1.4em "adonis-web", sans-serif;
+	--font-annotation: normal normal 400 0.8rem/1.4em ibm-plex-mono, sans-serif;
+	--font-body: normal normal 400 0.8rem/1.4em ibm-plex-mono, sans-serif;
 	--font-display: normal normal 700 2.75rem/1.1em "adonis-web", sans-serif;
 	--font-presentation: normal normal 400 2.75rem/1.1em cooper-black-std, sans-serif;
 }
