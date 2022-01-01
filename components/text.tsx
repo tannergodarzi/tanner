@@ -61,17 +61,30 @@ export const Text = ({ value }: PropsWithChildren<TextProps>) => {
 		}
 
 		return (
-			<span
-				key={plain_text}
-				className={classNames(styles.text, {
-					[styles.text_bold]: annotations.bold,
-					[styles[`text_color_${annotations.color}`]]: annotations.color,
-					[styles.text_italic]: annotations.italic,
-					[styles.text_strikethrough]: annotations.strikethrough,
-					[styles.text_underline]: annotations.underline,
-				})}
-				dangerouslySetInnerHTML={{ __html: wrappedElement.join("") }}
-			/>
+			<>
+				<span
+					key={plain_text}
+					className={classNames(styles.text, {
+						["text-bold"]: annotations.bold,
+						[styles[`text_color_${annotations.color}`]]: annotations.color,
+						[styles.text_italic]: annotations.italic,
+						[styles.text_strikethrough]: annotations.strikethrough,
+						[styles.text_underline]: annotations.underline,
+					})}
+					dangerouslySetInnerHTML={{ __html: wrappedElement.join("") }}
+				/>
+				<style jsx>{`
+					span {
+						display: inline;
+						width: 100%;
+					}
+					.text {
+					}
+					.text-bold {
+						font-weight: 700;
+					}
+				`}</style>
+			</>
 		);
 	});
 };

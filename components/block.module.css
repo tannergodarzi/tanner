@@ -10,8 +10,6 @@
 }
 .paragraph,
 .text {
-	font-size: 1.2rem;
-	line-height: 1.4em;
 	margin: 0.2rem 0 0.6rem;
 }
 .paragraph a {
@@ -22,6 +20,7 @@
 }
 .list_item {
 	font-size: 1rem;
+	margin-left: 1em;
 }
 .code {
 	font: var(--font-annotation);
@@ -38,8 +37,6 @@
 	filter: invert(50%);
 }
 .quote {
-	font-size: 1.2rem;
-	font-weight: 700;
 	font-style: italic;
 	text-align: center;
 	quotes: "“" "”";
@@ -51,7 +48,6 @@
 	content: close-quote;
 }
 .bookmark {
-	font-size: 1rem;
 	margin: 0.25rem 0;
 	display: flex;
 	gap: 0.25rem;

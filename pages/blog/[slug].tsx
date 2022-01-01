@@ -67,8 +67,8 @@ export default function Slug(props) {
 
 			<main>
 				<Navigation />
-				<article className={"article"}>
-					<header className={"header"}>
+				<article>
+					<header>
 						<h1>{pageTitle}</h1>
 						<time dateTime={meta.Published.date.start}>
 							{`Published ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
@@ -81,28 +81,30 @@ export default function Slug(props) {
 							return <Block block={block} key={block.id} />;
 						})}
 					</section>
-					<Footer />
 				</article>
+				<Footer />
 			</main>
 			<style jsx>{`
 				main {
+					min-height: 100vh;
+					display: flex;
+					flex-direction: column;
 					position: relative;
 				}
-				.article {
+				article {
 					flex-direction: column;
 					width: min(100%, 45rem);
 					box-sizing: border-box;
 					padding: 0 1.5rem;
 					margin: 4rem auto 0;
 				}
-				.header {
-					margin: 0 auto 1rem;
-					font-size: 0.85rem;
+				header {
+					margin: 0 auto 2em;
 					text-align: center;
 					width: max(75%, 20rem);
 				}
-				.header h1 {
-					margin-bottom: 0.25rem;
+				header h1 {
+					margin-bottom: 0.15em;
 				}
 			`}</style>
 		</>

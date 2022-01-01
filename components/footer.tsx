@@ -39,7 +39,8 @@ export const Footer = () => {
 			<style jsx>{`
 				.footer {
 					box-sizing: border-box;
-					padding: 2.5rem;
+					padding: 1rem;
+					margin-top: auto;
 					width: 100%;
 					text-align: center;
 					font: var(--font-annotation);

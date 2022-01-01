@@ -7,9 +7,8 @@ body {
 	-webkit-font-smoothing: subpixel-antialiased;
 	font-display: block;
 }
-time {
-	font: var(--font-annotation);
-	font-family: "adonis-web";
+* {
+	font: var(--font-body);
 }
 h1 {
 	font: var(--font-display);
@@ -22,7 +21,7 @@ h2 {
 	font: var(--font-display);
 	font-size: 1.8rem;
 	margin: 0 0 0.1em;
-	line-height: 1,1em;
+	line-height: 1, 1em;
 	letter-spacing: -0.02em;
 }
 h3 {
@@ -38,15 +37,16 @@ h5 {
 h6 {
 	font-size: 0.6rem;
 }
-* {
-	font: var(--font-body);
-}
 p {
-		margin: 0.2rem 0 0.6rem;
+	margin: 0.2rem 0 0.6rem;
 }
 a {
 	font-weight: 700;
 }
 em {
 	font-style: italic;
+}
+time {
+	font: var(--font-annotation);
+	font-family: "adonis-web";
 }

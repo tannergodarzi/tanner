@@ -21,13 +21,11 @@ export const Navigation = () => {
 					display: flex;
 					flex-direction: row;
 					align-content: center;
-
 					align-items: center;
 					top: 0;
 					max-width: 100%;
 					box-sizing: border-box;
-					padding: 0;
-					margin: 0 1.5rem;
+					padding: 1em 1.5rem;
 					background: var(--page-background);
 					z-index: 1001;
 					border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -42,7 +40,6 @@ export const Navigation = () => {
 					width: 100%;
 					height: 100%;
 					gap: 1.25em;
-					padding: 1em 0;
 				}
 				.mast * {
 					text-decoration: none;
