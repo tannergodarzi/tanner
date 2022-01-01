@@ -4,59 +4,64 @@ import Poster from "./poster";
 export const Hero = () => {
 	return (
 		<>
-			<section className="hero">
-				<article className="hero-text">
-					<h1>{`Howdy, I’m Tanner`}</h1> <span>{`— a real person on the internet.`}</span>
-					<Poster>
-						<Image
-							src={"https://media.giphy.com/media/QyDfZ9KyINz6Tnoj02/giphy-downsized.gif"}
-							alt={""}
-							layout="fill"
-							objectFit="cover"
-						/>
-					</Poster>
-					<span>{`I’m also a Front End Engineer motivated by design thinking and story telling.`}</span>
-					<Poster>
-						<Image
-							src={"https://media.giphy.com/media/kvl2YhR110qsBrHid2/giphy-downsized.gif"}
-							alt={""}
-							layout="fill"
-							objectFit="cover"
-						/>
-					</Poster>
-					<span>{"Currently I’m at Notion on Brand Marketing telling the story of tools for work."}</span>
-					<Poster>
-						<Image
-							src={"https://media.giphy.com/media/dVo2DTg9dVNiBQrkN6/giphy.gif"}
-							alt={""}
-							layout="fill"
-							objectFit="cover"
-						/>
-					</Poster>
-					<span>
-						{`San Francisco — specifically the delightful neighborhood of Cole Valley — is where I call home.`}
-					</span>
-					<Poster>
-						<Image
-							src={"https://media.giphy.com/media/9Hn5DiVGb74klPp29s/giphy-downsized.gif"}
-							alt={""}
-							layout="fill"
-							objectFit="cover"
-						/>
-					</Poster>
-					<span>
-						{"My favorite dish? Thanks for asking. I can’t deny the beauty of a Prosciutto di Parma Pie"}
-					</span>
-					<Poster>
-						<Image
-							src={"https://media.giphy.com/media/JppxLdTyGoP4rpR0CD/giphy.gif"}
-							alt={""}
-							layout="fill"
-							objectFit="cover"
-						/>
-					</Poster>
-				</article>
-			</section>
+			<article className="hero">
+				<section className="hero-text">
+					<h1>{`Howdy, I’m Tanner`}</h1>{" "}
+					<p>
+						<span>{`— a real person on the internet.`}</span>
+						<Poster>
+							<Image
+								src={"https://media.giphy.com/media/QyDfZ9KyINz6Tnoj02/giphy-downsized.gif"}
+								alt={""}
+								layout="fill"
+								objectFit="cover"
+							/>
+						</Poster>
+						<span>{`I’m also a Front End Engineer motivated by design thinking and story telling.`}</span>
+						<Poster>
+							<Image
+								src={"https://media.giphy.com/media/kvl2YhR110qsBrHid2/giphy-downsized.gif"}
+								alt={""}
+								layout="fill"
+								objectFit="cover"
+							/>
+						</Poster>
+						<span>{"Currently I’m at Notion on Brand Marketing telling the story of tools for work."}</span>
+						<Poster>
+							<Image
+								src={"https://media.giphy.com/media/dVo2DTg9dVNiBQrkN6/giphy.gif"}
+								alt={""}
+								layout="fill"
+								objectFit="cover"
+							/>
+						</Poster>
+						<span>
+							{`San Francisco — specifically the delightful neighborhood of Cole Valley — is where I call home.`}
+						</span>
+						<Poster>
+							<Image
+								src={"https://media.giphy.com/media/9Hn5DiVGb74klPp29s/giphy-downsized.gif"}
+								alt={""}
+								layout="fill"
+								objectFit="cover"
+							/>
+						</Poster>
+						<span>
+							{
+								"My favorite dish? Thanks for asking. I can’t deny the beauty of a Prosciutto di Parma Pie"
+							}
+						</span>
+						<Poster>
+							<Image
+								src={"https://media.giphy.com/media/JppxLdTyGoP4rpR0CD/giphy.gif"}
+								alt={""}
+								layout="fill"
+								objectFit="cover"
+							/>
+						</Poster>
+					</p>
+				</section>
+			</article>
 			<style jsx>{`
 				.hero {
 					box-sizing: border-box;
