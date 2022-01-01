@@ -23,7 +23,7 @@ export default function Index({ page, database }) {
 	return (
 		<>
 			<Head>
-				<title>Tanner Godarzi&rsquo;s Blog</title>
+				<title>Tanner&rsquo;s Blog</title>
 				<meta name="title" content="Tanner Godarzi&rsquo;s Blog" />
 				<meta name="description" content="Thoughts..." />
 				<meta name="keywords" content="Tanner Godarzi, Tanner, Notion, Dropbox, black ops" />
@@ -45,24 +45,19 @@ export default function Index({ page, database }) {
 						}).format(new Date(Published.date.start));
 						return (
 							<section className="entry" key={id}>
-								<header>
-									<h2 className="entry-title">
-										<Link href={`/blog/${sluggify(Slug.url)}`}>
-											<a>
+								<Link href={`/blog/${sluggify(Slug.url)}`}>
+									<a>
+										<header>
+											<h2 className="entry-title">
 												<Text value={Name.title} />
-											</a>
-										</Link>
-									</h2>
-									<time dateTime={publishedDate}>{`Published ${publishedDate}`}</time>
-								</header>
-								<p>
-									<Text value={Subtitle.rich_text} />
-									<footer>
-										<Link href={`/blog/${sluggify(Slug.url)}`}>
-											<a>{"Read more →"}</a>
-										</Link>
-									</footer>
-								</p>
+											</h2>
+											<time dateTime={publishedDate}>{`Published ${publishedDate}`}</time>
+										</header>
+										<p>
+											<Text value={Subtitle.rich_text} />
+										</p>
+									</a>
+								</Link>
 							</section>
 						);
 					})}
@@ -100,19 +95,19 @@ export default function Index({ page, database }) {
 					width: 100%;
 					margin-bottom: 4em;
 				}
-				.entry-title a {
-					text-decoration: none;
-				}
 				.entry p {
 					margin-bottom: 0;
 				}
 				.entry time {
-					font: var(--font-annotation);
 					font-size: 0.75em;
 					opacity: 0.75;
 				}
 				.entry header {
-					margin-bottom: 0.75em;
+					margin-bottom: 0;
+				}
+				.entry a {
+					font-weight: inherit;
+					text-decoration: none;
 				}
 				.entry a:hover,
 				.entry a:focus {

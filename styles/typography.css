@@ -5,7 +5,6 @@ body {
 	font-feature-settings: "liga" 0;
 	font-kerning: normal;
 	-webkit-font-smoothing: subpixel-antialiased;
-	font-display: swap;
 }
 * {
 	font: var(--font-body);
@@ -50,5 +49,4 @@ em {
 }
 time {
 	font: var(--font-annotation);
-	font-family: "adonis-web";
 }

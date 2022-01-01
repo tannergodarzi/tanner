@@ -58,7 +58,7 @@ export default function Slug(props) {
 	return (
 		<>
 			<Head>
-				<title>Blog | {pageTitle}</title>
+				<title>{pageTitle} | Tanner&rsquo;s Blog</title>
 				<meta name="title" content={`Blog | ${pageTitle}`} />
 				<meta
 					name="description"
