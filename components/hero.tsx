@@ -37,6 +37,8 @@ export const Hero = () => {
 							<Image
 								src={"https://media.giphy.com/media/dVo2DTg9dVNiBQrkN6/giphy-downsized..gif"}
 								alt={""}
+								width={480}
+								height={360}
 								layout="fill"
 								objectFit="cover"
 								quality={75}
