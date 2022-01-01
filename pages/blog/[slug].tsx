@@ -5,6 +5,7 @@ import { PostData } from "../../helpers/notionTypes";
 import { Navigation } from "../../components/navigation";
 import { sluggify } from "../../helpers/urlHelpers";
 import { Footer } from "../../components/footer";
+import { getEntryFromNotionDatabase } from "../../helpers/notionHelpers";
 
 // Notion client
 const notion = new Client({
@@ -12,31 +13,17 @@ const notion = new Client({
 });
 
 export async function getStaticProps(context) {
-	const queryResponse = await notion
-		.search({
-			query: context.params.slug,
-		})
-		.then((response) => response.results);
-	if (queryResponse.length === 0) {
-		return {
-			notFound: true,
-		};
-	}
-	const id = queryResponse[0].id;
+	const queryResponse = (await getEntryFromNotionDatabase(context.params.slug)) as any;
 
-	const pageResponse = await notion.pages.retrieve({ page_id: id }).then((response) => response as PostData);
 	const blocksResponse = await notion.blocks.children
 		.list({
-			block_id: id,
+			block_id: queryResponse.id,
 		})
-		.then((response) => response.results);
-
-	const { created_time, last_edited_time, properties, cover, icon } = pageResponse;
-	// TODO: Handle archived state as 404 or permanently deleted
-
-	const pageTitle = properties.title.title[0].plain_text;
+		.then((a) => a.results);
+	const { Published, Name, Slug, Subtitle } = queryResponse.properties;
+	const pageTitle = Name.title[0].plain_text;
 	const blocks = blocksResponse;
-	const meta = { created_time, last_edited_time, cover, icon };
+	const meta = { Published, Name, Slug, Subtitle };
 	return {
 		props: {
 			meta,
@@ -87,9 +74,9 @@ export default function Slug(props) {
 				<article className={"article"}>
 					<header className={"header"}>
 						<h1>{pageTitle}</h1>
-						<time dateTime={meta.created_time}>
+						<time dateTime={meta.Published.date.start}>
 							{`Published ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
-								new Date(meta.created_time)
+								new Date(meta.Published.date.start)
 							)}`}
 						</time>
 					</header>

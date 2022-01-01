@@ -3,15 +3,17 @@ import { sluggify } from "../../helpers/urlHelpers";
 import { Navigation } from "../../components/navigation";
 import { Text } from "../../components/text";
 import { Footer } from "../../components/footer";
-import { getNotionBlocks, getNotionPage } from "../../helpers/notionHelpers";
+import { getNotionBlocks, getNotionPage, getNotionDatabase } from "../../helpers/notionHelpers";
 import Link from "next/link";
 
 export async function getStaticProps() {
 	const posts = await getNotionBlocks();
 	const page = await getNotionPage();
+	const database = await getNotionDatabase();
 
 	return {
 		props: {
+			database,
 			posts,
 			page,
 		},
@@ -19,7 +21,8 @@ export async function getStaticProps() {
 	};
 }
 
-export default function Index({ posts, page }) {
+export default function Index({ posts, page, database }) {
+	console.log(database);
 	return (
 		<>
 			<Head>
@@ -42,28 +45,26 @@ export default function Index({ posts, page }) {
 							<Text value={page.properties.title.title} />
 						</h1>
 					</header>
-					{posts.map((post) => {
-						if (!post.child_page || post.archived === true) {
-							return null;
-						}
-						const { id, child_page, created_time } = post;
-						const publishedDate = new Intl.DateTimeFormat("en-US", { dateStyle: "long" }).format(
-							new Date(created_time)
-						);
+					{database.map((entry) => {
+						const { id, properties } = entry;
+						const { Published, Name, Slug, Subtitle } = properties;
+						const publishedDate = new Intl.DateTimeFormat("en-US", {
+							dateStyle: "long",
+						}).format(new Date(Published.date.start));
 						return (
-							<article key={id} className="entry">
+							<article className="entry" key={id}>
 								<header>
-									<h2 className="entry-title">{child_page.title}</h2>
-									<time dateTime={created_time}>{`Published ${publishedDate}`}</time>
+									<h2 className="entry-title">
+										<Text value={Name.title} />
+									</h2>
+									<time dateTime={publishedDate}>{`Published ${publishedDate}`}</time>
 								</header>
 								<p>
-									{
-										"It’s been almost a year since the lights went out on Broadway. It goes without saying that New York City’s arts and culture sector has been decimated by..."
-									}
+									<Text value={Subtitle.rich_text} />
 								</p>
 
 								<footer>
-									<Link href={`blog/${sluggify(child_page.title)}`}>
+									<Link href={`/blog/${sluggify(Slug.url)}`}>
 										<a>{"Read more"}</a>
 									</Link>
 								</footer>
