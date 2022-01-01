@@ -22,7 +22,6 @@ export async function getStaticProps() {
 }
 
 export default function Index({ posts, page, database }) {
-	console.log(database);
 	return (
 		<>
 			<Head>

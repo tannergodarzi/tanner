@@ -5,7 +5,7 @@ import { PostData } from "../../helpers/notionTypes";
 import { Navigation } from "../../components/navigation";
 import { sluggify } from "../../helpers/urlHelpers";
 import { Footer } from "../../components/footer";
-import { getEntryFromNotionDatabase } from "../../helpers/notionHelpers";
+import { getEntryFromNotionDatabase, getNotionDatabase } from "../../helpers/notionHelpers";
 
 // Notion client
 const notion = new Client({
@@ -35,15 +35,11 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-	const pageContent = await notion.blocks.children.list({
-		block_id: process.env.NOTION_BLOG_PAGE,
-	});
+	const database = await getNotionDatabase();
 
-	const paths = pageContent.results
-		.map((block: any) => {
-			if (block.child_page?.title && block.archived !== true) {
-				return { params: { slug: sluggify(block.child_page.title) } };
-			}
+	const paths = database
+		.map((entry: any) => {
+			return { params: { slug: sluggify(entry.properties.Slug.url) } };
 		})
 		.filter((a) => a !== undefined);
 
