@@ -14,7 +14,11 @@ const notion = new Client({
 
 export async function getStaticProps(context) {
 	const queryResponse = (await getEntryFromNotionDatabase(context.params.slug)) as any;
-
+	if (!queryResponse) {
+		return {
+			notFound: true,
+		};
+	}
 	const blocksResponse = await notion.blocks.children
 		.list({
 			block_id: queryResponse.id,
