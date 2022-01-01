@@ -21,7 +21,14 @@ export default function Index() {
 				<Hero />
 				<Footer />
 			</main>
-			<style jsx>{``}</style>
+			<style jsx>{`
+				main {
+					min-height: 100vh;
+					display: flex;
+					flex-direction: column;
+					position: relative;
+				}
+			`}</style>
 		</>
 	);
 }

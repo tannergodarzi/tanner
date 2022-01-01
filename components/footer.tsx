@@ -5,11 +5,9 @@ export const Footer = () => {
 	const currentYear = new Date().getFullYear();
 	return (
 		<>
-			<footer className={"footer"}>
-				<header className={"footer-header"}>
-					<h6>{`Made by Tanner Godarzi ©${currentYear}`}</h6>
-				</header>
-				<nav className={"footer-nav"}>
+			<footer>
+				<header>{`Made by Tanner Godarzi ©${currentYear}`}</header>
+				<nav>
 					<Link href={"/"}>
 						<a>{"Home"}</a>
 					</Link>
@@ -37,25 +35,25 @@ export const Footer = () => {
 				</nav>
 			</footer>
 			<style jsx>{`
-				.footer {
+				footer {
 					box-sizing: border-box;
 					padding: 1rem 1rem 1.2rem;
 					margin-top: auto;
 					width: 100%;
 					text-align: center;
 					font: var(--font-annotation);
+					font-weight: 400;
+					font-size: 0.6rem;
 				}
 
-				.footer-header {
+				header {
 					display: flex;
 					flex-direction: column;
 					gap: 0.25em;
-					font: var(--font-annotation);
-					font-weight: 400;
 					margin-bottom: 0;
 				}
 
-				.footer-nav {
+				nav {
 					display: flex;
 					flex-direction: row;
 					flex-wrap: wrap;
@@ -63,17 +61,16 @@ export const Footer = () => {
 					justify-content: center;
 				}
 
-				.footer-nav a {
-					font-weight: 400;
-					font-size: 0.6rem;
+				nav a {
+					font: inherit;
 					text-decoration: none;
 				}
 
-				.footer-nav a:hover {
+				nav a:hover {
 					text-decoration: underline;
 				}
 
-				.footer-nav a:after {
+				nav a:after {
 					content: "/";
 					margin-left: 0.5em;
 					text-decoration: none;
@@ -81,7 +78,7 @@ export const Footer = () => {
 					cursor: default;
 				}
 
-				.footer-nav a:last-of-type:after {
+				nav a:last-of-type:after {
 					display: none;
 				}
 			`}</style>
