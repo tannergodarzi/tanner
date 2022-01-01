@@ -15,6 +15,7 @@ export const Hero = () => {
 								alt={""}
 								layout="fill"
 								objectFit="cover"
+								quality={75}
 							/>
 						</Poster>
 						<span>{`I’m also a Front End Engineer motivated by design thinking and story telling.`}</span>
@@ -24,15 +25,17 @@ export const Hero = () => {
 								alt={""}
 								layout="fill"
 								objectFit="cover"
+								quality={75}
 							/>
 						</Poster>
 						<span>{"Currently I’m at Notion on Brand Marketing telling the story of tools for work."}</span>
 						<Poster>
 							<Image
-								src={"https://media.giphy.com/media/dVo2DTg9dVNiBQrkN6/giphy.gif"}
+								src={"https://media.giphy.com/media/dVo2DTg9dVNiBQrkN6/giphy-downsized..gif"}
 								alt={""}
 								layout="fill"
 								objectFit="cover"
+								quality={75}
 							/>
 						</Poster>
 						<span>
@@ -44,6 +47,7 @@ export const Hero = () => {
 								alt={""}
 								layout="fill"
 								objectFit="cover"
+								quality={75}
 							/>
 						</Poster>
 						<span>
@@ -53,10 +57,11 @@ export const Hero = () => {
 						</span>
 						<Poster>
 							<Image
-								src={"https://media.giphy.com/media/JppxLdTyGoP4rpR0CD/giphy.gif"}
+								src={"https://media.giphy.com/media/JppxLdTyGoP4rpR0CD/giphy-downsized..gif"}
 								alt={""}
 								layout="fill"
 								objectFit="cover"
+								quality={75}
 							/>
 						</Poster>
 					</p>
