@@ -35,7 +35,7 @@ export const Hero = () => {
 						<span>{"Currently I’m at Notion on Brand Marketing telling the story of tools for work."}</span>
 						<Poster>
 							<Image
-								src={"https://media.giphy.com/media/dVo2DTg9dVNiBQrkN6/giphy-downsized..gif"}
+								src={"https://media.giphy.com/media/dVo2DTg9dVNiBQrkN6/giphy-downsized.gif"}
 								alt={""}
 								width={480}
 								height={360}
