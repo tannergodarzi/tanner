@@ -1,45 +1,6 @@
-import React, { PropsWithChildren, useEffect, useState } from "react";
-import styles from "./hero.module.css";
+import React from "react";
 import Image from "next/image";
-import classNames from "classnames";
-import Link from "next/link";
-
-interface PosterProps {}
-const Poster = ({ children }: PropsWithChildren<PosterProps>) => {
-	const [isExpanded, setIsExpanded] = useState(false);
-	const [coords, setCoordinates] = useState({ xPos: 0, yPos: 0 });
-	return (
-		<span
-			className={classNames(styles.poster, {
-				[styles.poster_expanded]: isExpanded,
-			})}
-			onMouseEnter={(event) => {
-				setIsExpanded((a) => !a);
-				setCoordinates({ xPos: event.clientX, yPos: event.clientY });
-			}}
-			onMouseLeave={(event) => {
-				setIsExpanded(false);
-			}}
-			onMouseMove={(event) => {
-				setCoordinates({ xPos: event.clientX, yPos: event.clientY });
-			}}
-		>
-			<picture
-				className={classNames(styles.picture, {
-					[styles.picture_expanded]: isExpanded,
-				})}
-				style={{
-					top: coords.yPos,
-					left: coords.xPos,
-					pointerEvents: "none",
-				}}
-			>
-				{children}
-			</picture>
-		</span>
-	);
-};
-
+import Poster from "./poster";
 export const Hero = () => {
 	return (
 		<>
@@ -48,7 +9,7 @@ export const Hero = () => {
 					<h1>{`Howdy, I’m Tanner`}</h1> <span>{`— a real person on the internet.`}</span>
 					<Poster>
 						<Image
-							src={"https://media.giphy.com/media/xs7bOB7WyxnnQ9d0CS/giphy.gif"}
+							src={"https://media.giphy.com/media/QyDfZ9KyINz6Tnoj02/giphy-downsized.gif"}
 							alt={""}
 							layout="fill"
 							objectFit="cover"
@@ -57,7 +18,7 @@ export const Hero = () => {
 					<span>{`I’m also a Front End Engineer motivated by design thinking and story telling.`}</span>
 					<Poster>
 						<Image
-							src={"https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif"}
+							src={"https://media.giphy.com/media/kvl2YhR110qsBrHid2/giphy-downsized.gif"}
 							alt={""}
 							layout="fill"
 							objectFit="cover"
@@ -65,14 +26,19 @@ export const Hero = () => {
 					</Poster>
 					<span>{"Currently I’m at Notion on Brand Marketing telling the story of tools for work."}</span>
 					<Poster>
-						<Image src={"/notion-office.jpg"} alt={""} layout="fill" objectFit="cover" />
+						<Image
+							src={"https://media.giphy.com/media/dVo2DTg9dVNiBQrkN6/giphy.gif"}
+							alt={""}
+							layout="fill"
+							objectFit="cover"
+						/>
 					</Poster>
 					<span>
 						{`San Francisco — specifically the delightful neighborhood of Cole Valley — is where I call home.`}
 					</span>
 					<Poster>
 						<Image
-							src={"https://media.giphy.com/media/4GmVM1KT157CfsP5AY/giphy-downsized-large.gif"}
+							src={"https://media.giphy.com/media/9Hn5DiVGb74klPp29s/giphy-downsized.gif"}
 							alt={""}
 							layout="fill"
 							objectFit="cover"
@@ -83,7 +49,7 @@ export const Hero = () => {
 					</span>
 					<Poster>
 						<Image
-							src={"https://media.giphy.com/media/4ayiIWaq2VULC/giphy.gif"}
+							src={"https://media.giphy.com/media/JppxLdTyGoP4rpR0CD/giphy.gif"}
 							alt={""}
 							layout="fill"
 							objectFit="cover"

@@ -5,6 +5,7 @@ export const Navigation = () => {
 	return (
 		<>
 			<section className={"mast"}>
+				<span>{"Tanner"}</span>
 				<nav>
 					<Link href={"/"}>
 						<a>{"Home"}</a>
@@ -12,41 +13,42 @@ export const Navigation = () => {
 					<Link href={"/blog"}>
 						<a>{"Blog"}</a>
 					</Link>
-					<Link href={"/about"}>
-						<a>{"About"}</a>
-					</Link>
 				</nav>
 			</section>
 			<style jsx>{`
 				.mast {
 					height: auto;
 					position: sticky;
+					display: flex;
+					flex-direction: row;
+					align-content: center;
+					align-items: center;
 					top: 0;
-					width: 100%;
+					max-width: 100%;
 					box-sizing: border-box;
-					padding: 0 1.5rem 0;
-					margin: 0 auto;
+					padding: 0;
+					margin: 0 1.5rem;
 					background: var(--page-background);
 					z-index: 1001;
+					border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 				}
 				.mast nav {
 					display: flex;
 					flex-direction: row;
 					flex-wrap: wrap;
 					align-items: center;
-					justify-content: flex-start;
+					justify-content: flex-end;
 					box-sizing: border-box;
 					width: 100%;
 					height: 100%;
-					gap: 1em;
-					padding: 0.5em 0 0.75em;
-					border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+					gap: 1.25em;
+					padding: 1em 0;
 				}
-				.mast nav a {
+				.mast * {
 					text-decoration: none;
 					font-weight: 400;
 					font-size: 1rem;
-					font-family: "ibm-plex-mono";
+					font-family: "adonis-web";
 				}
 
 				.mast nav a:last-of-type:after {

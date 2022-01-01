@@ -23,12 +23,10 @@ export default function Index({ posts }) {
 		<>
 			<Head>
 				<title>Hello, I&rsquo;m Tanner</title>
-				<meta name="title" content="Hello, I'm Tanner" />
+				<meta name="title" content="Howdy, I'm Tanner" />
 				<meta
 					name="description"
-					content="a Front End Engineer living in San Francisco. I&rsquo;m
-						currently at Notion telling the story of toolmaking for the
-						future."
+					content="Howdy, I’m Tanner — a real person on the internet.I’m also a Front End Engineer motivated by design thinking and story telling."
 				/>
 				<meta name="keywords" content="Tanner Godarzi, Tanner, Notion, Dropbox, black ops" />
 			</Head>
@@ -37,7 +35,7 @@ export default function Index({ posts }) {
 				<Navigation />
 				<Hero />
 				<article className="grid">
-					<GridElement column={4} columnSpan={4} row={2} rowSpan={6}>
+					<GridElement column={4} columnSpan={4} row={1} rowSpan={6}>
 						<Image
 							src={"/tanner-foto.jpeg"}
 							layout="fill"
@@ -46,7 +44,7 @@ export default function Index({ posts }) {
 							alt=""
 						/>
 					</GridElement>
-					<GridElement column={9} columnSpan={5} row={2} rowSpan={4}>
+					<GridElement column={9} columnSpan={5} row={1} rowSpan={4}>
 						<h2>{"Not actually a cowboy"}</h2>
 						<p>
 							{`Ace Activity Book
@@ -141,6 +139,7 @@ Seaworthy (New Orleans), King's Highway
 			<style jsx>{`
 				.grid {
 					display: grid;
+					display: none;
 					grid-template-columns: repeat(16, calc(100vw / 16 - 0.5rem));
 					grid-template-rows: repeat(48, calc(100vw / 16 - 0.5rem));
 					gap: 0.5rem;

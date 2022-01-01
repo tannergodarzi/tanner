@@ -4,6 +4,7 @@ import { Navigation } from "../../components/navigation";
 import { Text } from "../../components/text";
 import { Footer } from "../../components/footer";
 import { getNotionBlocks, getNotionPage } from "../../helpers/notionHelpers";
+import Link from "next/link";
 
 export async function getStaticProps() {
 	const posts = await getNotionBlocks();
@@ -50,12 +51,23 @@ export default function Index({ posts, page }) {
 							new Date(created_time)
 						);
 						return (
-							<section key={id} className="entry">
-								<h2 className="entry-title">
-									<a href={`blog/${sluggify(child_page.title)}`}>{child_page.title}</a>
-								</h2>
-								<time dateTime={created_time}>{`Published ${publishedDate}`}</time>
-							</section>
+							<article key={id} className="entry">
+								<header>
+									<h2 className="entry-title">{child_page.title}</h2>
+									<time dateTime={created_time}>{`Published ${publishedDate}`}</time>
+								</header>
+								<p>
+									{
+										"It’s been almost a year since the lights went out on Broadway. It goes without saying that New York City’s arts and culture sector has been decimated by..."
+									}
+								</p>
+
+								<footer>
+									<Link href={`blog/${sluggify(child_page.title)}`}>
+										<a>{"Read more"}</a>
+									</Link>
+								</footer>
+							</article>
 						);
 					})}
 				</section>
@@ -70,7 +82,7 @@ export default function Index({ posts, page }) {
 					padding: 0 1.5rem;
 					margin: 4rem auto;
 				}
-				.container header {
+				.container > header {
 					text-align: center;
 					margin-bottom: 1em;
 				}
@@ -81,25 +93,21 @@ export default function Index({ posts, page }) {
 				.entry {
 					display: flex;
 					flex-direction: column;
-					text-align: center;
+					text-align: left;
 					width: 100%;
 					margin-bottom: 4em;
-					font-size: 0.85rem;
 				}
-				.entry-title {
-					margin-bottom: 0.35em;
-				}
-				.entry-title a {
-					text-decoration: none;
-					display: block;
-					width: 100%;
-					transition: opacity 100ms ease;
-				}
+
 				.entry time {
+					font: var(--font-annotation);
+					font-size: 0.75em;
 					opacity: 0.75;
 				}
-				.entry-title a:hover,
-				.entry-title a:focus {
+				.entry header {
+					margin-bottom: 0.75em;
+				}
+				.entry a:hover,
+				.entry a:focus {
 					opacity: 0.7;
 				}
 			`}</style>

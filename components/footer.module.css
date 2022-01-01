@@ -9,10 +9,10 @@
 .footerHeader {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5em;
+	gap: 0.25em;
 	font: var(--font-annotation);
 	font-weight: 400;
-	margin-bottom: 0.75em;
+	margin-bottom: 0;
 }
 
 .footerNav {
