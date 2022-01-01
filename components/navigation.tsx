@@ -5,10 +5,9 @@ export const Navigation = () => {
 	return (
 		<>
 			<section className={"mast"}>
-				<span>{"Tanner"}</span>
 				<nav>
 					<Link href={"/"}>
-						<a>{"Home"}</a>
+						<a>{"Tanner"}</a>
 					</Link>
 					<Link href={"/blog"}>
 						<a>{"Blog"}</a>
@@ -22,6 +21,7 @@ export const Navigation = () => {
 					display: flex;
 					flex-direction: row;
 					align-content: center;
+
 					align-items: center;
 					top: 0;
 					max-width: 100%;
@@ -37,7 +37,7 @@ export const Navigation = () => {
 					flex-direction: row;
 					flex-wrap: wrap;
 					align-items: center;
-					justify-content: flex-end;
+					justify-content: space-between;
 					box-sizing: border-box;
 					width: 100%;
 					height: 100%;
@@ -50,11 +50,6 @@ export const Navigation = () => {
 					font-size: 1rem;
 					font-family: "adonis-web";
 				}
-
-				.mast nav a:last-of-type:after {
-					display: none;
-				}
-
 				.mast nav a:hover {
 					text-decoration: underline;
 				}
