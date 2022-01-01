@@ -57,12 +57,12 @@ export default function Index({ page, database }) {
 								</header>
 								<p>
 									<Text value={Subtitle.rich_text} />
+									<footer>
+										<Link href={`/blog/${sluggify(Slug.url)}`}>
+											<a>{"Read more →"}</a>
+										</Link>
+									</footer>
 								</p>
-								<footer>
-									<Link href={`/blog/${sluggify(Slug.url)}`}>
-										<a>{"Read more →"}</a>
-									</Link>
-								</footer>
 							</section>
 						);
 					})}
