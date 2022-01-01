@@ -13,6 +13,8 @@ export const Hero = () => {
 							<Image
 								src={"https://media.giphy.com/media/QyDfZ9KyINz6Tnoj02/giphy-downsized.gif"}
 								alt={""}
+								width={480}
+								height={360}
 								layout="fill"
 								objectFit="cover"
 								quality={75}
@@ -23,6 +25,8 @@ export const Hero = () => {
 							<Image
 								src={"https://media.giphy.com/media/kvl2YhR110qsBrHid2/giphy-downsized.gif"}
 								alt={""}
+								width={480}
+								height={360}
 								layout="fill"
 								objectFit="cover"
 								quality={75}
@@ -45,6 +49,8 @@ export const Hero = () => {
 							<Image
 								src={"https://media.giphy.com/media/9Hn5DiVGb74klPp29s/giphy-downsized.gif"}
 								alt={""}
+								width={480}
+								height={360}
 								layout="fill"
 								objectFit="cover"
 								quality={75}
@@ -59,6 +65,8 @@ export const Hero = () => {
 							<Image
 								src={"https://media.giphy.com/media/JppxLdTyGoP4rpR0CD/giphy-downsized..gif"}
 								alt={""}
+								width={480}
+								height={360}
 								layout="fill"
 								objectFit="cover"
 								quality={75}
