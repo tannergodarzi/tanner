@@ -3,42 +3,35 @@ import { sluggify } from "../../helpers/urlHelpers";
 import { Navigation } from "../../components/navigation";
 import { Text } from "../../components/text";
 import { Footer } from "../../components/footer";
-import { getNotionBlocks, getNotionPage, getNotionDatabase } from "../../helpers/notionHelpers";
+import { getNotionPage, getNotionDatabase } from "../../helpers/notionHelpers";
 import Link from "next/link";
 
 export async function getStaticProps() {
-	const posts = await getNotionBlocks();
 	const page = await getNotionPage();
 	const database = await getNotionDatabase();
 
 	return {
 		props: {
 			database,
-			posts,
 			page,
 		},
 		revalidate: 60,
 	};
 }
 
-export default function Index({ posts, page, database }) {
+export default function Index({ page, database }) {
 	return (
 		<>
 			<Head>
 				<title>Tanner Godarzi&rsquo;s Blog</title>
 				<meta name="title" content="Tanner Godarzi&rsquo;s Blog" />
-				<meta
-					name="description"
-					content="a Front End Engineer living in San Francisco. I&rsquo;m
-						currently at Notion telling the story of toolmaking for the
-						future."
-				/>
+				<meta name="description" content="Thoughts..." />
 				<meta name="keywords" content="Tanner Godarzi, Tanner, Notion, Dropbox, black ops" />
 			</Head>
 
 			<main>
 				<Navigation />
-				<section className="container">
+				<article className="container">
 					<header>
 						<h1>
 							<Text value={page.properties.title.title} />
@@ -51,7 +44,7 @@ export default function Index({ posts, page, database }) {
 							dateStyle: "long",
 						}).format(new Date(Published.date.start));
 						return (
-							<article className="entry" key={id}>
+							<section className="entry" key={id}>
 								<header>
 									<h2 className="entry-title">
 										<Link href={`/blog/${sluggify(Slug.url)}`}>
@@ -70,10 +63,10 @@ export default function Index({ posts, page, database }) {
 										<a>{"Read more →"}</a>
 									</Link>
 								</footer>
-							</article>
+							</section>
 						);
 					})}
-				</section>
+				</article>
 				<Footer />
 			</main>
 			<style jsx>{`
