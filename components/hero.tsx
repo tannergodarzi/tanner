@@ -65,7 +65,7 @@ export const Hero = () => {
 						</span>
 						<Poster>
 							<Image
-								src={"https://media.giphy.com/media/JppxLdTyGoP4rpR0CD/giphy-downsized..gif"}
+								src={"https://media.giphy.com/media/JppxLdTyGoP4rpR0CD/giphy.gif"}
 								alt={""}
 								width={480}
 								height={360}
