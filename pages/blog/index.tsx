@@ -28,7 +28,7 @@ export default function Index({ database }) {
 			<Navigation />
 			<article className="container">
 				<header>
-					<h1>{"Blog"}</h1>
+					<h1>{"Select Writing"}</h1>
 				</header>
 				{database.map((entry) => {
 					const { id, properties } = entry;
@@ -77,7 +77,7 @@ export default function Index({ database }) {
 				.entry {
 					display: flex;
 					flex-direction: column;
-					text-align: left;
+					text-align: center;
 					width: 100%;
 					margin-bottom: 4em;
 				}
