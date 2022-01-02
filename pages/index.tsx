@@ -13,22 +13,10 @@ export default function Index() {
 					name="description"
 					content="I’m also a Front End Engineer motivated by design thinking and story telling."
 				/>
-				<meta name="keywords" content="Tanner Godarzi, Tanner, Notion, Dropbox, black ops" />
 			</Head>
-
-			<main>
-				<Navigation />
-				<Hero />
-				<Footer />
-			</main>
-			<style jsx>{`
-				main {
-					min-height: 100vh;
-					display: flex;
-					flex-direction: column;
-					position: relative;
-				}
-			`}</style>
+			<Navigation />
+			<Hero />
+			<Footer />
 		</>
 	);
 }

@@ -23,49 +23,41 @@ export default function Index({ database }) {
 				<title>Tanner&rsquo;s Blog</title>
 				<meta name="title" content="Tanner Godarzi&rsquo;s Blog" />
 				<meta name="description" content="Thoughts..." />
-				<meta name="keywords" content="Tanner Godarzi, Tanner, Notion, Dropbox, black ops" />
 			</Head>
 
-			<main>
-				<Navigation />
-				<article className="container">
-					<header>
-						<h1>{"Blog"}</h1>
-					</header>
-					{database.map((entry) => {
-						const { id, properties } = entry;
-						const { Published, Name, Slug, Subtitle } = properties;
-						const publishedDate = new Intl.DateTimeFormat("en-US", {
-							dateStyle: "long",
-						}).format(new Date(Published.date.start));
-						return (
-							<section className="entry" key={id}>
-								<Link href={`/blog/${sluggify(Slug.url)}`}>
-									<a>
-										<header>
-											<h2 className="entry-title">
-												<Text value={Name.title} />
-											</h2>
-											<time dateTime={publishedDate}>{`Published ${publishedDate}`}</time>
-										</header>
-										<p>
-											<Text value={Subtitle.rich_text} />
-										</p>
-									</a>
-								</Link>
-							</section>
-						);
-					})}
-				</article>
-				<Footer />
-			</main>
+			<Navigation />
+			<article className="container">
+				<header>
+					<h1>{"Blog"}</h1>
+				</header>
+				{database.map((entry) => {
+					const { id, properties } = entry;
+					const { Published, Name, Slug, Subtitle } = properties;
+					const publishedDate = new Intl.DateTimeFormat("en-US", {
+						dateStyle: "long",
+					}).format(new Date(Published.date.start));
+					return (
+						<section className="entry" key={id}>
+							<Link href={`/blog/${sluggify(Slug.url)}`}>
+								<a>
+									<header>
+										<h2 className="entry-title">
+											<Text value={Name.title} />
+										</h2>
+										<time dateTime={publishedDate}>{`Published ${publishedDate}`}</time>
+									</header>
+									<p>
+										<Text value={Subtitle.rich_text} />
+									</p>
+								</a>
+							</Link>
+						</section>
+					);
+				})}
+			</article>
+			<Footer />
+
 			<style jsx>{`
-				main {
-					min-height: 100vh;
-					display: flex;
-					flex-direction: column;
-					position: relative;
-				}
 				.container {
 					display: flex;
 					flex-direction: column;
@@ -81,7 +73,6 @@ export default function Index({ database }) {
 				}
 				.container h1 {
 					font: var(--font-presentation);
-					text-transform: uppercase;
 				}
 				.entry {
 					display: flex;

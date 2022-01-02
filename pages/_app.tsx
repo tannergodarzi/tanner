@@ -10,7 +10,17 @@ function App({ Component, pageProps }) {
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			</Head>
-			<Component {...pageProps} />
+			<main>
+				<Component {...pageProps} />
+			</main>
+			<style jsx>{`
+				main {
+					min-height: 100vh;
+					display: flex;
+					flex-direction: column;
+					position: relative;
+				}
+			`}</style>
 		</>
 	);
 }

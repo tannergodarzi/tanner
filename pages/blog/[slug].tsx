@@ -60,41 +60,28 @@ export default function Slug(props) {
 			<Head>
 				<title>{pageTitle} | Tanner&rsquo;s Blog</title>
 				<meta name="title" content={`Blog | ${pageTitle}`} />
-				<meta
-					name="description"
-					content="a Front End Engineer living in San Francisco. I&rsquo;m
-						currently at Notion telling the story of toolmaking for the
-						future."
-				/>
-				<meta name="keywords" content="Tanner Godarzi, Tanner, Notion, Dropbox, black ops" />
+				<meta name="description" content="Thoughts..." />
 			</Head>
 
-			<main>
-				<Navigation />
-				<article>
-					<header>
-						<h1>{pageTitle}</h1>
-						<time dateTime={meta.Published.date.start}>
-							{`Published ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
-								new Date(meta.Published.date.start)
-							)}`}
-						</time>
-					</header>
-					<section>
-						{blocks.map((block) => {
-							return <Block block={block} key={block.id} />;
-						})}
-					</section>
-				</article>
-				<Footer />
-			</main>
+			<Navigation />
+			<article>
+				<header>
+					<h1>{pageTitle}</h1>
+					<time dateTime={meta.Published.date.start}>
+						{`Published ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
+							new Date(meta.Published.date.start)
+						)}`}
+					</time>
+				</header>
+				<section>
+					{blocks.map((block) => {
+						return <Block block={block} key={block.id} />;
+					})}
+				</section>
+			</article>
+			<Footer />
+
 			<style jsx>{`
-				main {
-					min-height: 100vh;
-					display: flex;
-					flex-direction: column;
-					position: relative;
-				}
 				article {
 					flex-direction: column;
 					width: min(100%, 45rem);
