@@ -230,8 +230,8 @@ function BioFollowUp() {
 				<h3>{"Things I like"}</h3>
 				<p>
 					<ul>
-						<li>{"Ace Hotel"}</li>
 						<li>{"Deserts of the American Southwest"}</li>
+						<li>{"Ace Hotel"}</li>
 						<li>{"Meandering with a film camera"}</li>
 						<li>{"Land-use conspiracy theories"}</li>
 						<li>
@@ -259,7 +259,6 @@ function BioFollowUp() {
 					margin: 1em auto 0;
 				}
 				li {
-					font-size: 0.8em;
 					display: inline;
 				}
 				li a {
