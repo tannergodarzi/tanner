@@ -62,7 +62,7 @@ const Poster = ({ children }: PropsWithChildren<PosterProps>) => {
 				.picture-expanded {
 					width: 20rem;
 					height: 20rem;
-					transform: translate(calc(-50% + 45px), calc(-50% + 45px));
+					transform: translate(-50%, -33%);
 					transform-origin: center center;
 					position: fixed;
 					z-index: 2;
