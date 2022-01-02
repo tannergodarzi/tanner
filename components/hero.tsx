@@ -15,7 +15,6 @@ export const Hero = () => {
 								alt={""}
 								width={480}
 								height={360}
-								layout="fill"
 								objectFit="cover"
 								quality={75}
 							/>
@@ -27,7 +26,6 @@ export const Hero = () => {
 								alt={""}
 								width={480}
 								height={360}
-								layout="fill"
 								objectFit="cover"
 								quality={75}
 							/>
@@ -39,7 +37,6 @@ export const Hero = () => {
 								alt={""}
 								width={480}
 								height={360}
-								layout="fill"
 								objectFit="cover"
 								quality={75}
 							/>
@@ -53,7 +50,6 @@ export const Hero = () => {
 								alt={""}
 								width={480}
 								height={360}
-								layout="fill"
 								objectFit="cover"
 								quality={75}
 							/>
@@ -69,7 +65,6 @@ export const Hero = () => {
 								alt={""}
 								width={480}
 								height={360}
-								layout="fill"
 								objectFit="cover"
 								quality={75}
 							/>

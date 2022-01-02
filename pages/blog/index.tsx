@@ -3,23 +3,20 @@ import { sluggify } from "../../helpers/urlHelpers";
 import { Navigation } from "../../components/navigation";
 import { Text } from "../../components/text";
 import { Footer } from "../../components/footer";
-import { getNotionPage, getNotionDatabase } from "../../helpers/notionHelpers";
+import { getNotionDatabase } from "../../helpers/notionHelpers";
 import Link from "next/link";
 
 export async function getStaticProps() {
-	const page = await getNotionPage();
 	const database = await getNotionDatabase();
-
 	return {
 		props: {
 			database,
-			page,
 		},
 		revalidate: 60,
 	};
 }
 
-export default function Index({ page, database }) {
+export default function Index({ database }) {
 	return (
 		<>
 			<Head>
@@ -33,9 +30,7 @@ export default function Index({ page, database }) {
 				<Navigation />
 				<article className="container">
 					<header>
-						<h1>
-							<Text value={page.properties.title.title} />
-						</h1>
+						<h1>{"Blog"}</h1>
 					</header>
 					{database.map((entry) => {
 						const { id, properties } = entry;
