@@ -7,47 +7,24 @@ export const Grid = () => {
 	return (
 		<>
 			<section className="grid">
-				<GridElement column={4} columnSpan={4} row={1} rowSpan={6}>
-					<Image src={"/tanner-foto.jpeg"} layout="fill" objectFit="cover" objectPosition="center" alt="" />
+				<GridElement column={4} columnSpan={4} row={1} rowSpan={4}>
+					<picture>
+						<span>
+							<Image
+								src={"/tanner-foto.jpeg"}
+								layout="fill"
+								objectFit="cover"
+								objectPosition="center"
+								alt=""
+							/>
+						</span>
+					</picture>
 				</GridElement>
 				<GridElement column={9} columnSpan={5} row={1} rowSpan={4}>
-					<h2>{"Not actually a cowboy"}</h2>
-					<p>
-						{`Ace Activity Book
- Connect the dots, color inside (or outside) the lines, draw
-your essence. Fun pages from our pals the Haas Brothers,
-Nathaniel Russell, Andy Plants and yours truly, Ace Hotel.
-Recipes
-Favorites, classics and signature dishes from our culinary
-partners
-at Bar Marilou
-(New Orleans), Best Girl (Los Angeles),
-The Breslin (New York City), City Mouse (Chicago), Josephine
-Estelle (New Orleans),
-Seaworthy (New Orleans), King's Highway
-(Palm Springs), Hoi Polloi (Iondon), and Whitfield (Pittsburgh)`}
-					</p>
-					<Link href={"/about"}>
-						<a>{"Read more"}</a>
-					</Link>
+					<Bio />
 				</GridElement>
-				<GridElement column={13} columnSpan={3} row={28} rowSpan={4}>
-					<section className="frame">
-						<h3>{"Things I like"}</h3>
-						<p>
-							{"Every Ace Hotel"}
-							<br />
-							{"Deserts of the American Southwest"}
-							<br />
-
-							<Link href="https://twitter.com/ninlive/status/1183382334868983814">
-								<a>{"This video of Trent Reznor starting a Nine Inch Nails set"}</a>
-							</Link>
-							<br />
-							{"Land-use conspiracy theories and urban planning"}
-							<br />
-						</p>
-					</section>
+				<GridElement column={6} columnSpan={3} row={6} rowSpan={4}>
+					<BioFollowUp />
 				</GridElement>
 
 				<GridElement column={11} columnSpan={5} row={6} rowSpan={6}>
@@ -60,7 +37,7 @@ Seaworthy (New Orleans), King's Highway
 					/>
 				</GridElement>
 
-				<GridElement column={2} columnSpan={5} row={9} rowSpan={6}>
+				<GridElement column={2} columnSpan={5} row={10} rowSpan={6}>
 					<section className="entry frame">
 						<span>
 							<Image
@@ -94,10 +71,10 @@ Seaworthy (New Orleans), King's Highway
 					<Image src={"/card.jpg"} layout="fill" alt="" objectFit="contain" objectPosition={"center top"} />
 				</GridElement>
 			</section>
-			<style jsx>{`
+			<style global jsx>{`
 				.grid {
+					margin-top: 10vh;
 					display: grid;
-					display: none;
 					grid-template-columns: repeat(16, calc(100vw / 16 - 0.5rem));
 					grid-template-rows: repeat(48, calc(100vw / 16 - 0.5rem));
 					gap: 0.5rem;
@@ -105,9 +82,12 @@ Seaworthy (New Orleans), King's Highway
 					--minFontSize: 12px;
 					--maxFontSize: 32px;
 					--scaler: 1vw;
+					--font-body: normal normal 400 0.8rem/1.4em "ibm-plex-mono", sans-serif;
 				}
 				.grid p,
+				.grid ul,
 				.grid a:not(.special) {
+					font: var(--font-body);
 					line-height: 1.3em;
 					font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
 				}
@@ -116,6 +96,23 @@ Seaworthy (New Orleans), King's Highway
 				}
 				.grid h3 {
 					font-size: calc(1.6 * clamp(var(--minFontSize), var(--scaler), var(--maxFontSize)));
+				}
+				.grid picture {
+					padding: 0.5em;
+					box-sizing: border-box;
+					background: var(--color-lightest);
+					display: block;
+					width: 100%;
+					height: 100%;
+					position: relative;
+					-webkit-box-shadow: -1px 5px 15px 6px rgba(0, 0, 0, 0.1);
+					box-shadow: -1px 5px 15px 6px rgba(0, 0, 0, 0.1);
+				}
+				.grid picture span {
+					display: block;
+					position: relative;
+					width: 100%;
+					height: 100%;
 				}
 				.circle {
 					color: var(--text-color);
@@ -195,3 +192,87 @@ Seaworthy (New Orleans), King's Highway
 		</>
 	);
 };
+
+/**
+ * Local Components
+ */
+
+function Bio() {
+	return (
+		<>
+			<h2>{"Not actually a cowboy"}</h2>
+			<p>
+				{`Ace Activity Book
+ Connect the dots, color inside (or outside) the lines, draw
+your essence. Fun pages from our pals the Haas Brothers,
+Nathaniel Russell, Andy Plants and yours truly, Ace Hotel.
+Recipes
+Favorites, classics and signature dishes from our culinary
+partners
+at Bar Marilou
+(New Orleans), Best Girl (Los Angeles),
+The Breslin (New York City), City Mouse (Chicago), Josephine
+Estelle (New Orleans),
+Seaworthy (New Orleans), King's Highway
+(Palm Springs), Hoi Polloi (Iondon), and Whitfield (Pittsburgh)`}
+			</p>
+			<Link href={"/about"}>
+				<a>{"Read more"}</a>
+			</Link>
+			<style jsx>{``}</style>
+		</>
+	);
+}
+function BioFollowUp() {
+	return (
+		<>
+			<section>
+				<h3>{"Things I like"}</h3>
+				<p>
+					<ul>
+						<li>{"Ace Hotel"}</li>
+						<li>{"Deserts of the American Southwest"}</li>
+						<li>{"Meandering with a film camera"}</li>
+						<li>{"Land-use conspiracy theories"}</li>
+						<li>
+							<Link href="https://twitter.com/ninlive/status/1183382334868983814">
+								<a>{"This video of Trent Reznor starting a Nine Inch Nails set"}</a>
+							</Link>
+						</li>
+					</ul>
+				</p>
+			</section>
+			<style jsx>{`
+				section {
+					padding: 1em;
+					border: 2px dotted var(--color-dark);
+				}
+				section * {
+					color: var(--color-dark);
+				}
+				p {
+					margin: 0;
+				}
+				ul {
+					list-style-type: none;
+
+					margin: 1em auto 0;
+				}
+				li {
+					font-size: 0.8em;
+					display: inline;
+				}
+				li a {
+					font: inherit;
+				}
+				li:after {
+					content: "/";
+					margin: 0 0.2em;
+				}
+				li:last-of-type:after {
+					display: none;
+				}
+			`}</style>
+		</>
+	);
+}

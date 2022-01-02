@@ -15,6 +15,7 @@ h1 {
 	margin: 0 0 1.8rem 0;
 	line-height: 1em;
 	letter-spacing: -0.01em;
+	text-transform: capitalize;
 }
 h2 {
 	font: var(--font-display);
@@ -22,6 +23,7 @@ h2 {
 	margin: 0 0 0.1em;
 	line-height: 1, 1em;
 	letter-spacing: -0.02em;
+	text-transform: capitalize;
 }
 h3 {
 	font: var(--font-display);
@@ -29,6 +31,7 @@ h3 {
 	margin: 0 0;
 	line-height: 1.1em;
 	letter-spacing: -0.02em;
+	text-transform: capitalize;
 }
 h5 {
 	font-size: 0.8rem;
@@ -37,11 +40,13 @@ h6 {
 	font-size: 0.6rem;
 }
 p {
-		font-size: 1rem;
+	font: inherit;
+	font-size: 1rem;
 	line-height: 1.4em;
 	margin: 0.2rem 0 0.6rem;
 }
 a {
+	font: inherit;
 	font-weight: 700;
 }
 em {
