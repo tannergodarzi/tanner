@@ -1,87 +1,60 @@
 import React, { PropsWithChildren } from "react";
 import classNames from "classnames";
-import styles from "./text.module.css";
 
 interface TextProps {
 	value: any;
-}
-
-function prepend(value, array) {
-	var newArray = array.slice();
-	newArray.unshift(value);
-	return newArray;
 }
 
 export const Text = ({ value }: PropsWithChildren<TextProps>) => {
 	return value.map((block) => {
 		const { annotations, plain_text, text } = block;
 
-		if (text.link) {
-			return (
-				<a
-					href={text.link.url}
-					className={classNames(styles.text, {
-						[styles.text_bold]: annotations.bold,
-						[styles[`text_color_${annotations.color}`]]: annotations.color,
-						[styles.text_italic]: annotations.italic,
-						[styles.text_strikethrough]: annotations.strikethrough,
-						[styles.text_underline]: annotations.underline,
-					})}
-				>
-					{text.content}
-				</a>
-			);
-		}
-
-		let wrappedElement = [text.content];
-
-		if (annotations.bold) {
-			wrappedElement = prepend(`<b>`, wrappedElement);
-			wrappedElement.push(`</b>`);
-		}
-
-		if (annotations.strikethrough) {
-			wrappedElement = prepend(`<s>`, wrappedElement);
-			wrappedElement.push(`</s>`);
-		}
-
-		if (annotations.italic) {
-			wrappedElement = prepend(`<em>`, wrappedElement);
-			wrappedElement.push(`</em>`);
-		}
-
-		if (annotations.underline) {
-			wrappedElement = prepend(`<u>`, wrappedElement);
-			wrappedElement.push(`</u>`);
-		}
-
-		if (annotations.code) {
-			wrappedElement = prepend(`<code>`, wrappedElement);
-			wrappedElement.push(`</code>`);
-		}
+		const classes = classNames("text", {
+			["text-bold"]: annotations.bold,
+			[`text-color-${annotations.color}`]: annotations.color,
+			["text-italic"]: annotations.italic,
+			["text-strikethrough"]: annotations.strikethrough,
+			["text-underline"]: annotations.underline,
+			["text-code"]: annotations.code,
+		});
 
 		return (
 			<>
-				<span
-					key={plain_text}
-					className={classNames(styles.text, {
-						["text-bold"]: annotations.bold,
-						[styles[`text_color_${annotations.color}`]]: annotations.color,
-						[styles.text_italic]: annotations.italic,
-						[styles.text_strikethrough]: annotations.strikethrough,
-						[styles.text_underline]: annotations.underline,
-					})}
-					dangerouslySetInnerHTML={{ __html: wrappedElement.join("") }}
-				/>
+				<span key={plain_text} className={classes}>
+					{text.link ? (
+						<a href={text.link.url}>{text.content}</a>
+					) : !annotations.code ? (
+						text.content
+					) : (
+						<code>{text.content}</code>
+					)}
+				</span>
 				<style jsx>{`
-					span {
+					.text {
+						font: inherit;
 						display: inline;
 						width: 100%;
 					}
-					.text {
-					}
 					.text-bold {
 						font-weight: 700;
+					}
+					.text-italic {
+						font-style: italic;
+					}
+					.text-strikethrough {
+						text-decoration: line-through;
+					}
+					.text-underline {
+						text-decoration: underline;
+					}
+					.text-underline.text-strikethrough {
+						text-decoration: underline line-through;
+					}
+					.text-code {
+						font: var(--font-annotation);
+						background: rgba(255, 255, 255, 0.1);
+						padding: 0.3em;
+						border-radius: 0.4em;
 					}
 				`}</style>
 			</>

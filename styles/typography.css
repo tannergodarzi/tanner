@@ -6,8 +6,9 @@ body {
 	font-kerning: normal;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
-* {
+body * {
 	font: var(--font-body);
+	font-size: 1rem;
 }
 h1 {
 	font: var(--font-display);
@@ -40,8 +41,6 @@ h6 {
 	font-size: 0.6rem;
 }
 p {
-	font: inherit;
-	font-size: 1rem;
 	line-height: 1.4em;
 	margin: 0.2rem 0 0.6rem;
 }
@@ -52,6 +51,7 @@ a {
 em {
 	font-style: italic;
 }
+code,
 time {
 	font: var(--font-annotation);
 }
