@@ -6,10 +6,6 @@ body {
 	font-kerning: normal;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
-body * {
-	font: var(--font-body);
-	font-size: 1rem;
-}
 h1 {
 	font: var(--font-display);
 	font-size: 3.25rem;
@@ -40,7 +36,8 @@ h5 {
 h6 {
 	font-size: 0.6rem;
 }
-p {
+p,
+blockquote {
 	line-height: 1.4em;
 	margin: 0.2rem 0 0.6rem;
 }

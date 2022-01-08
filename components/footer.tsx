@@ -41,6 +41,8 @@ export const Footer = () => {
 					margin-top: auto;
 					width: 100%;
 					text-align: center;
+				}
+				footer * {
 					font: var(--font-annotation);
 					font-weight: 400;
 					font-size: 0.6rem;
