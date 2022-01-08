@@ -5,6 +5,7 @@ import { Text } from "../../components/text";
 import { Footer } from "../../components/footer";
 import { getNotionDatabase } from "../../helpers/notionHelpers";
 import Link from "next/link";
+import Image from "next/image";
 
 export async function getStaticProps() {
 	const database = await getNotionDatabase();
@@ -27,9 +28,18 @@ export default function Index({ database }) {
 
 			<Navigation />
 			<article className="container">
-				<header>
-					<h1>{"Select Writing"}</h1>
-				</header>
+				<section className="hero">
+					<h1>
+						<Image
+							src={"/newspaper.jpg"}
+							width={512}
+							height={407}
+							alt="Blog"
+							objectFit="cover"
+							objectPosition={"top center"}
+						/>
+					</h1>
+				</section>
 				{database.map((entry) => {
 					const { id, properties } = entry;
 					const { Published, Name, Slug, Subtitle } = properties;
@@ -68,11 +78,14 @@ export default function Index({ database }) {
 					padding: 0 1.5rem;
 					margin: 2rem auto 0;
 				}
-				.container > header {
+				.hero {
 					text-align: center;
+					position: relative;
+					margin-bottom: 2rem;
 				}
-				.container h1 {
-					font: var(--font-presentation);
+				.hero h1 {
+					font-size: 0;
+					margin: 0;
 				}
 				.entry {
 					display: flex;
@@ -85,10 +98,11 @@ export default function Index({ database }) {
 					margin-bottom: 0;
 				}
 				.entry time {
-					font-size: 0.75em;
+					font-size: 0.5em;
 					opacity: 0.75;
 				}
-				.entry header {
+				.entry header,
+				.entry header * {
 					margin-bottom: 0;
 				}
 				.entry a {

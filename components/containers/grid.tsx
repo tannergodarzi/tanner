@@ -7,7 +7,7 @@ export const Grid = () => {
 	return (
 		<>
 			<section className="grid">
-				<GridElement column={4} columnSpan={4} row={1} rowSpan={4}>
+				<GridElement column={6} columnSpan={3} row={1} rowSpan={4}>
 					<picture>
 						<span>
 							<Image
@@ -68,16 +68,16 @@ export const Grid = () => {
 				</GridElement>
 
 				<GridElement column={4} columnSpan={7} row={28} rowSpan={4}>
-					<Image src={"/card.jpg"} layout="fill" alt="" objectFit="contain" objectPosition={"center top"} />
+					<Image src={"/card.jpg"} layout="fill" alt="" objectFit="cover" objectPosition={"center top"} />
 				</GridElement>
 			</section>
 			<style global jsx>{`
 				.grid {
 					margin-top: 10vh;
 					display: grid;
-					grid-template-columns: repeat(16, calc(100vw / 16 - 0.5rem));
-					grid-template-rows: repeat(48, calc(100vw / 16 - 0.5rem));
-					gap: 0.5rem;
+					grid-template-columns: repeat(16, calc(100vw / 16 - 1rem));
+					grid-template-rows: repeat(48, calc(100vw / 16 - 1rem));
+					gap: 1rem;
 					width: 100vw;
 					--minFontSize: 12px;
 					--maxFontSize: 32px;
@@ -97,23 +97,7 @@ export const Grid = () => {
 				.grid h3 {
 					font-size: calc(1.6 * clamp(var(--minFontSize), var(--scaler), var(--maxFontSize)));
 				}
-				.grid picture {
-					padding: 0.5em;
-					box-sizing: border-box;
-					background: var(--color-lightest);
-					display: block;
-					width: 100%;
-					height: 100%;
-					position: relative;
-					-webkit-box-shadow: -1px 5px 15px 6px rgba(0, 0, 0, 0.1);
-					box-shadow: -1px 5px 15px 6px rgba(0, 0, 0, 0.1);
-				}
-				.grid picture span {
-					display: block;
-					position: relative;
-					width: 100%;
-					height: 100%;
-				}
+
 				.circle {
 					color: var(--text-color);
 					border: 4px solid var(--text-color);

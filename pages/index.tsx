@@ -17,7 +17,6 @@ export default function Index() {
 			</Head>
 			<Navigation />
 			<Hero />
-			<Grid />
 			<Footer />
 		</>
 	);
