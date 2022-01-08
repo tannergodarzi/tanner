@@ -54,11 +54,11 @@ export default function Index({ database }) {
 										<h2 className="entry-title">
 											<Text value={Name.title} />
 										</h2>
-										<time dateTime={publishedDate}>{`Published ${publishedDate}`}</time>
 									</header>
 									<p>
 										<Text value={Subtitle.rich_text} />
 									</p>
+									<time dateTime={publishedDate}>{`Published ${publishedDate}`}</time>
 								</a>
 							</Link>
 						</section>
@@ -98,7 +98,7 @@ export default function Index({ database }) {
 					margin-bottom: 0;
 				}
 				.entry time {
-					font-size: 0.5em;
+					font-size: 0.75em;
 					opacity: 0.75;
 				}
 				.entry header,
