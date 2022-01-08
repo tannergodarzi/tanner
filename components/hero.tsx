@@ -11,48 +11,32 @@ export const Hero = () => {
 						<span>{`— a real person on the internet.`}</span>
 						<Poster>
 							<Image
-								src={"https://media.giphy.com/media/QyDfZ9KyINz6Tnoj02/giphy-downsized.gif"}
+								src={"/gifs/skateboarder.gif"}
 								alt={""}
-								width={480}
-								height={360}
+								layout="fill"
 								objectFit="cover"
-								quality={75}
+								quality={50}
 							/>
 						</Poster>
 						<span>{`I’m also a Front End Engineer motivated by design thinking and story telling.`}</span>
 						<Poster>
-							<Image
-								src={"https://media.giphy.com/media/kvl2YhR110qsBrHid2/giphy-downsized.gif"}
-								alt={""}
-								width={480}
-								height={360}
-								objectFit="cover"
-								quality={75}
-							/>
+							<Image src={"/gifs/reading.gif"} alt={""} layout="fill" objectFit="cover" quality={50} />
 						</Poster>
 						<span>{"Currently I’m at Notion on Brand Marketing telling the story of tools for work."}</span>
 						<Poster>
 							<Image
-								src={"https://media.giphy.com/media/dVo2DTg9dVNiBQrkN6/giphy-downsized.gif"}
+								src={"/gifs/mission-control.gif"}
 								alt={""}
-								width={480}
-								height={360}
+								layout="fill"
 								objectFit="cover"
-								quality={75}
+								quality={50}
 							/>
 						</Poster>
 						<span>
 							{`San Francisco — specifically the delightful neighborhood of Cole Valley — is where I call home.`}
 						</span>
 						<Poster>
-							<Image
-								src={"https://media.giphy.com/media/9Hn5DiVGb74klPp29s/giphy-downsized.gif"}
-								alt={""}
-								width={480}
-								height={360}
-								objectFit="cover"
-								quality={75}
-							/>
+							<Image src={"/gifs/california.gif"} alt={""} layout="fill" objectFit="cover" quality={50} />
 						</Poster>
 						<span>
 							{
@@ -61,12 +45,11 @@ export const Hero = () => {
 						</span>
 						<Poster>
 							<Image
-								src={"https://media.giphy.com/media/JppxLdTyGoP4rpR0CD/giphy.gif"}
+								src={"/gifs/fruit-plate.gif"}
 								alt={""}
-								width={480}
-								height={360}
+								layout="fill"
 								objectFit="cover"
-								quality={75}
+								quality={50}
 							/>
 						</Poster>
 					</p>
