@@ -2,7 +2,6 @@ html,
 body {
 	font: var(--font-body);
 	font-size: clamp(1rem, 0.7996rem + 0.8909vw, 2rem);
-	font-feature-settings: "liga" 0;
 	font-kerning: normal;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
