@@ -27,12 +27,13 @@ export async function getStaticProps(context) {
 	const { Published, Name, Slug, Subtitle } = queryResponse.properties;
 	const pageTitle = Name.title[0].plain_text;
 	const blocks = blocksResponse;
-	const meta = { Published, Name, Slug, Subtitle };
+	const description = Subtitle.rich_text[0].plain_text;
+	const meta = { Published, Name, Slug, description };
 	return {
 		props: {
 			meta,
 			pageTitle,
-			Subtitle,
+			description,
 			blocks,
 		},
 		revalidate: 60,
@@ -55,16 +56,16 @@ export async function getStaticPaths() {
 }
 
 export default function Slug(props) {
-	const { blocks, meta, pageTitle, Subtitle } = props;
+	const { blocks, meta, pageTitle, description } = props;
 	return (
 		<>
 			<Head>
 				<title>{pageTitle} | Tanner&rsquo;s Blog</title>
 				<meta name="title" content={pageTitle} />
-				<meta name="description" content={Subtitle} />
+				<meta name="description" content={description} />
 
 				<meta name="og:title" content={pageTitle} />
-				<meta name="og:description" content={Subtitle} />
+				<meta name="og:description" content={description} />
 				<meta name="og:author" content={"Tanner Godarzi"} />
 				<meta
 					name="og:image"
@@ -73,7 +74,7 @@ export default function Slug(props) {
 
 				<meta name="twitter:card" content={"summary_large_image"} />
 				<meta name="twitter:title" content={pageTitle} />
-				<meta name="twitter:description" content={Subtitle} />
+				<meta name="twitter:description" content={description} />
 				<meta name="twitter:author" content={"@tannergodarzi"} />
 				<meta
 					name="twitter:image"
