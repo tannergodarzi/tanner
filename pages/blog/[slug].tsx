@@ -65,6 +65,10 @@ export default function Slug(props) {
 				<meta name="og:title" content={pageTitle} />
 				<meta name="og:description" content={Subtitle} />
 				<meta name="og:author" content={"Tanner Godarzi"} />
+
+				<meta name="twitter:title" content={pageTitle} />
+				<meta name="twitter:description" content={Subtitle} />
+				<meta name="twitter:author" content={"@tannergodarzi"} />
 			</Head>
 
 			<Navigation />
