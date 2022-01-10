@@ -54,13 +54,17 @@ export async function getStaticPaths() {
 }
 
 export default function Slug(props) {
-	const { blocks, meta, pageTitle } = props;
+	const { blocks, meta, pageTitle, Subtitle } = props;
 	return (
 		<>
 			<Head>
 				<title>{pageTitle} | Tanner&rsquo;s Blog</title>
-				<meta name="title" content={`Blog | ${pageTitle}`} />
-				<meta name="description" content="Thoughts..." />
+				<meta name="title" content={pageTitle} />
+				<meta name="description" content={Subtitle} />
+
+				<meta name="og:title" content={pageTitle} />
+				<meta name="og:description" content={Subtitle} />
+				<meta name="og:author" content={"Tanner Godarzi"} />
 			</Head>
 
 			<Navigation />
