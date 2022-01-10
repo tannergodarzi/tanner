@@ -35,7 +35,6 @@ export async function getStaticProps(context) {
 			blocks,
 		},
 		revalidate: 60,
-		fallback: "blocking",
 	};
 }
 

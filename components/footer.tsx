@@ -38,7 +38,7 @@ export const Footer = () => {
 				footer {
 					box-sizing: border-box;
 					padding: 1rem 1rem 1.2rem;
-					margin-top: auto;
+					margin-top: 3rem;
 					width: 100%;
 					text-align: center;
 				}
