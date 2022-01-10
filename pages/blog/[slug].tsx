@@ -32,6 +32,7 @@ export async function getStaticProps(context) {
 		props: {
 			meta,
 			pageTitle,
+			Subtitle,
 			blocks,
 		},
 		revalidate: 60,
