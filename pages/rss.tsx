@@ -30,7 +30,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             </description>
         </item>`;
 	});
-	const processedXml = `<?xml version="1.0" ?>
+	const processedXml = `<?xml version="1.0" encoding="UTF-8"?>
       <rss
         xmlns:dc="http://purl.org/dc/elements/1.1/"
         xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -39,9 +39,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       >
         <channel>
             <title><![CDATA[Select writings by Tanner Godarzi]]></title>
-            <link>https://tannergodarzi.com/blog</link>
+            <link>https://www.tannergodarzi.com/blog</link>
             <description>
-              <![CDATA[Howdy friend, I'm Tanner. These are thoughts and ramblings about technology and its cultural impact laced with observations of our world overlooked]]>
+              <![CDATA[Howdy friend, I’m Tanner. These are thoughts and ramblings about technology and its cultural impact. Occasionally observations of our world are laced in.]]>
             </description>
             <language>en</language>
             <lastBuildDate>${latestPostDate}</lastBuildDate>
