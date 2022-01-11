@@ -43,7 +43,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             <description>
               <![CDATA[Howdy friend, I’m Tanner. These are thoughts and ramblings about technology and its cultural impact. Occasionally observations of our world are laced in.]]>
             </description>
-            <language>en</language>
+            <language>en-us</language>
+            <copyright>${new Date().getFullYear()} All rights reserved.</copyright>
             <lastBuildDate>${latestPostDate}</lastBuildDate>
             ${rssItemsXml}
         </channel>
