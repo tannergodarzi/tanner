@@ -11,7 +11,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 	database.map((node: any) => {
 		const post = node.properties;
 		const postDate = Date.parse(post.date);
-		const postHref = `https://tannergodarzi.com/blog/${post.Slug.url}`;
+		const postHref = `https://www.tannergodarzi.com/blog/${post.Slug.url}`;
 
 		if (!latestPostDate || postDate > Date.parse(post.Published.date.start)) {
 			latestPostDate = post.Published.date.start;
