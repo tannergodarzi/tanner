@@ -25,7 +25,7 @@ export const Navigation = () => {
 					top: 0;
 					max-width: 100%;
 					box-sizing: border-box;
-					padding: 1rem;
+					padding: 1.5rem;
 					background: var(--page-background);
 					z-index: 1001;
 					border-bottom: 1px solid rgba(0, 0, 0, 0.2);
