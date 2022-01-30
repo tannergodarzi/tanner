@@ -26,12 +26,6 @@ export const Footer = () => {
 					<Link href={"https://github.com/tannergodarzi"}>
 						<a>{"GitHub"}</a>
 					</Link>
-					<Link href={"/rss"}>
-						<a>{"RSS"}</a>
-					</Link>
-					<Link href={"https://www.linkedin.com/in/tannergodarzi/"}>
-						<a>{"LinkedIn"}</a>
-					</Link>
 				</nav>
 			</footer>
 			<style jsx>{`
