@@ -70,15 +70,34 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 		case "image":
 			const { image } = block;
 			return (
-				<figure className={styles.image}>
-					{/* eslint-disable-next-line @next/next/no-img-element */}
-					<img src={image.file.url} alt={image.caption} />
-					{image.caption.length > 0 && (
-						<figcaption>
-							<Text value={image.caption} />
-						</figcaption>
-					)}
-				</figure>
+				<>
+					<figure className={"image"}>
+						{/* eslint-disable-next-line @next/next/no-img-element */}
+						<img src={image.file.url} alt={image.caption} />
+						{image.caption.length > 0 && (
+							<figcaption>
+								<Text value={image.caption} key={id} />
+							</figcaption>
+						)}
+					</figure>
+					<style jsx>{`
+						.image {
+							width: max(16rem, 100%);
+							margin: 0.2rem 0 1.5rem;
+							display: block;
+						}
+						.image img {
+							display: block;
+							height: auto;
+							width: 100%;
+						}
+						.image figcaption {
+							margin-top: 0.75em;
+							font: var(--font-annotation);
+							font-size: 0.6rem;
+						}
+					`}</style>
+				</>
 			);
 		case "embed":
 			return (

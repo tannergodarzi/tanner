@@ -1,11 +1,9 @@
 import Head from "next/head";
 import { Client } from "@notionhq/client";
 import { Block } from "../../components/block";
-import { PostData } from "../../helpers/notionTypes";
 import { Navigation } from "../../components/navigation";
-import { sluggify } from "../../helpers/urlHelpers";
 import { Footer } from "../../components/footer";
-import { getEntryFromNotionDatabase, getNotionDatabase } from "../../helpers/notionHelpers";
+import { getEntryFromNotionDatabase } from "../../helpers/notionHelpers";
 
 // Notion client
 const notion = new Client({
@@ -36,24 +34,8 @@ export async function getServerSideProps(context) {
 			description,
 			blocks,
 		},
-		//revalidate: 60,
 	};
 }
-
-/*export async function getStaticPaths() {
-	const database = await getNotionDatabase();
-
-	const paths = database
-		.map((entry: any) => {
-			return { params: { slug: sluggify(entry.properties.Slug.url) } };
-		})
-		.filter((a) => a !== undefined);
-
-	// We'll pre-render only these paths at build time.
-	// { fallback: blocking } will server-render pages
-	// on-demand if the path doesn't exist.
-	return { paths, fallback: "blocking" };
-}*/
 
 export default function Slug(props) {
 	const { blocks, meta, pageTitle, description } = props;
