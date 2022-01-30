@@ -12,7 +12,7 @@ const notion = new Client({
 	auth: process.env.NOTION_TOKEN,
 });
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
 	const queryResponse = (await getEntryFromNotionDatabase(context.params.slug)) as any;
 	if (!queryResponse) {
 		return {
@@ -36,11 +36,11 @@ export async function getStaticProps(context) {
 			description,
 			blocks,
 		},
-		revalidate: 60,
+		//revalidate: 60,
 	};
 }
 
-export async function getStaticPaths() {
+/*export async function getStaticPaths() {
 	const database = await getNotionDatabase();
 
 	const paths = database
@@ -53,7 +53,7 @@ export async function getStaticPaths() {
 	// { fallback: blocking } will server-render pages
 	// on-demand if the path doesn't exist.
 	return { paths, fallback: "blocking" };
-}
+}*/
 
 export default function Slug(props) {
 	const { blocks, meta, pageTitle, description } = props;
