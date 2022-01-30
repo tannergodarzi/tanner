@@ -38,7 +38,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         version="2.0"
       >
         <channel>
-            <title><![CDATA[Select writings by Tanner Godarzi]]></title>
+            <title><![CDATA[Tanner Godarzi]]></title>
             <link>https://www.tannergodarzi.com/blog</link>
             <description>
               <![CDATA[Howdy friend, I’m Tanner. These are thoughts and ramblings about technology and its cultural impact. Occasionally observations of our world are laced in.]]>

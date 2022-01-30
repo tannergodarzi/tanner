@@ -39,24 +39,24 @@ export const Grid = () => {
 
 				<GridElement column={2} columnSpan={5} row={10} rowSpan={6}>
 					<section className="entry frame">
-						<span>
-							<Image
-								src={"/newspaper.jpeg"}
-								layout="fill"
-								alt=""
-								objectFit="cover"
-								objectPosition={"top center"}
-							/>
-						</span>
+						<Image
+							src={"/newspaper.jpg"}
+							alt=""
+							objectFit="cover"
+							width={512}
+							height={407}
+							objectPosition={"top center"}
+						/>
+
 						<header>
-							<h3>{"Broadway from a Hotel Window"}</h3>
+							<h3>{"Candles Are Lit"}</h3>
 						</header>
 						<p>
 							{
-								"It’s been almost a year since the lights went out on Broadway. It goes without saying that New York City’s arts and culture sector has been decimated by the COVID-19 pandemic — but this past fall, we glimpsed a welcomed glimmer of the Theatre District’s greatness when Ace Hotel New York hosted a socially distanced dinner series called Broadway @ Breslin."
+								"Our age of technology has made every basic necessity an over complicated luxury wrestling us away from the small pleasures in the day-to-day."
 							}
 						</p>
-						<Link href={"/blog"}>
+						<Link href={"/blog/candles-are-lit"}>
 							<a>{"Read more"}</a>
 						</Link>
 					</section>
@@ -150,22 +150,17 @@ export const Grid = () => {
 					bottom: 4px;
 					border: 2px solid var(--text-color);
 				}
-				.entry span {
-					width: 100%;
-					display: block;
-					aspect-ratio: 4 / 2;
-					position: relative;
-					font-size: 0;
-				}
+
 				.entry {
 					display: flex;
-					flex: 0 0 auto;
+					flex: 1 0 auto;
 					gap: 1em;
 					width: 100%;
 					padding-bottom: 2rem;
 					flex-direction: column;
 					align-content: center;
 					text-align: center;
+					position: relative;
 				}
 
 				.entry * {

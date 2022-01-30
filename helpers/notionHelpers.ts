@@ -51,7 +51,7 @@ export async function getNotionDatabase(database_id: string = process.env.NOTION
 					{
 						property: "Active",
 						checkbox: {
-							equals: true,
+							equals: process.env.NODE_ENV !== "development" ? true : false,
 						},
 					},
 				],

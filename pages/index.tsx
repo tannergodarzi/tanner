@@ -17,6 +17,7 @@ export default function Index() {
 			</Head>
 			<Navigation />
 			<Hero />
+			{process.env.NODE_ENV === "development" && <Grid />}
 			<Footer />
 		</>
 	);
