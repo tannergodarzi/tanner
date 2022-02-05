@@ -41,6 +41,8 @@ export async function getServerSideProps(context) {
 export default function Slug(props) {
 	const router = useRouter();
 	const { blocks, meta, pageTitle, description } = props;
+	const canonicalUrl = typeof window === "undefined" ? "" : `${window.location.origin}${router.asPath}`;
+
 	return (
 		<>
 			<Head>
@@ -65,7 +67,7 @@ export default function Slug(props) {
 					content={"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpg&w=1080&q=75"}
 				/>
 
-				<link rel="canonical" href={router.asPath} />
+				<link rel="canonical" href={canonicalUrl} />
 			</Head>
 
 			<Navigation />
