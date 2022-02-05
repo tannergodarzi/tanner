@@ -3,14 +3,14 @@ import { Client } from "@notionhq/client";
 import { Block } from "../../components/block";
 import { Navigation } from "../../components/navigation";
 import { Footer } from "../../components/footer";
-import { getEntryFromNotionDatabase } from "../../helpers/notionHelpers";
+import { getEntryFromNotionDatabase, getNotionDatabase } from "../../helpers/notionHelpers";
 
 // Notion client
 const notion = new Client({
 	auth: process.env.NOTION_TOKEN,
 });
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 	const queryResponse = (await getEntryFromNotionDatabase(context.params.slug)) as any;
 	if (!queryResponse) {
 		return {
@@ -35,6 +35,18 @@ export async function getServerSideProps(context) {
 			blocks,
 		},
 	};
+}
+
+export async function getStaticPaths() {
+	const database = await getNotionDatabase();
+	const paths = database.map((entry: any) => {
+		return {
+			params: {
+				slug: entry.properties.Slug.url,
+			},
+		};
+	});
+	return { paths, fallback: "blocking" };
 }
 
 export default function Slug(props) {
