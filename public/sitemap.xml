@@ -6,10 +6,28 @@
     <changefreq>monthly</changefreq>
     <priority>1</priority>
   </url>
-    <url>
+  <url>
     <loc>https://www.tannergodarzi.com/blog</loc>
     <lastmod>2022-01-08</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.tannergodarzi.com/blog/candles-are-lit</loc>
+    <lastmod>2022-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1</priority>
+  </url>
+    <url>
+    <loc>https://www.tannergodarzi.com/blog/mattress-on-the-floor</loc>
+    <lastmod>2022-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1</priority>
+  </url>
+    <url>
+    <loc>https://www.tannergodarzi.com/blog/work-from-amtrak</loc>
+    <lastmod>2022-01-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1</priority>
   </url>
 </urlset>
