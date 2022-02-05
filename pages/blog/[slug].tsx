@@ -4,6 +4,7 @@ import { Block } from "../../components/block";
 import { Navigation } from "../../components/navigation";
 import { Footer } from "../../components/footer";
 import { getEntryFromNotionDatabase } from "../../helpers/notionHelpers";
+import { useRouter } from "next/router";
 
 // Notion client
 const notion = new Client({
@@ -38,6 +39,7 @@ export async function getServerSideProps(context) {
 }
 
 export default function Slug(props) {
+	const router = useRouter();
 	const { blocks, meta, pageTitle, description } = props;
 	return (
 		<>
@@ -62,6 +64,8 @@ export default function Slug(props) {
 					name="twitter:image"
 					content={"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpg&w=1080&q=75"}
 				/>
+
+				<link rel="canonical" href={router.asPath} />
 			</Head>
 
 			<Navigation />
