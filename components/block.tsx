@@ -73,7 +73,7 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 				<>
 					<figure className={"image"}>
 						{/* eslint-disable-next-line @next/next/no-img-element */}
-						<img src={image.file.url} alt={image.caption} />
+						<img src={image.file.url} alt={image.caption[0]?.plain_text || ""} />
 						{image.caption.length > 0 && (
 							<figcaption>
 								<Text value={image.caption} key={id} />
