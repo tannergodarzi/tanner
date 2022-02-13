@@ -1,8 +1,6 @@
 import Head from "next/head";
 import { Block } from "../components/block";
-import { Grid } from "../components/containers/grid";
 import { Footer } from "../components/footer";
-import { Hero } from "../components/hero";
 import { Navigation } from "../components/navigation";
 import { getNotionPage, getNotionBlocks } from "../helpers/notionHelpers";
 
