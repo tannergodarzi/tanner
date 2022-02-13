@@ -9,7 +9,7 @@ import { getNotionPage, getNotionBlocks } from "../helpers/notionHelpers";
 export async function getStaticProps() {
 	const page = await getNotionPage(process.env.NOTION_ABOUT_PAGE);
 	const blocks = await getNotionBlocks(page.id);
-	const pageTitle = page.properties.title.title[0].plain_text;
+	const pageTitle = page["properties"].title.title[0].plain_text;
 	return {
 		props: {
 			blocks,
