@@ -39,7 +39,7 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 		case "numbered_list_item":
 			return (
 				<ul className={styles.list_item}>
-					<li className={styles.text}>
+					<li>
 						<Text value={value.text} />
 					</li>
 				</ul>

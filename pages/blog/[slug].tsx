@@ -87,7 +87,6 @@ export default function Slug(props) {
 				</section>
 			</article>
 			<Footer />
-
 			<style jsx>{`
 				article {
 					flex-direction: column;
