@@ -39,11 +39,14 @@ export default function About({ blocks }) {
 			<Footer />
 			<style global jsx>{`
 				article {
+					display: flex;
 					flex-direction: column;
+					flex-grow: 1;
+					height: 100%;
 					width: min(100%, 45rem);
 					box-sizing: border-box;
 					padding: 0 1.5rem;
-					margin: 4rem auto 0;
+					margin: 2rem auto 0;
 				}
 				header {
 					margin: 0 auto 2em;
@@ -52,18 +55,6 @@ export default function About({ blocks }) {
 				}
 				header h1 {
 					margin-bottom: 0.15em;
-				}
-
-				.column .image {
-					height: 100%;
-					display: block;
-					margin: 0 !important;
-				}
-				.column .image img {
-					width: 100%;
-					height: 0 !important;
-					min-height: 100%;
-					object-fit: cover;
 				}
 			`}</style>
 		</>
