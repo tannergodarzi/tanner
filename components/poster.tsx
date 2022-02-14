@@ -15,7 +15,7 @@ const Poster = ({ children }: PropsWithChildren<PosterProps>) => {
 					setIsExpanded((a) => !a);
 					setCoordinates({ xPos: event.clientX, yPos: event.clientY });
 				}}
-				onMouseLeave={(event) => {
+				onMouseLeave={() => {
 					setIsExpanded(false);
 				}}
 				onMouseMove={(event) => {

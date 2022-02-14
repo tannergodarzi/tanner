@@ -1,6 +1,4 @@
-import Image from "next/image";
-import React, { PropsWithChildren, useCallback, useEffect, useState } from "react";
-import { getNotionBlocks } from "../helpers/notionHelpers";
+import React, { PropsWithChildren } from "react";
 import styles from "./block.module.css";
 import { Text } from "./text";
 
@@ -13,10 +11,6 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 	const value = block[type];
 	switch (type) {
 		case "column_list":
-			const supportsContainerQueries = "container" in document.documentElement.style;
-			if (!supportsContainerQueries) {
-				import("container-query-polyfill");
-			}
 			return (
 				<>
 					<section className="column_list">

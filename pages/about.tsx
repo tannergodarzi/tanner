@@ -40,7 +40,7 @@ export default function About({ blocks }) {
 			<style global jsx>{`
 				article {
 					flex-direction: column;
-					width: min(100%, 60rem);
+					width: min(100%, 45rem);
 					box-sizing: border-box;
 					padding: 0 1.5rem;
 					margin: 4rem auto 0;
@@ -57,6 +57,7 @@ export default function About({ blocks }) {
 				.column .image {
 					height: 100%;
 					display: block;
+					margin: 0 !important;
 				}
 				.column .image img {
 					width: 100%;
