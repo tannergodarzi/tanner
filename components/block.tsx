@@ -1,5 +1,6 @@
 import Image from "next/image";
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useCallback, useEffect, useState } from "react";
+import { getNotionBlocks } from "../helpers/notionHelpers";
 import styles from "./block.module.css";
 import { Text } from "./text";
 
@@ -11,6 +12,44 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 	const { type, id } = block;
 	const value = block[type];
 	switch (type) {
+		case "column_list":
+			const supportsContainerQueries = "container" in document.documentElement.style;
+			if (!supportsContainerQueries) {
+				import("container-query-polyfill");
+			}
+			return (
+				<>
+					<section className="column_list">
+						{block.column_list.map((column) => {
+							return (
+								<section key={column.id} className="column">
+									{column.column.map((block) => (
+										<Block block={block} key={block.id} />
+									))}
+								</section>
+							);
+						})}
+					</section>
+					<style global jsx>{`
+						.column_list {
+							display: grid;
+							grid-template-columns: repeat(${block.column_list.length}, 1fr);
+							grid-auto-rows: min-content;
+							gap: 1rem;
+							overflow: hidden;
+							margin: 0.2rem 0 1.5rem;
+						}
+						.column {
+							overflow: hidden;
+							display: flex;
+							flex-direction: column;
+						}
+						.column > *:last-of-type {
+							margin: 0;
+						}
+					`}</style>
+				</>
+			);
 		case "heading_1":
 			return (
 				<h1 className={styles.heading_1}>
@@ -39,9 +78,13 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 		case "numbered_list_item":
 			return (
 				<ul className={styles.list_item}>
-					<li>
-						<Text value={value.text} />
-					</li>
+					{block.bulleted_list_item.text.map((value, index) => {
+						return (
+							<li key={index}>
+								<Text value={[value]} />
+							</li>
+						);
+					})}
 				</ul>
 			);
 		case "code":
@@ -71,7 +114,7 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 			const { image } = block;
 			return (
 				<>
-					<figure className={"image"}>
+					<picture className={"image"}>
 						{/* eslint-disable-next-line @next/next/no-img-element */}
 						<img src={image.file.url} alt={image.caption[0]?.plain_text || ""} />
 						{image.caption.length > 0 && (
@@ -79,10 +122,10 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 								<Text value={image.caption} key={id} />
 							</figcaption>
 						)}
-					</figure>
+					</picture>
 					<style jsx>{`
 						.image {
-							width: max(16rem, 100%);
+							width: 100%;
 							margin: 0.2rem 0 1.5rem;
 							display: block;
 						}

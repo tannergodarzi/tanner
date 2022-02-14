@@ -2,22 +2,22 @@ import Head from "next/head";
 import { Block } from "../components/block";
 import { Footer } from "../components/footer";
 import { Navigation } from "../components/navigation";
-import { getNotionPage, getNotionBlocks } from "../helpers/notionHelpers";
+import { checkForChildBlocks, getNotionPage, getNotionBlocks } from "../helpers/notionHelpers";
 
 export async function getStaticProps() {
 	const page = await getNotionPage(process.env.NOTION_ABOUT_PAGE);
-	const blocks = await getNotionBlocks(page.id);
-	const pageTitle = page["properties"].title.title[0].plain_text;
+	const unparsedBlocks = await getNotionBlocks(page.id).then((a) => a.map(checkForChildBlocks));
+	const blocks = await Promise.all([...unparsedBlocks]).then((values) => values);
+
 	return {
 		props: {
 			blocks,
-			pageTitle,
 		},
 		revalidate: 60,
 	};
 }
 
-export default function About({ blocks, pageTitle }) {
+export default function About({ blocks }) {
 	return (
 		<>
 			<Head>
@@ -30,9 +30,6 @@ export default function About({ blocks, pageTitle }) {
 			</Head>
 			<Navigation />
 			<article>
-				<header>
-					<h1>{pageTitle}</h1>
-				</header>
 				<section>
 					{blocks.map((block) => {
 						return <Block block={block} key={block.id} />;
@@ -40,10 +37,10 @@ export default function About({ blocks, pageTitle }) {
 				</section>
 			</article>
 			<Footer />
-			<style jsx>{`
+			<style global jsx>{`
 				article {
 					flex-direction: column;
-					width: min(100%, 45rem);
+					width: min(100%, 60rem);
 					box-sizing: border-box;
 					padding: 0 1.5rem;
 					margin: 4rem auto 0;
@@ -55,6 +52,17 @@ export default function About({ blocks, pageTitle }) {
 				}
 				header h1 {
 					margin-bottom: 0.15em;
+				}
+
+				.column .image {
+					height: 100%;
+					display: block;
+				}
+				.column .image img {
+					width: 100%;
+					height: 0 !important;
+					min-height: 100%;
+					object-fit: cover;
 				}
 			`}</style>
 		</>

@@ -46,11 +46,11 @@ export default function Slug(props) {
 	return (
 		<>
 			<Head>
-				<title>{pageTitle} | Tanner&rsquo;s Blog</title>
+				<title>Tanner&rsquo;s Blog | {pageTitle}</title>
 				<meta name="title" content={pageTitle} />
 				<meta name="description" content={description} />
 
-				<meta name="og:title" content={pageTitle} />
+				<meta name="og:title" content={`Tanner’s Blog | ${pageTitle}`} />
 				<meta name="og:description" content={description} />
 				<meta name="og:author" content={"Tanner Godarzi"} />
 				<meta
@@ -59,7 +59,7 @@ export default function Slug(props) {
 				/>
 
 				<meta name="twitter:card" content={"summary_large_image"} />
-				<meta name="twitter:title" content={pageTitle} />
+				<meta name="twitter:title" content={`Tanner’s Blog | ${pageTitle}`} />
 				<meta name="twitter:description" content={description} />
 				<meta name="twitter:author" content={"@tannergodarzi"} />
 				<meta
