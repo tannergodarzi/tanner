@@ -26,9 +26,9 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 					</section>
 					<style global jsx>{`
 						.column_list {
-							display: grid;
-							grid-template-columns: repeat(${block.column_list.length}, 1fr);
-							grid-auto-rows: min-content;
+							display: flex;
+							flex-direction: row;
+							flex-wrap: wrap;
 							gap: 1rem;
 							overflow: hidden;
 							margin: 0.2rem 0 1.5rem;
@@ -37,6 +37,8 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 							overflow: hidden;
 							display: flex;
 							flex-direction: column;
+							flex: 1 0 auto;
+							width: min(100vw / ${block.column_list.length}, 300px);
 						}
 						.column > *:last-of-type {
 							margin: 0;
