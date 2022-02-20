@@ -29,11 +29,9 @@ export default function About({ blocks }) {
 			</Head>
 			<Navigation />
 			<article>
-				<section>
-					{blocks.map((block) => {
-						return <Block block={block} key={block.id} />;
-					})}
-				</section>
+				{blocks.map((block) => {
+					return <Block block={block} key={block.id} />;
+				})}
 			</article>
 			<Footer />
 			<style global jsx>{`
