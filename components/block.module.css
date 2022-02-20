@@ -10,7 +10,8 @@
 }
 .paragraph,
 .text,
-.quote {
+.quote,
+.code {
 	margin: 0 0 1.7rem;
 }
 .paragraph + .quote {
