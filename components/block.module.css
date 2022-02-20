@@ -13,6 +13,9 @@
 .quote {
 	margin: 0.2rem 0 1.5rem;
 }
+.paragraph + .quote {
+	margin-top: 0;
+}
 .paragraph a {
     font-weight: 700;
 }
