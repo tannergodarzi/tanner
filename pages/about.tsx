@@ -13,7 +13,6 @@ export async function getServerSideProps() {
 		props: {
 			blocks,
 		},
-		revalidate: 60,
 	};
 }
 
