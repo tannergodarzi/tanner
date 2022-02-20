@@ -62,7 +62,7 @@ export default function Slug(props) {
 				<meta name="twitter:card" content={"summary_large_image"} />
 				<meta name="twitter:title" content={`Tanner’s Blog | ${pageTitle}`} />
 				<meta name="twitter:description" content={description} />
-				<meta name="twitter:author" content={"@tannergodarzi"} />
+				<meta name="twitter:creator" content={"@tannergodarzi"} />
 				<meta
 					name="twitter:image"
 					content={"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpg&w=1080&q=75"}
