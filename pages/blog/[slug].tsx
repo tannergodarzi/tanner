@@ -50,7 +50,8 @@ export default function Slug(props) {
 				<meta name="title" content={pageTitle} />
 				<meta name="description" content={description} />
 
-				<meta name="og:title" content={`Tanner’s Blog | ${pageTitle}`} />
+				<meta name="og:site_name" content={`Tanner’s Blog`} />
+				<meta name="og:title" content={pageTitle} />
 				<meta name="og:description" content={description} />
 				<meta name="og:author" content={"Tanner Godarzi"} />
 				<meta
