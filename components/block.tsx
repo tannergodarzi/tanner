@@ -85,10 +85,8 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 			);
 		case "code":
 			return (
-				<pre>
-					<code className={styles.code}>
-						<Text value={value.text} />
-					</code>
+				<pre className={styles.code}>
+					<code>{value.text[0].text.content}</code>
 				</pre>
 			);
 		case "quote":
@@ -122,7 +120,7 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 					<style jsx>{`
 						.image {
 							width: 100%;
-							margin: 0.2rem 0 1.5rem;
+							margin-top: 1.7rem;
 							display: block;
 						}
 						.image img {
