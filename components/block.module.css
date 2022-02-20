@@ -19,10 +19,6 @@
 .paragraph a {
     font-weight: 700;
 }
-.paragraph + :not(.paragraph),
-.paragraph + :not(.quote) {
-	margin-top: 2.2rem;
-}
 .list_item {
 	font-size: 1rem;
 	margin-left: 1em;
@@ -43,14 +39,17 @@
 }
 .quote {
 	font-style: italic;
-	text-align: center;
 	quotes: "“" "”";
+	padding-left: 1rem;
+	border-left: 2px solid var(--text-color);
 }
 .quote::before {
 	content: open-quote;
+	margin-right: 0.2em;
 }
 .quote::after {
 	content: close-quote;
+	margin-left: 0.2em;
 }
 .bookmark {
 	margin: 0.25rem 0;
