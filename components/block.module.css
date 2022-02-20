@@ -11,7 +11,7 @@
 .paragraph,
 .text,
 .quote {
-	margin: 0.2rem 0 1.5rem;
+	margin: 0 0 1.7rem;
 }
 .paragraph + .quote {
 	margin-top: 0;
@@ -19,7 +19,8 @@
 .paragraph a {
     font-weight: 700;
 }
-.paragraph + :not(.paragraph) {
+.paragraph + :not(.paragraph),
+.paragraph + :not(.quote) {
 	margin-top: 2.2rem;
 }
 .list_item {
