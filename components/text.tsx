@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import classNames from "classnames";
+import { v4 as uuidv4 } from "uuid";
 
 interface TextProps {
 	value: any;
@@ -7,7 +8,7 @@ interface TextProps {
 
 export const Text = ({ value }: PropsWithChildren<TextProps>) => {
 	return value.map((block) => {
-		const { annotations, plain_text, text } = block;
+		const { annotations, plaint_text, text } = block;
 
 		const classes = classNames("text", {
 			["text-bold"]: annotations.bold,
@@ -18,9 +19,11 @@ export const Text = ({ value }: PropsWithChildren<TextProps>) => {
 			["text-code"]: annotations.code,
 		});
 
+		const genKey = uuidv4();
+
 		return (
-			<>
-				<span key={plain_text} className={classes}>
+			<React.Fragment key={genKey}>
+				<span className={classes}>
 					{text.link ? (
 						<a href={text.link.url}>{text.content}</a>
 					) : !annotations.code ? (
@@ -57,7 +60,7 @@ export const Text = ({ value }: PropsWithChildren<TextProps>) => {
 						border-radius: 0.4em;
 					}
 				`}</style>
-			</>
+			</React.Fragment>
 		);
 	});
 };

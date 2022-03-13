@@ -17,9 +17,9 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 						{block.column_list.map((column) => {
 							return (
 								<section key={column.id} className="column">
-									{column.column.map((block) => (
-										<Block block={block} key={block.id} />
-									))}
+									{column.column.map((block) => {
+										return <Block block={block} key={block.id} />;
+									})}
 								</section>
 							);
 						})}
@@ -107,7 +107,7 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 				<>
 					<picture className={"image"}>
 						{/* eslint-disable-next-line @next/next/no-img-element */}
-						<img src={image.file.url} alt={image.caption[0]?.plain_text || ""} />
+						<img src={image.external?.url || image.file?.url} alt={image.caption[0]?.plain_text || ""} />
 						{image.caption.length > 0 && (
 							<figcaption>
 								<Text value={image.caption} key={id} />
