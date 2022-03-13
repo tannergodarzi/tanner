@@ -71,6 +71,7 @@ export default function Slug(props) {
 				<link rel="canonical" href={canonicalUrl} />
 				<script type="application/ld+json">
 					{`
+					{
 						"@context": "https://schema.org",
 						"@type": "BlogPosting",
 						"mainEntityOfPage": {
@@ -89,6 +90,7 @@ export default function Slug(props) {
 							"name": "Tanner Godarzi",
 							"url": "https://www.tannergodarzi.com"
 						},
+					}
 						`}
 				</script>
 			</Head>
