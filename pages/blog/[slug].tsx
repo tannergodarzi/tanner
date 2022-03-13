@@ -79,9 +79,7 @@ export default function Slug(props) {
 						},
 						"headline": ${pageTitle},
 						"image": [
-							"https://example.com/photos/1x1/photo.jpg",
-							"https://example.com/photos/4x3/photo.jpg",
-							"https://example.com/photos/16x9/photo.jpg"
+							"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpg&w=1080&q=75"
 						],
 						"datePublished": ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
 							new Date(meta.Published.date.start)
