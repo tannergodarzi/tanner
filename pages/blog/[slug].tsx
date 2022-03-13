@@ -69,6 +69,30 @@ export default function Slug(props) {
 				/>
 
 				<link rel="canonical" href={canonicalUrl} />
+				<script type="application/ld+json">
+					{`
+						"@context": "https://schema.org",
+						"@type": "BlogPosting",
+						"mainEntityOfPage": {
+							"@type": "WebPage",
+							"@id": "https://www.tannergodarzi.com/blog"
+						},
+						"headline": ${pageTitle},
+						"image": [
+							"https://example.com/photos/1x1/photo.jpg",
+							"https://example.com/photos/4x3/photo.jpg",
+							"https://example.com/photos/16x9/photo.jpg"
+						],
+						"datePublished": ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
+							new Date(meta.Published.date.start)
+						)},
+						"author": {
+							"@type": "Person",
+							"name": "Tanner Godarzi",
+							"url": "https://www.tannergodarzi.com"
+						},
+						`}
+				</script>
 			</Head>
 
 			<Navigation />
