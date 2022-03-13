@@ -110,7 +110,7 @@ export default function Slug(props) {
 			<article>
 				<header>
 					<h1>{pageTitle}</h1>
-					<time dateTime={meta.Published.date.start}>
+					<time dateTime={new Date(meta.Published.date.start).toUTCString()}>
 						{`Published ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
 							new Date(meta.Published.date.start)
 						)}`}
