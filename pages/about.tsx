@@ -4,7 +4,7 @@ import { Footer } from "../components/footer";
 import { Navigation } from "../components/navigation";
 import { checkForChildBlocks, getNotionPage, getNotionBlocks } from "../helpers/notionHelpers";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const page = await getNotionPage(process.env.NOTION_ABOUT_PAGE);
 	const unparsedBlocks = await getNotionBlocks(page.id).then((a) => a.map(checkForChildBlocks));
 	const blocks = await Promise.all([...unparsedBlocks]).then((values) => values);
@@ -13,6 +13,7 @@ export async function getServerSideProps() {
 		props: {
 			blocks,
 		},
+		revalidate: 60,
 	};
 }
 

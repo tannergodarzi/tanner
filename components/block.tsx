@@ -40,9 +40,6 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 							flex: 1 0 auto;
 							width: min(100vw / ${block.column_list.length}, 300px);
 						}
-						.column > *:last-of-type {
-							margin: 0;
-						}
 					`}</style>
 				</>
 			);
