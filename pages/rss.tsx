@@ -14,16 +14,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 		const postHref = `https://www.tannergodarzi.com/blog/${post.Slug.url}`;
 
 		if (!latestPostDate || postDate > Date.parse(post.Published.date.start)) {
-			latestPostDate = post.Published.date.start;
+			latestPostDate = new Date(post.Published.date.start).toUTCString();
 		}
 
 		rssItemsXml += `
           <item>
             <title><![CDATA[${post.Name.title[0].text.content}]]></title>
             <link>${postHref}</link>
-            <pubDate>${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
-				new Date(post.Published.date.start)
-			)}</pubDate>
+            <pubDate>${new Date(post.Published.date.start).toUTCString()}</pubDate>
             <guid isPermaLink="false">${postHref}</guid>
             <description>
             <![CDATA[${post.Subtitle.rich_text[0].plain_text}]]>

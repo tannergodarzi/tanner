@@ -83,14 +83,14 @@ export default function Slug(props) {
 							"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpg&w=1080&q=75"
 						],
 						"datePublished": 
-						"${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(new Date(meta.Published.date.start))}",
+						"${new Date(meta.Published.date.start).toUTCString()}",
 						"author": {
 							"@type": "Person",
 							"name": "Tanner Godarzi",
 							"url": "https://www.tannergodarzi.com"
-						},
+						}
 					}
-						`}
+					`}
 				</script>
 			</Head>
 
