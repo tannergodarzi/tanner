@@ -8,9 +8,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 	let rssItemsXml = "";
 	let latestPostDate = "";
-	database.map((node: any) => {
+  database.map((node: any) => {
 		const post = node.properties;
-		const postDate = Date.parse(post.date);
+		const postDate = Date.parse(post.Published.date);
 		const postHref = `https://www.tannergodarzi.com/blog/${post.Slug.url}`;
 
 		if (!latestPostDate || postDate > Date.parse(post.Published.date.start)) {
@@ -29,8 +29,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             <![CDATA[${post.Subtitle.rich_text[0].plain_text}]]>
             </description>
         </item>`;
-	});
-	const processedXml = `<?xml version="1.0" encoding="UTF-8"?>
+  });
+  const processedXml = `<?xml version="1.0" encoding="UTF-8"?>
       <rss
         xmlns:dc="http://purl.org/dc/elements/1.1/"
         xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -50,13 +50,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         </channel>
       </rss>`;
 
-	res.setHeader("Content-Type", "text/xml");
-	res.write(processedXml);
-	res.end();
-	return {
+  res.setHeader("Content-Type", "text/xml");
+  res.write(processedXml);
+  res.end();
+  return {
 		props: {},
-		revalidate: 60,
-	};
+  };
 };
 
 const RssPage = () => null;
