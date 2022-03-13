@@ -31,7 +31,7 @@ export const Footer = () => {
 			<style jsx>{`
 				footer {
 					box-sizing: border-box;
-					padding: 1rem 1rem 1.2rem;
+					padding: 1rem 1rem 2rem;
 					margin-top: 3rem;
 					width: 100%;
 					text-align: center;
@@ -43,10 +43,7 @@ export const Footer = () => {
 				}
 
 				header {
-					display: flex;
-					flex-direction: column;
-					gap: 0.25em;
-					margin-bottom: 0;
+					margin-bottom: 0.75em;
 				}
 
 				nav {

@@ -9,6 +9,9 @@ export const Navigation = () => {
 					<Link href={"/"}>
 						<a>{"Tanner"}</a>
 					</Link>
+					<Link href={"/about"}>
+						<a>{"Me, Yea Me"}</a>
+					</Link>
 					<Link href={"/blog"}>
 						<a>{"Blog"}</a>
 					</Link>
@@ -35,11 +38,14 @@ export const Navigation = () => {
 					flex-direction: row;
 					flex-wrap: wrap;
 					align-items: center;
-					justify-content: space-between;
+					justify-content: flex-start;
 					box-sizing: border-box;
 					width: 100%;
 					height: 100%;
 					gap: 1.25em;
+				}
+				.mast nav > *:first-of-type {
+					margin-right: auto;
 				}
 				.mast * {
 					text-decoration: none;

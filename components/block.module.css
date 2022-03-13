@@ -1,33 +1,47 @@
-.heading_1 {
-	font-weight: 700;
-	margin: 0.4rem 0;
-}
-.heading_2 {
-	margin: 0.4rem 0;
-}
-.heading_3 {
-	margin: 0.4rem 0;
-}
+.heading_1,
+.heading_2,
+.heading_3,
 .paragraph,
-.text {
-	margin: 0.2rem 0 1.5rem;
+.text,
+.quote,
+.code,
+.list_item {
+	margin: 1.7rem 0 0;
+}
+.paragraph + .paragraph {
+	margin-top: 0.5rem;
+}
+.paragraph + .quote {
+	margin-top: 0;
 }
 .paragraph a {
     font-weight: 700;
-}
-.paragraph + :not(.paragraph) {
-	margin-top: 2.2rem;
 }
 .list_item {
 	font-size: 1rem;
 	margin-left: 1em;
 }
+.list_item + .list_item {
+	margin-top: 0.25rem;
+}
+.heading_1 + *,
+.heading_2 + *,
+.heading_3 + * {
+	margin-top: 0.5rem;
+}
+
 .code {
 	font: var(--font-annotation);
 	padding: 0.8rem;
 	display: block;
 	box-sizing: border-box;
 	background-color: rgba(200, 200, 200, 0.1);
+
+	page-break-inside: avoid;
+    font-family: monospace;
+    max-width: 100%;
+    overflow: auto;
+    word-wrap: break-word;
 }
 .divider {
 	margin: 2rem 0;
@@ -38,14 +52,17 @@
 }
 .quote {
 	font-style: italic;
-	text-align: center;
 	quotes: "“" "”";
+	padding-left: 1rem;
+	border-left: 2px solid var(--text-color);
 }
 .quote::before {
 	content: open-quote;
+	margin-right: 0.2em;
 }
 .quote::after {
 	content: close-quote;
+	margin-left: 0.2em;
 }
 .bookmark {
 	margin: 0.25rem 0;

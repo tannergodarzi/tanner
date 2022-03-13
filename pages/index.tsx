@@ -10,9 +10,15 @@ export default function Index() {
 			<Head>
 				<title>Howdy, I&rsquo;m Tanner &mdash; a real person on the internet.</title>
 				<meta name="title" content="Howdy, I’m Tanner — a real person on the internet" />
+				<meta name="og:title" content="Howdy, I’m Tanner — a real person on the internet" />
+
 				<meta
 					name="description"
-					content="I’m also a Front End Engineer motivated by design thinking and story telling. Currently I’m at Notion on Brand Marketing telling the story of tools for work."
+					content="I’m also a Front End Engineer motivated by design thinking and story telling. Currently I’m at Notion telling the story of tools for work."
+				/>
+				<meta
+					name="og:description"
+					content="I’m also a Front End Engineer motivated by design thinking and story telling. Currently I’m at Notion telling the story of tools for work."
 				/>
 			</Head>
 			<Navigation />

@@ -181,22 +181,10 @@ function Bio() {
 		<>
 			<h2>{"Not actually a cowboy"}</h2>
 			<p>
-				{`Ace Activity Book
- Connect the dots, color inside (or outside) the lines, draw
-your essence. Fun pages from our pals the Haas Brothers,
-Nathaniel Russell, Andy Plants and yours truly, Ace Hotel.
-Recipes
-Favorites, classics and signature dishes from our culinary
-partners
-at Bar Marilou
-(New Orleans), Best Girl (Los Angeles),
-The Breslin (New York City), City Mouse (Chicago), Josephine
-Estelle (New Orleans),
-Seaworthy (New Orleans), King's Highway
-(Palm Springs), Hoi Polloi (Iondon), and Whitfield (Pittsburgh)`}
+				{`I love adventure and a good felt hat. During the day I help tell the story of future of work tools at Notion and by night I write about odd thoughts and conversations. Weekends I can be found meandering around San Francisco with a camera. Previously I worked at Dropbox, Square and design agency / freelance work. I also worked with heavy metal band Machine Head in a past time. I’m eternally optimistic about the future. If you are too, then`}
 			</p>
 			<Link href={"/about"}>
-				<a>{"Read more"}</a>
+				<a>{"read more →"}</a>
 			</Link>
 			<style jsx>{``}</style>
 		</>

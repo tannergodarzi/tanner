@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { PropsWithChildren } from "react";
 import styles from "./block.module.css";
 import { Text } from "./text";
@@ -11,6 +10,39 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 	const { type, id } = block;
 	const value = block[type];
 	switch (type) {
+		case "column_list":
+			return (
+				<>
+					<section className="column_list">
+						{block.column_list.map((column) => {
+							return (
+								<section key={column.id} className="column">
+									{column.column.map((block) => {
+										return <Block block={block} key={block.id} />;
+									})}
+								</section>
+							);
+						})}
+					</section>
+					<style global jsx>{`
+						.column_list {
+							display: flex;
+							flex-direction: row;
+							flex-wrap: wrap;
+							gap: 1rem;
+							overflow: hidden;
+							margin: 0.2rem 0 1.5rem;
+						}
+						.column {
+							overflow: hidden;
+							display: flex;
+							flex-direction: column;
+							flex: 1 0 auto;
+							width: min(100vw / ${block.column_list.length}, 300px);
+						}
+					`}</style>
+				</>
+			);
 		case "heading_1":
 			return (
 				<h1 className={styles.heading_1}>
@@ -39,17 +71,19 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 		case "numbered_list_item":
 			return (
 				<ul className={styles.list_item}>
-					<li className={styles.text}>
-						<Text value={value.text} />
-					</li>
+					{block.bulleted_list_item.text.map((value, index) => {
+						return (
+							<li key={index}>
+								<Text value={[value]} />
+							</li>
+						);
+					})}
 				</ul>
 			);
 		case "code":
 			return (
-				<pre>
-					<code className={styles.code}>
-						<Text value={value.text} />
-					</code>
+				<pre className={styles.code}>
+					<code>{value.text[0].text.content}</code>
 				</pre>
 			);
 		case "quote":
@@ -71,19 +105,19 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 			const { image } = block;
 			return (
 				<>
-					<figure className={"image"}>
+					<picture className={"image"}>
 						{/* eslint-disable-next-line @next/next/no-img-element */}
-						<img src={image.file.url} alt={image.caption} />
+						<img src={image.external?.url || image.file?.url} alt={image.caption[0]?.plain_text || ""} />
 						{image.caption.length > 0 && (
 							<figcaption>
 								<Text value={image.caption} key={id} />
 							</figcaption>
 						)}
-					</figure>
+					</picture>
 					<style jsx>{`
 						.image {
-							width: max(16rem, 100%);
-							margin: 0.2rem 0 1.5rem;
+							width: 100%;
+							margin-top: 1.7rem;
 							display: block;
 						}
 						.image img {

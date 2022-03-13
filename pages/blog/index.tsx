@@ -90,7 +90,7 @@ export default function Index({ database }) {
 				.entry {
 					display: flex;
 					flex-direction: column;
-					text-align: center;
+					text-align: left;
 					width: 100%;
 					margin-bottom: 4em;
 				}

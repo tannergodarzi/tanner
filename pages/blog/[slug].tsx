@@ -4,6 +4,7 @@ import { Block } from "../../components/block";
 import { Navigation } from "../../components/navigation";
 import { Footer } from "../../components/footer";
 import { getEntryFromNotionDatabase, getNotionDatabase } from "../../helpers/notionHelpers";
+import { useRouter } from "next/router";
 
 // Notion client
 const notion = new Client({
@@ -50,14 +51,18 @@ export async function getStaticPaths() {
 }
 
 export default function Slug(props) {
+	const router = useRouter();
 	const { blocks, meta, pageTitle, description } = props;
+	const canonicalUrl = typeof window === "undefined" ? "" : `${window.location.origin}${router.asPath}`;
+
 	return (
 		<>
 			<Head>
-				<title>{pageTitle} | Tanner&rsquo;s Blog</title>
+				<title>Tanner&rsquo;s Blog | {pageTitle}</title>
 				<meta name="title" content={pageTitle} />
 				<meta name="description" content={description} />
 
+				<meta name="og:site_name" content={`Tanner’s Blog`} />
 				<meta name="og:title" content={pageTitle} />
 				<meta name="og:description" content={description} />
 				<meta name="og:author" content={"Tanner Godarzi"} />
@@ -67,13 +72,38 @@ export default function Slug(props) {
 				/>
 
 				<meta name="twitter:card" content={"summary_large_image"} />
-				<meta name="twitter:title" content={pageTitle} />
+				<meta name="twitter:title" content={`Tanner’s Blog | ${pageTitle}`} />
 				<meta name="twitter:description" content={description} />
-				<meta name="twitter:author" content={"@tannergodarzi"} />
+				<meta name="twitter:creator" content={"@tannergodarzi"} />
 				<meta
 					name="twitter:image"
 					content={"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpg&w=1080&q=75"}
 				/>
+
+				<link rel="canonical" href={canonicalUrl} />
+				<script type="application/ld+json">
+					{`
+					{
+						"@context": "https://schema.org",
+						"@type": "BlogPosting",
+						"mainEntityOfPage": {
+							"@type": "WebPage",
+							"@id": "https://www.tannergodarzi.com/blog"
+						},
+						"headline": "${pageTitle}",
+						"image": [
+							"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpg&w=1080&q=75"
+						],
+						"datePublished": 
+						"${new Date(meta.Published.date.start).toUTCString()}",
+						"author": {
+							"@type": "Person",
+							"name": "Tanner Godarzi",
+							"url": "https://www.tannergodarzi.com"
+						}
+					}
+					`}
+				</script>
 			</Head>
 
 			<Navigation />
@@ -93,7 +123,6 @@ export default function Slug(props) {
 				</section>
 			</article>
 			<Footer />
-
 			<style jsx>{`
 				article {
 					flex-direction: column;

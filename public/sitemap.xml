@@ -9,7 +9,7 @@
   <url>
     <loc>https://www.tannergodarzi.com/blog</loc>
     <lastmod>2022-01-08</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1</priority>
   </url>
   <url>
@@ -27,6 +27,24 @@
     <url>
     <loc>https://www.tannergodarzi.com/blog/work-from-amtrak</loc>
     <lastmod>2022-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://www.tannergodarzi.com/blog/hollister-hollister-hollister</loc>
+    <lastmod>2022-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1</priority>
+  </url>
+    <url>
+    <loc>https://www.tannergodarzi.com/blog/recreating-dropboxs-planes-of-color-in-css</loc>
+    <lastmod>2022-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1</priority>
+  </url>
+    <url>
+    <loc>https://www.tannergodarzi.com/blog/so-you-want-to-throw-a-dinner-party</loc>
+    <lastmod>2022-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1</priority>
   </url>
