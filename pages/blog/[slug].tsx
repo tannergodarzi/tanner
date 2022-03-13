@@ -78,13 +78,12 @@ export default function Slug(props) {
 							"@type": "WebPage",
 							"@id": "https://www.tannergodarzi.com/blog"
 						},
-						"headline": ${pageTitle},
+						"headline": "${pageTitle}",
 						"image": [
 							"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpg&w=1080&q=75"
 						],
-						"datePublished": ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
-							new Date(meta.Published.date.start)
-						)},
+						"datePublished": 
+						"${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(new Date(meta.Published.date.start))}",
 						"author": {
 							"@type": "Person",
 							"name": "Tanner Godarzi",

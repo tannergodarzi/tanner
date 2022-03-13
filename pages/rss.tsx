@@ -21,9 +21,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
           <item>
             <title><![CDATA[${post.Name.title[0].text.content}]]></title>
             <link>${postHref}</link>
-            <pubDate>${new Intl.DateTimeFormat("en-US", {
-				dateStyle: "long",
-			}).format(new Date(post.Published.date.start))}</pubDate>
+            <pubDate>${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
+				new Date(post.Published.date.start)
+			)}</pubDate>
             <guid isPermaLink="false">${postHref}</guid>
             <description>
             <![CDATA[${post.Subtitle.rich_text[0].plain_text}]]>
