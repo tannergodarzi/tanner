@@ -34,7 +34,7 @@ export default function Index({ database }) {
 			</Head>
 			<Navigation />
 			<Hero />
-			{process.env.NODE_ENV === "development" && <Grid database={database} />}
+			<Grid database={database} />
 			<Footer />
 		</>
 	);
