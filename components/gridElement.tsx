@@ -28,6 +28,7 @@ export const GridElement = ({ column, columnSpan, row, rowSpan, children }: Prop
 					justify-content: flex-start;
 					align-content: flex-start;
 					align-items: flex-start;
+					overflow: hidden;
 				}
 			`}</style>
 		</>

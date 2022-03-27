@@ -18,7 +18,7 @@
 
 :root {
 	--text-color: var(--color-dark);
-	--page-background: var(--color-tan);
+	--page-background: var(--color-blue);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -3,16 +3,13 @@ import Link from "next/link";
 import { GridElement } from "../gridElement";
 import Image from "next/image";
 import Bouncy from "../bouncy";
-import { sluggify } from "../../helpers/urlHelpers";
-import { Text } from "../text";
 import { Entry } from "../entry";
 
 export const Grid = ({ database }) => {
-	console.log(database[0]);
 	return (
 		<>
 			<section className="grid">
-				<GridElement column={3} columnSpan={6} row={1} rowSpan={8}>
+				<GridElement column={4} columnSpan={5} row={1} rowSpan={6}>
 					<picture>
 						<span>
 							<Image
@@ -25,14 +22,11 @@ export const Grid = ({ database }) => {
 						</span>
 					</picture>
 				</GridElement>
-				<GridElement column={9} columnSpan={5} row={1} rowSpan={4}>
+				<GridElement column={9} columnSpan={5} row={1} rowSpan={5}>
 					<Bio />
 				</GridElement>
-				<GridElement column={5} columnSpan={4} row={6} rowSpan={4}>
-					<BioFollowUp />
-				</GridElement>
 
-				<GridElement column={11} columnSpan={5} row={6} rowSpan={6}>
+				<GridElement column={10} columnSpan={6} row={7} rowSpan={6}>
 					<Image
 						src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
 						layout="fill"
@@ -42,23 +36,26 @@ export const Grid = ({ database }) => {
 					/>
 				</GridElement>
 
-				<GridElement column={2} columnSpan={5} row={10} rowSpan={6}>
-					<section className="entry frame">
-						<Image src={"/newspaper.jpg"} alt="" width={1024} height={813} objectPosition={"top center"} />
-
+				<GridElement column={2} columnSpan={6} row={8} rowSpan={8}>
+					<section className="frame">
+						<Image src={"/drop+out.jpg"} width={500} height={322} alt="" />
 						{database.map((entry) => (
 							<Entry entry={entry} key={entry.id} showPublishDate={false} />
 						))}
 					</section>
 				</GridElement>
-				<GridElement column={8} columnSpan={2} row={13} rowSpan={2}>
+				<GridElement column={12} columnSpan={2} row={14} rowSpan={2}>
 					<Link href={"/blog"}>
 						<a className="circle special">{"Blog"}</a>
 					</Link>
 				</GridElement>
 
-				<GridElement column={2} columnSpan={12} row={20} rowSpan={6}>
+				<GridElement column={4} columnSpan={6} row={18} rowSpan={6}>
 					<Bouncy />
+				</GridElement>
+
+				<GridElement column={12} columnSpan={4} row={20} rowSpan={4}>
+					<BioFollowUp />
 				</GridElement>
 
 				<GridElement column={4} columnSpan={7} row={28} rowSpan={4}>
@@ -132,6 +129,7 @@ export const Grid = ({ database }) => {
 					padding: 1em;
 					border: 4px solid var(--text-color);
 					position: relative;
+					overflow: hidden;
 				}
 				.frame:before {
 					content: " ";
@@ -143,23 +141,6 @@ export const Grid = ({ database }) => {
 					right: 4px;
 					bottom: 4px;
 					border: 2px solid var(--text-color);
-				}
-
-				.entry {
-					display: flex;
-					flex: 1 0 auto;
-					gap: 1em;
-					width: 100%;
-					padding-bottom: 2rem;
-					flex-direction: column;
-					align-content: center;
-					text-align: center;
-					position: relative;
-				}
-
-				.entry * {
-					margin-top: 0;
-					margin-bottom: 0;
 				}
 			`}</style>
 		</>
@@ -181,36 +162,35 @@ function Bio() {
 				<Link href={"/about"}>
 					<a>{"read more →"}</a>
 				</Link>
-				<style jsx>{`
-					article {
-						width: 100%;
-						width: 100%;
-						display: flex;
-						flex-direction: column;
-						height: 100%;
-					}
-					article p {
-						overflow: hidden;
-						display: -webkit-box;
-						-webkit-box-orient: vertical;
-
-						/* <integer> values */
-						-webkit-line-clamp: 6;
-						line-clamp: 6;
-						text-overflow: ellipsis;
-						overflow: hidden;
-					}
-				`}</style>
 			</article>
+			<style jsx>{`
+				article {
+					width: 100%;
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					height: 100%;
+				}
+				article p {
+					overflow: hidden;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+
+					/* <integer> values */
+					-webkit-line-clamp: 6;
+					line-clamp: 6;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+			`}</style>
 		</>
 	);
 }
 function BioFollowUp() {
 	return (
 		<>
-			<section>
+			<article>
 				<h3>{"Things I like"}</h3>
-
 				<ul>
 					<li>{"Deserts of the American Southwest"}</li>
 					<li>{"Ace Hotel"}</li>
@@ -222,13 +202,13 @@ function BioFollowUp() {
 						</Link>
 					</li>
 				</ul>
-			</section>
+			</article>
 			<style jsx>{`
-				section {
+				article {
 					padding: 1em;
 					border: 2px dotted var(--text-color);
 				}
-				section * {
+				article * {
 					color: var(--text-color);
 				}
 

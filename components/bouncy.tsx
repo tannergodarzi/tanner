@@ -1,4 +1,5 @@
 // Forked from https://codepen.io/tannergodarzi/pen/oNXYWOr/e2009c1b26f7ee4034f678029e68c6ff
+import Image from "next/image";
 import React, { useLayoutEffect, useEffect, useState, useRef, useCallback } from "react";
 
 export default function Bouncy() {
@@ -38,12 +39,13 @@ export default function Bouncy() {
 			let xDirection = directionRef.current.x;
 			let yDirection = directionRef.current.y;
 			const start = 0;
+			const actorSize = 100;
 
 			// X Positioning
 			if (xDirection === "increment") {
 				xPos = xPos + 1;
 
-				if (xPos > xEnd - 20) {
+				if (xPos > xEnd - actorSize) {
 					xDirection = "decrement";
 				}
 			} else if (xDirection === "decrement") {
@@ -57,7 +59,7 @@ export default function Bouncy() {
 			// Y Positioning
 			if (yDirection === "increment") {
 				yPos = yPos + 1;
-				if (yPos > yEnd - 20) {
+				if (yPos > yEnd - actorSize) {
 					yDirection = "decrement";
 				}
 			} else if (yDirection === "decrement") {
@@ -89,24 +91,32 @@ export default function Bouncy() {
 	return (
 		<>
 			<section className="bounding-box" ref={boundingBoxRef}>
-				<div className="actor" ref={actorRef} />
+				<div className="actor" ref={actorRef}>
+					<Image
+						src="/blu-ray.png"
+						width={200}
+						height={115}
+						alt=""
+						layout="fill"
+						objectFit="contain"
+						objectPosition={"center center"}
+					/>
+				</div>
 			</section>
 			<style jsx>{`
 				.bounding-box {
 					display: block;
-					max-width: 720px;
 					width: 100%;
-					height: auto;
-					aspect-ratio: 4/3;
-					border: 1px solid #000000;
-					overflow: hidden;
+					height: 100%;
+					box-sizing: border-box;
+					position: relative;
 				}
 
 				.actor {
-					width: 48px;
-					aspect-ratio: 1/1;
-					background: #000000;
+					width: 100px;
+					height: 100px;
 					will-change: transform;
+					position: relative;
 				}
 			`}</style>
 		</>
