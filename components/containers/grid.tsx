@@ -3,8 +3,12 @@ import Link from "next/link";
 import { GridElement } from "../gridElement";
 import Image from "next/image";
 import Bouncy from "../bouncy";
+import { sluggify } from "../../helpers/urlHelpers";
+import { Text } from "../text";
+import { Entry } from "../entry";
 
-export const Grid = () => {
+export const Grid = ({ database }) => {
+	console.log(database[0]);
 	return (
 		<>
 			<section className="grid">
@@ -24,7 +28,7 @@ export const Grid = () => {
 				<GridElement column={9} columnSpan={5} row={1} rowSpan={4}>
 					<Bio />
 				</GridElement>
-				<GridElement column={6} columnSpan={3} row={6} rowSpan={4}>
+				<GridElement column={5} columnSpan={4} row={6} rowSpan={4}>
 					<BioFollowUp />
 				</GridElement>
 
@@ -40,26 +44,11 @@ export const Grid = () => {
 
 				<GridElement column={2} columnSpan={5} row={10} rowSpan={6}>
 					<section className="entry frame">
-						<Image
-							src={"/newspaper.jpg"}
-							alt=""
-							objectFit="cover"
-							width={512}
-							height={407}
-							objectPosition={"top center"}
-						/>
+						<Image src={"/newspaper.jpg"} alt="" width={1024} height={813} objectPosition={"top center"} />
 
-						<header>
-							<h3>{"Candles Are Lit"}</h3>
-						</header>
-						<p>
-							{
-								"Our age of technology has made every basic necessity an over complicated luxury wrestling us away from the small pleasures in the day-to-day."
-							}
-						</p>
-						<Link href={"/blog/candles-are-lit"}>
-							<a>{"Read more"}</a>
-						</Link>
+						{database.map((entry) => (
+							<Entry entry={entry} key={entry.id} showPublishDate={false} />
+						))}
 					</section>
 				</GridElement>
 				<GridElement column={8} columnSpan={2} row={13} rowSpan={2}>
@@ -201,13 +190,15 @@ function Bio() {
 						height: 100%;
 					}
 					article p {
+						overflow: hidden;
+						display: -webkit-box;
+						-webkit-box-orient: vertical;
+
+						/* <integer> values */
+						-webkit-line-clamp: 6;
+						line-clamp: 6;
 						text-overflow: ellipsis;
 						overflow: hidden;
-						white-space: nowrap;
-						overflow-wrap: break-word;
-						/* display: block; */
-						width: 100%;
-						flex: 1;
 					}
 				`}</style>
 			</article>
@@ -219,31 +210,28 @@ function BioFollowUp() {
 		<>
 			<section>
 				<h3>{"Things I like"}</h3>
-				<p>
-					<ul>
-						<li>{"Deserts of the American Southwest"}</li>
-						<li>{"Ace Hotel"}</li>
-						<li>{"Meandering with a film camera"}</li>
-						<li>{"Land-use conspiracy theories"}</li>
-						<li>
-							<Link href="https://twitter.com/ninlive/status/1183382334868983814">
-								<a>{"This video of Trent Reznor starting a Nine Inch Nails set"}</a>
-							</Link>
-						</li>
-					</ul>
-				</p>
+
+				<ul>
+					<li>{"Deserts of the American Southwest"}</li>
+					<li>{"Ace Hotel"}</li>
+					<li>{"Meandering with a film camera"}</li>
+					<li>{"Land-use conspiracy theories"}</li>
+					<li>
+						<Link href="https://twitter.com/ninlive/status/1183382334868983814">
+							<a>{"This video of Trent Reznor starting a Nine Inch Nails set"}</a>
+						</Link>
+					</li>
+				</ul>
 			</section>
 			<style jsx>{`
 				section {
 					padding: 1em;
-					border: 2px dotted var(--color-dark);
+					border: 2px dotted var(--text-color);
 				}
 				section * {
-					color: var(--color-dark);
+					color: var(--text-color);
 				}
-				p {
-					margin: 0;
-				}
+
 				ul {
 					list-style-type: none;
 

@@ -3,8 +3,19 @@ import { Grid } from "../components/containers/grid";
 import { Footer } from "../components/footer";
 import { Hero } from "../components/hero";
 import { Navigation } from "../components/navigation";
+import { getNotionDatabase } from "../helpers/notionHelpers";
 
-export default function Index() {
+export async function getStaticProps() {
+	const database = await getNotionDatabase({ page_size: 1 });
+	return {
+		props: {
+			database,
+		},
+		revalidate: 60,
+	};
+}
+
+export default function Index({ database }) {
 	return (
 		<>
 			<Head>
@@ -23,7 +34,7 @@ export default function Index() {
 			</Head>
 			<Navigation />
 			<Hero />
-			{process.env.NODE_ENV === "development" && <Grid />}
+			{process.env.NODE_ENV === "development" && <Grid database={database} />}
 			<Footer />
 		</>
 	);

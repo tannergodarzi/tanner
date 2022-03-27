@@ -30,7 +30,7 @@ export default function Bouncy() {
 	}, [boundsRef, boundingBoxRef]);
 
 	const updatePosition = () => {
-		if (boundsRef != undefined) {
+		if (boundsRef.current !== null && actorRef.current !== null) {
 			let xPos = positionRef.current.x;
 			let yPos = positionRef.current.y;
 			let xEnd = boundsRef.current.x;
@@ -75,10 +75,10 @@ export default function Bouncy() {
 				x: xDirection,
 				y: yDirection,
 			};
-		}
 
-		actorRef.current.style.transform = `translate(${positionRef.current.x}px, ${positionRef.current.y}px)`;
-		windowAnimationRequestRef.current = window.requestAnimationFrame(updatePosition);
+			actorRef.current.style.transform = `translate(${positionRef.current.x}px, ${positionRef.current.y}px)`;
+			windowAnimationRequestRef.current = window.requestAnimationFrame(updatePosition);
+		}
 	};
 
 	useEffect(() => {
@@ -98,14 +98,14 @@ export default function Bouncy() {
 					width: 100%;
 					height: auto;
 					aspect-ratio: 4/3;
-					border: 1px solid red;
+					border: 1px solid #000000;
 					overflow: hidden;
 				}
 
 				.actor {
 					width: 48px;
 					aspect-ratio: 1/1;
-					background: red;
+					background: #000000;
 					will-change: transform;
 				}
 			`}</style>

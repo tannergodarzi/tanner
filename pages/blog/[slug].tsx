@@ -39,7 +39,9 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-	const database = await getNotionDatabase();
+	const database = await getNotionDatabase({
+		page_size: 100,
+	});
 	const paths = database.map((entry: any) => {
 		return {
 			params: {

@@ -23,11 +23,12 @@ export async function getEntryFromNotionDatabase(identifier: string) {
 		.then((a) => a.results[0]);
 }
 
-export async function getNotionDatabase(database_id: string = process.env.NOTION_BLOG_DATABASE) {
+export async function getNotionDatabase({ database_id = process.env.NOTION_BLOG_DATABASE, page_size = 100 }) {
 	return await notion.databases
 		.query({
-			database_id,
+			database_id: database_id,
 			sorts: [{ property: "Published", direction: "descending" }],
+			page_size: page_size,
 			filter: {
 				and: [
 					{

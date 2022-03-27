@@ -6,9 +6,10 @@ import { Footer } from "../../components/footer";
 import { getNotionDatabase } from "../../helpers/notionHelpers";
 import Link from "next/link";
 import Image from "next/image";
+import { Entry } from "../../components/entry";
 
 export async function getStaticProps() {
-	const database = await getNotionDatabase();
+	const database = await getNotionDatabase({ page_size: 100 });
 	return {
 		props: {
 			database,
@@ -40,30 +41,9 @@ export default function Index({ database }) {
 						/>
 					</h1>
 				</section>
-				{database.map((entry) => {
-					const { id, properties } = entry;
-					const { Published, Name, Slug, Subtitle } = properties;
-					const publishedDate = new Intl.DateTimeFormat("en-US", {
-						dateStyle: "long",
-					}).format(new Date(Published.date.start));
-					return (
-						<section className="entry" key={id}>
-							<Link href={`/blog/${sluggify(Slug.url)}`}>
-								<a>
-									<header>
-										<h2 className="entry-title">
-											<Text value={Name.title} />
-										</h2>
-									</header>
-									<p>
-										<Text value={Subtitle.rich_text} />
-									</p>
-									<time dateTime={publishedDate}>{`Published ${publishedDate}`}</time>
-								</a>
-							</Link>
-						</section>
-					);
-				})}
+				{database.map((entry) => (
+					<Entry entry={entry} key={entry.id} />
+				))}
 			</article>
 			<Footer />
 
@@ -86,32 +66,6 @@ export default function Index({ database }) {
 				.hero h1 {
 					font-size: 0;
 					margin: 0;
-				}
-				.entry {
-					display: flex;
-					flex-direction: column;
-					text-align: left;
-					width: 100%;
-					margin-bottom: 4em;
-				}
-				.entry p {
-					margin-bottom: 0;
-				}
-				.entry time {
-					font-size: 0.75em;
-					opacity: 0.75;
-				}
-				.entry header,
-				.entry header * {
-					margin-bottom: 0;
-				}
-				.entry a {
-					font-weight: inherit;
-					text-decoration: none;
-				}
-				.entry a:hover,
-				.entry a:focus {
-					opacity: 0.7;
 				}
 			`}</style>
 		</>
