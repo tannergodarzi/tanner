@@ -4,7 +4,7 @@ import { getNotionDatabase } from "../helpers/notionHelpers";
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	const res = context.res;
 
-	const database = await getNotionDatabase();
+	const database = await getNotionDatabase({ page_size: 100 });
 
 	let rssItemsXml = "";
 	let latestPostDate = "";
