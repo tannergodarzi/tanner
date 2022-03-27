@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { GridElement } from "../gridElement";
 import Image from "next/image";
+import Bouncy from "../bouncy";
 
 export const Grid = () => {
 	return (
@@ -65,6 +66,10 @@ export const Grid = () => {
 					<Link href={"/blog"}>
 						<a className="circle special">{"Blog"}</a>
 					</Link>
+				</GridElement>
+
+				<GridElement column={2} columnSpan={12} row={20} rowSpan={6}>
+					<Bouncy />
 				</GridElement>
 
 				<GridElement column={4} columnSpan={7} row={28} rowSpan={4}>
