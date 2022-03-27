@@ -12,7 +12,7 @@ export const Grid = ({ database }) => {
 	return (
 		<>
 			<section className="grid">
-				<GridElement column={6} columnSpan={3} row={1} rowSpan={4}>
+				<GridElement column={3} columnSpan={6} row={1} rowSpan={8}>
 					<picture>
 						<span>
 							<Image
