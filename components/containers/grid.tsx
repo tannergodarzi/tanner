@@ -15,7 +15,7 @@ export const Grid = () => {
 								layout="fill"
 								objectFit="cover"
 								objectPosition="center"
-								alt=""
+								alt="A photo of Tanner Godarzi dressed as a cowboy standing in front of the Red Dog Saloon in Pioneertown, California"
 							/>
 						</span>
 					</picture>
@@ -179,14 +179,33 @@ export const Grid = () => {
 function Bio() {
 	return (
 		<>
-			<h2>{"Not actually a cowboy"}</h2>
-			<p>
-				{`I love adventure and a good felt hat. During the day I help tell the story of future of work tools at Notion and by night I write about odd thoughts and conversations. Weekends I can be found meandering around San Francisco with a camera. Previously I worked at Dropbox, Square and design agency / freelance work. I also worked with heavy metal band Machine Head in a past time. I’m eternally optimistic about the future. If you are too, then`}
-			</p>
-			<Link href={"/about"}>
-				<a>{"read more →"}</a>
-			</Link>
-			<style jsx>{``}</style>
+			<article>
+				<h2>{"Not actually a cowboy"}</h2>
+				<p>
+					{`I love adventure and a good felt hat. During the day I help tell the story of future of work tools at Notion and by night I write about odd thoughts and conversations. Weekends I can be found meandering around San Francisco with a camera. Previously I worked at Dropbox, Square and design agency / freelance work. I also worked with heavy metal band Machine Head in a past time. I’m eternally optimistic about the future. If you are too, then`}
+				</p>
+				<Link href={"/about"}>
+					<a>{"read more →"}</a>
+				</Link>
+				<style jsx>{`
+					article {
+						width: 100%;
+						width: 100%;
+						display: flex;
+						flex-direction: column;
+						height: 100%;
+					}
+					article p {
+						text-overflow: ellipsis;
+						overflow: hidden;
+						white-space: nowrap;
+						overflow-wrap: break-word;
+						/* display: block; */
+						width: 100%;
+						flex: 1;
+					}
+				`}</style>
+			</article>
 		</>
 	);
 }
