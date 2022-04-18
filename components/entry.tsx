@@ -34,7 +34,7 @@ export const Entry = ({ entry, showPublishDate = true }) => {
 					flex-direction: column;
 					text-align: left;
 					width: 100%;
-					margin-bottom: 4em;
+					margin-bottom: 1em;
 				}
 				.entry p {
 					margin-bottom: 0;

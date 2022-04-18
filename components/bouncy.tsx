@@ -18,7 +18,7 @@ export default function Bouncy() {
 		y: 0,
 	});
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		if (boundingBoxRef !== null) {
 			const yEnd = boundingBoxRef.current.getBoundingClientRect().height;
 			const xEnd = boundingBoxRef.current.getBoundingClientRect().width;
@@ -94,8 +94,6 @@ export default function Bouncy() {
 				<div className="actor" ref={actorRef}>
 					<Image
 						src="/blu-ray.png"
-						width={200}
-						height={115}
 						alt=""
 						layout="fill"
 						objectFit="contain"

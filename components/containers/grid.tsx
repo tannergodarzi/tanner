@@ -9,24 +9,30 @@ export const Grid = ({ database }) => {
 	return (
 		<>
 			<section className="grid">
-				<GridElement column={4} columnSpan={5} row={1} rowSpan={6}>
-					<picture>
-						<span>
-							<Image
-								src={"/tanner-foto.jpeg"}
-								layout="fill"
-								objectFit="cover"
-								objectPosition="center"
-								alt="A photo of Tanner Godarzi dressed as a cowboy standing in front of the Red Dog Saloon in Pioneertown, California"
-							/>
-						</span>
-					</picture>
+				<GridElement column={2} columnSpan={4} row={1} rowSpan={6}>
+					<Image
+						src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
+						layout="fill"
+						alt=""
+						objectFit="cover"
+						objectPosition={"center center"}
+					/>
 				</GridElement>
-				<GridElement column={9} columnSpan={5} row={1} rowSpan={5}>
+				<GridElement column={7} columnSpan={4} row={1} rowSpan={6}>
 					<Bio />
 				</GridElement>
 
-				<GridElement column={10} columnSpan={6} row={7} rowSpan={6}>
+				<GridElement column={12} columnSpan={4} row={1} rowSpan={4}>
+					<Image
+						src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
+						layout="fill"
+						alt=""
+						objectFit="cover"
+						objectPosition={"center center"}
+					/>
+				</GridElement>
+
+				<GridElement column={10} columnSpan={6} row={10} rowSpan={7}>
 					<Image
 						src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
 						layout="fill"
@@ -36,57 +42,57 @@ export const Grid = ({ database }) => {
 					/>
 				</GridElement>
 
-				<GridElement column={2} columnSpan={6} row={8} rowSpan={8}>
+				<GridElement column={3} columnSpan={6} row={15} rowSpan={8}>
 					<section className="frame">
-						<Image src={"/drop+out.jpg"} width={500} height={322} alt="" />
 						{database.map((entry) => (
 							<Entry entry={entry} key={entry.id} showPublishDate={false} />
 						))}
 					</section>
 				</GridElement>
-				<GridElement column={12} columnSpan={2} row={14} rowSpan={2}>
+				<GridElement column={11} columnSpan={3} row={6} rowSpan={3}>
 					<Link href={"/blog"}>
-						<a className="circle special">{"Blog"}</a>
+						<a className="circle">{"Blog"}</a>
 					</Link>
 				</GridElement>
 
-				<GridElement column={4} columnSpan={6} row={18} rowSpan={6}>
-					<Bouncy />
+				<GridElement column={5} columnSpan={4} row={8} rowSpan={6}>
+					<iframe
+						src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?theme=0"
+						width="50%"
+						height="50%"
+						frameBorder="0"
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						style={{
+							transform: "scale(2)",
+							transformOrigin: "left top",
+						}}
+					></iframe>
 				</GridElement>
-
-				<GridElement column={12} columnSpan={4} row={20} rowSpan={4}>
+				<GridElement column={10} columnSpan={6} row={20} rowSpan={6}>
 					<BioFollowUp />
 				</GridElement>
 
-				<GridElement column={4} columnSpan={7} row={28} rowSpan={4}>
-					<Image src={"/card.jpg"} layout="fill" alt="" objectFit="cover" objectPosition={"center top"} />
+				<GridElement column={4} columnSpan={8} row={26} rowSpan={6}>
+					<picture>
+						<Image
+							src={"/card.jpg"}
+							layout="fill"
+							alt=""
+							objectFit="contain"
+							objectPosition={"center top"}
+						/>
+					</picture>
 				</GridElement>
 			</section>
 			<style global jsx>{`
 				.grid {
-					margin-top: 10vh;
 					display: grid;
 					grid-template-columns: repeat(16, calc(100vw / 16 - 1rem));
 					grid-template-rows: repeat(48, calc(100vw / 16 - 1rem));
 					gap: 1rem;
 					width: 100vw;
-					--minFontSize: 12px;
-					--maxFontSize: 32px;
-					--scaler: 1vw;
-					--font-body: normal normal 400 0.8rem/1.4em "ibm-plex-mono", sans-serif;
-				}
-				.grid p,
-				.grid ul,
-				.grid a:not(.special) {
-					font: var(--font-body);
-					line-height: 1.3em;
-					font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
-				}
-				.grid h3 {
-					font-size: calc(1.8 * clamp(var(--minFontSize), var(--scaler), var(--maxFontSize)));
-				}
-				.grid h3 {
-					font-size: calc(1.6 * clamp(var(--minFontSize), var(--scaler), var(--maxFontSize)));
+					margin: auto;
+					margin-top: 5vh;
 				}
 
 				.circle {
@@ -99,8 +105,6 @@ export const Grid = ({ database }) => {
 					align-content: center;
 					align-items: center;
 					text-align: center;
-					font-size: 3vw;
-
 					padding: 0.5em;
 					line-height: 1em;
 					font-weight: 700;
@@ -175,10 +179,8 @@ function Bio() {
 					overflow: hidden;
 					display: -webkit-box;
 					-webkit-box-orient: vertical;
-
-					/* <integer> values */
-					-webkit-line-clamp: 6;
-					line-clamp: 6;
+					-webkit-line-clamp: 10;
+					line-clamp: 10;
 					text-overflow: ellipsis;
 					overflow: hidden;
 				}
@@ -189,24 +191,25 @@ function Bio() {
 function BioFollowUp() {
 	return (
 		<>
-			<article>
-				<h3>{"Things I like"}</h3>
+			<article className="frame">
+				<h3>Things I Like</h3>
 				<ul>
 					<li>{"Deserts of the American Southwest"}</li>
-					<li>{"Ace Hotel"}</li>
-					<li>{"Meandering with a film camera"}</li>
+					<li>{"Every Ace Hotel"}</li>
+					<li>{"Point and shoot film cameras"}</li>
 					<li>{"Land-use conspiracy theories"}</li>
 					<li>
 						<Link href="https://twitter.com/ninlive/status/1183382334868983814">
 							<a>{"This video of Trent Reznor starting a Nine Inch Nails set"}</a>
 						</Link>
 					</li>
+					<li>{"Danish Mid Century Modern"}</li>
+					<li>{"Grevilleas"}</li>
 				</ul>
 			</article>
 			<style jsx>{`
 				article {
 					padding: 1em;
-					border: 2px dotted var(--text-color);
 				}
 				article * {
 					color: var(--text-color);
