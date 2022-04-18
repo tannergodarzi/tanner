@@ -2,9 +2,9 @@ import React, { PropsWithChildren } from "react";
 
 interface GridElementProps {
 	column: number;
-	columnSpan: number | "auto";
+	columnSpan: number;
 	row: number;
-	rowSpan: number | "auto";
+	rowSpan: number;
 }
 
 export const GridElement = ({ column, columnSpan, row, rowSpan, children }: PropsWithChildren<GridElementProps>) => {
