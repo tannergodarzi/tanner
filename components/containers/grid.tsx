@@ -58,15 +58,11 @@ export const Grid = ({ database }) => {
 				<GridElement column={5} columnSpan={4} row={8} rowSpan={6}>
 					<iframe
 						src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?theme=0"
-						width="75%"
-						height="75%"
+						width="100%"
+						height="100%"
 						frameBorder="0"
 						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-						style={{
-							transform: "scale(1.25)",
-							transformOrigin: "left top",
-						}}
-					></iframe>
+					/>
 				</GridElement>
 				<GridElement column={10} columnSpan={6} row={20} rowSpan={6}>
 					<BioFollowUp />
