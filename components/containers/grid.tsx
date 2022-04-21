@@ -11,7 +11,7 @@ export const Grid = ({ database }) => {
 			<section className="grid">
 				<GridElement column={2} columnSpan={4} row={1} rowSpan={6}>
 					<Image
-						src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
+						src={"/tanner-polaroid.jpeg"}
 						layout="fill"
 						alt=""
 						objectFit="cover"
@@ -24,11 +24,11 @@ export const Grid = ({ database }) => {
 
 				<GridElement column={12} columnSpan={4} row={1} rowSpan={4}>
 					<Image
-						src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
+						src={"/tanner-jesus.JPG"}
 						layout="fill"
 						alt=""
 						objectFit="cover"
-						objectPosition={"center center"}
+						objectPosition={"center top"}
 					/>
 				</GridElement>
 
@@ -58,12 +58,12 @@ export const Grid = ({ database }) => {
 				<GridElement column={5} columnSpan={4} row={8} rowSpan={6}>
 					<iframe
 						src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?theme=0"
-						width="50%"
-						height="50%"
+						width="75%"
+						height="75%"
 						frameBorder="0"
 						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
 						style={{
-							transform: "scale(2)",
+							transform: "scale(1.25)",
 							transformOrigin: "left top",
 						}}
 					></iframe>
