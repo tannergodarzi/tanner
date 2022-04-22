@@ -6,7 +6,7 @@ import { Navigation } from "../components/navigation";
 import { getNotionDatabase } from "../helpers/notionHelpers";
 
 export async function getStaticProps() {
-	const database = await getNotionDatabase({ page_size: 3 });
+	const database = await getNotionDatabase({ page_size: 1 });
 	return {
 		props: {
 			database,

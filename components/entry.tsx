@@ -26,13 +26,15 @@ export const Entry = ({ entry, showPublishDate = true }) => {
 						)}
 					</a>
 				</Link>
+				<Link href={`/blog/${sluggify(Slug.url)}`}>
+					<a>read more →</a>
+				</Link>
 			</section>
 
 			<style jsx>{`
 				.entry {
 					display: flex;
 					flex-direction: column;
-					text-align: left;
 					width: 100%;
 					margin-bottom: 1em;
 				}
@@ -54,6 +56,11 @@ export const Entry = ({ entry, showPublishDate = true }) => {
 				.entry a:hover,
 				.entry a:focus {
 					opacity: 0.7;
+				}
+				.entry > a:last-of-type {
+					font-weight: bold;
+					margin-top: 0.5em;
+					text-decoration: underline;
 				}
 			`}</style>
 		</>
