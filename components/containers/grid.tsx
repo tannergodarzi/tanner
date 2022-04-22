@@ -44,7 +44,7 @@ export const Grid = ({ database }) => {
 
 				<GridElement column={2} columnSpan={6} row={15} rowSpan={8}>
 					<section className="frame" style={{ textAlign: "center" }}>
-						<div style={{ marginBottom: "30px" }}>
+						<div style={{ marginBottom: "1em" }}>
 							<Image src={"/drop+out.jpg"} alt="" width={500} height={333} layout="responsive" />
 						</div>
 						{database.map((entry) => (
@@ -52,7 +52,7 @@ export const Grid = ({ database }) => {
 						))}
 					</section>
 				</GridElement>
-				<GridElement column={4} columnSpan={2} row={22} rowSpan={2}>
+				<GridElement column={4} columnSpan={2} row={23} rowSpan={2}>
 					<Link href={"/blog"}>
 						<a className="circle">{"Blog"}</a>
 					</Link>
