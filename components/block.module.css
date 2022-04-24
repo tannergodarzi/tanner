@@ -79,5 +79,6 @@
 .embed iframe {
 	width: 100%;
 	display: block;
+	height: auto;
 	aspect-ratio: 16 / 9;
 }
