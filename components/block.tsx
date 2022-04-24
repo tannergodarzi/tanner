@@ -29,16 +29,20 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 								display: flex;
 								flex-direction: row;
 								flex-wrap: wrap;
+								position: relative;
+								align-items: flex-start;
 								gap: 1rem;
 								overflow: hidden;
-								margin: 0.2rem 0 1.5rem;
 							}
 							.column {
 								overflow: hidden;
 								display: flex;
+								align-items: flex-start;
 								flex-direction: column;
 								flex: 1 0 auto;
 								width: min(100vw / ${block.column_list.length}, 300px);
+							}
+							.column > * {
 							}
 						`}</style>
 					</>
