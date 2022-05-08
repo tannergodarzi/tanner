@@ -9,7 +9,8 @@
 	--color-gold: #e6b870;
 	--color-green: rgb(168,183,148);
 	--color-tan: rgba(249,225,180, 1);
-	--color-neutral: var(--color-green);
+	--color-green-dark: rgb(119, 144,110);
+	--color-neutral: var(--color-green-dark);
 
 	--font-annotation: normal normal 400 0.8rem/1.4em "ibm-plex-mono", sans-serif;
 	--font-body: normal normal 400 0.8rem/1.4em "adonis-web", sans-serif;
@@ -19,7 +20,7 @@
 
 :root {
 	--text-color: var(--color-dark);
-	--page-background: var(--color-green);
+	--page-background: var(--color-green-dark);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,0 +1,45 @@
+.footer {
+	box-sizing: border-box;
+	padding: 1rem 1rem 2rem;
+	margin-top: 3rem;
+	width: 100%;
+	text-align: center;
+}
+.footer * {
+	font: var(--font-annotation);
+	font-weight: 400;
+	font-size: 0.6rem;
+}
+
+.footer header {
+	margin-bottom: 0.75em;
+}
+
+.footer nav {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	column-gap: 0.5em;
+	justify-content: center;
+}
+
+.footer nav a {
+	font: inherit;
+	text-decoration: none;
+}
+
+.footer nav a:hover {
+	text-decoration: underline;
+}
+
+.footer nav a:after {
+	content: "/";
+	margin-left: 0.5em;
+	text-decoration: none;
+	pointer-events: none;
+	cursor: default;
+}
+
+.footer nav a:last-of-type:after {
+	display: none;
+}

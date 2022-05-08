@@ -1,0 +1,13 @@
+.grid_element {
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+}
+.grid_element * {
+	font-size: 1em !important;
+	line-height: 1.2em !important;
+}

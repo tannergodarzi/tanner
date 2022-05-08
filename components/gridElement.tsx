@@ -1,5 +1,7 @@
 import React, { PropsWithChildren } from "react";
 
+import styles from "./gridElement.module.css";
+
 interface GridElementProps {
 	column: number;
 	columnSpan: number;
@@ -12,30 +14,15 @@ export const GridElement = ({ column, columnSpan, row, rowSpan, children }: Prop
 	return (
 		<>
 			<section
-				className={"grid-element"}
+				className={styles.grid_element}
 				style={{
 					gridColumn: `${column} / span ${columnSpan}`,
 					gridRow: `${row} / span ${rowSpan}`,
+					fontSize: `${(16 / columnSpan) * 0.95}vw`
 				}}
 			>
 				{children}
 			</section>
-			<style global jsx>{`
-				.grid-element {
-					box-sizing: border-box;
-					position: relative;
-					display: flex;
-					flex-direction: column;
-					justify-content: flex-start;
-					align-content: flex-start;
-					align-items: flex-start;
-					font-size: ${(16 / columnSpan) * 0.95}vw;
-				}
-				.grid-element * {
-					font-size: 1em !important;
-					line-height: 1.2em !important;
-				}
-			`}</style>
 		</>
 	);
 };

@@ -15,7 +15,7 @@
 	margin-top: 0;
 }
 .paragraph a {
-    font-weight: 700;
+	font-weight: 700;
 }
 .list_item {
 	font-size: 1rem;
@@ -38,16 +38,16 @@
 	background-color: rgba(200, 200, 200, 0.1);
 
 	page-break-inside: avoid;
-    font-family: monospace;
-    max-width: 100%;
-    overflow: auto;
-    word-wrap: break-word;
+	font-family: monospace;
+	max-width: 100%;
+	overflow: auto;
+	word-wrap: break-word;
 }
 .divider {
 	margin: 2rem 0;
-    border: none;
+	border: none;
 	border-top: 1px solid rgba(0, 0, 0, 1);
-    height: 0;
+	height: 0;
 	filter: invert(50%);
 }
 .quote {
@@ -79,5 +79,22 @@
 .embed iframe {
 	width: 100%;
 	display: block;
+	height: auto;
 	aspect-ratio: 16 / 9;
+}
+.column_list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: relative;
+	align-items: flex-start;
+	gap: 1rem;
+	overflow: hidden;
+}
+.column {
+	overflow: hidden;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	flex: 1 0 auto;
 }

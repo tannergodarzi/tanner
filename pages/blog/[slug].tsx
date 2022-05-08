@@ -3,7 +3,13 @@ import { Client } from "@notionhq/client";
 import { Block } from "../../components/block";
 import { Navigation } from "../../components/navigation";
 import { Footer } from "../../components/footer";
-import { getEntryFromNotionDatabase, getNotionDatabase } from "../../helpers/notionHelpers";
+import {
+	checkForChildBlocks,
+	getNotionBlocks,
+	getNotionPage,
+	getEntryFromNotionDatabase,
+	getNotionDatabase,
+} from "../../helpers/notionHelpers";
 import { useRouter } from "next/router";
 
 // Notion client
@@ -18,14 +24,12 @@ export async function getStaticProps(context) {
 			notFound: true,
 		};
 	}
-	const blocksResponse = await notion.blocks.children
-		.list({
-			block_id: queryResponse.id,
-		})
-		.then((a) => a.results);
+	const page = await getNotionPage(queryResponse.id);
+	const unparsedBlocks = await getNotionBlocks(page.id).then((a) => a.map(checkForChildBlocks));
+	const blocks = await Promise.all([...unparsedBlocks]).then((values) => values);
+
 	const { Published, Name, Slug, Subtitle } = queryResponse.properties;
 	const pageTitle = Name.title[0].plain_text;
-	const blocks = blocksResponse;
 	const description = Subtitle.rich_text[0].plain_text;
 	const meta = { Published, Name, Slug, description };
 	return {
@@ -70,7 +74,7 @@ export default function Slug(props) {
 				<meta name="og:author" content={"Tanner Godarzi"} />
 				<meta
 					name="og:image"
-					content={"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpg&w=1080&q=75"}
+					content={"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpeg&w=1080&q=75"}
 				/>
 
 				<meta name="twitter:card" content={"summary_large_image"} />

@@ -1,0 +1,25 @@
+.hero {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 1.5rem;
+	z-index: 1000;
+	position: relative;
+}
+
+.hero_text {
+	position: relative;
+}
+
+.hero_text,
+.hero_text *:not(span) {
+	z-index: 0;
+	pointer-events: none;
+	font: var(--font-display);
+	font-size: clamp(2.25rem, 1.7996rem + 1.8909vw, 3.75rem);
+	display: inline;
+	letter-spacing: -0.02em;
+	font-weight: 400;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
+}

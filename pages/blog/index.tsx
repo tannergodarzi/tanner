@@ -24,7 +24,7 @@ export default function Index({ database }) {
 			<Head>
 				<title>Tanner&rsquo;s Blog</title>
 				<meta name="title" content="Tanner Godarzi&rsquo;s Blog" />
-				<meta name="description" content="Thoughts..." />
+				<meta name="description" content="By night, I write about odd thoughts and conversations." />
 			</Head>
 
 			<Navigation />
@@ -32,9 +32,9 @@ export default function Index({ database }) {
 				<section className="hero">
 					<h1>
 						<Image
-							src={"/newspaper.jpg"}
-							width={512}
-							height={407}
+							src={"/newspaper.jpeg"}
+							width={570}
+							height={447}
 							alt="Blog"
 							objectFit="cover"
 							objectPosition={"top center"}

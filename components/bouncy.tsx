@@ -1,6 +1,6 @@
 // Forked from https://codepen.io/tannergodarzi/pen/oNXYWOr/e2009c1b26f7ee4034f678029e68c6ff
 import Image from "next/image";
-import React, { useLayoutEffect, useEffect, useState, useRef, useCallback } from "react";
+import React, {  useEffect,  useRef, useCallback } from "react";
 
 export default function Bouncy() {
 	// Use useRef for mutable variables that we want to persist
@@ -30,7 +30,7 @@ export default function Bouncy() {
 		// TODO: Add Mutation observer
 	}, [boundsRef, boundingBoxRef]);
 
-	const updatePosition = () => {
+	const updatePosition = useCallback(() => {
 		if (boundsRef.current !== null && actorRef.current !== null) {
 			let xPos = positionRef.current.x;
 			let yPos = positionRef.current.y;
@@ -81,12 +81,12 @@ export default function Bouncy() {
 			actorRef.current.style.transform = `translate(${positionRef.current.x}px, ${positionRef.current.y}px)`;
 			windowAnimationRequestRef.current = window.requestAnimationFrame(updatePosition);
 		}
-	};
+	}, []);
 
 	useEffect(() => {
 		windowAnimationRequestRef.current = requestAnimationFrame(updatePosition);
 		return () => cancelAnimationFrame(windowAnimationRequestRef.current);
-	}, []); // Make sure the effect runs only once
+	}, [updatePosition]); // Make sure the effect runs only once
 
 	return (
 		<>
