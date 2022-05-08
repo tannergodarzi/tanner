@@ -1,11 +1,13 @@
 import React from "react";
 import Link from "next/link";
 
+import styles from "./footer.module.css";
+
 export const Footer = () => {
 	const currentYear = new Date().getFullYear();
 	return (
 		<>
-			<footer>
+			<footer className={styles.footer}>
 				<header>{`Made by Tanner Godarzi ©${currentYear}`}</header>
 				<nav>
 					<Link href={"/"}>
@@ -28,53 +30,6 @@ export const Footer = () => {
 					</Link>
 				</nav>
 			</footer>
-			<style jsx>{`
-				footer {
-					box-sizing: border-box;
-					padding: 1rem 1rem 2rem;
-					margin-top: 3rem;
-					width: 100%;
-					text-align: center;
-				}
-				footer * {
-					font: var(--font-annotation);
-					font-weight: 400;
-					font-size: 0.6rem;
-				}
-
-				header {
-					margin-bottom: 0.75em;
-				}
-
-				nav {
-					display: flex;
-					flex-direction: row;
-					flex-wrap: wrap;
-					column-gap: 0.5em;
-					justify-content: center;
-				}
-
-				nav a {
-					font: inherit;
-					text-decoration: none;
-				}
-
-				nav a:hover {
-					text-decoration: underline;
-				}
-
-				nav a:after {
-					content: "/";
-					margin-left: 0.5em;
-					text-decoration: none;
-					pointer-events: none;
-					cursor: default;
-				}
-
-				nav a:last-of-type:after {
-					display: none;
-				}
-			`}</style>
 		</>
 	);
 };

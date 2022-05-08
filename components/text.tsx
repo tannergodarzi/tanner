@@ -2,21 +2,22 @@ import React, { PropsWithChildren } from "react";
 import classNames from "classnames";
 import { v4 as uuidv4 } from "uuid";
 
+import styles from "./text.module.css";
+
 interface TextProps {
 	value: any;
 }
 
 export const Text = ({ value }: PropsWithChildren<TextProps>) => {
 	return value.map((block) => {
-		const { annotations, plaint_text, text } = block;
+		const { annotations, text } = block;
 
-		const classes = classNames("text", {
-			["text-bold"]: annotations.bold,
-			[`text-color-${annotations.color}`]: annotations.color,
-			["text-italic"]: annotations.italic,
-			["text-strikethrough"]: annotations.strikethrough,
-			["text-underline"]: annotations.underline,
-			["text-code"]: annotations.code,
+		const classes = classNames(styles.text, {
+			[styles.text_bold]: annotations.bold,
+			[styles.text_italic]: annotations.italic,
+			[styles.text_strikethrough]: annotations.strikethrough,
+			[styles.text_underline]: annotations.underline,
+			[styles.text_code]: annotations.code,
 		});
 
 		const genKey = uuidv4();
@@ -32,34 +33,6 @@ export const Text = ({ value }: PropsWithChildren<TextProps>) => {
 						<code>{text.content}</code>
 					)}
 				</span>
-				<style jsx>{`
-					.text {
-						font: inherit;
-						display: inline;
-						width: 100%;
-					}
-					.text-bold {
-						font-weight: 700;
-					}
-					.text-italic {
-						font-style: italic;
-					}
-					.text-strikethrough {
-						text-decoration: line-through;
-					}
-					.text-underline {
-						text-decoration: underline;
-					}
-					.text-underline.text-strikethrough {
-						text-decoration: underline line-through;
-					}
-					.text-code {
-						font: var(--font-annotation);
-						background: rgba(255, 255, 255, 0.1);
-						padding: 0.3em;
-						border-radius: 0.4em;
-					}
-				`}</style>
 			</React.Fragment>
 		);
 	});

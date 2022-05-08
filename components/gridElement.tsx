@@ -1,5 +1,7 @@
 import React, { PropsWithChildren } from "react";
 
+import styles from "./gridElement.module.css";
+
 interface GridElementProps {
 	column: number;
 	columnSpan: number | "auto";
@@ -11,7 +13,7 @@ export const GridElement = ({ column, columnSpan, row, rowSpan, children }: Prop
 	return (
 		<>
 			<section
-				className={"grid-element"}
+				className={styles.grid_element}
 				style={{
 					gridColumn: `${column} / span ${columnSpan}`,
 					gridRow: `${row} / span ${rowSpan}`,
@@ -19,17 +21,6 @@ export const GridElement = ({ column, columnSpan, row, rowSpan, children }: Prop
 			>
 				{children}
 			</section>
-			<style jsx>{`
-				.grid-element {
-					box-sizing: border-box;
-					position: relative;
-					display: flex;
-					flex-direction: column;
-					justify-content: flex-start;
-					align-content: flex-start;
-					align-items: flex-start;
-				}
-			`}</style>
 		</>
 	);
 };

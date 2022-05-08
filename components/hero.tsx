@@ -1,11 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Poster from "./poster";
+
+import styles from "./hero.module.css";
+
 export const Hero = () => {
 	return (
 		<>
-			<article className="hero">
-				<section className="hero-text">
+			<article className={styles.hero}>
+				<section className={styles.hero_text}>
 					<h1>{`Howdy, I’m Tanner`}</h1>{" "}
 					<p>
 						<span>{`— a real person on the internet.`}</span>
@@ -55,29 +58,6 @@ export const Hero = () => {
 					</p>
 				</section>
 			</article>
-			<style jsx>{`
-				.hero {
-					box-sizing: border-box;
-					width: 100%;
-					padding: 1.5rem;
-					z-index: 1000;
-					position: relative;
-				}
-				.hero-text,
-				.hero-text * {
-					z-index: 0;
-					position: relative;
-					pointer-events: none;
-					font: var(--font-display);
-					font-size: clamp(2.25rem, 1.7996rem + 1.8909vw, 3.75rem);
-					display: inline;
-					letter-spacing: -0.02em;
-					font-weight: 400;
-					word-break: break-word;
-					overflow-wrap: break-word;
-					hyphens: auto;
-				}
-			`}</style>
 		</>
 	);
 };

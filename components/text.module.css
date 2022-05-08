@@ -1,0 +1,26 @@
+.text {
+	font: inherit;
+	display: inline;
+	width: 100%;
+}
+.text_bold {
+	font-weight: 700;
+}
+.text_italic {
+	font-style: italic;
+}
+.text_strikethrough {
+	text-decoration: line-through;
+}
+.text_underline {
+	text-decoration: underline;
+}
+.text_underline.text_strikethrough {
+	text-decoration: underline line-through;
+}
+.text_code {
+	font: var(--font-annotation);
+	background: rgba(255, 255, 255, 0.1);
+	padding: 0.3em;
+	border-radius: 0.4em;
+}

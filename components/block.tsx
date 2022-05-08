@@ -13,10 +13,16 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 			case "column_list":
 				return (
 					<>
-						<section className="column_list">
+						<section className={styles.column_list}>
 							{block.column_list.map((column) => {
 								return (
-									<section key={column.id} className="column">
+									<section
+										key={column.id}
+										className={styles.column}
+										style={{
+											width: `min(100vw / ${block.column_list.length}, 300px)`,
+										}}
+									>
 										{column.column.map((block) => {
 											return <Block block={block} key={block.id} />;
 										})}
@@ -24,27 +30,6 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 								);
 							})}
 						</section>
-						<style global jsx>{`
-							.column_list {
-								display: flex;
-								flex-direction: row;
-								flex-wrap: wrap;
-								position: relative;
-								align-items: flex-start;
-								gap: 1rem;
-								overflow: hidden;
-							}
-							.column {
-								overflow: hidden;
-								display: flex;
-								align-items: flex-start;
-								flex-direction: column;
-								flex: 1 0 auto;
-								width: min(100vw / ${block.column_list.length}, 300px);
-							}
-							.column > * {
-							}
-						`}</style>
 					</>
 				);
 			case "heading_1":
