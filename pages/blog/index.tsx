@@ -32,8 +32,8 @@ export default function Index({ database }) {
 					<h1>
 						<Image
 							src={"/newspaper.jpeg"}
-							width={512}
-							height={407}
+							width={570}
+							height={447}
 							alt="Blog"
 							objectFit="cover"
 							objectPosition={"top center"}
