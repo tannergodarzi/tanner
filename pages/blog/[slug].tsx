@@ -11,6 +11,7 @@ import {
 	getNotionDatabase,
 } from "../../helpers/notionHelpers";
 import { useRouter } from "next/router";
+import { NotionPages } from "../../library/notion";
 
 // Notion client
 const notion = new Client({
@@ -18,19 +19,20 @@ const notion = new Client({
 });
 
 export async function getStaticProps(context) {
+	const newQueryResponse = await NotionPages.loadPageBySlug(context.params.slug);
 	const queryResponse = (await getEntryFromNotionDatabase(context.params.slug)) as any;
-	if (!queryResponse) {
+	if (!newQueryResponse) {
 		return {
 			notFound: true,
 		};
 	}
-	const page = await getNotionPage(queryResponse.id);
-	const unparsedBlocks = await getNotionBlocks(page.id).then((a) => a.map(checkForChildBlocks));
+	//const page = await getNotionPage(queryResponse.id);
+	const unparsedBlocks = newQueryResponse.content.children.map(checkForChildBlocks); // await getNotionBlocks(page.id).then((a) => a.map(checkForChildBlocks));
 	const blocks = await Promise.all([...unparsedBlocks]).then((values) => values);
 
-	const { Published, Name, Slug, Subtitle } = queryResponse.properties;
-	const pageTitle = Name.title[0].plain_text;
-	const description = Subtitle.rich_text[0].plain_text;
+	const { Published, Name, Slug, Subtitle } = newQueryResponse.content.properties;
+	const pageTitle = Name["title"][0].plain_text;
+	const description = Subtitle["rich_text"][0].text.content;
 	const meta = { Published, Name, Slug, description };
 	return {
 		props: {
@@ -43,17 +45,18 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-	const database = await getNotionDatabase({
-		page_size: 100,
-	});
-	const paths = database.map((entry: any) => {
-		return {
+	const params: Array<{ params: { slug: string } }> = [];
+	for await (const page of NotionPages.query({
+		sorts: [NotionPages.sort.Published.descending],
+	})) {
+		await NotionPages.downloadAssets(page);
+		params.push({
 			params: {
-				slug: entry.properties.Slug.url,
+				slug: page.frontmatter.slug,
 			},
-		};
-	});
-	return { paths, fallback: "blocking" };
+		});
+	}
+	return { paths: params, fallback: false };
 }
 
 export default function Slug(props) {

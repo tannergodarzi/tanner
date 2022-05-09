@@ -1,10 +1,7 @@
 import Head from "next/head";
-import { sluggify } from "../../helpers/urlHelpers";
 import { Navigation } from "../../components/navigation";
-import { Text } from "../../components/text";
 import { Footer } from "../../components/footer";
 import { getNotionDatabase } from "../../helpers/notionHelpers";
-import Link from "next/link";
 import Image from "next/image";
 import { Entry } from "../../components/entry";
 

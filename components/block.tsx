@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { PropsWithChildren } from "react";
 import styles from "./block.module.css";
 import { Text } from "./text";
@@ -9,145 +10,157 @@ interface BlockProps {
 export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 	const { type, id } = block;
 	const value = block[type];
-		switch (type) {
-			case "column_list":
-				return (
-					<>
-						<section className={styles.column_list}>
-							{block.column_list.map((column) => {
-								return (
-									<section
-										key={column.id}
-										className={styles.column}
-										style={{
-											width: `min(100vw / ${block.column_list.length}, 300px)`,
-										}}
-									>
-										{column.column.map((block) => {
-											return <Block block={block} key={block.id} />;
-										})}
-									</section>
-								);
-							})}
-						</section>
-					</>
-				);
-			case "heading_1":
-				return (
-					<h1 className={styles.heading_1}>
-						<Text value={value.text} />
-					</h1>
-				);
-			case "heading_2":
-				return (
-					<h2 className={styles.heading_2}>
-						<Text value={value.text} />
-					</h2>
-				);
-			case "heading_3":
-				return (
-					<h3 className={styles.heading_3}>
-						<Text value={value.text} />
-					</h3>
-				);
-			case "paragraph":
-				return (
-					<p className={styles.paragraph}>
-						<Text value={value.text} />
-					</p>
-				);
-			case "bulleted_list_item":
-			case "numbered_list_item":
-				return (
-					<ul className={styles.list_item}>
-						{block.bulleted_list_item.text.map((value, index) => {
+	const [aspectRatio, setAspectRatio] = React.useState("1 / 1");
+	switch (type) {
+		case "column_list":
+			return (
+				<>
+					<section className={styles.column_list}>
+						{block.column_list.map((column) => {
 							return (
-								<li key={index}>
-									<Text value={[value]} />
-								</li>
+								<section
+									key={column.id}
+									className={styles.column}
+									style={{
+										width: `min(100vw / ${block.column_list.length}, 300px)`,
+									}}
+								>
+									{column.column.map((block) => {
+										return <Block block={block} key={block.id} />;
+									})}
+								</section>
 							);
 						})}
-					</ul>
-				);
-			case "code":
-				return (
-					<pre className={styles.code}>
-						<code>{value.text[0].text.content}</code>
-					</pre>
-				);
-			case "quote":
-				return (
-					<blockquote className={styles.quote}>
-						<Text value={value.text} />
-					</blockquote>
-				);
-			case "divider":
-				return <hr key={id} className={styles.divider} />;
-			case "bookmark":
-				const innerText = value.caption.length > 0 ? <Text value={value.caption} /> : value.url;
-				return (
-					<a href={value.url} className={styles.bookmark}>
-						{innerText}
-					</a>
-				);
-			case "image":
-				const { image } = block;
-				return (
-					<>
-						<picture className={"image"}>
-							{/* eslint-disable-next-line @next/next/no-img-element */}
-							<img
-								src={image.external?.url || image.file?.url}
-								alt={image.caption[0]?.plain_text || ""}
-							/>
-							{image.caption.length > 0 && (
-								<figcaption>
-									<Text value={image.caption} key={id} />
-								</figcaption>
-							)}
-						</picture>
-						<style jsx>{`
-							.image {
-								width: 100%;
-								margin-top: 1.7rem;
-								display: block;
+					</section>
+				</>
+			);
+		case "heading_1":
+			return (
+				<h1 className={styles.heading_1}>
+					<Text value={value.rich_text} />
+				</h1>
+			);
+		case "heading_2":
+			return (
+				<h2 className={styles.heading_2}>
+					<Text value={value.rich_text} />
+				</h2>
+			);
+		case "heading_3":
+			return (
+				<h3 className={styles.heading_3}>
+					<Text value={value.rich_text} />
+				</h3>
+			);
+		case "paragraph":
+			return (
+				<p className={styles.paragraph}>
+					<Text value={value.rich_text} />
+				</p>
+			);
+		case "bulleted_list_item":
+		case "numbered_list_item":
+			return (
+				<ul className={styles.list_item}>
+					{block.bulleted_list_item.rich_text.map((value, index) => {
+						return (
+							<li key={index}>
+								<Text value={[value]} />
+							</li>
+						);
+					})}
+				</ul>
+			);
+		case "code":
+			return (
+				<pre className={styles.code}>
+					<code>{value.rich_text[0].rich_text.content}</code>
+				</pre>
+			);
+		case "quote":
+			return (
+				<blockquote className={styles.quote}>
+					<Text value={value.rich_text} />
+				</blockquote>
+			);
+		case "divider":
+			return <hr key={id} className={styles.divider} />;
+		case "bookmark":
+			const innerText = value.caption.length > 0 ? <Text value={value.caption} /> : value.url;
+			return (
+				<a href={value.url} className={styles.bookmark}>
+					{innerText}
+				</a>
+			);
+		case "image":
+			console.log(block);
+			const { image } = block;
+
+			return (
+				<>
+					<picture className={"image"} style={{ aspectRatio }}>
+						<Image
+							src={
+								image.external?.url ||
+								`/api/notion-asset/block/${block.id}/image?last_edited_time=${block.last_edited_time}`
 							}
-							.image img {
-								display: block;
-								height: auto;
-								width: 100%;
-							}
-							.image figcaption {
-								margin-top: 0.75em;
-								font: var(--font-annotation);
-								font-size: 0.6rem;
-							}
-						`}</style>
-					</>
-				);
-			case "embed":
-				return (
-					<figure className={styles.embed}>
-						<iframe src={block.embed.url} />
-						{block.embed.caption.length > 0 && (
+							alt={image.caption[0]?.plain_text || ""}
+							layout="fill"
+							objectFit="contain"
+							onLoad={(event: React.SyntheticEvent) => {
+								const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
+								setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
+							}}
+						/>
+						{image.caption.length > 0 && (
 							<figcaption>
-								<Text value={block.embed.caption} />
+								<Text value={image.caption} key={id} />
 							</figcaption>
 						)}
-					</figure>
-				);
-			case "video":
-				return (
-					<figure className={styles.embed}>
-						<iframe src={block.video.type === "external" ? block.video.external.url : block.video.url} />
-						{block.video.caption.length > 0 && (
-							<figcaption>
-								<Text value={block.video.caption} />
-							</figcaption>
-						)}
-					</figure>
-				);
-			default:
-				return null;
-		}
+					</picture>
+					<style jsx>{`
+						.image {
+							width: 100%;
+							margin-top: 1.7rem;
+							display: block;
+							position: relative;
+						}
+						.image img {
+							display: block;
+							height: auto;
+							width: 100%;
+						}
+						.image figcaption {
+							margin-top: 0.75em;
+							font: var(--font-annotation);
+							font-size: 0.6rem;
+						}
+					`}</style>
+				</>
+			);
+		case "embed":
+			return (
+				<figure className={styles.embed}>
+					<iframe src={block.embed.url} />
+					{block.embed.caption.length > 0 && (
+						<figcaption>
+							<Text value={block.embed.caption} />
+						</figcaption>
+					)}
+				</figure>
+			);
+		case "video":
+			return (
+				<figure className={styles.embed}>
+					<iframe src={block.video.type === "external" ? block.video.external.url : block.video.url} />
+					{block.video.caption.length > 0 && (
+						<figcaption>
+							<Text value={block.video.caption} />
+						</figcaption>
+					)}
+				</figure>
+			);
+		default:
+			return null;
+	}
 };

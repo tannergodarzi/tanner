@@ -13,7 +13,7 @@ export async function getEntryFromNotionDatabase(identifier: string) {
 				and: [
 					{
 						property: "Slug",
-						text: {
+						url: {
 							equals: identifier,
 						},
 					},
@@ -33,15 +33,17 @@ export async function getNotionDatabase({ database_id = process.env.NOTION_BLOG_
 				and: [
 					{
 						property: "Name",
-						text: {
+						title: {
 							is_not_empty: true,
 						},
+						type: "title",
 					},
 					{
 						property: "Slug",
-						text: {
+						url: {
 							is_not_empty: true,
 						},
+						type: "url",
 					},
 					{
 						property: "Published",

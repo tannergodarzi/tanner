@@ -9,6 +9,9 @@ interface TextProps {
 }
 
 export const Text = ({ value }: PropsWithChildren<TextProps>) => {
+	if (value === undefined || value.length === 0) {
+		return null;
+	}
 	return value.map((block) => {
 		const { annotations, text } = block;
 

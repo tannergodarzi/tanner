@@ -7,8 +7,7 @@ import { checkForChildBlocks, getNotionPage, getNotionBlocks } from "../helpers/
 export async function getStaticProps() {
 	const page = await getNotionPage(process.env.NOTION_ABOUT_PAGE);
 	const unparsedBlocks = await getNotionBlocks(page.id).then((a) => a.map(checkForChildBlocks));
-	const blocks = await Promise.all([...unparsedBlocks]).then((values) => values);
-
+	const blocks = await Promise.all(unparsedBlocks);
 	return {
 		props: {
 			blocks,
