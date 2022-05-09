@@ -98,21 +98,23 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 			return (
 				<>
 					<picture className={"image"} style={{ aspectRatio }}>
-						<Image
-							src={
-								image.external?.url ||
-								`/api/notion-asset/block/${block.id}/image?last_edited_time=${block.last_edited_time}`
-							}
-							alt={image.caption[0]?.plain_text || ""}
-							layout="fill"
-							objectFit="contain"
-							loading="eager"
-							quality={75}
-							onLoad={(event: React.SyntheticEvent) => {
-								const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
-								setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
-							}}
-						/>
+						{image.external?.url ? (
+							/* eslint-disable @next/next/no-img-element */
+							<img src={image.external?.url} alt={image.caption.length > 0 ? image.caption : ""} />
+						) : (
+							<Image
+								src={`/api/notion-asset/block/${block.id}/image?last_edited_time=${block.last_edited_time}`}
+								alt={image.caption[0]?.plain_text || ""}
+								layout="fill"
+								objectFit="contain"
+								loading="eager"
+								quality={75}
+								onLoad={(event: React.SyntheticEvent) => {
+									const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
+									setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
+								}}
+							/>
+						)}
 						{image.caption.length > 0 && (
 							<figcaption>
 								<Text value={image.caption} key={id} />
