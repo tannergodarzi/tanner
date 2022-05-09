@@ -34,7 +34,6 @@ export default function Index({ database }) {
 			</Head>
 			<Navigation />
 			<Hero />
-			<Grid database={database} />
 			<Footer />
 		</>
 	);
