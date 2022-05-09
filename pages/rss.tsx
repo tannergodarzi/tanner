@@ -44,7 +44,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         </channel>
       </rss>`;
 
-  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.setHeader("Content-Type", "application/rss+xml; charset=utf-8");
   res.write(processedXml);
   res.end();
   return {
