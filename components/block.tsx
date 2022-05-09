@@ -106,6 +106,8 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 							alt={image.caption[0]?.plain_text || ""}
 							layout="fill"
 							objectFit="contain"
+							loading="eager"
+							quality={75}
 							onLoad={(event: React.SyntheticEvent) => {
 								const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
 								setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
