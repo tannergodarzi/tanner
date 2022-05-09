@@ -9,7 +9,13 @@ interface GridElementProps {
 	rowSpan: number;
 }
 
-export const GridElement = ({ column, columnSpan, row, rowSpan, children }: PropsWithChildren<GridElementProps>) => {
+export const GridElement = ({
+	column,
+	columnSpan = 1,
+	row,
+	rowSpan,
+	children,
+}: PropsWithChildren<GridElementProps>) => {
 	// Resize observer
 	return (
 		<>
@@ -18,7 +24,7 @@ export const GridElement = ({ column, columnSpan, row, rowSpan, children }: Prop
 				style={{
 					gridColumn: `${column} / span ${columnSpan}`,
 					gridRow: `${row} / span ${rowSpan}`,
-					fontSize: `${(16 / columnSpan) * 0.95}vw`
+					fontSize: `${(16 / columnSpan) * 0.475}vw`,
 				}}
 			>
 				{children}
