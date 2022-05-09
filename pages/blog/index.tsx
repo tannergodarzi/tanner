@@ -22,6 +22,12 @@ export default function Index({ database }) {
 				<title>Tanner&rsquo;s Blog</title>
 				<meta name="title" content="Tanner Godarzi&rsquo;s Blog" />
 				<meta name="description" content="By night, I write about odd thoughts and conversations." />
+				<link
+					rel="alternate"
+					type="application/rss+xml"
+					href="https://www.tannergodarzi.com/rss"
+					title="Tanner's RSS Feed"
+				></link>
 			</Head>
 
 			<Navigation />
