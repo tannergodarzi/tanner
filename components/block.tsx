@@ -74,7 +74,7 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 		case "code":
 			return (
 				<pre className={styles.code}>
-					<code>{value.rich_text[0].rich_text.content}</code>
+					<code>{value.rich_text[0].text.content}</code>
 				</pre>
 			);
 		case "quote":
