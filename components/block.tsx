@@ -93,7 +93,6 @@ export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
 				</a>
 			);
 		case "image":
-			console.log(block);
 			const { image } = block;
 
 			return (
