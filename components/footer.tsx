@@ -16,6 +16,9 @@ export const Footer = () => {
 					<Link href={"/blog"}>
 						<a>{"Blog"}</a>
 					</Link>
+					<Link href={"/rss"}>
+						<a>{"RSS"}</a>
+					</Link>
 					<Link href={"mailto:tanner.godarzi@gmail.com"}>
 						<a>{"Fan Mail"}</a>
 					</Link>
