@@ -29,9 +29,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         </item>`;
   });
   const processedXml = `<?xml version="1.0" ?>
-      <rss
-        version="2.0"
-      >
+      <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
         <channel>
             <title><![CDATA[Tanner Godarzi]]></title>
             <link>https://www.tannergodarzi.com/blog</link>
@@ -42,6 +40,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             <copyright>${new Date().getFullYear()} All rights reserved.</copyright>
             <lastBuildDate>${latestPostDate}</lastBuildDate>
             ${rssItemsXml}
+            <atom:link href="http://tannergodarzi.com/rss" rel="self" type="application/rss+xml" />
         </channel>
       </rss>`;
 
