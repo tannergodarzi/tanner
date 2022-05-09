@@ -39,12 +39,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             <language>en-us</language>
             <copyright>${new Date().getFullYear()} All rights reserved.</copyright>
             <lastBuildDate>${latestPostDate}</lastBuildDate>
-            ${rssItemsXml}
             <atom:link href="http://tannergodarzi.com/rss" rel="self" type="application/rss+xml" />
+            ${rssItemsXml}
         </channel>
       </rss>`;
 
-  res.setHeader("Content-Type", "text/xml");
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.write(processedXml);
   res.end();
   return {
