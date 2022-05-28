@@ -98,3 +98,18 @@
 	flex-direction: column;
 	flex: 1 0 auto;
 }
+.image {
+	width: 100%;
+	margin-top: 1.7rem;
+	display: block;
+	position: relative;
+}
+.image img {
+	display: block;
+	height: auto;
+	width: 100%;
+}
+.image figcaption {
+	margin-top: 0.75em;
+	font: var(--font-annotation);
+}

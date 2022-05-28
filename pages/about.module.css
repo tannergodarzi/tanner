@@ -1,0 +1,18 @@
+.about {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	height: 100%;
+	width: min(100%, 45rem);
+	box-sizing: border-box;
+	padding: 0 1.5rem;
+	margin: 2rem auto 0;
+}
+.about header {
+	margin: 0 auto 2em;
+	text-align: center;
+	width: max(75%, 20rem);
+}
+.about header h1 {
+	margin-bottom: 0.15em;
+}

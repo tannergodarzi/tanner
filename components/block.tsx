@@ -96,50 +96,30 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 			const { image } = block;
 
 			return (
-				<>
-					<picture className={"image"} style={{ aspectRatio }}>
-						{image.external?.url ? (
-							/* eslint-disable @next/next/no-img-element */
-							<img src={image.external?.url} alt={image.caption.length > 0 ? image.caption : ""} />
-						) : (
-							<Image
-								src={`/api/notion-asset/block/${block.id}/image?last_edited_time=${block.last_edited_time}`}
-								alt={image.caption[0]?.plain_text || ""}
-								layout="fill"
-								objectFit="contain"
-								loading="eager"
-								quality={75}
-								onLoad={(event: React.SyntheticEvent) => {
-									const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
-									setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
-								}}
-							/>
-						)}
-						{image.caption.length > 0 && (
-							<figcaption>
-								<Text value={image.caption} key={id} />
-							</figcaption>
-						)}
-					</picture>
-					<style jsx>{`
-						.image {
-							width: 100%;
-							margin-top: 1.7rem;
-							display: block;
-							position: relative;
-						}
-						.image img {
-							display: block;
-							height: auto;
-							width: 100%;
-						}
-						.image figcaption {
-							margin-top: 0.75em;
-							font: var(--font-annotation);
-							font-size: 0.6rem;
-						}
-					`}</style>
-				</>
+				<picture className={styles.imaage} style={{ aspectRatio }}>
+					{image.external?.url ? (
+						/* eslint-disable @next/next/no-img-element */
+						<img src={image.external?.url} alt={image.caption.length > 0 ? image.caption : ""} />
+					) : (
+						<Image
+							src={`/api/notion-asset/block/${block.id}/image?last_edited_time=${block.last_edited_time}`}
+							alt={image.caption[0]?.plain_text || ""}
+							layout="fill"
+							objectFit="contain"
+							loading="eager"
+							quality={75}
+							onLoad={(event: React.SyntheticEvent) => {
+								const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
+								setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
+							}}
+						/>
+					)}
+					{image.caption.length > 0 && (
+						<figcaption>
+							<Text value={image.caption} key={id} />
+						</figcaption>
+					)}
+				</picture>
 			);
 		case "embed":
 			return (
