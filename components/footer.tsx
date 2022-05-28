@@ -10,27 +10,43 @@ export default function Footer() {
 			<footer className={styles.footer}>
 				<header>{`Made by Tanner Godarzi ©${currentYear}`}</header>
 				<nav>
-					<Link href={"/"}>
-						<a>{"Home"}</a>
-					</Link>
-					<Link href={"/blog"}>
-						<a>{"Blog"}</a>
-					</Link>
-					<Link href={"/rss"}>
-						<a>{"RSS"}</a>
-					</Link>
-					<Link href={"mailto:tanner.godarzi@gmail.com"}>
-						<a>{"Fan Mail"}</a>
-					</Link>
-					<Link href={"https://twitter.com/tannergodarzi"}>
-						<a>{"Twitter"}</a>
-					</Link>
-					<Link href={"https://glass.photo/tannergodarzi"}>
-						<a>{"Glass"}</a>
-					</Link>
-					<Link href={"https://github.com/tannergodarzi"}>
-						<a>{"GitHub"}</a>
-					</Link>
+					<ul>
+						<li>
+							<Link href={"/"}>
+								<a>{"Home"}</a>
+							</Link>
+						</li>
+						<li>
+							<Link href={"/blog"}>
+								<a>{"Blog"}</a>
+							</Link>
+						</li>
+						<li>
+							<Link href={"/rss"}>
+								<a>{"RSS"}</a>
+							</Link>
+						</li>
+						<li>
+							<Link href={"mailto:tanner.godarzi@gmail.com"}>
+								<a>{"Fan Mail"}</a>
+							</Link>
+						</li>
+						<li>
+							<Link href={"https://twitter.com/tannergodarzi"}>
+								<a>{"Twitter"}</a>
+							</Link>
+						</li>
+						<li>
+							<Link href={"https://glass.photo/tannergodarzi"}>
+								<a>{"Glass"}</a>
+							</Link>
+						</li>
+						<li>
+							<Link href={"https://github.com/tannergodarzi"}>
+								<a>{"GitHub"}</a>
+							</Link>
+						</li>
+					</ul>
 				</nav>
 			</footer>
 		</>

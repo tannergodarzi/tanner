@@ -33,7 +33,9 @@ export default function Index({ database }) {
 				/>
 			</Head>
 			<Navigation />
-			<Hero />
+			<article>
+				<Hero />
+			</article>
 			<Footer />
 		</>
 	);

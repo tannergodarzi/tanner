@@ -7,9 +7,11 @@ import styles from "./hero.module.css";
 export default function Hero() {
 	return (
 		<>
-			<article className={styles.hero}>
-				<section className={styles.heroText}>
-					<h1>{`Howdy, I’m Tanner`}</h1>{" "}
+			<section className={styles.hero}>
+				<article className={styles.heroText}>
+					<header>
+						<h1>{`Howdy, I’m Tanner`}</h1>{" "}
+					</header>
 					<p>
 						<span>{`— a real person on the internet.`}</span>
 						<Poster>
@@ -56,8 +58,8 @@ export default function Hero() {
 							/>
 						</Poster>
 					</p>
-				</section>
-			</article>
+				</article>
+			</section>
 		</>
 	);
 };

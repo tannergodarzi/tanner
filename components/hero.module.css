@@ -6,10 +6,6 @@
 	position: relative;
 }
 
-.heroText {
-	position: relative;
-}
-
 .heroText,
 .heroText *:not(span) {
 	z-index: 0;

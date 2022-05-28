@@ -15,12 +15,13 @@
 	margin-bottom: 0.75em;
 }
 
-.footer nav {
+.footer nav ul {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	column-gap: 0.5em;
 	justify-content: center;
+	list-style-type: none;
 }
 
 .footer nav a {
@@ -32,7 +33,7 @@
 	text-decoration: underline;
 }
 
-.footer nav a:after {
+.footer nav li:after {
 	content: "/";
 	margin-left: 0.5em;
 	text-decoration: none;
@@ -40,6 +41,6 @@
 	cursor: default;
 }
 
-.footer nav a:last-of-type:after {
+.footer nav li:last-of-type:after {
 	display: none;
 }
