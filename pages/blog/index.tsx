@@ -31,14 +31,14 @@ export default function Index({ database }) {
 			</Head>
 
 			<Navigation />
-			<article className="container">
-				<section className="hero">
+			<section className="container">
+				<header className="hero">
 					<h1>{"Blog"}</h1>
-				</section>
+				</header>
 				{database.map((entry) => (
 					<Entry entry={entry} key={entry.id} />
 				))}
-			</article>
+			</section>
 			<Footer />
 
 			<style jsx>{`
@@ -56,10 +56,6 @@ export default function Index({ database }) {
 					text-align: center;
 					position: relative;
 					margin-bottom: 2rem;
-				}
-				.hero h1 {
-					font-size: 0;
-					margin: 0;
 				}
 			`}</style>
 		</>
