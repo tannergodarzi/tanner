@@ -33,16 +33,7 @@ export default function Index({ database }) {
 			<Navigation />
 			<article className="container">
 				<section className="hero">
-					<h1>
-						<Image
-							src={"/newspaper.jpeg"}
-							width={570}
-							height={447}
-							alt="Blog"
-							objectFit="cover"
-							objectPosition={"top center"}
-						/>
-					</h1>
+					<h1>{"Blog"}</h1>
 				</section>
 				{database.map((entry) => (
 					<Entry entry={entry} key={entry.id} />

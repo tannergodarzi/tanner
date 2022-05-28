@@ -8,7 +8,7 @@ export default function Hero() {
 	return (
 		<>
 			<article className={styles.hero}>
-				<section className={styles.hero_text}>
+				<section className={styles.heroText}>
 					<h1>{`Howdy, I’m Tanner`}</h1>{" "}
 					<p>
 						<span>{`— a real person on the internet.`}</span>

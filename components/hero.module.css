@@ -6,12 +6,12 @@
 	position: relative;
 }
 
-.hero_text {
+.heroText {
 	position: relative;
 }
 
-.hero_text,
-.hero_text *:not(span) {
+.heroText,
+.heroText *:not(span) {
 	z-index: 0;
 	pointer-events: none;
 	font: var(--font-display);
