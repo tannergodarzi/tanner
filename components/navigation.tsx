@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import styles from "./navigation.module.css";
 
-export const Navigation = () => {
+export default function Navigation() {
 	return (
 		<>
 			<section className={styles.mast}>

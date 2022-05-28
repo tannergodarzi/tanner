@@ -9,14 +9,13 @@ interface GridElementProps {
 	rowSpan: number;
 }
 
-export const GridElement = ({
+export default function GridElement({
 	column,
 	columnSpan = 1,
 	row,
 	rowSpan,
 	children,
-}: PropsWithChildren<GridElementProps>) => {
-	// Resize observer
+}: PropsWithChildren<GridElementProps>) {
 	return (
 		<>
 			<section

@@ -1,9 +1,9 @@
 import Head from "next/head";
-import { Navigation } from "../../components/navigation";
-import { Footer } from "../../components/footer";
+import Navigation from "../../components/navigation";
+import Footer from "../../components/footer";
 import { getNotionDatabase } from "../../helpers/notionHelpers";
 import Image from "next/image";
-import { Entry } from "../../components/entry";
+import Entry from "../../components/entry";
 
 export async function getStaticProps() {
 	const database = await getNotionDatabase({ page_size: 100 });

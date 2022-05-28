@@ -1,14 +1,16 @@
 import React from "react";
 import Link from "next/link";
-import { GridElement } from "../gridElement";
+import GridElement from "../gridElement";
 import Image from "next/image";
-import Bouncy from "../bouncy";
-import { Entry } from "../entry";
+import Entry from "../entry";
 
-export const Grid = ({ database }) => {
+import styles from "./grid.module.css";
+import Bio from "../bio";
+
+export default function Grid({ database }) {
 	return (
 		<>
-			<section className="grid">
+			<section className={styles.grid}>
 				<GridElement column={2} columnSpan={4} row={1} rowSpan={6}>
 					<Image
 						src={"/tanner-foto.jpeg"}
@@ -92,21 +94,6 @@ export const Grid = ({ database }) => {
 				</GridElement>
 			</section>
 			<style global jsx>{`
-				.grid {
-					display: grid;
-					grid-template-columns: repeat(16, calc(100vw / 16 - 1rem));
-					grid-template-rows: repeat(32, calc(100vw / 16 - 1rem));
-					gap: 1rem;
-					max-width: (2rem - 100vw);
-					margin: auto;
-					margin-top: 5vh;
-				}
-
-				.grid * {
-					//font-family: "ibm-plex-mono";
-					//font-weight: 200;
-				}
-
 				.circle {
 					color: var(--text-color);
 					border: 2px solid var(--text-color);
@@ -174,43 +161,7 @@ export const Grid = ({ database }) => {
 	);
 };
 
-/**
- * Local Components
- */
 
-function Bio() {
-	return (
-		<>
-			<article>
-				<h2>{"Not actually a cowboy"}</h2>
-				<p>
-					{`I love adventure and a good felt hat. During the day I help tell the story of future of work tools at Notion and by night I write about odd thoughts and conversations. Weekends I can be found meandering around San Francisco with a camera. Previously I worked at Dropbox, Square and design agency / freelance work. I also worked with heavy metal band Machine Head in a past time. I’m eternally optimistic about the future. If you are too, then`}
-				</p>
-				<Link href={"/about"}>
-					<a>{"read more →"}</a>
-				</Link>
-			</article>
-			<style jsx>{`
-				article {
-					width: 100%;
-					width: 100%;
-					display: flex;
-					flex-direction: column;
-					height: 100%;
-				}
-				article p {
-					overflow: hidden;
-					display: -webkit-box;
-					-webkit-box-orient: vertical;
-					-webkit-line-clamp: 10;
-					line-clamp: 10;
-					text-overflow: ellipsis;
-					overflow: hidden;
-				}
-			`}</style>
-		</>
-	);
-}
 function BioFollowUp() {
 	return (
 		<>

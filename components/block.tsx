@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { PropsWithChildren } from "react";
 import styles from "./block.module.css";
-import { Text } from "./text";
+import Text from "./text";
 
 interface BlockProps {
 	block: any;

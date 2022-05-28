@@ -4,7 +4,7 @@ import Poster from "./poster";
 
 import styles from "./hero.module.css";
 
-export const Hero = () => {
+export default function Hero() {
 	return (
 		<>
 			<article className={styles.hero}>

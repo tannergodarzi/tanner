@@ -4,7 +4,7 @@ import classNames from "classnames";
 import styles from "./poster.module.css";
 
 interface PosterProps {}
-const Poster = ({ children }: PropsWithChildren<PosterProps>) => {
+export default function Poster({ children }: PropsWithChildren<PosterProps>) {
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [coords, setCoordinates] = useState({ xPos: 0, yPos: 0 });
 	return (
@@ -40,4 +40,3 @@ const Poster = ({ children }: PropsWithChildren<PosterProps>) => {
 	);
 };
 
-export default Poster;

@@ -1,0 +1,14 @@
+.bio {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.bio p {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 10;
+	line-clamp: 10;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}

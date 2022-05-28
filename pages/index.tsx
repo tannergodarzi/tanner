@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { Grid } from "../components/containers/grid";
-import { Footer } from "../components/footer";
-import { Hero } from "../components/hero";
-import { Navigation } from "../components/navigation";
+import Grid from "../components/containers/grid";
+import Footer from "../components/footer";
+import Hero from "../components/hero";
+import Navigation from "../components/navigation";
 import { getNotionDatabase } from "../helpers/notionHelpers";
 
 export async function getStaticProps() {

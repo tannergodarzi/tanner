@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import styles from "./footer.module.css";
 
-export const Footer = () => {
+export default function Footer() {
 	const currentYear = new Date().getFullYear();
 	return (
 		<>
