@@ -96,7 +96,7 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 			const { image } = block;
 
 			return (
-				<picture className={styles.imaage} style={{ aspectRatio }}>
+				<picture className={styles.image} style={{ aspectRatio }}>
 					{image.external?.url ? (
 						/* eslint-disable @next/next/no-img-element */
 						<img src={image.external?.url} alt={image.caption.length > 0 ? image.caption : ""} />
