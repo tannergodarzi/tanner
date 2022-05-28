@@ -1,15 +1,9 @@
 import Head from "next/head";
 import { Client } from "@notionhq/client";
-import { Block } from "../../components/block";
-import { Navigation } from "../../components/navigation";
-import { Footer } from "../../components/footer";
-import {
-	checkForChildBlocks,
-	getNotionBlocks,
-	getNotionPage,
-	getEntryFromNotionDatabase,
-	getNotionDatabase,
-} from "../../helpers/notionHelpers";
+import Block from "../../components/block";
+import Navigation from "../../components/navigation";
+import Footer from "../../components/footer";
+import { checkForChildBlocks, getEntryFromNotionDatabase } from "../../helpers/notionHelpers";
 import { useRouter } from "next/router";
 import { NotionPages } from "../../library/notion";
 
@@ -20,14 +14,12 @@ const notion = new Client({
 
 export async function getStaticProps(context) {
 	const newQueryResponse = await NotionPages.loadPageBySlug(context.params.slug);
-	const queryResponse = (await getEntryFromNotionDatabase(context.params.slug)) as any;
 	if (!newQueryResponse) {
 		return {
 			notFound: true,
 		};
 	}
-	//const page = await getNotionPage(queryResponse.id);
-	const unparsedBlocks = newQueryResponse.content.children.map(checkForChildBlocks); // await getNotionBlocks(page.id).then((a) => a.map(checkForChildBlocks));
+	const unparsedBlocks = newQueryResponse.content.children.map(checkForChildBlocks);
 	const blocks = await Promise.all([...unparsedBlocks]).then((values) => values);
 
 	const { Published, Name, Slug, Subtitle } = newQueryResponse.content.properties;

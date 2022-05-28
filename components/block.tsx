@@ -7,7 +7,7 @@ interface BlockProps {
 	block: any;
 }
 
-export const Block = ({ block }: PropsWithChildren<BlockProps>) => {
+export default function Block({ block }: PropsWithChildren<BlockProps>) {
 	const { type, id } = block;
 	const value = block[type];
 	const [aspectRatio, setAspectRatio] = React.useState("1 / 1");

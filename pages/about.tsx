@@ -1,7 +1,7 @@
 import Head from "next/head";
-import { Block } from "../components/block";
-import { Footer } from "../components/footer";
-import { Navigation } from "../components/navigation";
+import Block from "../components/block";
+import Footer from "../components/footer";
+import Navigation from "../components/navigation";
 import { checkForChildBlocks, getNotionPage, getNotionBlocks } from "../helpers/notionHelpers";
 
 export async function getStaticProps() {
