@@ -1,35 +1,16 @@
-.heading_1,
-.heading_2,
-.heading_3,
-.paragraph,
-.text,
-.quote,
-.code,
-.list_item {
-	margin: 1.7rem 0 0;
-}
-.paragraph + .paragraph {
-	margin-top: 0.5rem;
-}
-.paragraph + .quote {
-	margin-top: 0;
+.callout {
+	padding: 1rem;
+	background: var(--color-neutral);
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
 }
 .paragraph a {
 	font-weight: 700;
 }
 .list_item {
-	font-size: 1rem;
 	margin-left: 1em;
 }
-.list_item + .list_item {
-	margin-top: 0.25rem;
-}
-.heading_1 + *,
-.heading_2 + *,
-.heading_3 + * {
-	margin-top: 0.5rem;
-}
-
 .code {
 	font: var(--font-annotation);
 	padding: 0.8rem;
@@ -44,7 +25,6 @@
 	word-wrap: break-word;
 }
 .divider {
-	margin: 2rem 0;
 	border: none;
 	border-top: 1px solid rgba(0, 0, 0, 1);
 	height: 0;
@@ -65,7 +45,6 @@
 	margin-left: 0.2em;
 }
 .bookmark {
-	margin: 0.25rem 0;
 	display: flex;
 	gap: 0.25rem;
 }
@@ -100,7 +79,7 @@
 }
 .image {
 	width: 100%;
-	margin-top: 1.7rem;
+	margin-bottom: 0.5rem;
 	display: block;
 	position: relative;
 }
@@ -109,7 +88,6 @@
 	height: auto;
 	width: 100%;
 }
-.image figcaption {
-	margin-top: 0.75em;
+.image + figcaption {
 	font: var(--font-annotation);
 }

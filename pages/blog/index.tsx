@@ -2,7 +2,6 @@ import Head from "next/head";
 import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
 import { getNotionDatabase } from "../../helpers/notionHelpers";
-import Image from "next/image";
 import Entry from "../../components/entry";
 
 export async function getStaticProps() {

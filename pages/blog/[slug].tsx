@@ -3,7 +3,7 @@ import { Client } from "@notionhq/client";
 import Block from "../../components/block";
 import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
-import { checkForChildBlocks, getEntryFromNotionDatabase } from "../../helpers/notionHelpers";
+import { checkForChildBlocks } from "../../helpers/notionHelpers";
 import { useRouter } from "next/router";
 import { NotionPages } from "../../library/notion";
 
@@ -117,16 +117,14 @@ export default function Slug(props) {
 						)}`}
 					</time>
 				</header>
-				<section>
-					{blocks.map((block) => {
-						return <Block block={block} key={block.id} />;
-					})}
-				</section>
+
+				{blocks.map((block) => {
+					return <Block block={block} key={block.id} />;
+				})}
 			</article>
 			<Footer />
 			<style jsx>{`
 				article {
-					flex-direction: column;
 					width: min(100%, 45rem);
 					box-sizing: border-box;
 					padding: 0 1.5rem;
