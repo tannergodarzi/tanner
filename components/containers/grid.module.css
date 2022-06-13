@@ -1,4 +1,5 @@
-.grid {
+@media(min-width: 768px) {
+	.grid {
 	display: grid;
 	grid-template-columns: repeat(16, calc(100vw / 16 - 1rem));
 	grid-template-rows: repeat(32, calc(100vw / 16 - 1rem));
@@ -6,4 +7,13 @@
 	max-width: (2rem - 100vw);
 	margin: auto;
 	margin-top: 5vh;
+}
+}
+
+@media(max-width: 768px) {
+	.grid {
+		display: flex;
+		flex-direction: column;
+		padding: 1rem;
+	}
 }

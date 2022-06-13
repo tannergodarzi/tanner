@@ -20,7 +20,7 @@ export default function Grid({ database }) {
 						objectPosition={"center center"}
 					/>
 				</GridElement>
-				<GridElement column={7} columnSpan={4} row={1} rowSpan={6}>
+				<GridElement column={7} columnSpan={5} row={1} rowSpan={6}>
 					<Bio />
 				</GridElement>
 
@@ -34,7 +34,7 @@ export default function Grid({ database }) {
 					/>
 				</GridElement>
 
-				<GridElement column={10} columnSpan={6} row={6} rowSpan={7}>
+				<GridElement column={10} columnSpan={6} row={7} rowSpan={7}>
 					<Image
 						src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
 						layout="fill"
@@ -45,16 +45,13 @@ export default function Grid({ database }) {
 				</GridElement>
 
 				<GridElement column={2} columnSpan={6} row={15} rowSpan={8}>
-					<section className="frame" style={{ textAlign: "center" }}>
-						<div style={{ marginBottom: "1em" }}>
-							<Image src={"/drop+out.jpg"} alt="" width={500} height={333} layout="responsive" />
-						</div>
+					<section className="frame container">
 						{database.map((entry) => (
 							<Entry entry={entry} key={entry.id} showPublishDate={false} />
 						))}
 					</section>
 				</GridElement>
-				<GridElement column={4} columnSpan={2} row={23} rowSpan={2}>
+				<GridElement column={10} columnSpan={3} row={18} rowSpan={3}>
 					<Link href={"/blog"}>
 						<a className="circle">{"Blog"}</a>
 					</Link>
@@ -71,17 +68,17 @@ export default function Grid({ database }) {
 				</GridElement>
 				<GridElement column={12} columnSpan={3} row={14} rowSpan={2}></GridElement>
 
-				<GridElement column={10} columnSpan={4} row={14} rowSpan={3}>
+				{/*<GridElement column={10} columnSpan={4} row={14} rowSpan={3}>
 					<picture className="picture-frame">
 						<Image src={"/tanner-candid.jpg"} width={1000} height={675} alt="" />
 					</picture>
-				</GridElement>
+						</GridElement>*/}
 
-				<GridElement column={10} columnSpan={6} row={20} rowSpan={6}>
+				<GridElement column={10} columnSpan={4} row={22} rowSpan={6}>
 					<BioFollowUp />
 				</GridElement>
 
-				<GridElement column={4} columnSpan={8} row={26} rowSpan={6}>
+				<GridElement column={2} columnSpan={8} row={26} rowSpan={6}>
 					<picture>
 						<Image
 							src={"/card.jpg"}
@@ -156,20 +153,22 @@ export default function Grid({ database }) {
 					box-sizing: border-box;
 					box-shadow: 2px 2px 21px 5px rgba(0, 0, 0, 0.1);
 				}
+				.container {
+					display: flex;
+					flex-direction: column;
+					flex-grow: 1;
+					gap: 2rem;
+				}
 			`}</style>
 		</>
 	);
-};
-
+}
 
 function BioFollowUp() {
 	return (
 		<>
 			<article className="frame">
 				<ul>
-					<li>
-						<h3>Things I Like</h3>
-					</li>
 					<li>{"Deserts of the American Southwest"}</li>
 					<li>{"Every Ace Hotel"}</li>
 					<li>{"Point and shoot film cameras"}</li>

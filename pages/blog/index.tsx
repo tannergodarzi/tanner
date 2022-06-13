@@ -45,6 +45,7 @@ export default function Index({ database }) {
 					display: flex;
 					flex-direction: column;
 					flex-grow: 1;
+					gap: 2rem;
 					height: 100%;
 					width: min(100%, 45rem);
 					box-sizing: border-box;
@@ -54,7 +55,6 @@ export default function Index({ database }) {
 				.hero {
 					text-align: center;
 					position: relative;
-					margin-bottom: 2rem;
 				}
 			`}</style>
 		</>

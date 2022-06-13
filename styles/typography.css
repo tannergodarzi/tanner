@@ -8,7 +8,7 @@ body {
 h1 {
 	font: var(--font-display);
 	font-size: 3.25rem;
-	margin: 1.8rem 0 0 0;
+	margin: 0 0 1.8rem 0;
 	line-height: 1em;
 	letter-spacing: -0.01em;
 	text-transform: capitalize;
@@ -16,7 +16,7 @@ h1 {
 h2 {
 	font: var(--font-display);
 	font-size: 1.8rem;
-	margin: 0.75em 0 0 0;
+	margin: 0 0 0.75em 0;
 	line-height: 1, 1em;
 	letter-spacing: -0.02em;
 	text-transform: capitalize;
@@ -24,7 +24,7 @@ h2 {
 h3 {
 	font: var(--font-display);
 	font-size: 1.6rem;
-	margin: 0.75em 0 0 0;
+	margin:0 0  0.75em 0;
 	line-height: 1.1em;
 	letter-spacing: -0.02em;
 	text-transform: capitalize;

@@ -6,7 +6,7 @@ import Navigation from "../components/navigation";
 import { getNotionDatabase } from "../helpers/notionHelpers";
 
 export async function getStaticProps() {
-	const database = await getNotionDatabase({ page_size: 1 });
+	const database = await getNotionDatabase({ page_size: 3 });
 	return {
 		props: {
 			database,
@@ -36,6 +36,7 @@ export default function Index({ database }) {
 			<article>
 				<Hero />
 			</article>
+			{/*<Grid database={database} />*/}
 			<Footer />
 		</>
 	);
