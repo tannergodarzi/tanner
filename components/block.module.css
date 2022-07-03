@@ -11,6 +11,9 @@
 .list_item {
 	margin-left: 1em;
 }
+.heading_2 {
+	margin-bottom: 0.5em;
+}
 .code {
 	font: var(--font-annotation);
 	padding: 0.8rem;
