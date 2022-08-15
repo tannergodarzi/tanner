@@ -62,25 +62,13 @@ export default function Slug(props) {
 				<title>Tanner&rsquo;s Blog | {pageTitle}</title>
 				<meta name="title" content={pageTitle} />
 				<meta name="description" content={description} />
-
 				<meta name="og:site_name" content={`Tanner’s Blog`} />
 				<meta name="og:title" content={pageTitle} />
 				<meta name="og:description" content={description} />
 				<meta name="og:author" content={"Tanner Godarzi"} />
-				<meta
-					name="og:image"
-					content={"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpeg&w=1080&q=75"}
-				/>
-
-				<meta name="twitter:card" content={"summary_large_image"} />
 				<meta name="twitter:title" content={`Tanner’s Blog | ${pageTitle}`} />
 				<meta name="twitter:description" content={description} />
 				<meta name="twitter:creator" content={"@tannergodarzi"} />
-				<meta
-					name="twitter:image"
-					content={"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpg&w=1080&q=75"}
-				/>
-
 				<link rel="canonical" href={canonicalUrl} />
 				<script type="application/ld+json">
 					{`
