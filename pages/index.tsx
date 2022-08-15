@@ -36,7 +36,7 @@ export default function Index({ database }) {
 			<article>
 				<Hero />
 			</article>
-			{/*<Grid database={database} />*/}
+			<Grid database={database} />
 			<Footer />
 		</>
 	);

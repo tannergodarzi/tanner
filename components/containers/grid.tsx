@@ -6,12 +6,13 @@ import Entry from "../entry";
 
 import styles from "./grid.module.css";
 import Bio from "../bio";
+import Text from "../text";
 
 export default function Grid({ database }) {
 	return (
 		<>
 			<section className={styles.grid}>
-				<GridElement column={2} columnSpan={4} row={1} rowSpan={6}>
+				{/*<GridElement column={2} columnSpan={4} row={1} rowSpan={6}>
 					<Image
 						src={"/tanner-foto.jpeg"}
 						layout="fill"
@@ -32,8 +33,16 @@ export default function Grid({ database }) {
 						objectFit="cover"
 						objectPosition={"center top"}
 					/>
+				</GridElement>*/}
+				<GridElement column={3} columnSpan={4} row={7} rowSpan={6}>
+					<iframe
+						src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?theme=0"
+						width="100%"
+						height="100%"
+						frameBorder="0"
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+					/>
 				</GridElement>
-
 				<GridElement column={10} columnSpan={6} row={7} rowSpan={7}>
 					<Image
 						src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
@@ -43,11 +52,10 @@ export default function Grid({ database }) {
 						objectPosition={"top center"}
 					/>
 				</GridElement>
-
 				<GridElement column={2} columnSpan={6} row={15} rowSpan={8}>
 					<section className="frame container">
 						{database.map((entry) => (
-							<Entry entry={entry} key={entry.id} showPublishDate={false} />
+							<Entry entry={entry} key={entry.id} />
 						))}
 					</section>
 				</GridElement>
@@ -56,28 +64,17 @@ export default function Grid({ database }) {
 						<a className="circle">{"Blog"}</a>
 					</Link>
 				</GridElement>
-
-				<GridElement column={5} columnSpan={4} row={8} rowSpan={6}>
-					<iframe
-						src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?theme=0"
-						width="100%"
-						height="100%"
-						frameBorder="0"
-						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-					/>
+				<GridElement column={12} columnSpan={3} row={14} rowSpan={2}>
+					<blockquote>{"Tanner is really cool"}</blockquote>
 				</GridElement>
-				<GridElement column={12} columnSpan={3} row={14} rowSpan={2}></GridElement>
-
 				{/*<GridElement column={10} columnSpan={4} row={14} rowSpan={3}>
 					<picture className="picture-frame">
 						<Image src={"/tanner-candid.jpg"} width={1000} height={675} alt="" />
 					</picture>
 						</GridElement>*/}
-
 				<GridElement column={10} columnSpan={4} row={22} rowSpan={6}>
 					<BioFollowUp />
 				</GridElement>
-
 				<GridElement column={2} columnSpan={8} row={26} rowSpan={6}>
 					<picture>
 						<Image
@@ -128,6 +125,7 @@ export default function Grid({ database }) {
 					box-sizing: border-box;
 					padding: 1em;
 					border: 2px solid var(--text-color);
+					width: 100%;
 					position: relative;
 					overflow: hidden;
 				}
