@@ -94,7 +94,6 @@ export default function Slug(props) {
 					`}
 				</script>
 			</Head>
-
 			<Navigation />
 			<article>
 				<header>
