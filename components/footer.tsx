@@ -12,39 +12,25 @@ export default function Footer() {
 				<nav>
 					<ul>
 						<li>
-							<Link href={"/"}>
-								<a>{"Home"}</a>
-							</Link>
+							<Link href={"/"}>{"Home"}</Link>
 						</li>
 						<li>
-							<Link href={"/blog"}>
-								<a>{"Blog"}</a>
-							</Link>
+							<Link href={"/blog"}>{"Blog"}</Link>
 						</li>
 						<li>
-							<Link href={"/rss"}>
-								<a>{"RSS"}</a>
-							</Link>
+							<Link href={"/rss"}>{"RSS"}</Link>
 						</li>
 						<li>
-							<Link href={"mailto:tanner.godarzi@gmail.com"}>
-								<a>{"Fan Mail"}</a>
-							</Link>
+							<Link href={"mailto:tanner.godarzi@gmail.com"}>{"Fan Mail"}</Link>
 						</li>
 						<li>
-							<Link href={"https://twitter.com/tannergodarzi"}>
-								<a>{"Twitter"}</a>
-							</Link>
+							<Link href={"https://twitter.com/tannergodarzi"}>{"Twitter"}</Link>
 						</li>
 						<li>
-							<Link href={"https://glass.photo/tannergodarzi"}>
-								<a>{"Glass"}</a>
-							</Link>
+							<Link href={"https://glass.photo/tannergodarzi"}>{"Glass"}</Link>
 						</li>
 						<li>
-							<Link href={"https://github.com/tannergodarzi"}>
-								<a>{"GitHub"}</a>
-							</Link>
+							<Link href={"https://github.com/tannergodarzi"}>{"GitHub"}</Link>
 						</li>
 					</ul>
 				</nav>

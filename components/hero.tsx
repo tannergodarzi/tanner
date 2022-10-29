@@ -15,33 +15,21 @@ export default function Hero() {
 					<p>
 						<span>{`— a real person on the internet.`}</span>
 						<Poster>
-							<Image
-								src={"/gifs/skateboarder.gif"}
-								alt={""}
-								layout="fill"
-								objectFit="cover"
-								quality={50}
-							/>
+							<Image src={"/gifs/skateboarder.gif"} alt={""} fill quality={50} />
 						</Poster>
 						<span>{`I’m also a Front End Engineer motivated by design thinking and story telling.`}</span>
 						<Poster>
-							<Image src={"/gifs/reading.gif"} alt={""} layout="fill" objectFit="cover" quality={50} />
+							<Image src={"/gifs/reading.gif"} alt={""} fill quality={50} />
 						</Poster>
 						<span>{"Currently I’m at Notion on Brand Marketing telling the story of tools for work."}</span>
 						<Poster>
-							<Image
-								src={"/gifs/mission-control.gif"}
-								alt={""}
-								layout="fill"
-								objectFit="cover"
-								quality={50}
-							/>
+							<Image src={"/gifs/mission-control.gif"} alt={""} fill quality={50} />
 						</Poster>
 						<span>
 							{`San Francisco — specifically the delightful neighborhood of Cole Valley — is where I call home.`}
 						</span>
 						<Poster>
-							<Image src={"/gifs/california.gif"} alt={""} layout="fill" objectFit="cover" quality={50} />
+							<Image src={"/gifs/california.gif"} alt={""} fill quality={50} />
 						</Poster>
 						<span>
 							{
@@ -49,13 +37,7 @@ export default function Hero() {
 							}
 						</span>
 						<Poster>
-							<Image
-								src={"/gifs/fruit-plate.gif"}
-								alt={""}
-								layout="fill"
-								objectFit="cover"
-								quality={50}
-							/>
+							<Image src={"/gifs/fruit-plate.gif"} alt={""} fill quality={50} />
 						</Poster>
 					</p>
 				</article>

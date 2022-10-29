@@ -92,13 +92,7 @@ export default function Bouncy() {
 		<>
 			<section className="bounding-box" ref={boundingBoxRef}>
 				<div className="actor" ref={actorRef}>
-					<Image
-						src="/blu-ray.png"
-						alt=""
-						layout="fill"
-						objectFit="contain"
-						objectPosition={"center center"}
-					/>
+					<Image src="/blu-ray.png" alt="" fill />
 				</div>
 			</section>
 			<style jsx>{`

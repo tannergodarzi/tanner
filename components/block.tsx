@@ -113,8 +113,7 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 						<Image
 							src={`/api/notion-asset/block/${block.id}/image?last_edited_time=${block.last_edited_time}`}
 							alt={image.caption[0]?.plain_text || ""}
-							layout="fill"
-							objectFit="contain"
+							fill
 							loading="eager"
 							quality={75}
 							onLoad={(event: React.SyntheticEvent) => {

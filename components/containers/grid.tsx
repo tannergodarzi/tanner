@@ -12,36 +12,18 @@ export default function Grid({ database }) {
 		<>
 			<section className={styles.grid}>
 				<GridElement column={2} columnSpan={4} row={1} rowSpan={6}>
-					<Image
-						src={"/tanner-foto.jpeg"}
-						layout="fill"
-						alt=""
-						objectFit="cover"
-						objectPosition={"center center"}
-					/>
+					<Image src={"/tanner-foto.jpeg"} alt="" fill />
 				</GridElement>
 				<GridElement column={7} columnSpan={5} row={1} rowSpan={6}>
 					<Bio />
 				</GridElement>
 
 				<GridElement column={12} columnSpan={4} row={1} rowSpan={4}>
-					<Image
-						src={"/tanner-polaroid.jpeg"}
-						layout="fill"
-						alt=""
-						objectFit="cover"
-						objectPosition={"center top"}
-					/>
+					<Image src={"/tanner-polaroid.jpeg"} fill alt="" />
 				</GridElement>
 
 				<GridElement column={10} columnSpan={6} row={7} rowSpan={7}>
-					<Image
-						src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
-						layout="fill"
-						alt=""
-						objectFit="contain"
-						objectPosition={"top center"}
-					/>
+					<Image src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"} fill alt="" />
 				</GridElement>
 
 				<GridElement column={2} columnSpan={6} row={15} rowSpan={8}>
@@ -80,13 +62,7 @@ export default function Grid({ database }) {
 
 				<GridElement column={2} columnSpan={8} row={26} rowSpan={6}>
 					<picture>
-						<Image
-							src={"/card.jpg"}
-							layout="fill"
-							alt=""
-							objectFit="contain"
-							objectPosition={"center top"}
-						/>
+						<Image src={"/card.jpg"} fill alt="" />
 					</picture>
 				</GridElement>
 			</section>
@@ -178,7 +154,7 @@ function BioFollowUp() {
 					<li>{"Cocktail bars named after complete sentences"}</li>
 					<li>
 						<Link href="https://twitter.com/ninlive/status/1183382334868983814">
-							<a>{"This video of Trent Reznor starting a Nine Inch Nails set"}</a>
+							{"This video of Trent Reznor starting a Nine Inch Nails set"}
 						</Link>
 					</li>
 				</ul>
