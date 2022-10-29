@@ -43,26 +43,14 @@ export default function Index({ database }) {
 			</article>
 			<Grid>
 				<GridElement column={2} columnSpan={4} row={1} rowSpan={6}>
-					<Image
-						src={"/tanner-foto.jpeg"}
-						layout="fill"
-						alt=""
-						objectFit="cover"
-						objectPosition={"center center"}
-					/>
+					<Image src={"/tanner-foto.jpeg"} fill alt="" />
 				</GridElement>
 				<GridElement column={7} columnSpan={5} row={1} rowSpan={6}>
 					<Bio />
 				</GridElement>
 
 				<GridElement column={12} columnSpan={4} row={1} rowSpan={4}>
-					<Image
-						src={"/tanner-polaroid.jpeg"}
-						layout="fill"
-						alt=""
-						objectFit="cover"
-						objectPosition={"center top"}
-					/>
+					<Image src={"/tanner-polaroid.jpeg"} fill alt="" />
 				</GridElement>
 				<GridElement column={3} columnSpan={4} row={7} rowSpan={6}>
 					<iframe
@@ -74,13 +62,7 @@ export default function Index({ database }) {
 					/>
 				</GridElement>
 				<GridElement column={10} columnSpan={6} row={7} rowSpan={7}>
-					<Image
-						src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"}
-						layout="fill"
-						alt=""
-						objectFit="contain"
-						objectPosition={"top center"}
-					/>
+					<Image src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"} fill alt="" />
 				</GridElement>
 				<GridElement column={2} columnSpan={6} row={15} rowSpan={8}>
 					<section className="frame container">
@@ -105,13 +87,7 @@ export default function Index({ database }) {
 				<GridElement column={10} columnSpan={4} row={22} rowSpan={6}></GridElement>
 				<GridElement column={2} columnSpan={8} row={26} rowSpan={6}>
 					<picture>
-						<Image
-							src={"/card.jpg"}
-							layout="fill"
-							alt=""
-							objectFit="contain"
-							objectPosition={"center top"}
-						/>
+						<Image src={"/card.jpg"} fill alt="" />
 					</picture>
 				</GridElement>
 			</Grid>

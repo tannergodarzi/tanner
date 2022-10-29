@@ -101,7 +101,7 @@ function BioFollowUp() {
 					<li>{"Cocktail bars named after complete sentences"}</li>
 					<li>
 						<Link href="https://twitter.com/ninlive/status/1183382334868983814">
-							<a>{"This video of Trent Reznor starting a Nine Inch Nails set"}</a>
+							{"This video of Trent Reznor starting a Nine Inch Nails set"}
 						</Link>
 					</li>
 				</ul>
