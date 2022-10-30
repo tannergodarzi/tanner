@@ -108,7 +108,14 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 				<picture className={styles.image} style={{ aspectRatio }}>
 					{image.external?.url ? (
 						/* eslint-disable @next/next/no-img-element */
-						<img src={image.external?.url} alt={image.caption.length > 0 ? image.caption : ""} />
+						<img
+							src={image.external?.url}
+							alt={image.caption.length > 0 ? image.caption : ""}
+							onLoad={(event: React.SyntheticEvent) => {
+								const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
+								setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
+							}}
+						/>
 					) : (
 						<Image
 							src={`/api/notion-asset/block/${block.id}/image?last_edited_time=${block.last_edited_time}`}

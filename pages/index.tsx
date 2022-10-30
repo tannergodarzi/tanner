@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Bio from "../components/bio";
 import Grid from "../components/containers/grid";
+import { Listicle } from "../components/containers/listicle";
 import Entry from "../components/entry";
 import Footer from "../components/footer";
 import GridElement from "../components/gridElement";
@@ -11,7 +12,7 @@ import Navigation from "../components/navigation";
 import { getNotionDatabase } from "../helpers/notionHelpers";
 
 export async function getStaticProps() {
-	const database = await getNotionDatabase({ page_size: 3 });
+	const database = await getNotionDatabase({ page_size: 4 });
 	return {
 		props: {
 			database,
@@ -42,7 +43,7 @@ export default function Index({ database }) {
 				<Hero />
 			</article>
 			<Grid>
-				<GridElement column={2} columnSpan={4} row={1} rowSpan={6}>
+				<GridElement column={3} columnSpan={4} row={1} rowSpan={6}>
 					<Image src={"/tanner-foto.jpeg"} fill alt="" />
 				</GridElement>
 				<GridElement column={7} columnSpan={5} row={1} rowSpan={6}>
@@ -50,9 +51,9 @@ export default function Index({ database }) {
 				</GridElement>
 
 				<GridElement column={12} columnSpan={4} row={1} rowSpan={4}>
-					<Image src={"/tanner-polaroid.jpeg"} fill alt="" />
+					<Image src={"/tanner.jpeg"} fill alt="" />
 				</GridElement>
-				<GridElement column={3} columnSpan={4} row={7} rowSpan={6}>
+				<GridElement column={6} columnSpan={3} row={8} rowSpan={4}>
 					<iframe
 						src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?theme=0"
 						width="100%"
@@ -61,34 +62,34 @@ export default function Index({ database }) {
 						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
 					/>
 				</GridElement>
-				<GridElement column={10} columnSpan={6} row={7} rowSpan={7}>
+				<GridElement column={9} columnSpan={4} row={8} rowSpan={5}>
 					<Image src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"} fill alt="" />
 				</GridElement>
-				<GridElement column={2} columnSpan={6} row={15} rowSpan={8}>
-					<section className="frame container">
-						{database.map((entry) => (
-							<Entry entry={entry} key={entry.id} />
-						))}
+				<GridElement column={4} columnSpan={6} row={15} rowSpan={8}>
+					<section className="frame">
+						<section className="container">
+							{database.map((entry) => (
+								<Entry entry={entry} key={entry.id} />
+							))}
+						</section>
 					</section>
 				</GridElement>
-				<GridElement column={10} columnSpan={3} row={18} rowSpan={3}>
-					<Link href={"/blog"}>
-						<a className="circle">{"Blog"}</a>
+				<GridElement column={11} columnSpan={3} row={18} rowSpan={3}>
+					<Link href={"/blog"} className="circle">
+						{"Blog"}
 					</Link>
 				</GridElement>
-				<GridElement column={12} columnSpan={3} row={14} rowSpan={2}>
-					<blockquote>{"Tanner is really cool"}</blockquote>
-				</GridElement>
-				{/*<GridElement column={10} columnSpan={4} row={14} rowSpan={3}>
-					<picture className="picture-frame">
-						<Image src={"/tanner-candid.jpg"} width={1000} height={675} alt="" />
-					</picture>
-						</GridElement>*/}
-				<GridElement column={10} columnSpan={4} row={22} rowSpan={6}></GridElement>
-				<GridElement column={2} columnSpan={8} row={26} rowSpan={6}>
+				<GridElement column={12} columnSpan={3} row={14} rowSpan={3}>
 					<picture>
 						<Image src={"/card.jpg"} fill alt="" />
 					</picture>
+				</GridElement>
+				<GridElement column={10} columnSpan={4} row={22} rowSpan={6}>
+					<section className="frame">
+						<section className="container">
+							<Listicle />
+						</section>
+					</section>
 				</GridElement>
 			</Grid>
 			<Footer />
