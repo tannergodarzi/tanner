@@ -4,6 +4,8 @@ import Footer from "../../components/footer";
 import { getNotionDatabase } from "../../helpers/notionHelpers";
 import Entry from "../../components/entry";
 
+import styles from "./index.module.css";
+
 export async function getStaticProps() {
 	const database = await getNotionDatabase({ page_size: 100 });
 	return {
@@ -30,8 +32,8 @@ export default function Index({ database }) {
 			</Head>
 
 			<Navigation />
-			<section className="container">
-				<header className="hero">
+			<section className={styles.container}>
+				<header className={styles.header}>
 					<h1>{"Blog"}</h1>
 				</header>
 				{database.map((entry) => (
@@ -39,24 +41,6 @@ export default function Index({ database }) {
 				))}
 			</section>
 			<Footer />
-
-			<style jsx>{`
-				.container {
-					display: flex;
-					flex-direction: column;
-					flex-grow: 1;
-					gap: 2rem;
-					height: 100%;
-					width: min(100%, 45rem);
-					box-sizing: border-box;
-					padding: 0 1.5rem;
-					margin: 2rem auto 0;
-				}
-				.hero {
-					text-align: center;
-					position: relative;
-				}
-			`}</style>
 		</>
 	);
 }
