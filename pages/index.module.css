@@ -7,6 +7,8 @@
 	color: var(--text-color);
 	border: 2px solid var(--text-color);
 	width: 100%;
+	margin: auto;
+		max-width: 222px;
 	height: auto;
 	display: flex;
 	justify-content: center;
