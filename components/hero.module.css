@@ -6,8 +6,8 @@
 	position: relative;
 }
 
-.hero>*,
-.hero>*:not(span) {
+.heroText,
+.heroText *:not(span) {
 	z-index: 0;
 	pointer-events: none;
 	font: var(--font-display);
