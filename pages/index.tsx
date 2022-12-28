@@ -11,6 +11,7 @@ import Hero from "../components/hero";
 import Navigation from "../components/navigation";
 import { getNotionDatabase } from "../helpers/notionHelpers";
 
+import styles from "./index.module.css";
 
 export async function getStaticProps() {
 	const database = await getNotionDatabase({ page_size: 4 });
