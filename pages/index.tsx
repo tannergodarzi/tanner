@@ -11,8 +11,6 @@ import Hero from "../components/hero";
 import Navigation from "../components/navigation";
 import { getNotionDatabase } from "../helpers/notionHelpers";
 
-import "../components/grid.module.css";
-
 
 export async function getStaticProps() {
 	const database = await getNotionDatabase({ page_size: 4 });
@@ -69,8 +67,8 @@ export default function Index({ database }) {
 					<Image src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"} fill alt="" />
 				</GridElement>
 				<GridElement column={4} columnSpan={6} row={15} rowSpan={8}>
-					<section className="frame">
-						<section className="container">
+					<section className={styles.frame}>
+						<section className={styles.content}>
 							{database.map((entry) => (
 								<Entry entry={entry} key={entry.id} />
 							))}
@@ -78,7 +76,7 @@ export default function Index({ database }) {
 					</section>
 				</GridElement>
 				<GridElement column={11} columnSpan={3} row={18} rowSpan={3}>
-					<Link href={"/blog"} className="circle">
+					<Link href={"/blog"} className={styles.circle}>
 						{"Blog"}
 					</Link>
 				</GridElement>
@@ -88,8 +86,8 @@ export default function Index({ database }) {
 					</picture>
 				</GridElement>
 				<GridElement column={10} columnSpan={4} row={22} rowSpan={6}>
-					<section className="frame">
-						<section className="container">
+					<section className={styles.frame}>
+						<section className={styles.content}>
 							<Listicle />
 						</section>
 					</section>
