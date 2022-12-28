@@ -46,14 +46,14 @@ export default function Index({ database }) {
 			</article>
 			<Grid>
 				<GridElement column={3} columnSpan={4} row={1} rowSpan={6}>
-					<Image src={"/tanner-foto.jpeg"} fill alt="" />
+					<Image src={"/tanner-foto.jpeg"} alt="" />
 				</GridElement>
 				<GridElement column={7} columnSpan={5} row={1} rowSpan={6}>
 					<Bio />
 				</GridElement>
 
 				<GridElement column={12} columnSpan={4} row={1} rowSpan={4}>
-					<Image src={"/tanner.jpeg"} fill alt="" />
+					<Image src={"/tanner.jpeg"} alt="" />
 				</GridElement>
 				<GridElement column={6} columnSpan={3} row={8} rowSpan={4}>
 					<iframe
