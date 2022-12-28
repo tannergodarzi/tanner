@@ -19,11 +19,11 @@ export default function GridElement({
 	return (
 		<>
 			<section
-				className={styles.grid_element}
+				className={styles.gridElement}
 				style={{
 					gridColumn: `${column} / span ${columnSpan}`,
 					gridRow: `${row} / span ${rowSpan}`,
-					fontSize: `${(16 / columnSpan) * 0.475}vw`,
+					//fontSize: `${(16 / columnSpan) * 0.475}vw`,
 				}}
 			>
 				{children}

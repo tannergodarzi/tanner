@@ -1,4 +1,4 @@
-.grid_element {
+.gridElement {
 	box-sizing: border-box;
 	position: relative;
 	display: flex;
@@ -9,7 +9,7 @@
 	overflow: hidden;
 }
 
-.grid_element > * {
-	font-size: 1em !important;
-	line-height: 1.2em !important;
+.gridElement > * {
+	/*font-size: 1em !important;
+	line-height: 1.2em !important; */
 }
