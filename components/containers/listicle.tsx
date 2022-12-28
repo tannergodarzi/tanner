@@ -23,7 +23,7 @@ export function Listicle() {
 					<dd>{"Wearing a cool black leather jacket listening to Judas Priest"}</dd>
 				</dl>
 			</article>
-			<style jsx>{`
+			{/*<style jsx>{`
 				dl {
 					font-size: 0.75em;
 					line-height: 1.05em;
@@ -48,7 +48,7 @@ export function Listicle() {
 				dd:last-of-type:after {
 					display: none;
 				}
-			`}</style>
+			`}</style>*/}
 		</>
 	);
 }

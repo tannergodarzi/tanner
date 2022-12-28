@@ -95,7 +95,7 @@ export default function Bouncy() {
 					<Image src="/blu-ray.png" alt="" fill />
 				</div>
 			</section>
-			<style jsx>{`
+			{/*<style jsx>{`
 				.bounding-box {
 					display: block;
 					width: 100%;
@@ -110,7 +110,7 @@ export default function Bouncy() {
 					will-change: transform;
 					position: relative;
 				}
-			`}</style>
+			`}</style>*/}
 		</>
 	);
 }

@@ -7,6 +7,8 @@ import { checkForChildBlocks } from "../../helpers/notionHelpers";
 import { useRouter } from "next/router";
 import { NotionPages } from "../../library/notion";
 
+import styles from "./slug.module.css";
+
 // Notion client
 const notion = new Client({
 	auth: process.env.NOTION_TOKEN,
@@ -95,8 +97,8 @@ export default function Slug(props) {
 				</script>
 			</Head>
 			<Navigation />
-			<article>
-				<header>
+			<article className={styles.article}>
+				<header className={styles.header}>
 					<h1>{pageTitle}</h1>
 					<time dateTime={new Date(meta.Published.date.start).toUTCString()}>
 						{`Published ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
@@ -110,22 +112,6 @@ export default function Slug(props) {
 				})}
 			</article>
 			<Footer />
-			<style jsx>{`
-				article {
-					width: min(100%, 45rem);
-					box-sizing: border-box;
-					padding: 0 1.5rem;
-					margin: 4rem auto 0;
-				}
-				header {
-					margin: 0 auto 2em;
-					text-align: center;
-					width: max(75%, 20rem);
-				}
-				header h1 {
-					margin-bottom: 0.15em;
-				}
-			`}</style>
 		</>
 	);
 }
