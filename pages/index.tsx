@@ -2,14 +2,16 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Bio from "../components/bio";
-import Grid from "../components/containers/grid";
-import { Listicle } from "../components/containers/listicle";
+import Grid from "../components/grid";
+import { Listicle } from "../components/listicle";
 import Entry from "../components/entry";
 import Footer from "../components/footer";
 import GridElement from "../components/gridElement";
 import Hero from "../components/hero";
 import Navigation from "../components/navigation";
 import { getNotionDatabase } from "../helpers/notionHelpers";
+
+import "../components/grid.module.css";
 
 export async function getStaticProps() {
 	const database = await getNotionDatabase({ page_size: 4 });
