@@ -46,7 +46,7 @@ export default function Index({ database }) {
 			</article>
 			<Grid>
 				<GridElement column={3} columnSpan={4} row={1} rowSpan={6}>
-					<Image src={"/tanner-foto.jpeg"} alt="" />
+					<Image src={"/tanner-polaroid.jpeg"} alt="" />
 				</GridElement>
 				<GridElement column={7} columnSpan={5} row={1} rowSpan={6}>
 					<Bio />
@@ -65,7 +65,7 @@ export default function Index({ database }) {
 					/>
 				</GridElement>
 				<GridElement column={9} columnSpan={4} row={8} rowSpan={5}>
-					<Image src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"} fill alt="" />
+					<Image src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"} alt="" />
 				</GridElement>
 				<GridElement column={4} columnSpan={6} row={15} rowSpan={8}>
 					<section className={styles.frame}>
@@ -83,7 +83,7 @@ export default function Index({ database }) {
 				</GridElement>
 				<GridElement column={12} columnSpan={3} row={14} rowSpan={3}>
 					<picture>
-						<Image src={"/card.jpg"} fill alt="" />
+						<Image src={"/card.jpg"} alt="" />
 					</picture>
 				</GridElement>
 				<GridElement column={10} columnSpan={4} row={22} rowSpan={6}>
