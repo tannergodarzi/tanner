@@ -6,25 +6,6 @@ export default function Grid({ children }) {
 		<>
 			<section className={styles.grid}>{children}</section>
 			<style global jsx>{`
-				@media (min-width: 768px) {
-					.grid {
-						display: grid;
-						grid-template-columns: repeat(16, calc(100vw / 16 - 1rem));
-						grid-template-rows: repeat(32, calc(100vw / 16 - 1rem));
-						gap: 1rem;
-						max-width: (2rem - 100vw);
-						margin: auto;
-						margin-top: 5vh;
-					}
-				}
-
-				@media (max-width: 768px) {
-					.grid {
-						display: flex;
-						flex-direction: column;
-						padding: 1rem;
-					}
-				}
 				.circle {
 					color: var(--text-color);
 					border: 2px solid var(--text-color);
