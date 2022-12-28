@@ -18,13 +18,7 @@ export default function Footer() {
 							<Link href={"/blog"}>{"Blog"}</Link>
 						</li>
 						<li>
-							<Link href={"mailto:tanner.godarzi@gmail.com"}>{"Fan Mail"}</Link>
-						</li>
-						<li>
-							<Link href={"https://glass.photo/tannergodarzi"}>{"Glass"}</Link>
-						</li>
-						<li>
-							<Link href={"https://github.com/tannergodarzi"}>{"GitHub"}</Link>
+							<Link href={"mailto:tanner.godarzi@gmail.com"}>{"Mail"}</Link>
 						</li>
 					</ul>
 				</nav>
