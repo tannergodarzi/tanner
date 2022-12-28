@@ -1,13 +1,13 @@
 .hero {
 	box-sizing: border-box;
 	width: 100%;
-	padding: 1.5rem;
+	padding: 1rem;
 	z-index: 1000;
 	position: relative;
 }
 
-.heroText,
-.heroText *:not(span) {
+.hero>*,
+.hero>*:not(span) {
 	z-index: 0;
 	pointer-events: none;
 	font: var(--font-display);
