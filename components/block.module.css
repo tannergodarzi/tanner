@@ -76,6 +76,7 @@
 .column {
 	overflow: hidden;
 	display: flex;
+	row-gap: 0.5rem;
 	align-items: flex-start;
 	flex-direction: column;
 	flex: 1 0 auto;

@@ -9,7 +9,7 @@
 	margin-top: 5vh;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 2768px) {
 	.grid {
 		display: flex;
 		flex-direction: column;
