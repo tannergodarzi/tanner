@@ -14,7 +14,7 @@ import { getNotionDatabase } from "../helpers/notionHelpers";
 import styles from "./index.module.css";
 
 export async function getStaticProps() {
-	const database = await getNotionDatabase({ page_size: 4 });
+	const database = await getNotionDatabase({ page_size: 3 });
 	return {
 		props: {
 			database,
