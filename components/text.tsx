@@ -16,11 +16,11 @@ export default function Text({ value }: PropsWithChildren<TextProps>) {
 		const { annotations, text } = block;
 
 		const classes = classNames(styles.text, {
-			[styles.text_bold]: annotations.bold,
-			[styles.text_italic]: annotations.italic,
-			[styles.text_strikethrough]: annotations.strikethrough,
-			[styles.text_underline]: annotations.underline,
-			[styles.text_code]: annotations.code,
+			[styles.text_bold]: annotations?.bold,
+			[styles.text_italic]: annotations?.italic,
+			[styles.text_strikethrough]: annotations?.strikethrough,
+			[styles.text_underline]: annotations?.underline,
+			[styles.text_code]: annotations?.code,
 		});
 
 		const genKey = uuidv4();
@@ -30,7 +30,7 @@ export default function Text({ value }: PropsWithChildren<TextProps>) {
 				<span className={classes}>
 					{text.link ? (
 						<a href={text.link.url}>{text.content}</a>
-					) : !annotations.code ? (
+					) : !annotations?.code ? (
 						text.content
 					) : (
 						<code>{text.content}</code>

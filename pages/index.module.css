@@ -2,7 +2,6 @@
 	text-align: center;
 	position: relative;
 }
-
 .circle {
 	color: var(--text-color);
 	border: 2px solid var(--text-color);
