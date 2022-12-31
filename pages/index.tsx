@@ -45,16 +45,12 @@ export default function Index({ database }) {
 				<Hero />
 			</article>
 			<Grid>
-				<GridElement column={3} columnSpan={4} row={1} rowSpan={6}>
-					<Image src={"/tanner-polaroid.jpeg"} alt="" />
-				</GridElement>
+				<GridElement column={3} columnSpan={4} row={1} rowSpan={6}></GridElement>
 				<GridElement column={7} columnSpan={5} row={1} rowSpan={6}>
 					<Bio />
 				</GridElement>
 
-				<GridElement column={12} columnSpan={4} row={1} rowSpan={4}>
-					<Image src={"/tanner.jpeg"} alt="" />
-				</GridElement>
+				<GridElement column={12} columnSpan={4} row={1} rowSpan={4}></GridElement>
 				<GridElement column={6} columnSpan={3} row={8} rowSpan={4}>
 					<iframe
 						src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?theme=0"
@@ -63,9 +59,6 @@ export default function Index({ database }) {
 						frameBorder="0"
 						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
 					/>
-				</GridElement>
-				<GridElement column={9} columnSpan={4} row={8} rowSpan={5}>
-					<Image src={"/NYC-2016-AIR-LAND-MATT_MURPHY-NOTE.jpg"} alt="" />
 				</GridElement>
 				<GridElement column={4} columnSpan={6} row={15} rowSpan={8}>
 					<section className={styles.frame}>
@@ -81,11 +74,7 @@ export default function Index({ database }) {
 						{"Blog"}
 					</Link>
 				</GridElement>
-				<GridElement column={12} columnSpan={3} row={14} rowSpan={3}>
-					<picture>
-						<Image src={"/card.jpg"} alt="" />
-					</picture>
-				</GridElement>
+				<GridElement column={12} columnSpan={3} row={14} rowSpan={3}></GridElement>
 				<GridElement column={10} columnSpan={4} row={22} rowSpan={6}>
 					<section className={styles.frame}>
 						<section className={styles.content}>
