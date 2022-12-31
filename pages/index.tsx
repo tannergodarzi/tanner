@@ -12,6 +12,7 @@ import Navigation from "../components/navigation";
 import { getNotionDatabase } from "../helpers/notionHelpers";
 
 import styles from "./index.module.css";
+import Bouncy from "../components/bouncy";
 
 export async function getStaticProps() {
 	const database = await getNotionDatabase({ page_size: 3 });
@@ -71,7 +72,9 @@ export default function Index({ database }) {
 						{"Blog"}
 					</Link>
 				</GridElement>
-				<GridElement column={12} columnSpan={3} row={14} rowSpan={3}></GridElement>
+				<GridElement column={12} columnSpan={3} row={14} rowSpan={3}>
+					<Bouncy />
+				</GridElement>
 				<GridElement column={10} columnSpan={4} row={22} rowSpan={6}>
 					<section className={styles.frame}>
 						<section className={styles.content}>

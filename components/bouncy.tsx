@@ -2,6 +2,8 @@
 import Image from "next/image";
 import React, {  useEffect,  useRef, useCallback } from "react";
 
+import styles from "./bouncy.module.css";
+
 export default function Bouncy() {
 	// Use useRef for mutable variables that we want to persist
 	// without triggering a re-render on their change
@@ -90,27 +92,13 @@ export default function Bouncy() {
 
 	return (
 		<>
-			<section className="bounding-box" ref={boundingBoxRef}>
-				<div className="actor" ref={actorRef}>
-					<Image src="/blu-ray.png" alt="" fill />
-				</div>
-			</section>
-			{/*<style jsx>{`
-				.bounding-box {
-					display: block;
-					width: 100%;
-					height: 100%;
-					box-sizing: border-box;
-					position: relative;
-				}
-
-				.actor {
-					width: 100px;
-					height: 100px;
-					will-change: transform;
-					position: relative;
-				}
-			`}</style>*/}
+			<div className={styles.frame}>
+				<section className={styles.boundingBox} ref={boundingBoxRef}>
+					<div className={styles.actor} ref={actorRef}>
+						<Image src="/blu-ray.png" alt="" fill />
+					</div>
+				</section>
+			</div>
 		</>
 	);
 }
