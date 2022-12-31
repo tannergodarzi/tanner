@@ -45,12 +45,9 @@ export default function Index({ database }) {
 				<Hero />
 			</article>
 			<Grid>
-				<GridElement column={3} columnSpan={4} row={1} rowSpan={6}></GridElement>
 				<GridElement column={7} columnSpan={5} row={1} rowSpan={6}>
 					<Bio />
 				</GridElement>
-
-				<GridElement column={12} columnSpan={4} row={1} rowSpan={4}></GridElement>
 				<GridElement column={6} columnSpan={3} row={8} rowSpan={4}>
 					<iframe
 						src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?theme=0"
