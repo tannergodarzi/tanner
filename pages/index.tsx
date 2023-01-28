@@ -46,10 +46,16 @@ export default function Index({ database }) {
 				<Hero />
 			</article>
 			<Grid>
+				<GridElement column={2} columnSpan={4} row={1} rowSpan={5}>
+					<Image src={"https://place-hold.it/600x800/#f7f7f"} alt="" fill />
+				</GridElement>
 				<GridElement column={7} columnSpan={5} row={1} rowSpan={6}>
 					<Bio />
 				</GridElement>
-				<GridElement column={6} columnSpan={3} row={8} rowSpan={4}>
+				<GridElement column={12} columnSpan={4} row={2} rowSpan={3}>
+					<Image src={"https://place-hold.it/600x800/#f7f7f"} alt="" fill />
+				</GridElement>
+				<GridElement column={4} columnSpan={8} row={8} rowSpan={6}>
 					<iframe
 						src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?theme=0"
 						width="100%"
@@ -58,7 +64,7 @@ export default function Index({ database }) {
 						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
 					/>
 				</GridElement>
-				<GridElement column={4} columnSpan={6} row={15} rowSpan={8}>
+				<GridElement column={3} columnSpan={6} row={16} rowSpan={10}>
 					<section className={styles.frame}>
 						<section className={styles.content}>
 							{database.map((entry) => (
@@ -67,15 +73,12 @@ export default function Index({ database }) {
 						</section>
 					</section>
 				</GridElement>
-				<GridElement column={11} columnSpan={3} row={18} rowSpan={3}>
+				<GridElement column={10} columnSpan={6} row={18} rowSpan={6}>
 					<Link href={"/blog"} className={styles.circle}>
 						{"Blog"}
 					</Link>
 				</GridElement>
-				<GridElement column={12} columnSpan={3} row={14} rowSpan={3}>
-					<Bouncy />
-				</GridElement>
-				<GridElement column={10} columnSpan={4} row={22} rowSpan={6}>
+				<GridElement column={4} columnSpan={10} row={27} rowSpan={6}>
 					<section className={styles.frame}>
 						<section className={styles.content}>
 							<Listicle />

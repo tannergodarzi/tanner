@@ -7,7 +7,6 @@
 	border: 2px solid var(--text-color);
 	width: 100%;
 	margin: auto;
-		max-width: 222px;
 	height: auto;
 	display: flex;
 	justify-content: center;
@@ -24,6 +23,10 @@
 	box-sizing: border-box;
 	position: relative;
 	z-index: 1;
+}
+.circle,
+.circle * {
+	font-size: 5rem;
 }
 .circle:before {
 	content: " ";

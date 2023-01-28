@@ -6,6 +6,12 @@
 	gap: 0;
 }
 
-.bio * {
-	display: inline;
+.bio>span {
+	height: auto;
+	word-wrap: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
