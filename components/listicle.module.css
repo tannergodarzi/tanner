@@ -1,4 +1,7 @@
 .listicle dl {
+	height: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
 }
 .listicle dt {
 	display: inline;

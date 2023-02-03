@@ -45,8 +45,7 @@ a {
 em {
 	font-style: italic;
 }
-code,
-time {
+code	 {
 	font: var(--font-annotation);
 }
 

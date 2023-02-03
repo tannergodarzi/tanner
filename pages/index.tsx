@@ -12,7 +12,6 @@ import Navigation from "../components/navigation";
 import { getNotionDatabase } from "../helpers/notionHelpers";
 
 import styles from "./index.module.css";
-import Bouncy from "../components/bouncy";
 
 export async function getStaticProps() {
 	const database = await getNotionDatabase({ page_size: 3 });
@@ -46,16 +45,16 @@ export default function Index({ database }) {
 				<Hero />
 			</article>
 			<Grid>
-				<GridElement column={2} columnSpan={4} row={1} rowSpan={5}>
-					<Image src={"https://place-hold.it/600x800/#f7f7f"} alt="" fill />
+				<GridElement column={3} columnSpan={4} row={1} rowSpan={5}>
+					<Image src={"/tanner-cowboy.jpeg"} alt="" style={{ objectFit: "contain" }} fill />
 				</GridElement>
 				<GridElement column={7} columnSpan={5} row={1} rowSpan={6}>
 					<Bio />
 				</GridElement>
 				<GridElement column={12} columnSpan={4} row={2} rowSpan={3}>
-					<Image src={"https://place-hold.it/600x800/#f7f7f"} alt="" fill />
+					<Image src={"/000045920024.jpg"} alt="" style={{ objectFit: "contain" }} fill />
 				</GridElement>
-				<GridElement column={4} columnSpan={8} row={8} rowSpan={6}>
+				<GridElement column={4} columnSpan={6} row={8} rowSpan={6}>
 					<iframe
 						src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?theme=0"
 						width="100%"
@@ -73,12 +72,12 @@ export default function Index({ database }) {
 						</section>
 					</section>
 				</GridElement>
-				<GridElement column={10} columnSpan={6} row={18} rowSpan={6}>
+				<GridElement column={12} columnSpan={3} row={7} rowSpan={3}>
 					<Link href={"/blog"} className={styles.circle}>
 						{"Blog"}
 					</Link>
 				</GridElement>
-				<GridElement column={4} columnSpan={10} row={27} rowSpan={6}>
+				<GridElement column={6} columnSpan={6} row={28} rowSpan={6}>
 					<section className={styles.frame}>
 						<section className={styles.content}>
 							<Listicle />

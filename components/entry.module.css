@@ -4,29 +4,35 @@
 	gap: 1rem;
 	width: 100%;
 }
+
 .entry * {
 	text-decoration: none;
 }
+
 .entry p {
 	margin-bottom: 0;
 }
+
 .entry time {
 	font-size: 0.75em;
 	opacity: 0.75;
 }
+
 .entry header,
 .entry header * {
 	margin: 0;
 	padding: 0;
 }
+
 .entry a {
 	font-weight: inherit;
 	text-decoration: none;
-		display: flex;
+	display: flex;
 	flex-direction: column;
 	gap: 0.25rem;
 	width: 100%;
 }
+
 .entry a:hover,
 .entry a:focus {
 	opacity: 0.7;

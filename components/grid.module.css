@@ -3,13 +3,12 @@
 	grid-template-columns: repeat(16, calc(100vw / 16 - 1rem));
 	grid-template-rows: repeat(32, calc(100vw / 16 - 1rem));
 	gap: 1rem;
-	min-width: 800px;
 	max-width: (2rem - 100vw);
 	margin: auto;
 	margin-top: 5vh;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
 	.grid {
 		display: flex;
 		flex-direction: column;
