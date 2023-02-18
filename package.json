@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@jitl/notion-api": "^0.2.2",
 		"@notionhq/client": "^1.0.4",
+		"@vercel/analytics": "^0.1.10",
 		"classnames": "^2.2.6",
 		"jsx": "^0.9.89",
 		"next": "^13.0.0",
@@ -19,7 +20,8 @@
 		"send": "^0.18.0",
 		"sharp": "^0.30.6",
 		"typescript": "^4.5.2",
-		"uuid": "^8.3.2"
+		"uuid": "^8.3.2",
+		"vercel": "^28.16.2"
 	},
 	"devDependencies": {
 		"@types/node": "^18.11.18",
