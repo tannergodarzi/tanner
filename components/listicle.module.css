@@ -1,25 +1,30 @@
 .listicle dl {
 	height: 100%;
-		overflow: hidden;
+	overflow: hidden;
 		text-overflow: ellipsis;
 }
+
 .listicle dt {
 	display: inline;
 	font-weight: 700;
 }
+
 .listicle dt:after {
 	content: "";
 	margin: 0 0.2em;
 }
+
 .listicle dd,
 .listicle dd * {
 	display: inline;
 	font-weight: 400;
 }
+
 .listicle dd:after {
 	content: "/";
 	margin: 0 0.2em;
 }
+
 .listicle dd:last-of-type:after {
 	display: none;
 }

@@ -41,13 +41,14 @@ export default function Bouncy() {
 			let xDirection = directionRef.current.x;
 			let yDirection = directionRef.current.y;
 			const start = 0;
-			const actorSize = 100;
+			const actorHeight = 70;
+			const actorWidth = 100;
 
 			// X Positioning
 			if (xDirection === "increment") {
 				xPos = xPos + 1;
 
-				if (xPos > xEnd - actorSize) {
+				if (xPos > xEnd - actorWidth) {
 					xDirection = "decrement";
 				}
 			} else if (xDirection === "decrement") {
@@ -61,7 +62,7 @@ export default function Bouncy() {
 			// Y Positioning
 			if (yDirection === "increment") {
 				yPos = yPos + 1;
-				if (yPos > yEnd - actorSize) {
+				if (yPos > yEnd - actorHeight) {
 					yDirection = "decrement";
 				}
 			} else if (yDirection === "decrement") {
@@ -95,7 +96,7 @@ export default function Bouncy() {
 			<div className={styles.frame}>
 				<section className={styles.boundingBox} ref={boundingBoxRef}>
 					<div className={styles.actor} ref={actorRef}>
-						<Image src="/blu-ray.png" alt="" fill />
+						<Image src="/dvd.png" alt="" fill />
 					</div>
 				</section>
 			</div>

@@ -12,9 +12,10 @@ import Navigation from "../components/navigation";
 import { getNotionDatabase } from "../helpers/notionHelpers";
 
 import styles from "./index.module.css";
+import Bouncy from "../components/bouncy";
 
 export async function getStaticProps() {
-	const database = await getNotionDatabase({ page_size: 3 });
+	const database = await getNotionDatabase({ page_size: 2 });
 	return {
 		props: {
 			database,
@@ -64,7 +65,14 @@ export default function Index({ database }) {
 					/>
 				</GridElement>
 				<GridElement column={3} columnSpan={6} row={16} rowSpan={10}>
-					<section className={styles.frame}>
+					<section
+						className={styles.frame}
+						style={
+							{
+								"--background": "var(--color-yellow)",
+							} as React.CSSProperties
+						}
+					>
 						<section className={styles.content}>
 							{database.map((entry) => (
 								<Entry entry={entry} key={entry.id} />
@@ -73,16 +81,47 @@ export default function Index({ database }) {
 					</section>
 				</GridElement>
 				<GridElement column={12} columnSpan={3} row={7} rowSpan={3}>
-					<Link href={"/blog"} className={styles.circle}>
+					<Link
+						href={"/blog"}
+						className={styles.circle}
+						style={
+							{
+								"--background": "var(--color-orange)",
+							} as React.CSSProperties
+						}
+					>
 						{"Blog"}
 					</Link>
 				</GridElement>
-				<GridElement column={6} columnSpan={6} row={28} rowSpan={6}>
-					<section className={styles.frame}>
+				<GridElement column={4} columnSpan={10} row={28} rowSpan={6}>
+					<section
+						className={styles.frame}
+						style={
+							{
+								"--background": "var(--color-pink)",
+							} as React.CSSProperties
+						}
+					>
 						<section className={styles.content}>
 							<Listicle />
 						</section>
 					</section>
+				</GridElement>
+				<GridElement column={11} columnSpan={3} row={10} rowSpan={3}>
+					<Link
+						href={"/about"}
+						className={styles.circle}
+						style={
+							{
+								"--background": "var(--color-gold)",
+							} as React.CSSProperties
+						}
+					>
+						{"About"}
+					</Link>
+				</GridElement>
+				<GridElement column={10} columnSpan={6} row={18} rowSpan={4}>
+					<Bouncy />
 				</GridElement>
 			</Grid>
 			<Footer />

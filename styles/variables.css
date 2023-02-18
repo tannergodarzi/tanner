@@ -5,11 +5,14 @@
 	--color-lightest: rgb(255, 255, 255);
 	--color-blue: #97dbda;
 	--color-gray: rgb(249,247,242);
+	--color-pink: rgb(238 191 180);
 	--color-brown: #61381c;
 	--color-gold: #e6b870;
+	--color-orange: rgb(228, 149, 55);
 	--color-green: rgb(144, 165, 136);
-	--color-red: #d02c07;
+	--color-red: rgb(209, 88, 53);
 	--color-tan: rgba(249,225,180, 1);
+	--color-yellow: rgb(234, 208, 108);
 	--color-green-dark: rgb(119, 144,110);
 	--color-neutral: var(--color-green-dark);
 
