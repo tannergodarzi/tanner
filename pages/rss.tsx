@@ -1,14 +1,14 @@
 import { GetServerSideProps } from "next";
-import { getNotionDatabase } from "../helpers/notionHelpers";
+import { getNotionBlogDatabase } from "../helpers/notionHelpers";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	const res = context.res;
 
-	const database = await getNotionDatabase({ page_size: 100 });
+	const database = await getNotionBlogDatabase({ page_size: 100 });
 
 	let rssItemsXml = "";
 	let latestPostDate = "";
-  database.map((node: any) => {
+	database.map((node: any) => {
 		const post = node.properties;
 		const postDate = Date.parse(post.Published.date);
 		const postHref = `https://www.tannergodarzi.com/blog/${post.Slug.url}`;
@@ -27,8 +27,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             <![CDATA[${post.Subtitle.rich_text[0].plain_text}]]>
             </description>
         </item>`;
-  });
-  const processedXml = `<?xml version="1.0" ?>
+	});
+	const processedXml = `<?xml version="1.0" ?>
       <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
         <channel>
             <atom:link href="https://tannergodarzi.com/rss" rel="self" type="application/rss+xml" />
@@ -44,12 +44,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         </channel>
       </rss>`;
 
-  res.setHeader("Content-Type", "application/rss+xml; charset=utf-8");
-  res.write(processedXml);
-  res.end();
-  return {
+	res.setHeader("Content-Type", "application/rss+xml; charset=utf-8");
+	res.write(processedXml);
+	res.end();
+	return {
 		props: {},
-  };
+	};
 };
 
 const RssPage = () => null;

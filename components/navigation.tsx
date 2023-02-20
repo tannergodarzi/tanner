@@ -9,6 +9,7 @@ export default function Navigation() {
 			<section className={styles.mast}>
 				<nav>
 					<Link href={"/"}>{"Tanner"}</Link>
+					<Link href={"/dinner-with-friends"}>{"Dinner With Friends"}</Link> |
 					<Link href={"/about"}>{"About"}</Link>
 					<Link href={"/blog"}>{"Blog"}</Link>
 				</nav>

@@ -9,13 +9,13 @@ import Footer from "../components/footer";
 import GridElement from "../components/gridElement";
 import Hero from "../components/hero";
 import Navigation from "../components/navigation";
-import { getNotionDatabase } from "../helpers/notionHelpers";
+import { getNotionBlogDatabase } from "../helpers/notionHelpers";
 
 import styles from "./index.module.css";
 import Bouncy from "../components/bouncy";
 
 export async function getStaticProps() {
-	const database = await getNotionDatabase({ page_size: 2 });
+	const database = await getNotionBlogDatabase({ page_size: 2 });
 	return {
 		props: {
 			database,

@@ -21,7 +21,7 @@ export const NotionBlogPages = new CMS({
 	slug: "Slug",
 	visible: "Active",
 	getFrontmatter: ({ page, properties, defaultFrontmatter: { slug } }) => {
-		// Transform your DB properties to a format convinient to use in your
+		// Transform your DB properties to a format convenient to use in your
 		// renderers. I convert Notion's rich text to plain text a lot.
 		const props = {
 			slug: properties.Slug,
@@ -46,27 +46,24 @@ export const NotionBlogPages = new CMS({
 });
 
 export const NotionDinnerWithFriendsPages = new CMS({
-	database_id: process.env.NOTION_DINNER_WITH_FRIENDS,
+	database_id: process.env.NOTION_DINNER_WITH_FRIENDS_DATABASE,
 	notion, // API client we set up before
 	schema: inferDatabaseSchema({
 		// inferDatabaseSchema adds "name" where unspecified.
 		Slug: { type: "url" },
-		Active: { type: "checkbox" },
-		Published: { type: "date" },
-		Subtitle: { type: "rich_text" },
 		Name: { type: "title" },
+		Summary: { type: "rich_text" },
+		Photos: { type: "files" },
 	}),
 	slug: "Slug",
-	visible: "Active",
+	visible: true,
 	getFrontmatter: ({ page, properties, defaultFrontmatter: { slug } }) => {
 		// Transform your DB properties to a format convenient to use in your
 		// renderers.
 		const props = {
+			...properties,
 			slug: properties.Slug,
-			Active: properties.Active,
-			Published: properties.Published,
-			Subtitle: richTextAsPlainText(properties.Subtitle),
-			Name: properties.Name,
+			Summary: richTextAsPlainText(properties.Summary),
 		};
 
 		return {

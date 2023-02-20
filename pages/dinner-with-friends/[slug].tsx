@@ -1,11 +1,14 @@
 import Head from "next/head";
 import { Client } from "@notionhq/client";
-import Block from "../../components/block";
 import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
 import { checkForChildBlocks } from "../../helpers/notionHelpers";
 import { useRouter } from "next/router";
 import { NotionDinnerWithFriendsPages } from "../../library/notion";
+import Text from "../../components/text";
+import Block from "../../components/block";
+import React from "react";
+import Image from "next/image";
 
 // Notion client
 const notion = new Client({
@@ -22,15 +25,14 @@ export async function getStaticProps(context) {
 	const unparsedBlocks = newQueryResponse.content.children.map(checkForChildBlocks);
 	const blocks = await Promise.all([...unparsedBlocks]).then((values) => values);
 
-	const { Published, Name, Slug, Subtitle } = newQueryResponse.content.properties;
-	const pageTitle = Name["title"][0].plain_text;
-	const description = Subtitle["rich_text"][0].text.content;
-	const meta = { Published, Name, Slug, description };
+	const { Title, Summary } = newQueryResponse.content.properties;
+	const pageTitle = Title["title"][0].plain_text;
+	const pageDescription = Summary["rich_text"][0].plain_text;
 	return {
 		props: {
-			meta,
+			...newQueryResponse.content.properties,
 			pageTitle,
-			description,
+			pageDescription,
 			blocks,
 		},
 		revalidate: 60,
@@ -38,33 +40,60 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-	const params: Array<{ params: { slug: string } }> = [];
-	for await (const page of NotionDinnerWithFriendsPages.query({
-		sorts: [NotionDinnerWithFriendsPages.sort.Published.descending],
-	})) {
-		await NotionDinnerWithFriendsPages.downloadAssets(page);
-		params.push({
-			params: {
-				slug: page.frontmatter.slug,
-			},
-		});
-	}
+	const params: Array<{ params: { slug: string } }> = [{ params: { slug: "cory-and-trick-dog" } }];
+
 	return { paths: params, fallback: false };
 }
 
 export default function Slug(props) {
-	const router = useRouter();
-	const { pageTitle } = props;
-	const canonicalUrl = typeof window === "undefined" ? "" : `${window.location.origin}${router.asPath}`;
-
+	const { blocks, Photos, pageTitle, pageDescription } = props;
+	const [aspectRatio, setAspectRatio] = React.useState("1 / 1");
+	console.log(Photos);
 	return (
 		<>
 			<Head>
 				<title>Dinner With Friends | {pageTitle}</title>
-				<meta name="title" content={pageTitle} />
-				<link rel="canonical" href={canonicalUrl} />
 			</Head>
 			<Navigation />
+			<article>
+				<h1>{pageTitle}</h1>
+				<h2>{pageDescription}</h2>
+				<section>
+					{Photos.files.map((image) => {
+						console.log(image);
+						return (
+							<picture style={{ aspectRatio }} key={image.id}>
+								{image.external?.url ? (
+									/* eslint-disable @next/next/no-img-element */
+									<img
+										src={image.external?.url}
+										alt={image.caption.length > 0 ? image.caption : ""}
+										onLoad={(event: React.SyntheticEvent) => {
+											const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
+											setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
+										}}
+									/>
+								) : (
+									<Image
+										src={`/api/notion-asset/block/${image.name}/image`}
+										alt={""}
+										fill
+										loading="eager"
+										quality={75}
+										onLoad={(event: React.SyntheticEvent) => {
+											const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
+											setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
+										}}
+									/>
+								)}
+							</picture>
+						);
+					})}
+				</section>
+				{blocks.map((block) => {
+					return <Block block={block} key={block.id} />;
+				})}
+			</article>
 			<Footer />
 		</>
 	);
