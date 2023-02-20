@@ -5,7 +5,7 @@ import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
 import { checkForChildBlocks } from "../../helpers/notionHelpers";
 import { useRouter } from "next/router";
-import { NotionPages } from "../../library/notion";
+import { NotionBlogPages } from "../../library/notion";
 
 import styles from "./slug.module.css";
 
@@ -15,7 +15,7 @@ const notion = new Client({
 });
 
 export async function getStaticProps(context) {
-	const newQueryResponse = await NotionPages.loadPageBySlug(context.params.slug);
+	const newQueryResponse = await NotionBlogPages.loadPageBySlug(context.params.slug);
 	if (!newQueryResponse) {
 		return {
 			notFound: true,
@@ -35,15 +35,16 @@ export async function getStaticProps(context) {
 			description,
 			blocks,
 		},
+		revalidate: 60,
 	};
 }
 
 export async function getStaticPaths() {
 	const params: Array<{ params: { slug: string } }> = [];
-	for await (const page of NotionPages.query({
-		sorts: [NotionPages.sort.Published.descending],
+	for await (const page of NotionBlogPages.query({
+		sorts: [NotionBlogPages.sort.Published.descending],
 	})) {
-		await NotionPages.downloadAssets(page);
+		await NotionBlogPages.downloadAssets(page);
 		params.push({
 			params: {
 				slug: page.frontmatter.slug,
@@ -82,9 +83,6 @@ export default function Slug(props) {
 							"@id": "https://www.tannergodarzi.com/blog"
 						},
 						"headline": "${pageTitle}",
-						"image": [
-							"https://www.tannergodarzi.com/_next/image?url=%2Fnewspaper.jpg&w=1080&q=75"
-						],
 						"datePublished": 
 						"${new Date(meta.Published.date.start).toUTCString()}",
 						"author": {
