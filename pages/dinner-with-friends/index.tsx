@@ -26,7 +26,6 @@ export default function Index({ database }) {
 			<Navigation />
 			<section>
 				{database.map((entry) => {
-					console.log(entry.properties.Photos.files[0].file);
 					return (
 						<section key={entry.id}>
 							<picture>

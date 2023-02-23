@@ -25,12 +25,13 @@ export async function getStaticProps(context) {
 	const unparsedBlocks = newQueryResponse.content.children.map(checkForChildBlocks);
 	const blocks = await Promise.all([...unparsedBlocks]).then((values) => values);
 
-	const { Title, Summary } = newQueryResponse.content.properties;
+	const { Title, Summary, frontmatter } = newQueryResponse.content.properties;
 	const pageTitle = Title["title"][0].plain_text;
 	const pageDescription = Summary["rich_text"][0].plain_text;
 	return {
 		props: {
 			...newQueryResponse.content.properties,
+			//Photos: newQueryResponse.frontmatter["Photos"],
 			pageTitle,
 			pageDescription,
 			blocks,
@@ -46,9 +47,8 @@ export async function getStaticPaths() {
 }
 
 export default function Slug(props) {
-	const { blocks, Photos, pageTitle, pageDescription } = props;
+	const { blocks, Photos, pageTitle, pageDescription, frontmatter } = props;
 	const [aspectRatio, setAspectRatio] = React.useState("1 / 1");
-	console.log(Photos);
 	return (
 		<>
 			<Head>
@@ -59,34 +59,21 @@ export default function Slug(props) {
 				<h1>{pageTitle}</h1>
 				<h2>{pageDescription}</h2>
 				<section>
-					{Photos.files.map((image) => {
-						console.log(image);
+					{Photos.files.map((file) => {
 						return (
-							<picture style={{ aspectRatio }} key={image.id}>
-								{image.external?.url ? (
-									/* eslint-disable @next/next/no-img-element */
-									<img
-										src={image.external?.url}
-										alt={image.caption.length > 0 ? image.caption : ""}
-										onLoad={(event: React.SyntheticEvent) => {
-											const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
-											setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
-										}}
-									/>
-								) : (
-									<Image
-										src={`/api/notion-asset/block/${image.name}/image`}
-										alt={""}
-										fill
-										loading="eager"
-										quality={75}
-										onLoad={(event: React.SyntheticEvent) => {
-											const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
-											setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
-										}}
-									/>
-								)}
-							</picture>
+							<Image
+								src={`/api/notion-asset/block/${file.file.url}/file?last_edited_time=${file.file.expiry_time}`}
+								alt={""}
+								width={200}
+								height={200}
+								loading="eager"
+								quality={75}
+								onLoad={(event: React.SyntheticEvent) => {
+									const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
+									setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
+								}}
+								key={file.name}
+							/>
 						);
 					})}
 				</section>

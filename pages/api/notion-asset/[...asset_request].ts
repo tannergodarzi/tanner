@@ -39,7 +39,7 @@ async function getNotionAssetUsingDisk(
 
 	const relativePath = await assets.downloadAssetRequest({
 		request: assetRequest,
-		cache: NotionBlogPages.notionObjects,
+		cache: NotionDinnerWithFriendsPages.notionObjects,
 		notion,
 	});
 

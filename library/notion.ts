@@ -51,7 +51,7 @@ export const NotionDinnerWithFriendsPages = new CMS({
 	schema: inferDatabaseSchema({
 		// inferDatabaseSchema adds "name" where unspecified.
 		Slug: { type: "url" },
-		Name: { type: "title" },
+		Title: { type: "title" },
 		Summary: { type: "rich_text" },
 		Photos: { type: "files" },
 	}),
