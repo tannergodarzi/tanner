@@ -56,30 +56,40 @@ export default function Slug(props) {
 			</Head>
 			<Navigation />
 			<article>
-				<h1>{pageTitle}</h1>
-				<h2>{pageDescription}</h2>
-				<section>
+				<header>
+					<h1>{pageTitle}</h1>
+					<h2>{pageDescription}</h2>
+				</header>
+				<aside>
 					{Photos.files.map((file) => {
 						return (
 							<Image
-								src={`/api/notion-asset/block/${file.file.url}/file?last_edited_time=${file.file.expiry_time}`}
+								src={file.file.url}
 								alt={""}
-								width={200}
-								height={200}
 								loading="eager"
 								quality={75}
 								onLoad={(event: React.SyntheticEvent) => {
 									const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
+									console.log(naturalWidth, naturalHeight);
 									setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
 								}}
-								key={file.name}
+								style={{
+									aspectRatio,
+									display: "block",
+									objectFit: "contain",
+								}}
+								width={300}
+								height={300}
+								key={file.file.name}
 							/>
 						);
 					})}
+				</aside>
+				<section>
+					{blocks.map((block) => {
+						return <Block block={block} key={block.id} />;
+					})}
 				</section>
-				{blocks.map((block) => {
-					return <Block block={block} key={block.id} />;
-				})}
 			</article>
 			<Footer />
 		</>
