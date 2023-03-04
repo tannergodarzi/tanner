@@ -41,7 +41,7 @@ export default function Bouncy() {
 			let xDirection = directionRef.current.x;
 			let yDirection = directionRef.current.y;
 			const start = 0;
-			const actorHeight = 70;
+			const actorHeight = 41;
 			const actorWidth = 100;
 
 			// X Positioning
