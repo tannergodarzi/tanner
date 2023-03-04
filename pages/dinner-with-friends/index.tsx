@@ -7,6 +7,9 @@ import { sluggify } from "../../helpers/urlHelpers";
 import Text from "../../components/text";
 import Image from "next/image";
 
+
+import styles from "./index.module.css";
+
 export async function getStaticProps() {
 	const database = await getNotionDinnerWithFriendsDatabase({ page_size: 100 });
 	return {
@@ -23,8 +26,7 @@ export default function Index({ database }) {
 			<Head>
 				<title>Dinner With Friends</title>
 			</Head>
-			<Navigation />
-			<section>
+			<section className={styles.app}>
 				{database.map((entry) => {
 					return (
 						<section key={entry.id}>
@@ -32,8 +34,11 @@ export default function Index({ database }) {
 								<Image
 									src={entry.properties.Photos.files[0].file.url}
 									alt=""
-									width={600}
+									width={400}
 									height={400}
+									style={{
+										objectFit: "cover",
+									}}
 								/>
 							</picture>
 							<header>
@@ -51,7 +56,6 @@ export default function Index({ database }) {
 					);
 				})}
 			</section>
-			<Footer />
 		</>
 	);
 }

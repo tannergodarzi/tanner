@@ -91,7 +91,7 @@ export async function getNotionDinnerWithFriendsDatabase({
 					{
 						property: "Status",
 						select: {
-							equals: "Published",
+							equals: "Draft",
 						},
 						type: "select",
 					},

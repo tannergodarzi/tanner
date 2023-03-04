@@ -17,6 +17,7 @@
 	--color-neutral: var(--color-green-dark);
 
 	--font-annotation: normal normal 400 0.8rem/1.4em monospace, sans-serif;
+	--font-copy: monospace, sans-serif;
 	--font-body: normal normal 400 0.8rem/1.4em "adonis-web", sans-serif;
 	--font-display: normal normal 700 2.75rem/1.1em "adonis-web", sans-serif;
 	--font-presentation: normal normal 700 2.75rem/1.1em "adonis-web", sans-serif;

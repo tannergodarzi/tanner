@@ -1,0 +1,12 @@
+.app,
+.app p {
+  font: var(--font-copy);
+}
+
+.app {
+  background: var(--color-lightest);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
