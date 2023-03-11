@@ -14,7 +14,7 @@
 		"@vercel/analytics": "^0.1.10",
 		"classnames": "^2.2.6",
 		"jsx": "^0.9.89",
-		"next": "^13.0.0",
+		"next": "^13.2.4",
 		"react": "^18.0.0-0",
 		"react-dom": "^18.0.0-0",
 		"send": "^0.18.0",
@@ -26,7 +26,7 @@
 	"devDependencies": {
 		"@types/node": "^18.11.18",
 		"@types/react": "^18.0.0-0",
-		"eslint": "7.32.0",
-		"eslint-config-next": "11.1.0"
+		"eslint": "8.36.0",
+		"eslint-config-next": "13.2.4"
 	}
 }
