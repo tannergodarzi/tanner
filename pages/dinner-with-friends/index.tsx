@@ -6,7 +6,7 @@ import Link from "next/link";
 import { sluggify } from "../../helpers/urlHelpers";
 import Text from "../../components/text";
 import Image from "next/image";
-
+import classNames from "classnames";
 
 import styles from "./index.module.css";
 
@@ -27,34 +27,103 @@ export default function Index({ database }) {
 				<title>Dinner With Friends</title>
 			</Head>
 			<section className={styles.app}>
-				{database.map((entry) => {
-					return (
-						<section key={entry.id}>
-							<picture>
-								<Image
-									src={entry.properties.Photos.files[0].file.url}
-									alt=""
-									width={400}
-									height={400}
-									style={{
-										objectFit: "cover",
-									}}
-								/>
-							</picture>
-							<header>
-								<h2>
-									<Text value={entry.properties.Title.title} />
-								</h2>
-							</header>
-							<p>
-								<Text value={entry.properties.Summary.rich_text} />
-							</p>
-							<Link href={`/dinner-with-friends/${sluggify(entry.properties.Slug.url)}`} passHref>
-								{"Read more"}
-							</Link>
-						</section>
-					);
-				})}
+				<section className={styles.hero}>
+					<header>
+						<h1>{"Dinner With Friends"}</h1>
+						<h2>{"is a..."}</h2>
+					</header>
+				</section>
+				<section className={styles.grid}>
+					{database.map((entry) => {
+						return (
+							<>
+								<section key={entry.id} className={classNames(styles.large, styles.module)}>
+									<picture>
+										<Image
+											src={entry.properties.Photos.files[0].file.url}
+											alt=""
+											style={{
+												objectFit: "cover",
+											}}
+											fill
+										/>
+									</picture>
+									<section className={styles.description}>
+										<header>
+											<Text value={entry.properties.Title.title} />
+										</header>
+										<Link href={`/dinner-with-friends/${sluggify(entry.properties.Slug.url)}`}>
+											{"Read more"}
+										</Link>
+									</section>
+								</section>
+
+								<section key={entry.id} className={classNames(styles.small, styles.module)}>
+									<picture>
+										<Image
+											src={entry.properties.Photos.files[0].file.url}
+											alt=""
+											style={{
+												objectFit: "cover",
+											}}
+											fill
+										/>
+									</picture>
+									<section className={styles.description}>
+										<header>
+											<Text value={entry.properties.Title.title} />
+										</header>
+										<Link href={`/dinner-with-friends/${sluggify(entry.properties.Slug.url)}`}>
+											{"Read more"}
+										</Link>
+									</section>
+								</section>
+
+								<section key={entry.id} className={classNames(styles.medium, styles.module)}>
+									<picture>
+										<Image
+											src={entry.properties.Photos.files[0].file.url}
+											alt=""
+											style={{
+												objectFit: "cover",
+											}}
+											fill
+										/>
+									</picture>
+									<section className={styles.description}>
+										<header>
+											<Text value={entry.properties.Title.title} />
+										</header>
+										<Link href={`/dinner-with-friends/${sluggify(entry.properties.Slug.url)}`}>
+											{"Read more"}
+										</Link>
+									</section>
+								</section>
+
+								<section key={entry.id} className={classNames(styles.medium, styles.module)}>
+									<picture>
+										<Image
+											src={entry.properties.Photos.files[0].file.url}
+											alt=""
+											style={{
+												objectFit: "cover",
+											}}
+											fill
+										/>
+									</picture>
+									<section className={styles.description}>
+										<header>
+											<Text value={entry.properties.Title.title} />
+										</header>
+										<Link href={`/dinner-with-friends/${sluggify(entry.properties.Slug.url)}`}>
+											{"Read more"}
+										</Link>
+									</section>
+								</section>
+							</>
+						);
+					})}
+				</section>
 			</section>
 		</>
 	);
