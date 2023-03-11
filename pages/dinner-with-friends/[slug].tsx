@@ -69,16 +69,17 @@ export default function Slug(props) {
 									quality={75}
 									onLoad={(event: React.SyntheticEvent) => {
 										const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
-										console.log(naturalWidth, naturalHeight);
 										setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
 									}}
 									style={{
 										aspectRatio,
 										display: "block",
 										objectFit: "contain",
+										position: "relative",
 									}}
 									width={300}
 									height={300}
+									layout="responsive"
 									key={file.file.name}
 								/>
 							);
@@ -90,7 +91,7 @@ export default function Slug(props) {
 						return (
 							<>
 								<Block block={block} key={block.id} />
-								<div style={{ height: "0.75em", display: "block" }} />
+								<div style={{ height: "0.75em", display: "block" }} key={`div-${block.id}`} />
 							</>
 						);
 					})}

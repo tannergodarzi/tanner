@@ -11,7 +11,7 @@ article.app {
   display: grid;
   grid-template-areas: "header header header" "aside content content";
   gap: 30px;
-  grid-template-columns: minmax(100px, 30%) minmax(300px, 70%);
+  grid-template-columns: minmax(100px, 35%) minmax(300px, 65%);
 }
 
 article.app header {
@@ -29,4 +29,7 @@ article.app section {
 .carousel {
   position: sticky;
   top: 0;
+  width: 100%;
+    height: auto;
+    display: block;
 }
