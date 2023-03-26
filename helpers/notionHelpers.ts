@@ -65,7 +65,7 @@ export async function getNotionBlogDatabase({ database_id = process.env.NOTION_B
 
 export async function getNotionDinnerWithFriendsDatabase({
 	database_id = process.env.NOTION_DINNER_WITH_FRIENDS_DATABASE,
-	page_size = 10,
+	page_size = 100,
 }) {
 	return await notion.databases
 		.query({
@@ -137,4 +137,3 @@ export const checkForChildBlocks = async (block) => {
 	}
 	return block;
 };
-

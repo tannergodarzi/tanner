@@ -31,7 +31,7 @@ export default function Text({ value }: PropsWithChildren<TextProps>): any {
 					{text.link ? (
 						<a href={text.link.url}>{text.content}</a>
 					) : !annotations?.code ? (
-						<React.Fragment>{text.content}</React.Fragment>
+						text.content
 					) : (
 						<code>{text.content}</code>
 					)}
@@ -39,4 +39,4 @@ export default function Text({ value }: PropsWithChildren<TextProps>): any {
 			</React.Fragment>
 		);
 	});
-}
+};

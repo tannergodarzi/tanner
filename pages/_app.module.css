@@ -3,6 +3,4 @@
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	color: var(--text-color);
-		background: var(--page-background);
 }
