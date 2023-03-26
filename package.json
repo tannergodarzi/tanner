@@ -1,6 +1,6 @@
 {
-	"name": "tanner-site",
-	"version": "6.9",
+	"name": "dinner-with-friends",
+	"version": "0.1",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
