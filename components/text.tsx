@@ -9,7 +9,7 @@ interface TextProps {
 }
 
 export default function Text({ value }: PropsWithChildren<TextProps>) {
-	if (value === undefined || value.length === 0) {
+	if (value === undefined || value.length === 0 || !Array.isArray(value)) {
 		return null;
 	}
 	return value.map((block) => {
@@ -31,7 +31,7 @@ export default function Text({ value }: PropsWithChildren<TextProps>) {
 					{text.link ? (
 						<a href={text.link.url}>{text.content}</a>
 					) : !annotations?.code ? (
-						text.content
+						<React.Fragment>{text.content}</React.Fragment>
 					) : (
 						<code>{text.content}</code>
 					)}
@@ -39,4 +39,4 @@ export default function Text({ value }: PropsWithChildren<TextProps>) {
 			</React.Fragment>
 		);
 	});
-};
+}

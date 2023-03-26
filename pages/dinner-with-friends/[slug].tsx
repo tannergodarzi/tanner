@@ -9,6 +9,7 @@ import React from "react";
 import Image from "next/image";
 
 import styles from "./slug.module.css";
+import Text from "../../components/text";
 
 // Notion client
 const notion = new Client({
@@ -62,26 +63,26 @@ export default function Slug(props) {
 					<section className={styles.carousel}>
 						{Photos.files.map((file) => {
 							return (
-								<Image
-									src={file.file.url}
-									alt={""}
-									loading="eager"
-									quality={75}
-									onLoad={(event: React.SyntheticEvent) => {
-										const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
-										setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
-									}}
-									style={{
-										aspectRatio,
-										display: "block",
-										objectFit: "contain",
-										position: "relative",
-									}}
-									width={300}
-									height={300}
-									layout="responsive"
-									key={file.file.name}
-								/>
+								<div key={file.file.name}>
+									<Image
+										src={file.file.url}
+										alt={""}
+										loading="eager"
+										quality={75}
+										onLoad={(event: React.SyntheticEvent) => {
+											const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
+											setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
+										}}
+										style={{
+											aspectRatio,
+											display: "block",
+											objectFit: "contain",
+											position: "relative",
+										}}
+										width={600}
+										height={600}
+									/>
+								</div>
 							);
 						})}
 					</section>
@@ -97,6 +98,11 @@ export default function Slug(props) {
 					})}
 				</section>
 			</article>
+			<nav className={styles.navigation}>
+				<Text value={"Estimated reading time: 7 minutes 26 seconds"} />
+				<button>{"Start scrolling"}</button>
+				<button>{"1x speed"}</button>
+			</nav>
 		</>
 	);
 }

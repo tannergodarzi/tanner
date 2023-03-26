@@ -1,8 +1,10 @@
 import "../styles/resets.css";
 import "../styles/variables.css";
 import "../styles/typography.css";
+import "../styles/dwf.module.css";
 
 import styles from "./_app.module.css";
+import dwfStyles from "../styles/dwf.module.css";
 
 import { useEffect } from "react";
 import Script from "next/script";
@@ -10,6 +12,7 @@ import { useRouter } from "next/router";
 import * as gtag from "../library/gtag";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
+import classNames from "classnames";
 
 function App({ Component, pageProps }) {
 	const router = useRouter();
@@ -27,7 +30,11 @@ function App({ Component, pageProps }) {
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			</Head>
-			<main className={styles.app}>
+			<main
+				className={classNames(styles.app, {
+					[dwfStyles.page]: router.pathname.includes("dinner-with-friends"),
+				})}
+			>
 				{/* Global Site Tag (gtag.js) - Google Analytics */}
 				<Script
 					strategy="afterInteractive"
