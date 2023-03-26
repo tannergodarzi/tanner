@@ -8,7 +8,7 @@ interface TextProps {
 	value: any;
 }
 
-export default function Text({ value }: PropsWithChildren<TextProps>) {
+export default function Text({ value }: PropsWithChildren<TextProps>): any {
 	if (value === undefined || value.length === 0 || !Array.isArray(value)) {
 		return null;
 	}
