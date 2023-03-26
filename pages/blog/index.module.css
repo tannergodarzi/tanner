@@ -1,12 +1,23 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	gap: 2rem;
+	height: 100%;
+	width: min(100%, 45rem);
+	box-sizing: border-box;
+	padding: 0 1.5rem;
+	margin: 2rem auto 0;
+}
 .hero {
 	text-align: center;
 	position: relative;
 }
+
 .circle {
 	color: var(--text-color);
-	background: var(--background);
+	border: 2px solid var(--text-color);
 	width: 100%;
-	margin: auto;
 	height: auto;
 	display: flex;
 	justify-content: center;
@@ -16,21 +27,13 @@
 	padding: 0.5em;
 	line-height: 1em;
 	font-weight: 700;
+	text-transform: uppercase;
 	text-decoration: none;
 	border-radius: 50%;
-	aspect-ratio: 1;
+	aspect-ratio: 1 / 1;
 	box-sizing: border-box;
 	position: relative;
 	z-index: 1;
-	border: none;
-}
-.circle,
-.circle * {
-	font-size: 2rem;
-}
-.circle {
-	max-width: 220px;
-	margin: auto;
 }
 .circle:before {
 	content: " ";
@@ -43,20 +46,17 @@
 	bottom: 4px;
 	border-radius: 50%;
 	border: 1px solid var(--text-color);
-	display: none;
 }
 
 .frame {
 	box-sizing: border-box;
 	padding: 4px;
-	border: none;
+	border: 2px solid var(--text-color);
 	width: 100%;
 	height: 100%;
 	position: relative;
-			background: var(--background);
 }
 .frame:before {
-	display: none;
 	content: " ";
 	position: absolute;
 	z-index: 0;

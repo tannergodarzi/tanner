@@ -1,15 +1,15 @@
 import Head from "next/head";
 import { Client } from "@notionhq/client";
-import Navigation from "../components/navigation";
-import Footer from "../components/footer";
-import { checkForChildBlocks } from "../helpers/notionHelpers";
-import { NotionDinnerWithFriendsPages } from "../library/notion";
-import Block from "../components/block";
+import Navigation from "../../components/navigation";
+import Footer from "../../components/footer";
+import { checkForChildBlocks } from "../../helpers/notionHelpers";
+import { NotionDinnerWithFriendsPages } from "../../library/notion";
+import Block from "../../components/block";
 import React from "react";
 import Image from "next/image";
 
 import styles from "./slug.module.css";
-import Text from "../components/text";
+import Text from "../../components/text";
 
 // Notion client
 const notion = new Client({

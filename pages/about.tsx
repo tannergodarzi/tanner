@@ -1,0 +1,41 @@
+import Head from "next/head";
+import Block from "../components/block";
+import Footer from "../components/footer";
+import Navigation from "../components/navigation";
+import { checkForChildBlocks, getNotionPage, getNotionBlocks } from "../helpers/notionHelpers";
+
+import styles from "./about.module.css";
+
+export async function getStaticProps() {
+	const page = await getNotionPage(process.env.NOTION_ABOUT_PAGE);
+	const unparsedBlocks = await getNotionBlocks(page.id).then((a) => a.map(checkForChildBlocks));
+	const blocks = await Promise.all(unparsedBlocks);
+	return {
+		props: {
+			blocks,
+		},
+		revalidate: 60,
+	};
+}
+
+export default function About({ blocks }) {
+	return (
+		<>
+			<Head>
+				<title>Howdy, I&rsquo;m Tanner &mdash; a real person on the internet.</title>
+				<meta name="title" content="Howdy, I’m Tanner — a real person on the internet" />
+				<meta
+					name="description"
+					content="I’m also a Front End Engineer motivated by design thinking and story telling. Currently I’m at Notion on Brand Marketing telling the story of tools for work."
+				/>
+			</Head>
+			<Navigation />
+			<article className={styles.about}>
+				{blocks.map((block) => {
+					return <Block block={block} key={block.id} />;
+				})}
+			</article>
+			<Footer />
+		</>
+	);
+}
