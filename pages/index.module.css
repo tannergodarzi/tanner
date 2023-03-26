@@ -1,91 +1,132 @@
-.hero {
-	text-align: center;
-	position: relative;
-}
-.circle {
-	color: var(--text-color);
-	background: var(--background);
-	width: 100%;
-	margin: auto;
-	height: auto;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	text-align: center;
-	padding: 0.5em;
-	line-height: 1em;
-	font-weight: 700;
-	text-decoration: none;
-	border-radius: 50%;
-	aspect-ratio: 1;
-	box-sizing: border-box;
-	position: relative;
-	z-index: 1;
-	border: none;
-}
-.circle,
-.circle * {
-	font-size: 2rem;
-}
-.circle {
-	max-width: 220px;
-	margin: auto;
-}
-.circle:before {
-	content: " ";
-	position: absolute;
-	z-index: 0;
-	pointer-events: none;
-	top: 4px;
-	left: 4px;
-	right: 4px;
-	bottom: 4px;
-	border-radius: 50%;
-	border: 1px solid var(--text-color);
-	display: none;
+.app {
+  background: rgb(252, 249, 238);
+  min-height: 100vh;
 }
 
-.frame {
-	box-sizing: border-box;
-	padding: 4px;
-	border: none;
-	width: 100%;
-	height: 100%;
-	position: relative;
-			background: var(--background);
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: min-content;
+  grid-auto-flow: dense;
+  width: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+  align-items: start;
+  gap: 36px;
+  row-gap: 96px;
 }
-.frame:before {
-	display: none;
-	content: " ";
-	position: absolute;
-	z-index: 0;
-	pointer-events: none;
-	top: 4px;
-	left: 4px;
-	right: 4px;
-	bottom: 4px;
-	border: 1px solid var(--text-color);
+
+@media(max-width: 768px) {
+  .grid {
+    grid-template-columns: 100%;
+    grid-auto-flow: initial;
+    grid-auto-columns: 0;
+  }
 }
-.picture-frame {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: #ffffff;
-	padding: 10px;
-	border: 1px solid #f7f7f7;
-	display: block;
-	box-sizing: border-box;
-	box-shadow: 2px 2px 21px 5px rgba(0, 0, 0, 0.1);
+
+.smol {
+  grid-column: auto / span 3;
 }
-.content {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	flex: 0;
-	padding: 1rem;
-	box-sizing: border-box;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
+
+.small {
+  grid-column: auto / span 4;
+}
+
+.medium {
+  grid-column: auto / span 6;
+}
+
+.large {
+  grid-column: auto / span 8;
+}
+
+@media(max-width: 768px) {
+  .smoll,
+  .small,
+  .medium,
+  .large {
+    grid-column: 1 / 1;
+  }
+}
+
+.module {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.module a {
+  height: 100%;
+  display: contents;
+}
+
+@media(max-width: 768px) {
+  .module {
+    height: auto;
+  }
+}
+
+.module picture {
+  position: relative;
+  aspect-ratio: 4 / 3 ;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgb(241, 239, 228);
+  flex-grow: 1;
+}
+
+@media(max-width: 768px) {
+  .module picture {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+  }
+}
+
+.module .description {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  justify-self: flex-end;
+}
+
+.module .description p {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+@media(max-width: 768px) {
+  .module .description {
+    height: auto;
+  }
+}
+
+.smol.module picture,
+.small.module picture {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 2 / 3;
+}
+
+.hero {
+  padding: 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sidekick {
+  display: flex;
+  margin: 32px;
+  width: calc(100% - 64px);
+  box-sizing: border-box;
+  border-bottom: 1px solid #000;
+  background: none;
 }
