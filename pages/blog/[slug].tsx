@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Client } from "@notionhq/client";
 import Block from "../../components/block";
 import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
@@ -8,10 +7,11 @@ import { useRouter } from "next/router";
 import { NotionBlogPages } from "../../library/notion";
 
 import styles from "./slug.module.css";
+import { GetStaticPropsContext } from "next";
 
 
-export async function getStaticProps(context) {
-	const newQueryResponse = await NotionBlogPages.loadPageBySlug(context.params.slug);
+export async function getStaticProps(context: GetStaticPropsContext) {
+	const newQueryResponse = await NotionBlogPages.loadPageBySlug(context?.params.slug as string);
 	if (!newQueryResponse) {
 		return {
 			notFound: true,
@@ -24,12 +24,15 @@ export async function getStaticProps(context) {
 	const pageTitle = Name["title"][0].plain_text;
 	const description = Subtitle["rich_text"][0].text.content;
 	const meta = { Published, Name, Slug, description };
+	const canonicalUrl = `https://www.tannergodarzi.com/blog/${context?.params.slug}`;
+
 	return {
 		props: {
 			meta,
 			pageTitle,
 			description,
 			blocks,
+			canonicalUrl
 		},
 		revalidate: 60,
 	};
@@ -52,8 +55,8 @@ export async function getStaticPaths() {
 
 export default function Slug(props) {
 	const router = useRouter();
-	const { blocks, meta, pageTitle, description } = props;
-	const canonicalUrl = typeof window === "undefined" ? "" : `${window.location.origin}${router.asPath}`;
+	const { blocks, meta, pageTitle, description, canonicalUrl } = props;
+	
 
 	return (
 		<>
