@@ -2,10 +2,6 @@
 	"name": "tanner-site",
 	"version": "6.9",
 	"private": true,
-	"engines": {
-		"npm": ">=8.0.0 <9.0.0",
-		"node": ">=16.0.0 <18.0.0"
-	},
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
