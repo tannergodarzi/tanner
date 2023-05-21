@@ -159,9 +159,6 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 							preload="auto"
 							src={`/api/notion-asset/block/${block.id}/file?last_edited_time=${block.last_edited_time}`}
 						>
-							<source
-								src={`/api/notion-asset/block/${block.id}/file?last_edited_time=${block.last_edited_time}`}
-							/>
 						</video>
 					)}
 					{block.video.caption.length > 0 && (

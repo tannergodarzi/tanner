@@ -5,4 +5,7 @@ module.exports = {
 		minimumCacheTTL: 60,
 	},
 	basePath: "",
+	api: {
+		responseLimit: false,
+	},
 };
