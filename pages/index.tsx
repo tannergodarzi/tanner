@@ -15,7 +15,7 @@ import styles from "./index.module.css";
 import Bouncy from "../components/bouncy";
 
 export async function getStaticProps() {
-	const database = await getNotionBlogDatabase({ page_size: 2 });
+	const database = await getNotionBlogDatabase({ page_size: 4 });
 	return {
 		props: {
 			database,

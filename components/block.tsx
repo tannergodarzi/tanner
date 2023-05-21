@@ -150,10 +150,11 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 		case "video":
 			return (
 				<figure className={styles.embed}>
-					{block.video.type === "external" && (
-						<iframe src={block.video.type === "external" ? block.video.external.url : block.video.url} />
-					)}
-					{block.video.type !== "external" && <video controls preload="auto" src={block.video.url} />}
+					<video
+						controls
+						preload="auto"
+						src={block.video.type === "external" ? block.video.external.url : block.video.url}
+					/>
 					{block.video.caption.length > 0 && (
 						<figcaption>
 							<Text value={block.video.caption} />
@@ -164,4 +165,4 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 		default:
 			return null;
 	}
-};
+}

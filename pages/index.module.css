@@ -54,6 +54,7 @@
 	height: 100%;
 	position: relative;
 			background: var(--background);
+			overflow: scroll;
 }
 .frame:before {
 	display: none;
