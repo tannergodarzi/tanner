@@ -153,4 +153,10 @@ function getSuccessCacheControlHeader(assetRequest: ParsedAssetRequest) {
 	}
 }
 
+export const config = {
+	api: {
+		responseLimit: false,
+	},
+};
+
 export default getNotionAsset;
