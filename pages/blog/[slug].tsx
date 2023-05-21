@@ -9,10 +9,6 @@ import { NotionBlogPages } from "../../library/notion";
 
 import styles from "./slug.module.css";
 
-// Notion client
-const notion = new Client({
-	auth: process.env.NOTION_TOKEN,
-});
 
 export async function getStaticProps(context) {
 	const newQueryResponse = await NotionBlogPages.loadPageBySlug(context.params.slug);

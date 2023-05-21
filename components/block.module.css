@@ -64,6 +64,12 @@
 	height: auto;
 	aspect-ratio: 16 / 9;
 }
+.embed video {
+	width: 100%;
+	display: block;
+	height: auto;
+	aspect-ratio: 16 / 9;
+}
 .column_list {
 	display: flex;
 	flex-direction: row;
