@@ -148,16 +148,15 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 				</figure>
 			);
 		case "video":
+			console.log(block)
 			return (
 				<figure className={styles.embed}>
 					<video
 						controls
 						preload="auto"
-						src={block.video.type === "external" ? block.video.external.url : block.video.file.url}
+						src={`/api/notion-asset/block/${block.id}/file?last_edited_time=${block.last_edited_time}`}
 					>
-						<source
-							src={block.video.type === "external" ? block.video.external.url : block.video.file.url}
-						/>
+						<source src={`/api/notion-asset/block/${block.id}/file?last_edited_time=${block.last_edited_time}`} />
 					</video>
 					{block.video.caption.length > 0 && (
 						<figcaption>
