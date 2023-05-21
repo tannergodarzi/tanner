@@ -153,9 +153,11 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 					<video
 						controls
 						preload="auto"
-						src={block.video.type === "external" ? block.video.external.url : block.video.url}
+						src={block.video.type === "external" ? block.video.external.url : block.video.file.url}
 					>
-						<source src={block.video.type === "external" ? block.video.external.url : block.video.url} />
+						<source
+							src={block.video.type === "external" ? block.video.external.url : block.video.file.url}
+						/>
 					</video>
 					{block.video.caption.length > 0 && (
 						<figcaption>
