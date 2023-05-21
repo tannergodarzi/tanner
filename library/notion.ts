@@ -44,38 +44,3 @@ export const NotionBlogPages = new CMS({
 		downloadExternalAssets: true,
 	},
 });
-
-export const NotionDinnerWithFriendsPages = new CMS({
-	database_id: process.env.NOTION_DINNER_WITH_FRIENDS_DATABASE,
-	notion, // API client we set up before
-	schema: inferDatabaseSchema({
-		// inferDatabaseSchema adds "name" where unspecified.
-		Slug: { type: "url" },
-		Title: { type: "title" },
-		Summary: { type: "rich_text" },
-		Photos: { type: "files" },
-	}),
-	slug: "Slug",
-	visible: true,
-	getFrontmatter: ({ page, properties, defaultFrontmatter: { slug } }) => {
-		// Transform your DB properties to a format convenient to use in your
-		// renderers.
-		const props = {
-			...properties,
-			slug: properties.Slug,
-			Summary: richTextAsPlainText(properties.Summary),
-		};
-
-		return {
-			...props,
-			httpRoute: `/dinner-with-friends/${slug}`,
-		};
-	},
-	cache: {
-		directory: path.resolve(".next/notion-cache"),
-	},
-	assets: {
-		directory: path.resolve("public/notion-assets"),
-		downloadExternalAssets: true,
-	},
-});

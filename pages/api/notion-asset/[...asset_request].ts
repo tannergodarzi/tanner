@@ -5,7 +5,7 @@ import send from "send";
 import { parseAssetRequestQuery, ParsedAssetRequest } from "@jitl/notion-api";
 import { assertDefined, unreachable } from "@jitl/util";
 
-import { notion, NotionBlogPages, NotionDinnerWithFriendsPages } from "../../../library/notion";
+import { notion, NotionBlogPages } from "../../../library/notion";
 
 const IMMUTABLE = "public, max-age=31536000, immutable";
 const REVALIDATE = "public, s-maxage=59, stale-while-revalidate";
@@ -34,12 +34,12 @@ async function getNotionAssetUsingDisk(
 	parsedAssetRequest: ParsedAssetRequest
 ) {
 	const { assetRequest } = parsedAssetRequest;
-	const { assets } = { ...NotionBlogPages, ...NotionDinnerWithFriendsPages };
+	const { assets } = { ...NotionBlogPages };
 	assertDefined(assets);
 
 	const relativePath = await assets.downloadAssetRequest({
 		request: assetRequest,
-		cache: NotionDinnerWithFriendsPages.notionObjects,
+		cache: NotionBlogPages.notionObjects,
 		notion,
 	});
 
@@ -69,7 +69,7 @@ async function getNotionAssetUsingNetwork(
 	parsedAssetRequest: ParsedAssetRequest
 ) {
 	const { assetRequest } = parsedAssetRequest;
-	const { assets } = { ...NotionBlogPages, ...NotionDinnerWithFriendsPages };
+	const { assets } = { ...NotionBlogPages, };
 	assertDefined(assets);
 
 	const asset = await assets.performAssetRequest({

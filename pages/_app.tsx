@@ -3,7 +3,7 @@ import "../styles/variables.css";
 import "../styles/typography.css";
 
 import styles from "./_app.module.css";
-
+				
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 

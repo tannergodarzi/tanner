@@ -23,7 +23,7 @@ export async function getEntryFromNotionDatabase(identifier: string) {
 		.then((a) => a.results[0]);
 }
 
-export async function getNotionBlogDatabase({ database_id = process.env.NOTION_BLOG_DATABASE, page_size = 100 }) {
+export async function getNotionBlogDatabase({ database_id = process.env.NOTION_BLOG_DATABASE, page_size = 100, active = true }) {
 	return await notion.databases
 		.query({
 			database_id: database_id,
@@ -54,46 +54,8 @@ export async function getNotionBlogDatabase({ database_id = process.env.NOTION_B
 					{
 						property: "Active",
 						checkbox: {
-							equals: true,
+							equals: active,
 						},
-					},
-				],
-			},
-		})
-		.then((a) => a.results);
-}
-
-export async function getNotionDinnerWithFriendsDatabase({
-	database_id = process.env.NOTION_DINNER_WITH_FRIENDS_DATABASE,
-	page_size = 100,
-}) {
-	return await notion.databases
-		.query({
-			database_id: database_id,
-			sorts: [{ property: "Date", direction: "descending" }],
-			page_size: page_size,
-			filter: {
-				and: [
-					{
-						property: "Title",
-						title: {
-							is_not_empty: true,
-						},
-						type: "title",
-					},
-					{
-						property: "Slug",
-						url: {
-							is_not_empty: true,
-						},
-						type: "url",
-					},
-					{
-						property: "Status",
-						select: {
-							equals: "Draft",
-						},
-						type: "select",
 					},
 				],
 			},
