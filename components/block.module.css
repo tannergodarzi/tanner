@@ -19,7 +19,7 @@
 	padding: 0.8rem;
 	display: block;
 	box-sizing: border-box;
-	background-color: rgba(200, 200, 200, 0.1);
+	background-color: rgba(200, 200, 200, 0.4);
 
 	page-break-inside: avoid;
 	font-family: monospace;
