@@ -45,7 +45,7 @@ export default function Index({ database }) {
 			<article>
 				<Hero />
 			</article>
-			<Grid>
+			{/*<Grid>
 				<GridElement column={3} columnSpan={4} row={1} rowSpan={5}>
 					<Image src={"/tanner-cowboy.jpeg"} alt="" style={{ objectFit: "contain" }} fill />
 				</GridElement>
@@ -120,10 +120,7 @@ export default function Index({ database }) {
 						{"About"}
 					</Link>
 				</GridElement>
-				<GridElement column={10} columnSpan={6} row={18} rowSpan={4}>
-					<Bouncy />
-				</GridElement>
-			</Grid>
+					</Grid>*/}
 			<Footer />
 		</>
 	);
