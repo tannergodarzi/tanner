@@ -45,6 +45,50 @@ export default function Index({ database }) {
 			<article>
 				<Hero />
 			</article>
+			<Grid>
+				<GridElement column={1} columnSpan={10} row={1} rowSpan={12}>
+					<section
+						className={styles.frame}
+						style={
+							{
+								"--background": "var(--color-gold)",
+							} as React.CSSProperties
+						}
+					>
+						<section className={styles.content}>
+							<header>
+								<h1>{"Blog"}</h1>
+							</header>
+							{database.map((entry) => (
+								<Entry entry={entry} key={entry.id} />
+							))}
+						</section>
+					</section>
+				</GridElement>
+				<GridElement column={11} columnSpan={6} row={1} rowSpan={4}>
+					<iframe
+						src="https://open.spotify.com/embed/playlist/6CFbyGpSDA0eXAiPJQcqnG?theme=0"
+						width="100%"
+						height="100%"
+						frameBorder="0"
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+					/>
+				</GridElement>
+				<GridElement column={11} columnSpan={6} row={5} rowSpan={8}>
+					<section
+						className={styles.frame}
+						style={
+							{
+								"--background": "var(--color-green-dark)",
+							} as React.CSSProperties
+						}
+					>
+						<section className={styles.content}>
+							<Listicle />
+						</section>
+					</section>
+				</GridElement>
+			</Grid>
 			{/*<Grid>
 				<GridElement column={3} columnSpan={4} row={1} rowSpan={5}>
 					<Image src={"/tanner-cowboy.jpeg"} alt="" style={{ objectFit: "contain" }} fill />
