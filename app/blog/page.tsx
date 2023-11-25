@@ -7,23 +7,14 @@ import { Metadata } from "next";
 export default async function BlogRoot() {
 	const database = await getNotionBlogDatabase({ page_size: 100 });
 	return (
-		<>
-			<link
-				rel="alternate"
-				type="application/rss+xml"
-				href="https://www.tannergodarzi.com/rss"
-				title="Tanner's RSS Feed"
-			></link>
-
-			<section className={styles.container}>
-				<header className={styles.header}>
-					<h1>{"Blog"}</h1>
-				</header>
-				{database.map((entry) => (
-					<Entry entry={entry} key={entry.id} />
-				))}
-			</section>
-		</>
+		<section className={styles.container}>
+			<header className={styles.header}>
+				<h1>{"Blog"}</h1>
+			</header>
+			{database.map((entry) => (
+				<Entry entry={entry} key={entry.id} />
+			))}
+		</section>
 	);
 }
 
