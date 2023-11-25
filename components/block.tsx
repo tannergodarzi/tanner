@@ -19,6 +19,7 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 							if (!column || !column.column) {
 								return;
 							}
+							console.log(column)
 							return (
 								<section
 									key={column.id}
