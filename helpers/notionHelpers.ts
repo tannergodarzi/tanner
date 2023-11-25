@@ -8,7 +8,7 @@ const notion = new Client({
 export async function getEntryFromNotionDatabase(identifier: string) {
 	return await notion.databases
 		.query({
-			database_id: process.env.NOTION_BLOG_DATABASE,
+			database_id: process.env.NOTION_BLOG_DATABASE as string,
 			filter: {
 				and: [
 					{
@@ -26,7 +26,7 @@ export async function getEntryFromNotionDatabase(identifier: string) {
 export async function getNotionBlogDatabase({ database_id = process.env.NOTION_BLOG_DATABASE, page_size = 100, active = true }) {
 	return await notion.databases
 		.query({
-			database_id: database_id,
+			database_id: database_id as string,
 			sorts: [{ property: "Published", direction: "descending" }],
 			page_size: page_size,
 			filter: {
@@ -63,7 +63,7 @@ export async function getNotionBlogDatabase({ database_id = process.env.NOTION_B
 		.then((a) => a.results);
 }
 
-export const getNotionBlocks = async (block_id: string = process.env.NOTION_BLOG_PAGE) => {
+export const getNotionBlocks = async (block_id: string) => {
 	return (await notion.blocks.children
 		.list({
 			block_id: block_id,
@@ -76,7 +76,7 @@ export const getNotionBlocks = async (block_id: string = process.env.NOTION_BLOG
 		)) as Array<any>;
 };
 
-export const getNotionPage = async (page_id: string = process.env.NOTION_BLOG_PAGE) => {
+export const getNotionPage = async (page_id: string) => {
 	return await notion.pages.retrieve({
 		page_id: page_id,
 	});
