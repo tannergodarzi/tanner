@@ -29,11 +29,11 @@ export default async function Slug({ params }) {
 		<article className={styles.article}>
 			<header className={styles.header}>
 				<h1>{pageTitle}</h1>
-				<time dateTime={new Date(meta.Published.date.start).toUTCString()}>
+				{meta.Published["date"] !== undefined ? <time dateTime={new Date(meta.Published["date"].start).toUTCString()}>
 					{`Published ${new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(
-						new Date(meta.Published.date.start)
+						new Date(meta.Published["date"].start)
 					)}`}
-				</time>
+				</time> : null}
 			</header>
 
 			{blocks.map((block) => {
