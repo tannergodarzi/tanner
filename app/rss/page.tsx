@@ -1,5 +1,5 @@
 import { GetServerSideProps } from "next";
-import { getNotionBlogDatabase } from "../helpers/notionHelpers";
+import { getNotionBlogDatabase } from "../../helpers/notionHelpers";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	const res = context.res;

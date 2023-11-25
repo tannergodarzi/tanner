@@ -10,7 +10,6 @@ interface BlockProps {
 export default function Block({ block }: PropsWithChildren<BlockProps>) {
 	const { type, id } = block;
 	const value = block[type];
-	const [aspectRatio, setAspectRatio] = React.useState("1 / 1");
 	switch (type) {
 		case "column_list":
 			return (
@@ -105,27 +104,32 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 			const { image } = block;
 
 			return (
-				<picture className={styles.image} style={{ aspectRatio }}>
+				<picture className={styles.image}>
 					{image.external?.url ? (
 						/* eslint-disable @next/next/no-img-element */
 						<img
 							src={image.external?.url}
 							alt={image.caption.length > 0 ? image.caption : ""}
-							onLoad={(event: React.SyntheticEvent) => {
-								const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
-								setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
+							width={1000}
+							height={1000}
+							style={{
+								width: "100%",
+								height: "auto",
+								display: "block",
 							}}
 						/>
 					) : (
 						<Image
 							src={`/api/notion-asset/block/${block.id}/image?last_edited_time=${block.last_edited_time}`}
 							alt={image.caption[0]?.plain_text || ""}
-							fill
 							loading="eager"
 							quality={75}
-							onLoad={(event: React.SyntheticEvent) => {
-								const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
-								setAspectRatio(`${naturalWidth} / ${naturalHeight}`);
+							width={1000}
+							height={1000}
+							style={{
+								width: "100%",
+								height: "auto",
+								display: "block",
 							}}
 						/>
 					)}
@@ -158,8 +162,7 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 							controls
 							preload="auto"
 							src={`/api/notion-asset/block/${block.id}/file?last_edited_time=${block.last_edited_time}`}
-						>
-						</video>
+						></video>
 					)}
 					{block.video.caption.length > 0 && (
 						<figcaption>
