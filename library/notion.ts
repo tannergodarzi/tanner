@@ -8,7 +8,7 @@ export const notion = new Client({
 });
 
 export const NotionBlogPages = new CMS({
-	database_id: process.env.NOTION_BLOG_DATABASE,
+	database_id: process.env.NOTION_BLOG_DATABASE as string,
 	notion, // API client we set up before
 	schema: inferDatabaseSchema({
 		// inferDatabaseSchema adds "name" where unspecified.
