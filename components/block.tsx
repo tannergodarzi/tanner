@@ -16,7 +16,7 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 				<>
 					<section className={styles.column_list}>
 						{block.column_list.map((column) => {
-							if (!column) {
+							if (!column || !column.column) {
 								return;
 							}
 							return (
@@ -27,9 +27,9 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 										width: `min(100vw / ${block.column_list.length}, 300px)`,
 									}}
 								>
-									{column.column.map((block) => {
+									{column.column ? column.column.map((block) => {
 										return <Block block={block} key={block.id} />;
-									})}
+									}) : null}
 								</section>
 							);
 						})}
