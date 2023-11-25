@@ -20,7 +20,7 @@ export const NotionBlogPages = new CMS({
 	}),
 	slug: "Slug",
 	visible: "Active",
-	getFrontmatter: ({ page, properties, defaultFrontmatter: { slug } }) => {
+	getFrontmatter: ({ properties, defaultFrontmatter: { slug } }) => {
 		// Transform your DB properties to a format convenient to use in your
 		// renderers. I convert Notion's rich text to plain text a lot.
 		const props = {
