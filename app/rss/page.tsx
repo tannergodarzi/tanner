@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import { getNotionBlogDatabase } from "../../helpers/notionHelpers";
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export async function RSS(context) {
 	const res = context.res;
 
 	const database = await getNotionBlogDatabase({ page_size: 100 });
@@ -47,11 +47,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 	res.setHeader("Content-Type", "application/rss+xml; charset=utf-8");
 	res.write(processedXml);
 	res.end();
-	return {
-		props: {},
-	};
 };
-
-const RssPage = () => null;
-
-export default RssPage;
