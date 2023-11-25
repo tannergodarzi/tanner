@@ -44,41 +44,33 @@ export default async function Slug({ params }) {
 }
 
 export async function generateStaticParams() {
-	const params: Array<{ params: { slug: string } }> = [];
+	const params: Array<{ slug: string }> = [];
 	for await (const page of NotionBlogPages.query({
 		sorts: [NotionBlogPages.sort.Published.descending],
 	})) {
 		await NotionBlogPages.downloadAssets(page);
 		params.push({
-			params: {
-				slug: page.frontmatter.slug,
-			},
+			slug: page.frontmatter.slug,
 		});
 	}
-	return { paths: params };
+	return params;
 }
 
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
 	const newQueryResponse = await NotionBlogPages.loadPageBySlug(params.slug as string);
 	if (!newQueryResponse) {
-		return {
-		};
+		return {};
 	}
-	const unparsedBlocks = newQueryResponse.content.children.map(checkForChildBlocks);
-	const blocks = await Promise.all([...unparsedBlocks]).then((values) => values);
-
-	const { Published, Name, Slug, Subtitle } = newQueryResponse.content.properties;
-	const pageTitle = Name["title"][0].plain_text;
+	const { Name, Slug, Subtitle } = newQueryResponse.content.properties;
+	const title = Name["title"][0].plain_text;
 	const description = Subtitle["rich_text"][0].text.content;
-	const meta = { Published, Name, Slug, description };
-
 
 	return {
-		title: pageTitle,
+		title,
 		description,
 		openGraph: {
-			title: pageTitle,
-			url: `http://tannergodarzi.com/blog/${params.slug}`,
+			title,
+			url: new URL(`http://tannergodarzi.com/blog/${Slug}`),
 			description,
 		},
 	};

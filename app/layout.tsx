@@ -3,11 +3,9 @@ import Footer from "../components/footer";
 import Navigation from "../components/navigation";
 import { Analytics } from "@vercel/analytics/react";
 
-import styles from "./layout.module.css";
+import "../styles/global.css";
 
-import "../styles/resets.css";
-import "../styles/variables.css";
-import "../styles/typography.css";
+import styles from "./layout.module.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
