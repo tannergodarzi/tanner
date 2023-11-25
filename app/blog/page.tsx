@@ -1,8 +1,9 @@
-import { getNotionBlogDatabase } from "../../helpers/notionHelpers";
+import { checkForChildBlocks, getNotionBlogDatabase } from "../../helpers/notionHelpers";
 import Entry from "../../components/entry";
 
 import styles from "./index.module.css";
 import { Metadata } from "next";
+import { NotionBlogPages } from "../../library/notion";
 
 export default async function BlogRoot() {
 	const database = await getNotionBlogDatabase({ page_size: 100 });
@@ -11,9 +12,15 @@ export default async function BlogRoot() {
 			<header className={styles.header}>
 				<h1>{"Blog"}</h1>
 			</header>
-			{database.map((entry) => (
-				<Entry entry={entry} key={entry.id} />
-			))}
+			{await Promise.all(database.map(async (entry) => {
+				const newQueryResponse = await NotionBlogPages.loadPageBySlug(entry["properties"].Slug.url as string);
+				if (!newQueryResponse) {
+					return 
+				}
+					const unparsedBlocks = newQueryResponse.content.children.map(checkForChildBlocks);
+					const blocks = await Promise.all([...unparsedBlocks]).then((values) => values);
+				return <Entry entry={entry} key={entry.id} blocks={blocks} />;
+			}))}
 		</section>
 	);
 }

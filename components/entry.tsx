@@ -4,8 +4,10 @@ import { sluggify } from "../helpers/urlHelpers";
 import Text from "./text";
 
 import styles from "./entry.module.css";
+import { NotionBlogPages } from "../library/notion";
+import Block from "./block";
 
-export default function Entry({ entry, showPublishDate = true }) {
+export default function Entry({ entry, blocks }) {
 	const { Published, Name, Slug, Subtitle } = entry.properties;
 	const publishedDate = new Intl.DateTimeFormat("en-US", {
 		dateStyle: "long",
@@ -13,17 +15,23 @@ export default function Entry({ entry, showPublishDate = true }) {
 
 	return (
 		<section className={styles.entry}>
-			<Link href={`/blog/${sluggify(Slug.url)}`} passHref>
-				<header>
-					<h2>
-						<Text value={Name.title} />
-					</h2>
-				</header>
-				<p>
-					<Text value={Subtitle.rich_text} />
-				</p>
-				{showPublishDate === true && <time dateTime={publishedDate}>{`Published ${publishedDate}`}</time>}
-			</Link>
+			<header>
+				<h2>
+					<Link href={`/blog/${sluggify(Slug.url)}`} passHref>
+						<Text value={Name.title} />{" "}
+					</Link>
+				</h2>
+				{/*<time dateTime={publishedDate}>{`Published ${publishedDate}`}</time>*/}
+			</header>
+			{/*<p>
+				<Text value={Subtitle.rich_text} />
+	</p>*/}
+
+			<article>
+				{blocks.map((block) => {
+					return <Block block={block} key={block.id} />;
+				})}
+			</article>
 		</section>
 	);
-};
+}

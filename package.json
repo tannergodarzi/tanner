@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@jitl/notion-api": "^0.2.2",
-		"@notionhq/client": "^1.0.4",
+		"@notionhq/client": "^2.2.13",
 		"@vercel/analytics": "^0.1.10",
 		"classnames": "^2.3.2",
 		"jsx": "^0.9.89",
