@@ -1,9 +1,7 @@
-import { GetServerSideProps } from "next";
 import { getNotionBlogDatabase } from "../../helpers/notionHelpers";
 
-export async function RSS(context) {
-	const res = context.res;
-
+export const dynamic = "force-dynamic"; // defaults to force-static
+export async function GET(request: Request) {
 	const database = await getNotionBlogDatabase({ page_size: 100 });
 
 	let rssItemsXml = "";
@@ -44,7 +42,9 @@ export async function RSS(context) {
         </channel>
       </rss>`;
 
-	res.setHeader("Content-Type", "application/rss+xml; charset=utf-8");
-	res.write(processedXml);
-	res.end();
-};
+	return new Response(processedXml, {
+		headers: {
+			"Content-Type": "application/atom+xml; charset=utf-8",
+		},
+	});
+}
