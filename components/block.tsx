@@ -16,6 +16,9 @@ export default function Block({ block }: PropsWithChildren<BlockProps>) {
 				<>
 					<section className={styles.column_list}>
 						{block.column_list.map((column) => {
+							if (!column) {
+								return;
+							}
 							return (
 								<section
 									key={column.id}
