@@ -39,6 +39,9 @@ p,
 blockquote {
 	line-height: 1.2em;
 }
+p {
+	margin-bottom: 0.5rem;
+}
 a {
 	font: inherit;
 }
@@ -52,5 +55,4 @@ code	 {
 article {
 	display: flex;
 	flex-direction: column;
-	row-gap: 1rem;
 }

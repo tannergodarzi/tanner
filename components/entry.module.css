@@ -25,17 +25,13 @@
 	padding: 0;
 }
 
-.entry article {
-	margin: auto;
-}
-
 .entry a {
 	font-weight: inherit;
-	text-decoration: none;
 	display: flex;
 	flex-direction: column;
 	gap: 0.25rem;
 	width: 100%;
+	text-decoration: underline;
 }
 
 .entry a:hover,
