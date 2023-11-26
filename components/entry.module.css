@@ -1,17 +1,13 @@
 .entry {
 	gap: 1rem;
 	margin-bottom: 3rem;
-	padding-bottom: 3rem;
+	padding-bottom: 2.5rem;
 	border-bottom: 1px dashed var(--text-color);
 	width: min(100%, 45rem);
 }
 
 .entry * {
 	text-decoration: none;
-}
-
-.entry p {
-	margin-bottom: 0;
 }
 
 .entry time {
@@ -31,7 +27,7 @@
 	flex-direction: column;
 	gap: 0.25rem;
 	width: 100%;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .entry a:hover,

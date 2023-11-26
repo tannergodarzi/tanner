@@ -3,7 +3,6 @@
 	flex-direction: column;
 	position: relative;
 	flex-grow: 1;
-	gap: 2rem;
 	height: 100%;
 	width: min(100%, 45rem);
 	box-sizing: border-box;
