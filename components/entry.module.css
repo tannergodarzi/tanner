@@ -1,6 +1,5 @@
 .entry {
 	gap: 1rem;
-	width: 100%;
 	margin-bottom: 3rem;
 	padding-bottom: 3rem;
 	border-bottom: 1px dashed var(--text-color);
@@ -24,16 +23,6 @@
 .entry header * {
 	margin: 0;
 	padding: 0;
-}
-
-.entry header {
-	position: sticky;
-	background: var(--page-background);
-	top: 70px;
-	padding-top: 0.75rem;
-	padding-bottom: 0.5rem;
-	margin-bottom: 1rem;
-	z-index: 100;
 }
 
 .entry article {
