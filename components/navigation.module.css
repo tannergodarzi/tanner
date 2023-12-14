@@ -8,7 +8,7 @@
 	max-width: 100%;
 	box-sizing: border-box;
 	padding: 0.5rem 1rem;
-	height: 70px;
+	height: auto;
 	background: var(--page-background);
 	z-index: 1001;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
