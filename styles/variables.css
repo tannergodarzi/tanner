@@ -11,7 +11,8 @@
 	--color-orange: rgb(228, 149, 55);
 	--color-green: rgb(144, 165, 136);
 	--color-red: rgb(209, 88, 53);
-	--color-tan: rgba(249,225,180, 1);
+	--color-tan: rgba(232,229,217, 1);
+	--color-tanner: rgba(195, 186, 166, 1);
 	--color-yellow: rgb(234, 208, 108);
 	--color-green-dark: rgb(119, 144,110);
 	--color-neutral: var(--color-green-dark);
@@ -25,19 +26,9 @@
 
 :root {
 	--text-color: var(--color-dark);
-	--page-background: var(--color-lightest);
+	--page-background: var(--color-tan);
 		--color-neutral: var(--color-tan);
 }
-
-/*@media (prefers-color-scheme: dark) {
-	:root {
-		--text-color: var(--color-light);
-		--page-background: var(--color-dark);
-		--color-neutral: var(--color-medium);
-	}
-}
-
-*/
 
 html,
 body {

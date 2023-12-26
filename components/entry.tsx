@@ -4,10 +4,14 @@ import { sluggify } from "../helpers/urlHelpers";
 import Text from "./text";
 
 import styles from "./entry.module.css";
-import { NotionBlogPages } from "../library/notion";
 import Block from "./block";
 
-export default function Entry({ entry, blocks }) {
+interface EntryProps {
+	entry: any
+	blocks?: any
+}
+
+export default function Entry({ entry, blocks }: EntryProps) {
 	const { Published, Name, Slug, Subtitle } = entry.properties;
 	const publishedDate = new Intl.DateTimeFormat("en-US", {
 		dateStyle: "long",
@@ -21,17 +25,19 @@ export default function Entry({ entry, blocks }) {
 						<Text value={Name.title} />{" "}
 					</Link>
 				</h2>
-				{/*<time dateTime={publishedDate}>{`Published ${publishedDate}`}</time>*/}
+				<time dateTime={publishedDate}>{`Published ${publishedDate}`}</time>
 			</header>
-			{/*<p>
+			<p>
 				<Text value={Subtitle.rich_text} />
-	</p>*/}
+			</p>
 
-			<article>
-				{blocks.map((block) => {
-					return <Block block={block} key={block.id} />;
-				})}
-			</article>
+			{blocks ? (
+				<article>
+					{blocks.map((block: any) => {
+						return <Block block={block} key={block.id} />;
+					})}
+				</article>
+			) : null}
 		</section>
 	);
 }

@@ -17,9 +17,7 @@ export default async function BlogRoot() {
 				if (!newQueryResponse) {
 					return 
 				}
-					const unparsedBlocks = newQueryResponse.content.children.map(checkForChildBlocks);
-					const blocks = await Promise.all([...unparsedBlocks]).then((values) => values);
-				return <Entry entry={entry} key={entry.id} blocks={blocks} />;
+				return <Entry entry={entry} key={entry.id} />;
 			}))}
 		</section>
 	);

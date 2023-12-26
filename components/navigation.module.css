@@ -13,6 +13,7 @@
 	z-index: 1001;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .mast nav {
 	display: flex;
 	flex-direction: row;
@@ -24,15 +25,18 @@
 	height: 100%;
 	gap: 1.25em;
 }
+
 .mast nav > *:first-of-type {
 	margin-right: auto;
 }
+
 .mast * {
 	text-decoration: none;
 	font-weight: 400;
 	font-size: 1rem;
 	font-family: "adonis-web";
 }
+
 .mast nav a:hover {
 	text-decoration: underline;
 }

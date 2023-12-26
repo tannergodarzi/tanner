@@ -1,7 +1,6 @@
 @import url("https://use.typekit.net/wir7xtg.css");
 
 .layout {
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	position: relative;
