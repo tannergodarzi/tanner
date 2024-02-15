@@ -5,6 +5,9 @@
 	flex-direction: row;
 	gap: 1rem;
 }
+.paragraph {
+	line-height: 1.3em;
+}
 .paragraph a {
 	font-weight: 700;
 }
