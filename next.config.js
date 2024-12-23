@@ -1,4 +1,13 @@
 module.exports = {
+	async redirects() {
+		return [
+			{
+				source: "/blog",
+				destination: "https://tannergodarzi.substack.com",
+				permanent: true,
+			},
+		];
+	},
 	reactStrictMode: true,
 	images: {
 		remotePatterns: [

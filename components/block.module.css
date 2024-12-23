@@ -5,7 +5,8 @@
 	flex-direction: row;
 	gap: 1rem;
 }
-.paragraph {
+.paragraph,
+.paragraph p {
 	line-height: 1.3em;
 }
 .paragraph a {
