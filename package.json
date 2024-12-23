@@ -13,7 +13,6 @@
 		"@notionhq/client": "^1.0.4",
 		"@vercel/analytics": "^0.1.10",
 		"classnames": "^2.3.2",
-		"jsx": "^0.9.89",
 		"next": "^14.0.3",
 		"react": "^18.0.0-0",
 		"react-dom": "^18.0.0-0",
