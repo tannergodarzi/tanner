@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import Footer from "../components/footer";
 import Navigation from "../components/navigation";
-import { Analytics } from "@vercel/analytics/react";
-
+import { GoogleTagManager } from "@next/third-parties/google";
 import "../styles/global.css";
 
 import styles from "./layout.module.css";
@@ -10,12 +9,16 @@ import styles from "./layout.module.css";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html>
+			<head>
+				<meta charSet="UTF-8" />
+				<link rel="icon" href="/favicon.ico" sizes="any" />
+			</head>
 			<body>
 				<Navigation />
 				<main className={styles.layout}>{children}</main>
 				<Footer />
-				<Analytics />
 			</body>
+			<GoogleTagManager gtmId="G-TX0Y3FW0VE" />
 		</html>
 	);
 }
