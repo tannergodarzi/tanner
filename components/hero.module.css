@@ -17,11 +17,13 @@
 	word-break: break-word;
 	overflow-wrap: break-word;
 	hyphens: auto;
+	pointer-events: none;
 }
 
 .heroText a {
 	font-style: italic;
 	opacity: 0.85;
+	pointer-events: all;
 }
 
 .posterImage {
