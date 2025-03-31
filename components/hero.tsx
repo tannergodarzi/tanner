@@ -11,7 +11,7 @@ export default function Hero() {
 			<section className={styles.hero}>
 				<article className={styles.heroText}>
 					<header>
-						<h1>{`Howdy, I’m Tanner`}</h1>{" "}
+						<h1>{`Howdy friend, I’m Tanner`}</h1>{" "}
 					</header>
 					<p>
 						<span>{`— a real person on the internet.`}</span>
@@ -50,7 +50,7 @@ export default function Hero() {
 						<span>
 							{"Occasionally I interview my pals at "}
 							<Link href="https://dinnerwithfriendsclub.com/">{"Dinner With Friends"}</Link>
-							{" about misadventures and chicken tenders"}
+							{" about misadventures and chicken tenders."}
 						</span>
 						<Poster>
 							<Image
