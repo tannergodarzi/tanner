@@ -9,7 +9,6 @@
 .heroText,
 .heroText *:not(span) {
 	z-index: 0;
-	pointer-events: none;
 	font: var(--font-display);
 	font-size: clamp(2.25rem, 1.7996rem + 1.8909vw, 3.75rem);
 	display: inline;
@@ -18,4 +17,18 @@
 	word-break: break-word;
 	overflow-wrap: break-word;
 	hyphens: auto;
+}
+
+.heroText a {
+	font-style: italic;
+	opacity: 0.85;
+}
+
+.posterImage {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	object-position: center;
+	font-size: 0;
+	display: block;
 }

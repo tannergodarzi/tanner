@@ -13,13 +13,14 @@
 	box-sizing: border-box;
 	overflow: hidden;
 }
+
 .poster_expanded {
 	z-index: 100;
 }
 
 .picture {
 	aspect-ratio: 1 /1;
-    pointer-events: "none",
+	pointer-events: "none",
 }
 
 .picture_expanded {

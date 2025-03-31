@@ -12,6 +12,7 @@
 	--color-green: rgb(144, 165, 136);
 	--color-red: rgb(209, 88, 53);
 	--color-tan: rgba(232,229,217, 1);
+	--color-parchment: rgb(234, 233, 228);
 	--color-tanner: rgba(195, 186, 166, 1);
 	--color-yellow: rgb(234, 208, 108);
 	--color-green-dark: rgb(119, 144,110);
@@ -26,8 +27,9 @@
 
 :root {
 	--text-color: var(--color-dark);
-	--page-background: var(--color-tan);
-		--color-neutral: var(--color-tan);
+	--page-background: #E5D0AC; /* var(--color-parchment);*/
+		--color-neutral: #E5D0AC;
+			/* var(--color-parchment);*/
 }
 
 html,
