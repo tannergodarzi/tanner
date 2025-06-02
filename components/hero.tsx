@@ -48,6 +48,10 @@ export default function Hero() {
 							/>
 						</Poster>
 						<span>
+							{"I also made a fun way to have better connection at "}
+							<Link href="https://www.conversationquest.app/">{"Conversation Quest. "}</Link>
+						</span>
+						<span>
 							{"Occasionally I interview my pals at "}
 							<Link href="https://dinnerwithfriendsclub.com/">{"Dinner With Friends"}</Link>
 							{" about misadventures and chicken tenders."}

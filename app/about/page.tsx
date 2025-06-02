@@ -59,14 +59,6 @@ export default async function AboutPage() {
 				I&rsquo;m eternally optimistic about the future. Perpetual doom and gloom isn&rsquo;t something I mesh
 				with. However, I do love discourse and debate.
 			</p>
-			<p className={styles.paragraph}>
-				I love getting coffee with people and talking design, art, new web technologies, to mundane theories
-				about urban planning.
-			</p>
-			<p className={styles.paragraph}>
-				Sound weird? Let&rsquo;s talk 🤠{" "}
-				<a href="mailto:tanner.godarzi%2Bhowdy@gmail.com">tanner.godarzi@gmail.com</a>
-			</p>
 		</article>
 	);
 }
