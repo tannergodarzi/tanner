@@ -26,9 +26,9 @@
 }
 
 :root {
-	--text-color: var(--color-dark);
-	--page-background: #E5D0AC; /* var(--color-parchment);*/
-		--color-neutral: #E5D0AC;
+	--text-color: var(--color-lightest);
+	--page-background: var(--color-dark);
+		--color-neutral: var(--color-dark);
 			/* var(--color-parchment);*/
 }
 
