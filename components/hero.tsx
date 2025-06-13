@@ -36,20 +36,10 @@ export default function Hero() {
 								height={288}
 							/>
 						</Poster>
-						<span>{"Currently I’m at Notion on Brand Marketing telling the story of tools for work."}</span>
-						<Poster>
-							<Image
-								src={"/gifs/mission-control.gif"}
-								alt={""}
-								quality={50}
-								className={styles.posterImage}
-								width={480}
-								height={360}
-							/>
-						</Poster>
 						<span>
-							{"I also made a fun way to have better connection at "}
-							<Link href="https://www.conversationquest.app/">{"Conversation Quest. "}</Link>
+							{"I made a fun way to have better connection at "}
+							<Link href="https://www.conversationquest.app/">{"Conversation Quest."}</Link>
+							{" "}
 						</span>
 						<span>
 							{"Occasionally I interview my pals at "}

@@ -12,9 +12,8 @@ export default async function AboutPage() {
 					}}
 				>
 					<p className={styles.paragraph}>
-						Not actually a cowboy but I do love a good felt hat and adventure. I&rsquo;m a Front-End
-						Engineer building Notion&rsquo;s Marketing Site and telling the story of tools for work. In a
-						past life I worked at Dropbox, Square (I really like cubes) after a tour with an agency and
+						Not actually a cowboy but I do love a good felt hat and adventure. In a
+						past life I worked at Notion, Dropbox, Square (I really like companies with cube shaped logos) after a tour with an agency and
 						freelancing.
 					</p>
 					<p className={styles.paragraph}>
