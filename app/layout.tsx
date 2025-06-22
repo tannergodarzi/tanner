@@ -24,13 +24,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 
 export const metadata: Metadata = {
-	title: "Howdy, I'm Tanner — a real person on the internet.",
+	title: "Hello, I'm Tanner — a real person on the internet.",
 	description:
-		"I’m also a Front End Engineer motivated by design thinking and story telling. Currently I’m at Notion telling the story of tools for work.",
+		"And a Front End Engineer motivated by design thinking and story telling.",
 };
 
 export const viewport = {
 	width: "device-width",
 	initialScale: 1,
-	maximumScale: 1,
 };

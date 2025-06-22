@@ -3,42 +3,18 @@ import styles from "./about.module.css";
 export default async function AboutPage() {
 	return (
 		<article className={styles.about}>
-			<section className={styles.column_list}>
-				<h1>Howdy Friend, I&rsquo;m Tanner</h1>
-				<section
-					className={styles.column}
-					style={{
-						width: "min(50vw, 300px)",
-					}}
-				>
-					<p className={styles.paragraph}>
-						Not actually a cowboy but I do love a good felt hat and adventure. In a
-						past life I worked at Notion, Dropbox, Square (I really like companies with cube shaped logos) after a tour with an agency and
-						freelancing.
-					</p>
-					<p className={styles.paragraph}>
-						I think the web should be a sandbox of infinite exploration to unlock our human potential for
-						creativity and communication. Utilitarian tools and acid bath type experiences are the
-						polarizing ends of the web I find most exciting to build.
-					</p>
-				</section>
-				<aside
-					className={styles.column}
-					style={{
-						width: "min(50vw, 300px)",
-					}}
-				>
-					<picture className={styles.image}>
-						<img
-							src="https://www.tannergodarzi.com/tanner-godarzi.jpeg"
-							alt="An image of Tanner Godarzi"
-							width="1000"
-							height="1341"
-						/>
-					</picture>
-				</aside>
-			</section>
-			<hr className={styles.divider} />
+			<h1>Hello Friend, I&rsquo;m Tanner</h1>
+
+			<p className={styles.paragraph}>
+				Not actually a cowboy but I do love a good felt hat and adventure. In a past life I worked at Notion,
+				Dropbox, Square (I really like companies with cube shaped logos) after a tour with an agency and
+				freelancing.
+			</p>
+			<p className={styles.paragraph}>
+				I think the web should be a sandbox of infinite exploration to unlock our human potential for creativity
+				and communication. Utilitarian tools and acid bath type experiences are the polarizing ends of the web I
+				find most exciting to build.
+			</p>
 			<p className={styles.paragraph}>
 				I find joy in bringing people together and creating a community, usually over a dinner party invoking
 				the fine touches and wackiness of our patron saint of food Eric Wareheim. You should throw a dinner
