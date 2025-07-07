@@ -4,6 +4,11 @@
 	padding: 1rem;
 	z-index: 1000;
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	align-items: center;
+
 }
 
 .heroText,
@@ -34,3 +39,15 @@
 	font-size: 0;
 	display: block;
 }
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(7, minmax(10px, 2em));
+	grid-template-rows: repeat(7, minmax(10px, 2em));
+}
+
+.grid span {
+	grid-column: var(--grid-column) / span 1;
+	grid-row: var(--grid-row) / span 1;
+	font-size: 2em;
+} 

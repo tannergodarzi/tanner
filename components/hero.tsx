@@ -11,82 +11,212 @@ export default function Hero() {
 			<section className={styles.hero}>
 				<article className={styles.heroText}>
 					<header>
-						<h1>{`Hello friend, I’m Tanner`}</h1>{" "}
+						<h1>{`Hello friend, I’m Tanner. 🤠 `}</h1>
 					</header>
 					<p>
-						<span>{`— a real person on the internet.`}</span>
-						<Poster>
-							<Image
-								src={"/gifs/skateboarder.gif"}
-								alt={""}
-								quality={50}
-								width={480}
-								height={360}
-								className={styles.posterImage}
-							/>
-						</Poster>
-						<span>{`I’m also a Front End Engineer motivated by design thinking and story telling.`}</span>
-						<Poster>
-							<Image
-								src={"/gifs/reading.gif"}
-								alt={""}
-								quality={50}
-								className={styles.posterImage}
-								width={384}
-								height={288}
-							/>
-						</Poster>
+						<span>{`A Front-End Engineer motivated by design thinking and story telling. 💻 `} </span>
 						<span>
 							{"I made a fun way to have better connection at "}
-							<Link href="https://www.conversationquest.app/">{"Conversation Quest."}</Link>
-							{" "}
+							<Link href="https://www.conversationquest.app/">{"Conversation Quest."}</Link>{"🃏 "}
 						</span>
 						<span>
 							{"Occasionally I interview my pals at "}
 							<Link href="https://dinnerwithfriendsclub.com/">{"Dinner With Friends"}</Link>
-							{" about misadventures and chicken tenders."}
+							{" about misadventures and chicken tenders. 🍲"}{" "}
 						</span>
-						<Poster>
-							<Image
-								src={"/gifs/dinner-with-friends.gif"}
-								alt={""}
-								quality={50}
-								className={styles.posterImage}
-								width={900}
-								height={900}
-							/>
-						</Poster>
-						<span>
-							{`San Francisco — specifically the delightful neighborhood of Cole Valley — is where I call home.`}
-						</span>
-						<Poster>
-							<Image
-								src={"/gifs/california.gif"}
-								alt={""}
-								quality={50}
-								className={styles.posterImage}
-								width={351}
-								height={263}
-							/>
-						</Poster>
 						<span>
 							{
-								"My favorite dish? Thanks for asking. I can’t deny the beauty of a Prosciutto di Parma Pie."
+								"San Francisco — specifically the delightful neighborhood of Cole Valley — is where I call home. 🌁 My favorite dish? Thanks for asking. I can’t deny the beauty of a Prosciutto di Parma Pie. 🍕"
 							}
 						</span>
-						<Poster>
-							<Image
-								src={"/gifs/fruit-plate.gif"}
-								alt={""}
-								quality={50}
-								className={styles.posterImage}
-								width={480}
-								height={320}
-							/>
-						</Poster>
 					</p>
 				</article>
+				<div className={styles.grid}>
+					{/** 1 */}
+					<span
+						style={
+							{
+								"--grid-column": 4,
+								"--grid-row": 1,
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					{/** 2 */}
+					<span
+						style={
+							{
+								"--grid-column": 3,
+								"--grid-row": 2,
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					<span
+						style={
+							{
+								"--grid-column": 4,
+								"--grid-row": 2,
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					<span
+						style={
+							{
+								"--grid-column": 5,
+								"--grid-row": 2,
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					{/** 3 */}
+					<span
+						style={
+							{
+								"--grid-column": 2,
+								"--grid-row": 3,
+								transform: "translateX(50%)",
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					<span
+						style={
+							{
+								"--grid-column": 4,
+								"--grid-row": 3,
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					<span
+						style={
+							{
+								"--grid-column": 6,
+								"--grid-row": 3,
+								transform: "translateX(-50%)",
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					{/** 4 */}
+					<span
+						style={
+							{
+								"--grid-column": 2,
+								"--grid-row": 4,
+							} as React.CSSProperties
+						}
+					>
+						{"👇"}
+					</span>
+					<span
+						style={
+							{
+								"--grid-column": 3,
+								"--grid-row": 4,
+								transform: "translateX(50%)",
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					<span
+						style={
+							{
+								"--grid-column": 5,
+								"--grid-row": 4,
+								transform: "translateX(-50%)",
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					<span
+						style={
+							{
+								"--grid-column": 6,
+								"--grid-row": 4,
+							} as React.CSSProperties
+						}
+					>
+						{"👇"}
+					</span>
+					{/** 5 */}
+					<span
+						style={
+							{
+								"--grid-column": 3,
+								"--grid-row": 5,
+								transform: "translateX(25%)",
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					<span
+						style={
+							{
+								"--grid-column": 5,
+								"--grid-row": 5,
+								transform: "translateX(-25%)",
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					{/** 6 */}
+					<span
+						style={
+							{
+								"--grid-column": 3,
+								"--grid-row": 6,
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					<span
+						style={
+							{
+								"--grid-column": 5,
+								"--grid-row": 6,
+							} as React.CSSProperties
+						}
+					>
+						{"🤠"}
+					</span>
+					{/** 6 */}
+					<span
+						style={
+							{
+								"--grid-column": 3,
+								"--grid-row": 7,
+							} as React.CSSProperties
+						}
+					>
+						{"👢"}
+					</span>
+					<span
+						style={
+							{
+								"--grid-column": 5,
+								"--grid-row": 7,
+							} as React.CSSProperties
+						}
+					>
+						{"👢"}
+					</span>
+				</div>
 			</section>
 		</>
 	);
-};
+}
