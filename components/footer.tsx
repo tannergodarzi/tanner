@@ -18,9 +18,6 @@ export default function Footer() {
 						<li>
 							<Link href={"/blog"}>{"Blog"}</Link>
 						</li>
-						<li>
-							<Link href={"mailto:tanner.godarzi@gmail.com"}>{"Mail"}</Link>
-						</li>
 					</ul>
 				</nav>
 			</footer>

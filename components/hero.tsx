@@ -14,10 +14,15 @@ export default function Hero() {
 						<h1>{`Hello friend, I’m Tanner. 🤠 `}</h1>
 					</header>
 					<p>
-						<span>{`A Front-End Engineer motivated by design thinking and story telling. 💻 `} </span>
+						<span>
+							{`I'm A Front-End Engineer currently at `}
+							<Link href="https://www.conversationquest.app/">{`Vercel`}</Link>
+							{` telling the sotry of better Development on the Web. 🌐 `}{" "}
+						</span>
 						<span>
 							{"I made a fun way to have better connection at "}
-							<Link href="https://www.conversationquest.app/">{"Conversation Quest."}</Link>{"🃏 "}
+							<Link href="https://www.conversationquest.app/">{"Conversation Quest."}</Link>
+							{"💎 "}
 						</span>
 						<span>
 							{"Occasionally I interview my pals at "}
