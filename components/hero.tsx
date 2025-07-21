@@ -17,7 +17,7 @@ export default function Hero() {
 						<span>
 							{`I'm A Front-End Engineer currently at `}
 							<Link href="https://www.conversationquest.app/">{`Vercel`}</Link>
-							{` telling the sotry of better Development on the Web. 🌐 `}{" "}
+							{` telling the story of better Development on the Web. 🌐 `}{" "}
 						</span>
 						<span>
 							{"I made a fun way to have better connection at "}
