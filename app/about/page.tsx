@@ -6,7 +6,7 @@ export default async function AboutPage() {
 			<h1>Hello Friend, I&rsquo;m Tanner</h1>
 
 			<p className={styles.paragraph}>
-				Not actually a cowboy, but I do love a good felt hat and adventure. Currently I'm A Front-End Engineer currently at Vercel telling the sotry of better Development on the Web. In a past life I worked at Notion,
+				Not actually a cowboy, but I do love a good felt hat and adventure. Currently I'm A Front-End Engineer currently at Vercel telling the story of better Development on the Web. In a past life I worked at Notion,
 				Dropbox, Square (I really like companies with cube shaped logos) after a tour with an agency and
 				freelancing.
 			</p>
