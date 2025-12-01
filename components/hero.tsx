@@ -37,7 +37,7 @@ export default function Hero() {
 							{" based on field recordings. Give it a listen. 🎤"}{" "}
 						</span>
 						<span>
-							{"If a podcast isn't your jam, you can subscribe to my Substack "}
+							{"If a podcast isn’t your jam, you can subscribe to my Substack "}
 							<Link href="http://tannergodarzi.substack.com">{"Tanner Thoughts"}</Link>
 							{" too. ✍️"}{" "}
 						</span>
