@@ -34,12 +34,12 @@ export default function Hero() {
 							<Link href="https://open.spotify.com/show/5uDwswaecZ42ZJvMblVZp7">
 								{"Magical Ambient Sound Machine"}
 							</Link>
-							{" based on field recordings. Give it a listen. 📢"}{" "}
+							{" based on field recordings. Give it a listen. 🎤"}{" "}
 						</span>
 						<span>
 							{"If a podcast isn't your jam, you can subscribe to my SubStack "}
 							<Link href="http://tannergodarzi.substack.com">{"Tanner Thoughts"}</Link>
-							{" too. 🤠"}{" "}
+							{" too. ✍️"}{" "}
 						</span>
 						<span>
 							{
