@@ -30,6 +30,13 @@ export default function Hero() {
 							{" about misadventures and chicken tenders. 🍲"}{" "}
 						</span>
 						<span>
+							{"I even have an ambient noise podcast called "}
+							<Link href="https://open.spotify.com/show/5uDwswaecZ42ZJvMblVZp7">
+								{"Magical Ambient Sound Machine"}
+							</Link>
+							{" based on field recordings. Give it a listen. 📢"}{" "}
+						</span>
+						<span>
 							{
 								"San Francisco — specifically the delightful neighborhood of Cole Valley — is where I call home. 🌁 My favorite dish? Thanks for asking. I can’t deny the beauty of a Prosciutto di Parma Pie. 🍕"
 							}
