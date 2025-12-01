@@ -11,7 +11,7 @@ export default function Hero() {
 			<section className={styles.hero}>
 				<article className={styles.heroText}>
 					<header>
-						<h1>{`Hello friend, I’m Tanner. 🤠 `}</h1>
+						<h1>{`Howdy friend, I’m Tanner. 🤠 `}</h1>
 					</header>
 					<p>
 						<span>

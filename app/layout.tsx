@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 
 export const metadata: Metadata = {
-	title: "Hello, I'm Tanner — a real person on the internet.",
+	title: "Howdy, I'm Tanner — a real person on the internet.",
 	description:
 		"And a Front-End Engineer motivated by design thinking and storytelling.",
 };
