@@ -125,3 +125,17 @@
 .image+figcaption {
 	font: var(--font-annotation);
 }
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(7, minmax(10px, 2em));
+	grid-template-rows: repeat(7, minmax(10px, 2em));
+	margin: auto;
+	width: auto;
+}
+
+.grid span {
+	grid-column: var(--grid-column) / span 1;
+	grid-row: var(--grid-row) / span 1;
+	font-size: 2em;
+}
