@@ -16,7 +16,7 @@ export default function Hero() {
 					<p>
 						<span>
 							{`I'm a Front-End Engineer currently at `}
-							<Link href="https://www.conversationquest.app/">{`Vercel`}</Link>
+							<Link href="http://vercel.com/design">{`Vercel`}</Link>
 							{` telling the story of better development on the web. 🌐 `}{" "}
 						</span>
 						<span>
