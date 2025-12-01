@@ -37,6 +37,11 @@ export default function Hero() {
 							{" based on field recordings. Give it a listen. 📢"}{" "}
 						</span>
 						<span>
+							{"If a podcast isn't your jam, you can subscribe to my SubStack "}
+							<Link href="http://tannergodarzi.substack.com">{"Tanner Thoughts"}</Link>
+							{" too. 🤠"}{" "}
+						</span>
+						<span>
 							{
 								"San Francisco — specifically the delightful neighborhood of Cole Valley — is where I call home. 🌁 My favorite dish? Thanks for asking. I can’t deny the beauty of a Prosciutto di Parma Pie. 🍕"
 							}
