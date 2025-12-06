@@ -3,7 +3,7 @@ import styles from "./about.module.css";
 export default async function AboutPage() {
 	return (
 		<article className={styles.about}>
-			<h1>Howdy Friend, I&rsquo;m Tanner</h1>
+			<h1>Hello Friend, I&rsquo;m Tanner</h1>
 
 			<p className={styles.paragraph}>
 				Not actually a cowboy, but I do love a good felt hat and adventure. I&rsquo;m a Front-End Engineer at
